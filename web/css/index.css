@@ -45,6 +45,7 @@ body {
   min-width: 1000px;
   margin: 0;
   padding: 0;
+  position: relative;
   cursor: default;
   -webkit-text-size-adjust: 100%;
   -webkit-font-smoothing: subpixel-antialiased;

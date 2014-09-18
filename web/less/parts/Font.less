@@ -1,0 +1,33 @@
+/* ******* PARTS: FONT ******* */
+
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,300,700,600);
+@import url(http://fonts.googleapis.com/css?family=PT+Sans+Narrow:700);
+
+.font-base {
+
+}
+
+.font-link {
+    cursor: pointer;
+    outline: none;
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+.font-header-menu {
+    font: 700 ~'@{Font-Header-Size}/@{Font-Header-LineHeight}' @Font-Header-Family;
+    color: @Color-Header-Menu;
+}
+
+.font-button-big {
+    font: bold ~'@{Font-Button-Big-Size}/@{Font-Base-LineHeight}' @Font-Base-Family;
+    color: @Color-Button;
+}
+
+.font-button-medium {
+    font: bold ~'@{Font-Button-Medium-Size}/@{Font-Base-LineHeight}' @Font-Base-Family;
+    color: @Color-Button;
+}

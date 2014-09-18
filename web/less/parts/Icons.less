@@ -1,0 +1,37 @@
+/* ******* PARTS: ICONS ******* */
+
+.icon {
+    background: transparent 50% 50% no-repeat;
+
+    &.hidden {
+        visibility: hidden;
+    }
+
+    &.inline {
+        display: inline-block;
+        vertical-align: top;
+    }
+
+    &.linked {
+        cursor: pointer;
+        .mix-transition(opacity @PT-Icon-Duration ease-in-out);
+
+        &:hover {
+            opacity: @PT-Icon-Linked-Opacity;
+            .mix-transition(opacity @PT-Icon-DurationReverse ease-in-out);
+        }
+    }
+
+    // /* *** FOR BUTTONS *** */
+
+    &.size-36 {
+        width: 36px;
+        height: 36px;
+
+        .for(facebook twitter); .-each(@name) {
+            &.@{name} {
+                background-image: url("@{Path-Image}/icons/36/@{name}.png");
+            }
+        }
+    }
+}

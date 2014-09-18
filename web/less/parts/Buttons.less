@@ -1,0 +1,94 @@
+/* ******* PARTS: BUTTONS ******* */
+
+.button {
+    &:extend(.cm-text-overflow);
+
+    margin: 0;
+    padding: 0 @PT-Button-PaddingWidth;
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    -webkit-appearance: none;
+    border: none;
+    border-radius: @PT-Button-Radius;
+    text-align: center;
+    text-decoration: none;
+    white-space: nowrap;
+    cursor: pointer;
+    .mix-box-sizing();
+    .mix-background-clip();
+    .mix-user-select();
+    .mix-transition(background-color @PT-Button-Duration ease-in-out);
+
+    &.has-icon {
+        text-align: left;
+        padding-left: 0;
+
+        .icon {
+            margin-right: @PT-Button-PaddingWidth;
+        }
+    }
+
+    &.size-44 {
+        &:extend(.font-button-big);
+
+        height: 44px;
+        line-height: 44px;
+    }
+
+    &.size-36 {
+        &:extend(.font-button-medium);
+
+        height: 36px;
+        line-height: 36px;
+    }
+
+    &.style-twitter {
+        background-color: @Background-Twitter;
+
+        &.size-36 {
+            font-weight: normal;
+        }
+
+        &.has-icon {
+            .icon {
+                border-right: 1px solid #4fc5ec;
+            }
+        }
+    }
+
+    &.style-facebook {
+        background-color: @Background-Facebook;
+
+        &.size-36 {
+            font-weight: normal;
+        }
+
+        &.has-icon {
+            .icon {
+                border-right: 1px solid #516ba1;
+            }
+        }
+    }
+}
+
+
+.pt__buttons {
+    margin-top: @PT-Buttons-Indent;
+
+    &.is-block {
+        .button,
+        .browse-button {
+            width: 100%;
+            display: block;
+            margin: @PT-Button-IndentY 0 0 0;
+            float: none;
+            .cm-text-overflow;
+
+            &:first-child {
+                margin: 0;
+            }
+        }
+    }
+}
+

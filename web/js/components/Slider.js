@@ -246,12 +246,12 @@ function(params){
             // Reset active slide
             if(previous){
                 if(that.params['buttons']){
-                    cm.removeClass(previous['nodes']['button'], 'active');
+                    cm.removeClass(previous['nodes']['button'], 'active', true);
                 }
             }
             // Set active slide
             if(that.params['buttons']){
-                cm.addClass(current['nodes']['button'], 'active');
+                cm.addClass(current['nodes']['button'], 'active', true);
             }
             // Set bar item
             if(that.params['hasBar']){

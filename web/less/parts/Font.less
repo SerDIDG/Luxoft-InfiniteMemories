@@ -4,22 +4,30 @@
 @import url(http://fonts.googleapis.com/css?family=PT+Sans+Narrow:700);
 
 .font-base {
-
+    font: @Font-Base-Weight ~'@{Font-Base-Size}/@{Font-Base-LineHeight}' @Font-Base-Family;
+    color: @Color-Base;
 }
 
 .font-link {
     cursor: pointer;
     outline: none;
     text-decoration: none;
+    color: @Color-Link;
 
     &:hover {
-        text-decoration: underline;
+        text-decoration: none;
+        color: @Color-LinkHover;
     }
 }
 
 .font-header-menu {
-    font: 700 ~'@{Font-Header-Size}/@{Font-Header-LineHeight}' @Font-Header-Family;
+    font: 700 ~'@{Font-Header-Size}/@{Font-Base-LineHeight}' @Font-Header-Family;
     color: @Color-Header-Menu;
+}
+
+.font-input {
+    font: @Font-Base-Weight ~'@{Font-Input-Size}/@{Font-Input-LineHeight}' @Font-Base-Family;
+    color: @Color-Input;
 }
 
 .font-button-big {

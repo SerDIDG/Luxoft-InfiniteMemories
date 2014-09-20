@@ -43,6 +43,21 @@
         line-height: 36px;
     }
 
+    &.size-32 {
+        &:extend(.font-button-medium);
+
+        height: 32px;
+        line-height: 32px;
+    }
+
+    &.button-active {
+        background-color: @Background-Button-Active;
+    }
+
+    &.button-alt {
+        background-color: @Background-Button-Alt;
+    }
+
     &.style-twitter {
         background-color: @Background-Twitter;
 
@@ -76,7 +91,7 @@
 .pt__buttons {
     margin-top: @PT-Buttons-Indent;
 
-    &.is-block {
+    &.is-box {
         .button,
         .browse-button {
             width: 100%;

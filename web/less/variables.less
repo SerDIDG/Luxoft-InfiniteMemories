@@ -3,6 +3,7 @@
 // /* ******* COMMON ******* */
 
 @CM-MinWidth: 1000px;
+@CM-WrapperIndent: 12px;
 @CM-Transition-Duration: 300ms;
 @CM-Transition-DurationReverse: 100ms;
 
@@ -14,26 +15,42 @@
 
 @Font-Base-Family: Tahoma, Geneva, sans-serif;
 @Font-Base-LineHeight: 18px;
-
-@Font-Splash-Family: 'Open Sans', Arial, Helvetica, sans-serif;
-
+@Font-Base-Size: 14px;
+@Font-Base-SizeSecondary: 12px;
+@Font-Base-Weight: normal;
+@Font-Slider-Family: 'Open Sans', Arial, Helvetica, sans-serif;
+@Font-Slider-Weight: bold;
 @Font-Header-Family: 'PT Sans Narrow', sans-serif;
-@Font-Header-LineHeight: 18px;
 @Font-Header-Size: 14px;
-
 @Font-Button-Big-Size: 16px;
 @Font-Button-Medium-Size: 14px;
+@Font-Input-Size: 17px;
+@Font-Input-LineHeight: 22px;
 
 // /* *** COLORS *** */
 
+@Color-Base: #000000;
+@Color-Base-Active: #328cd2;
+@Color-Link: @Color-Base-Active;
+@Color-LinkHover: @Color-Link;
+@Color-Placeholder: #a0a0a0;
 @Color-Header-Menu: #ffffff;
 @Color-Button: #ffffff;
+@Color-Input: @Color-Base;
 
 // /* *** BACKGROUNDS *** */
 
 @Background-Base: #ffffff;
+@Background-Base-Active: @Color-Base-Active;
 @Background-Twitter: #30bbe9;
 @Background-Facebook: #325190;
+@Background-Button-Active: @Background-Base-Active;
+@Background-Button-Alt: #14a27c;
+
+// /* *** BORDERS *** */
+
+@Border-Base-ActiveSize: 2px;
+@Border-Base-Active: @Border-Base-ActiveSize solid @Background-Base-Active;
 
 // /* ******* PARTS ******* */
 
@@ -43,24 +60,45 @@
 @PT-Icon-DurationReverse: @CM-Transition-DurationReverse;
 @PT-Icon-Linked-Opacity: 0.7;
 
+// /* *** FORM *** */
+
+@PT-Form-FieldHeight: 28px;
+@PT-Form-FieldIndent: 16px;
+@PT-Form-FieldInnerIndent: @PT-Form-FieldIndent / 2;
+@PT-Form-FieldTitleWidth: 150px;
+
+// /* *** INPUTS *** */
+
+@PT-Input-Height: @PT-Form-FieldHeight;
+@PT-Input-Indent: 4px;
+@PT-Input-Radius: 0px;
+@PT-Textarea-Height: 100px;
+@PT-Select-Size: 7;
+
 // /* *** BUTTONS *** */
 
-@PT-Buttons-Indent: 16px;
+@PT-Buttons-Indent: @PT-Form-FieldIndent;
 
 @PT-Button-Radius: 0px;
-@PT-Button-IndentY: 16px;
+@PT-Button-IndentY: @PT-Form-FieldIndent;
 @PT-Button-PaddingWidth: 16px;
 @PT-Button-Duration: @CM-Transition-Duration;
 @PT-Button-DurationReverse: @CM-Transition-DurationReverse;
 
 // /* ******* LAYOUTS ******* */
 
+// /* *** SLIDER *** */
+
+@LT-Slider-BackgroundWidth: 1500px;
+@LT-Slider-ButtonSize: 16px;
+@LT-Slider-ButtonBackground: #ffffff;
+@LT-Slider-ButtonBackgroundActive: #ca3100;
+@LT-Slider-Color: #ffffff;
+
 // /* *** SPLASH *** */
 
 @LT-Splash-HeaderHeight: 33px;
 @LT-Splash-FooterHeight: 160px;
-@LT-Splash-BackgroundWidth: 1500px;
-@LT-Splash-BackgroundDuration: 1000ms;
 
 // /* *** LOGIN *** */
 

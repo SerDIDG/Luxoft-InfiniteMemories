@@ -1,0 +1,37 @@
+/* ******* PARTS: MARKETS ******* */
+
+/* *** BASE *** */
+
+.pt__markets {
+    > ul {
+        &:extend(.cm-ul-clear all, .cm-ul-inline all);
+
+        > li {
+            margin: 0 10px 0 0;
+
+            a {
+                display: block;
+
+                img {
+                    display: block;
+                }
+            }
+
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+
+    &.pull-left {
+        text-align: left;
+    }
+
+    &.pull-center {
+        text-align: center;
+    }
+
+    &.pull-right {
+        text-align: right;
+    }
+}

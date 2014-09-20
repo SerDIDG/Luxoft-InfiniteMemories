@@ -1,23 +1,90 @@
 /* ******* PARTS: MENU ******* */
 
-.pt__menu-header {
+/* *** BASE *** */
+
+.pt__menu {
+    > ul {
+        &:extend(.cm-ul-clear all, .cm-ul-inline all);
+    }
+
+    &.pull-left {
+        > ul {
+            text-align: left;
+        }
+    }
+
+    &.pull-center {
+        > ul {
+            text-align: center;
+        }
+    }
+
+    &.pull-right {
+        > ul {
+            text-align: right;
+        }
+    }
+}
+
+/* *** HEADER *** */
+
+.pt__menu--header {
     float: right;
     margin: 0 18px 0 0;
 
     > ul {
-        &:extend(.cm-list-clear all, .cm-ul-inline all);
-
-        text-align: left;
-        font-size: 0;
-
         > li {
-            display: inline-block;
-            vertical-align: top;
             margin: 0 18px 0 0;
 
             > a {
                 &:extend(.font-header-menu);
                 text-transform: uppercase;
+            }
+
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+}
+
+/* *** FOOTER *** */
+
+.pt__menu--footer {
+    > ul {
+        > li {
+            &:after {
+                width: 1px;
+                height: 16px;
+                margin: ((@Font-Base-LineHeight - 16px) / 2) 8px;
+                display: inline-block;
+                vertical-align: top;
+                background-color: #cce2f4;
+                content: '';
+            }
+
+            > a {
+                font-size: @Font-Base-SizeSecondary;
+            }
+
+            &:last-child {
+                &:after {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+/* *** LINKS *** */
+
+.pt__menu--links {
+    > ul {
+        > li {
+            margin: 0 10px 0 0;
+
+            > a {
+                font-size: @Font-Base-SizeSecondary;
             }
 
             &:last-child {

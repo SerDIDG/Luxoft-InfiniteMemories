@@ -19,11 +19,35 @@
         padding: 34px @LT-Login-PaddingWidth 44px;
     }
 
-    &.is-right {
+    &.pull-left {
+        float: left;
+    }
+
+    &.pull-center {
+        margin: 0 auto;
+    }
+
+    &.pull-right {
         float: right;
     }
 }
 
 .lt__login__logo {
-    &:extend(.cm-image-adaptive);
+    margin: 0 0 @PT-Form-FieldIndent;
+}
+
+.lt__login__social-login {
+    margin: 0 0 30px;
+}
+
+.lt__login__form {
+    margin: 0 0 6px;
+}
+
+.lt__login__links {
+    margin: 0 0 20px;
+}
+
+.lt__login__submit-box {
+    margin: 0;
 }

@@ -4,52 +4,183 @@
     <meta charset="UTF-8">
     <title>Infinite Memories</title>
     <link type="text/css" rel="stylesheet" href="css/index.css">
+
+    <script type="text/javascript" src="js/polyfill.js"></script>
+    <script type="text/javascript" src="js/common.js"></script>
+    <script type="text/javascript" src="js/parts.js"></script>
+    <script type="text/javascript" src="js/modules.js"></script>
+    <script type="text/javascript" src="js/init.js"></script>
+    <script type="text/javascript" src="js/components/UA.js"></script>
+    <script type="text/javascript" src="js/components/Collector.js"></script>
+    <script type="text/javascript" src="js/components/Slider.js"></script>
+
+    <script type="text/javascript" src="js/custom.js"></script>
+
+    <script type="text/javascript">
+        cm.onReady(function(){
+            // Components
+            new Com.Collector()
+                .add('slider', function(node){
+                    new Com.Slider({
+                        'node' : node
+                    });
+                })
+                .construct();
+        });
+    </script>
 </head>
 <body>
 
 <div class="lt__splash">
-    <div class="lt__splash__bg">
-        <ul>
-            <li class="is-active">
-                <img class="bg" src="img/layouts/splash/bg-1.jpg" alt="">
-            </li>
-        </ul>
+
+    <div class="lt__splash__header">
+        <div class="pt__menu pt__menu--header">
+            <ul>
+                <li>
+                    <a>Site feedback</a>
+                </li>
+                <li>
+                    <a>Help</a>
+                </li>
+            </ul>
+        </div>
     </div>
 
     <div class="lt__splash__content">
-        <div class="lt__splash__header">
-            <div class="pt__menu-header">
-                <ul>
-                    <li>
-                        <a>Site feedback</a>
+        <div class="lt__slider"  data-element="slider" data-node="ComSlider:{}:container">
+            <div class="lt__slider__slides" data-node="slides">
+                <ul data-node="slidesInner">
+                    <li data-node="items:[]:container">
+                        <img class="image" src="img/layouts/splash/bg-1.jpg" alt="">
+                        <div class="text">
+                            <div class="lt__splash__slide-text-1">Keep<br>the most tender<br>memories</div>
+                        </div>
                     </li>
-                    <li>
-                        <a>Help</a>
+                    <li data-node="items:[]:container">
+                        <img class="image" src="img/layouts/splash/bg-2.jpg" alt="">
+                        <div class="text">
+                            <div class="lt__splash__slide-text-2">TELL YOUR STORY AND USE<br>THE POWER OF YOUR<br>MEMORIES</div>
+                        </div>
+                    </li>
+                    <li data-node="items:[]:container">
+                        <img class="image" src="img/layouts/splash/bg-3.jpg" alt="">
+                        <div class="text">
+                            <div class="lt__splash__slide-text-3">Keep<br>the most cherish<br>memories</div>
+                        </div>
                     </li>
                 </ul>
             </div>
-        </div>
 
-        <div class="inner">
-            <div class="lt__login is-right">
+            <div class="lt__splash__main">
                 <div class="inner">
-                    <img class="lt__login__logo" src="img/parts/logo/280.png" alt="Infinite Memories">
-                    <div class="pt__buttons is-block">
-                        <a class="button size-36 style-facebook has-icon">
-                            <span class="icon inline size-36 facebook"></span>Login with Facebook
-                        </a>
-                        <a class="button size-36 style-twitter has-icon">
-                            <span class="icon inline size-36 twitter"></span>Login with Twitter
-                        </a>
+                    <div class="lt__login pull-right">
+                        <div class="inner">
+                            <div class="lt__login__logo">
+                                <div class="icon icon-logo size-280" title="Infinite Memories"></div>
+                            </div>
+
+                            <div class="lt__login__social-login pt__buttons is-box">
+                                <a class="button size-36 style-facebook has-icon">
+                                    <span class="icon inline size-36 facebook"></span>Login with Facebook
+                                </a>
+                                <a class="button size-36 style-twitter has-icon">
+                                    <span class="icon inline size-36 twitter"></span>Login with Twitter
+                                </a>
+                            </div>
+
+                            <div class="lt__login__form pt__form">
+                                <dl class="is-box">
+                                    <dd>
+                                        <input type="text" name="email" placeholder="Email or Phone">
+                                    </dd>
+                                </dl>
+                                <dl class="is-box">
+                                    <dd>
+                                        <input type="password" name="password" placeholder="Password">
+                                    </dd>
+                                </dl>
+                            </div>
+
+                            <div class="lt__login__links pt__menu pt__menu--links pull-right">
+                                <ul>
+                                    <li>
+                                        <a>Forgot password?</a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="lt__login__submit-box pt__buttons is-box">
+                                <a class="button button-active size-32">Login</a>
+                                <a class="button button-alt size-32">Sign Up</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
+            </div>
+
+            <div class="lt__slider__buttons">
+                <ul data-node="buttons"></ul>
             </div>
         </div>
     </div>
 
     <div class="lt__splash__footer">
         <div class="inner">
+            <div class="l">
+                <div class="pt__menu pt__menu--footer">
+                    <ul>
+                        <li>
+                            <a>Help & Support</a>
+                        </li>
+                        <li>
+                            <a>Terms of Service</a>
+                        </li>
+                        <li>
+                            <a>Privacy Policy</a>
+                        </li>
+                        <li>
+                            <a>Languages</a>
+                        </li>
+                    </ul>
+                </div>
 
+                <div class="pt__share pt__share--footer">
+                    <ul>
+                        <li>
+                            <a class="icon size-28 facebook linked"></a>
+                        </li>
+                        <li>
+                            <a class="icon size-28 twitter linked"></a>
+                        </li>
+                        <li>
+                            <a class="icon size-28 google linked"></a>
+                        </li>
+                        <li>
+                            <a class="icon size-28 youtube linked"></a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="lt__splash__copyright">
+                    Infinite Memories © 2014  •  All rights reserved
+                </div>
+            </div>
+
+            <div class="r">
+                <div class="pt__markets">
+                    <ul>
+                        <li>
+                            <a class="icon icon-markets app-store linked"></a>
+                        </li>
+                        <li>
+                            <a class="icon icon-markets google-play linked"></a>
+                        </li>
+                        <li>
+                            <a class="icon icon-markets windows-store linked"></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </div>
 </div>

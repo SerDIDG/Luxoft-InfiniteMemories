@@ -34,6 +34,25 @@
             user-select: @value;
 }
 
+.mix-placeholder (@color) {
+    &::-webkit-input-placeholder {
+        opacity: 1;
+        color: @color;
+    }
+    &:-moz-placeholder {
+        opacity: 1;
+        color: @color;
+    }
+    &::-moz-placeholder {
+        opacity: 1;
+        color: @color;
+    }
+    &:-ms-input-placeholder {
+        opacity: 1;
+        color: @color;
+    }
+}
+
 // /* ******* OTHER ******* */
 
 .for(@i, @n) {.-each(@i)}

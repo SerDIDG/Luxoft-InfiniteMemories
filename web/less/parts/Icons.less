@@ -22,7 +22,20 @@
         }
     }
 
-    // /* *** FOR BUTTONS *** */
+    // /* *** 28 x 28 *** */
+
+    &.size-28 {
+        width: 28px;
+        height: 28px;
+
+        .for(facebook twitter google youtube); .-each(@name) {
+            &.@{name} {
+                background-image: url("@{Path-Image}/icons/28/@{name}.png");
+            }
+        }
+    }
+
+    // /* *** 36 x 36 *** */
 
     &.size-36 {
         width: 36px;
@@ -32,6 +45,29 @@
             &.@{name} {
                 background-image: url("@{Path-Image}/icons/36/@{name}.png");
             }
+        }
+    }
+
+    // /* *** MARKETS *** */
+
+    &.icon-markets {
+        width: 120px;
+        height: 40px;
+
+        .for(app-store google-play windows-store); .-each(@name) {
+            &.@{name} {
+                background-image: url("@{Path-Image}/icons/markets/@{name}.png");
+            }
+        }
+    }
+
+    // /* *** LOGO *** */
+
+    &.icon-logo {
+        &.size-280 {
+            width: 280px;
+            height: 90px;
+            background-image: url("@{Path-Image}/icons/logo/280.png");
         }
     }
 }

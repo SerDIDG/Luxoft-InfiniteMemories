@@ -8,7 +8,7 @@ html, body {
 body {
     &:extend(.font-base);
 
-    min-width: @CM-MinWidth;
+    min-width: @CM-MinWidth + (@CM-WrapperIndent * 2);
     margin: 0;
     padding: 0;
     position: relative;
@@ -40,9 +40,37 @@ a {
 
 /* *** INPUTS *** */
 
+input[type="file"] {
+    width: 100%;
+    cursor: pointer;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+    cursor: pointer;
+}
+
 input[type="button"],
 input[type="submit"],
 input[type="reset"],
 button {
     &:extend(.button all);
+}
+
+input[type="text"],
+input[type="email"],
+input[type="number"],
+input[type="phone"],
+input[type="password"],
+textarea,
+select {
+    &:extend(.input all);
+}
+
+textarea {
+    &:extend(.textarea all);
+}
+
+select {
+    &:extend(.select all);
 }

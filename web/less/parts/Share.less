@@ -1,0 +1,45 @@
+/* ******* PARTS: SHARE ******* */
+
+/* *** BASE *** */
+
+.pt__share {
+    > ul {
+        &:extend(.cm-ul-clear all, .cm-ul-inline all);
+
+        > li {
+            a {
+                display: block;
+
+                img {
+                    display: block;
+                }
+            }
+        }
+    }
+
+    &.pull-left {
+        text-align: left;
+    }
+
+    &.pull-center {
+        text-align: center;
+    }
+
+    &.pull-right {
+        text-align: right;
+    }
+}
+
+/* *** FOOTER *** */
+
+.pt__share--footer {
+    > ul {
+        > li {
+            margin: 0 10px 0 0;
+
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+}

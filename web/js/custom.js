@@ -4,3 +4,8 @@ Com.Slider.prototype.setParams({
     'time' : 1000,
     'delay' : 5000
 });
+
+Com.Sidebar.prototype.setParams({
+    'remember' : true,
+    'name' : 'sidebar'
+});

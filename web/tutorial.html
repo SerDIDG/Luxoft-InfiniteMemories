@@ -13,6 +13,8 @@
     <script type="text/javascript" src="js/components/UA.js"></script>
     <script type="text/javascript" src="js/components/Collector.js"></script>
     <script type="text/javascript" src="js/components/Slider.js"></script>
+    <script type="text/javascript" src="js/components/Sidebar.js"></script>
+    <script type="text/javascript" src="js/components/ToggleBox.js"></script>
 
     <script type="text/javascript" src="js/custom.js"></script>
 
@@ -20,6 +22,16 @@
         cm.onReady(function(){
             // Components
             new Com.Collector()
+                .add('sidebar', function(node){
+                    new Com.Sidebar({
+                        'node' : node
+                    });
+                })
+                .add('togglebox', function(node){
+                    new Com.ToggleBox({
+                        'node' : node
+                    });
+                })
                 .add('slider', function(node){
                     new Com.Slider({
                         'node' : node
@@ -38,7 +50,7 @@
     <div class="lt__base__header">
         <div class="inner">
             <div class="l">
-                <div class="header-toggle">
+                <div class="header-toggle" title="Toggle Sidebar Menu" data-node="ComSidebar.button">
                     <div class="icon size-50 menu linked"></div>
                 </div>
 
@@ -49,7 +61,7 @@
                 <div class="header-search">
                     <div class="pt__search pt__search--header">
                         <input class="style-clear" type="text" name="search">
-                        <a class="button button-active size-28">
+                        <a class="button button-active size-28" title="Search">
                             <div class="icon size-28 search linked"></div>
                         </a>
                     </div>
@@ -83,7 +95,7 @@
         </div>
     </div>
 
-    <div class="lt__base__content">
+    <div class="lt__base__content" data-node="ComSidebar.container">
         <div class="lt__slider"  data-element="slider" data-node="ComSlider:{}:container">
             <div class="lt__slider__slides" data-node="slides">
                 <ul data-node="slidesInner">
@@ -112,6 +124,109 @@
 
             <div class="lt__slider__buttons">
                 <ul data-node="buttons"></ul>
+            </div>
+        </div>
+
+        <div class="lt__sidebar is-collapsed" data-node="ComSidebar.sidebar" data-element="sidebar" data-config='{"remember" : false}'>
+            <div class="inner">
+                <div class="top">
+                    <dl class="lt__sidebar__block lt__sidebar__block--create">
+                        <dd>
+                            <div class="pt__menu pt__menu--sidebar has-icon-right">
+                                <ul>
+                                    <li class="active">
+                                        <a>
+                                            <div class="icon size-26 plus-white"></div>Create
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </dd>
+                    </dl>
+
+                    <dl class="lt__sidebar__block">
+                        <dd>
+                            <div class="pt__menu pt__menu--sidebar has-icon-left">
+                                <ul>
+                                    <li>
+                                        <a>
+                                            <div class="icon size-26 s-profile"></div>My Profile
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a>
+                                            <div class="icon size-26 s-avatars"></div>My Avatars
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a>
+                                            <div class="icon size-26 s-memories"></div>My Memories
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a>
+                                            <div class="icon size-26 s-circles"></div>My Circles
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a>
+                                            <div class="icon size-26 s-messages"></div>Messages
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a>
+                                            <div class="icon size-26 s-friends"></div>Friends & Family
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a>
+                                            <div class="icon size-26 s-diary"></div>My Diary
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a>
+                                            <div class="icon size-26 s-settings"></div>Settings
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </dd>
+                    </dl>
+
+                    <dl class="lt__sidebar__block has-separator is-show" data-element="togglebox">
+                        <dt data-node="ComToggleBox.button">
+                            <span class="icon default"></span>
+                            <span class="title">Interests</span>
+                        </dt>
+                        <dd data-node="ComToggleBox.target">
+                            <div class="pt__menu pt__menu--sidebar has-icon-left">
+                                <ul>
+                                    <li>
+                                        <a>
+                                            <div class="counter">4</div>
+                                            <div class="icon size-26 si-family"></div>
+                                            <div class="title">Family</div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a>
+                                            <div class="counter">21</div>
+                                            <div class="icon size-26 si-travel"></div>
+                                            <div class="title">Travel</div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a>
+                                            <div class="counter">2</div>
+                                            <div class="icon size-26 si-auctions"></div>
+                                            <div class="title">Auctions</div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </dd>
+                    </dl>
+                </div>
             </div>
         </div>
     </div>

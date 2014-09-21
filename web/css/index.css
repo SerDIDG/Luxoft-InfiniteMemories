@@ -70,6 +70,12 @@ button.size-28 {
   font: bold 14px/18px Tahoma, Geneva, sans-serif;
   color: #ffffff;
 }
+.font-title-small,
+.lt__sidebar__block > dt {
+  font: bold 12px/18px Tahoma, Geneva, sans-serif;
+  color: #4d4d4d;
+  text-transform: uppercase;
+}
 /* ******* PARTS: TAGS ******* */
 html,
 body {
@@ -198,6 +204,7 @@ input[type="checkbox"] {
   overflow-y: scroll;
 }
 .cm-scroll-y-a,
+.lt__sidebar > .inner > .top,
 .lt__splash__main {
   -webkit-overflow-scrolling: touch;
   overflow-x: hidden;
@@ -228,6 +235,9 @@ input[type="checkbox"] {
 }
 .cm-text-overflow,
 .button,
+.pt__menu--sidebar > ul > li > a,
+.pt__menu--sidebar > ul > li > a .title,
+.lt__sidebar__block > dt,
 input[type="button"],
 input[type="submit"],
 input[type="reset"],
@@ -235,6 +245,12 @@ button {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
+}
+.cm-transition-none,
+.lt__sidebar.is-immediately {
+  -webkit-transition: none;
+  -ms-transition: none;
+  transition: none;
 }
 /* ******* PARTS: ICONS ******* */
 .icon {
@@ -256,6 +272,46 @@ button {
   opacity: 0.7;
   -webkit-transition: opacity 100ms ease-in-out;
   transition: opacity 100ms ease-in-out;
+}
+.icon.size-26 {
+  width: 26px;
+  height: 26px;
+}
+.icon.size-26.plus-white {
+  background-image: url("../img/icons/26/plus-white.png");
+}
+.icon.size-26.s-avatars {
+  background-image: url("../img/icons/26/s-avatars.png");
+}
+.icon.size-26.s-circles {
+  background-image: url("../img/icons/26/s-circles.png");
+}
+.icon.size-26.s-diary {
+  background-image: url("../img/icons/26/s-diary.png");
+}
+.icon.size-26.s-friends {
+  background-image: url("../img/icons/26/s-friends.png");
+}
+.icon.size-26.si-auctions {
+  background-image: url("../img/icons/26/si-auctions.png");
+}
+.icon.size-26.si-family {
+  background-image: url("../img/icons/26/si-family.png");
+}
+.icon.size-26.si-travel {
+  background-image: url("../img/icons/26/si-travel.png");
+}
+.icon.size-26.s-memories {
+  background-image: url("../img/icons/26/s-memories.png");
+}
+.icon.size-26.s-messages {
+  background-image: url("../img/icons/26/s-messages.png");
+}
+.icon.size-26.s-profile {
+  background-image: url("../img/icons/26/s-profile.png");
+}
+.icon.size-26.s-settings {
+  background-image: url("../img/icons/26/s-settings.png");
 }
 .icon.size-28 {
   width: 28px;
@@ -724,6 +780,53 @@ button.style-facebook.has-icon .icon {
 .pt__menu--links > ul > li:last-child {
   margin-right: 0;
 }
+/* *** SIDEBAR *** */
+.pt__menu--sidebar > ul > li {
+  height: 26px;
+  display: block;
+}
+.pt__menu--sidebar > ul > li > a {
+  padding: 0 8px;
+  display: block;
+  line-height: 26px;
+  color: #000000;
+  -webkit-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
+}
+.pt__menu--sidebar > ul > li > a .counter {
+  float: right;
+  margin: 0 0 0 8px;
+  font-weight: bold;
+  color: #a0a0a0;
+}
+.pt__menu--sidebar > ul > li > a:hover,
+.pt__menu--sidebar > ul > li > a.active {
+  background-color: #cf1715;
+  color: #fff;
+  -webkit-transition: all 100ms ease-in-out;
+  transition: all 100ms ease-in-out;
+}
+.pt__menu--sidebar > ul > li.active > a {
+  background-color: #cf1715;
+  color: #fff;
+  -webkit-transition: all 100ms ease-in-out;
+  transition: all 100ms ease-in-out;
+}
+.pt__menu--sidebar.has-icon-left > ul > li > a {
+  padding: 0 8px 0 4px;
+}
+.pt__menu--sidebar.has-icon-left > ul > li > a .icon {
+  margin: 0 8px 0 0;
+  float: left;
+}
+.pt__menu--sidebar.has-icon-right > ul > li > a {
+  padding: 0 0 0 8px;
+  font-weight: bold;
+}
+.pt__menu--sidebar.has-icon-right > ul > li > a .icon {
+  margin: 0;
+  float: right;
+}
 /* ******* PARTS: SHARE ******* */
 /* *** BASE *** */
 .pt__share > ul > li a {
@@ -1018,6 +1121,117 @@ button.style-facebook.has-icon .icon {
 }
 .lt__login__submit-box {
   margin: 0;
+}
+/* ******* LAYOUTS: SIDEBAR ******* */
+.lt__sidebar {
+  width: 200px;
+  position: absolute;
+  z-index: 2;
+  background-color: #ffffff;
+  border-right: 1px solid #e2e2e2;
+  -webkit-transition: -webkit-transform 300ms ease-in-out;
+  -ms-transition: -ms-transform 300ms ease-in-out;
+  transition: transform 300ms ease-in-out;
+  top: 0;
+  right: auto;
+  bottom: 0;
+  left: 0;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.lt__sidebar > .inner {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+.lt__sidebar > .inner > .top {
+  padding: 16px 9px 0 8px;
+  position: absolute;
+  top: 0;
+  right: -1px;
+  bottom: 48px;
+  left: 0;
+}
+.lt__sidebar > .inner > .bottom {
+  height: 48px;
+  position: absolute;
+  top: auto;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+.lt__sidebar.is-expanded {
+  -webkit-transform: translateX(0);
+  -ms-transform: translateX(0);
+  transform: translateX(0);
+}
+.lt__sidebar.is-collapsed {
+  -webkit-transform: translateX(-200px);
+  -ms-transform: translateX(-200px);
+  transform: translateX(-200px);
+}
+/* *** BLOCK *** */
+.lt__sidebar__block {
+  margin: 10px 0 0 0;
+  padding: 0;
+}
+.lt__sidebar__block > dt {
+  padding: 0 26px 0 8px;
+  margin: 0;
+  position: relative;
+  line-height: 26px;
+  cursor: pointer;
+}
+.lt__sidebar__block > dt .icon {
+  position: absolute;
+  -webkit-transition: -webkit-transform 300ms ease-in-out;
+  -ms-transition: -ms-transform 300ms ease-in-out;
+  transition: transform 300ms ease-in-out;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: auto;
+}
+.lt__sidebar__block > dt .icon.default {
+  width: 26px;
+  height: 26px;
+}
+.lt__sidebar__block > dt .icon.default:before {
+  width: 0;
+  height: 0;
+  display: block;
+  position: absolute;
+  margin: -4px 0 0 -2px;
+  content: '';
+  border-style: solid;
+  border-width: 4px 0 5px 4px;
+  border-color: transparent transparent transparent #a0a0a0;
+  top: 50%;
+  right: auto;
+  bottom: auto;
+  left: 50%;
+}
+.lt__sidebar__block > dd {
+  padding: 0;
+}
+.lt__sidebar__block.has-separator {
+  padding-top: 10px;
+  border-top: 1px solid #e2e2e2;
+}
+.lt__sidebar__block:first-child {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: none;
+}
+.lt__sidebar__block.is-show > dt .icon {
+  -webkit-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+.lt__sidebar__block--create {
+  margin-right: -10px;
 }
 /* ******* LAYOUTS: SPLASH ******* */
 .lt__splash {

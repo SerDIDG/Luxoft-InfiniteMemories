@@ -26,19 +26,23 @@
 @Font-Button-Medium-Size: 14px;
 @Font-Input-Size: 17px;
 @Font-Input-LineHeight: 22px;
+@Font-TitleSmall-Size: @Font-Base-SizeSecondary;
 
 // /* *** COLORS *** */
 
 @Color-Base: #000000;
 @Color-Base-Active: #009fda;
 @Color-Base-Alt: #47b537;
+@Color-Base-AltSecondary: #cf1715;
 @Color-Link: @Color-Base-Active;
 @Color-LinkHover: @Color-Link;
-@Color-Placeholder: #a0a0a0;
+@Color-Hint: #a0a0a0;
+@Color-Placeholder: @Color-Hint;
 @Color-Header: #ffffff;
 @Color-Button: #ffffff;
 @Color-Input: @Color-Base;
 @Color-Border: #e2e2e2;
+@Color-TitleSmall: #4d4d4d;
 
 // /* *** BACKGROUNDS *** */
 
@@ -49,6 +53,7 @@
 @Background-Button-Active: @Color-Base-Active;
 @Background-Button-Alt: @Color-Base-Alt;
 @Background-Input: #f9f9f9;
+@Background-Sidebar-Hover: @Color-Base-AltSecondary;
 
 // /* *** BORDERS *** */
 
@@ -64,6 +69,10 @@
 @PT-Icon-Duration: @CM-Transition-Duration;
 @PT-Icon-DurationReverse: @CM-Transition-DurationReverse;
 @PT-Icon-Linked-Opacity: 0.7;
+
+// /* *** MENU *** */
+
+@PT-Menu-Sidebar-Height: 26px;
 
 // /* *** FORM *** */
 
@@ -117,3 +126,10 @@
 // /* *** BASE *** */
 
 @LT-Base-HeaderHeight: 50px;
+
+// /* *** SIDEBAR *** */
+
+@LT-Sidebar-Width: 200px;
+@LT-Sidebar-Duration: 300ms;
+@LT-Sidebar-PanelBottom-Height: 48px;
+@LT-Sidebar-InnerIndent: 8px;

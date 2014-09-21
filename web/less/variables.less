@@ -31,10 +31,10 @@
 // /* *** COLORS *** */
 
 @Color-Base: #000000;
-@Color-Base-Active: #009fda;
-@Color-Base-Alt: #47b537;
-@Color-Base-AltSecondary: #cf1715;
-@Color-Link: @Color-Base-Active;
+@Color-Active: #009fda;
+@Color-Active-Secondary: #cf1715;
+@Color-Alt: #47b537;
+@Color-Link: @Color-Active;
 @Color-LinkHover: @Color-Link;
 @Color-Hint: #a0a0a0;
 @Color-Placeholder: @Color-Hint;
@@ -48,19 +48,21 @@
 
 @Background-Base: #ffffff;
 @Background-Base-Dark: #1e1e1e;
+@Background-Active: @Color-Active;
+@Background-Active-Secondary: @Color-Active-Secondary;
+@Background-Alt: @Color-Alt;
 @Background-Twitter: #30bbe9;
 @Background-Facebook: #325190;
-@Background-Button-Active: @Color-Base-Active;
-@Background-Button-Alt: @Color-Base-Alt;
+@Background-Button-Active: @Background-Active;
+@Background-Button-Alt: @Background-Alt;
 @Background-Input: #f9f9f9;
-@Background-Sidebar-Hover: @Color-Base-AltSecondary;
 
 // /* *** BORDERS *** */
 
 @Border-Base-Size: 1px;
 @Border-Base: @Border-Base-Size solid @Color-Border;
-@Border-Alt-Size: 2px;
-@Border-Alt: @Border-Alt-Size solid @Color-Base-Active;
+@Border-Active-Size: 2px;
+@Border-Active: @Border-Active-Size solid @Color-Active;
 
 // /* ******* PARTS ******* */
 
@@ -108,8 +110,8 @@
 
 @LT-Slider-BackgroundWidth: 1500px;
 @LT-Slider-ButtonSize: 16px;
-@LT-Slider-ButtonBackground: #ffffff;
-@LT-Slider-ButtonBackgroundActive: #ca3100;
+@LT-Slider-ButtonBackground: @Background-Base;
+@LT-Slider-ButtonBackgroundActive: @Background-Active-Secondary;
 @LT-Slider-Color: #ffffff;
 
 // /* *** SPLASH *** */

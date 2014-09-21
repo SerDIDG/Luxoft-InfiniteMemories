@@ -109,7 +109,7 @@
             > a {
                 &:extend(.cm-text-overflow);
 
-                padding: 0 8px;
+                padding: 0 @PT-Menu-Sidebar-Indent;
                 display: block;
                 line-height: @PT-Menu-Sidebar-Height;
                 color: @Color-Base;
@@ -117,20 +117,13 @@
 
                 .counter {
                     float: right;
-                    margin: 0 0 0 8px;
+                    margin: 0 0 0 @PT-Menu-Sidebar-Indent;
                     font-weight: bold;
                     color: @Color-Hint;
                 }
 
                 .title {
                     &:extend(.cm-text-overflow);
-                }
-
-                &:hover,
-                &.active {
-                    background-color: @Background-Active-Secondary;
-                    color: #fff;
-                    .mix-transition(all @CM-Transition-DurationReverse ease-in-out);
                 }
             }
 
@@ -148,10 +141,10 @@
         > ul {
             > li {
                 > a {
-                    padding: 0 8px 0 4px;
+                    padding: 0 @PT-Menu-Sidebar-Indent 0 @PT-Menu-Sidebar-IndentIconLeft;
 
                     .icon {
-                        margin: 0 8px 0 0;
+                        margin: 0 @PT-Menu-Sidebar-Indent 0 0;
                         float: left;
                     }
                 }
@@ -163,7 +156,7 @@
         > ul {
             > li {
                 > a {
-                    padding: 0 0 0 8px;
+                    padding: 0 0 0 @PT-Menu-Sidebar-Indent;
                     font-weight: bold;
 
                     .icon {

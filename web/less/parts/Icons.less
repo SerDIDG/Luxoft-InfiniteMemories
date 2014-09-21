@@ -22,6 +22,19 @@
         }
     }
 
+    // /* *** 18 x 18 *** */
+
+    &.size-18 {
+        width: 18px;
+        height: 18px;
+
+        .for(more-right); .-each(@name) {
+            &.@{name} {
+                background-image: url("@{Path-Image}/icons/18/@{name}.png");
+            }
+        }
+    }
+
     // /* *** 26 x 26 *** */
 
     &.size-26 {

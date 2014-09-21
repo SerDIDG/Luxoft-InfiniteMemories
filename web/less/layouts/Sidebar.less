@@ -55,13 +55,32 @@
     padding: 0;
 
     > dt {
-        &:extend(.font-title-small, .cm-text-overflow);
+        &:extend(.cm-text-overflow);
 
         padding: 0 @PT-Menu-Sidebar-Height 0 @LT-Sidebar-InnerIndent;
         margin: 0;
         position: relative;
-        line-height: @PT-Menu-Sidebar-Height;
+        font-size: 0;
         cursor: pointer;
+
+        .title,
+        .counter {
+            &:extend(.font-title-small, .cm-text-overflow);
+            line-height: @PT-Menu-Sidebar-Height;
+        }
+
+        .counter {
+            margin: 0 0 0 5px;
+            font-weight: normal;
+
+            &:before {
+                content: '(';
+            }
+
+            &:after {
+                content: ')';
+            }
+        }
 
         .icon {
             position: absolute;

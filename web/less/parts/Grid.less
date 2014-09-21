@@ -1,0 +1,104 @@
+/* ******* PARTS: GRID ******* */
+
+/* *** BASE *** */
+
+.pt__grid {
+    overflow: hidden;
+
+    > ul {
+        &:extend(.cm-ul-clear all, .cm-ul-inline all);
+
+        > li {
+            &:extend(.font-base);
+
+            width: 100%;
+            overflow: hidden;
+            .mix-box-sizing();
+
+            > a {
+                display: block;
+                cursor: pointer;
+
+                > img {
+                    width: 100%;
+                    display: block;
+                    position: relative;
+                    cursor: pointer;
+                    .mix-transition(opacity @CM-Transition-Duration ease-in-out);
+                }
+
+                &:hover {
+                    > img {
+                        opacity: @CM-Opacity-Hover;
+                        .mix-transition(opacity @CM-Transition-DurationReverse ease-in-out);
+                    }
+                }
+            }
+        }
+    }
+
+    &.is-inline {
+        > ul {
+            overflow: hidden;
+            white-space: nowrap;
+        }
+    }
+
+    &.is-inrow {
+        height: 100%;
+    }
+
+    // /* Build columns styles */
+
+    .loop(@counter) when (@counter > 0) {
+        .loop((@counter - 1));
+
+        &.col-@{counter} {
+            #cm > .grid-size(@counter);
+        }
+    }
+
+    .loop(12);
+
+    // /* Set grid items indent */
+
+    #cm > .grid-indent(@PT-Grid-itemIndent);
+
+    .for(@PT-Grid-itemIndents); .-each(@name) {
+        &.indent-@{name} {
+            #cm > .grid-indent(@name);
+        }
+    }
+}
+
+/* *** SIDEBAR *** */
+
+.pt__grid--sidebar {
+    padding: 0 @LT-Sidebar-InnerIndent;
+}
+
+/* ******* PARTS: GRID: BUNDLE ******* */
+
+#cm () {
+    .grid-size (@count: 1) {
+        @size: 100% / @count;
+
+        > ul > li {
+            width: @size;
+        }
+    }
+
+    .grid-indent (@indent: @PT-Grid-itemIndent) {
+        > ul {
+            margin: @indent -@indent -@indent;
+
+            &:first-child {
+                margin: -@indent;
+            }
+
+            > li {
+                padding: @indent;
+            }
+        }
+    }
+}

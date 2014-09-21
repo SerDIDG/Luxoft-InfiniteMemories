@@ -22,6 +22,10 @@
         }
     }
 
+    &.pull-center {
+        margin: 0 auto;
+    }
+
     // /* *** 18 x 18 *** */
 
     &.size-18 {
@@ -31,6 +35,19 @@
         .for(more-right); .-each(@name) {
             &.@{name} {
                 background-image: url("@{Path-Image}/icons/18/@{name}.png");
+            }
+        }
+    }
+
+    // /* *** 24 x 24 *** */
+
+    &.size-24 {
+        width: 24px;
+        height: 24px;
+
+        .for(icon-1 icon-2 icon-3 icon-4); .-each(@name) {
+            &.@{name} {
+                background-image: url("@{Path-Image}/icons/24/@{name}.png");
             }
         }
     }

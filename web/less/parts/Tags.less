@@ -32,10 +32,58 @@ dl, dt, dd, canvas, iframe, form {
     text-indent: 0;
 }
 
+iframe {
+    width: 100%;
+    display: block;
+    border: none;
+}
+
+header, main, aside, footer, section {
+    display: block;
+}
+
+/* *** TABLE *** */
+
+table {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    border: none;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+tbody, thead, tr {
+    width: 100%;
+}
+
+tbody, thead, td, th, tr {
+    margin: 0;
+    padding: 0;
+}
+
 /* *** TEXT *** */
 
 a {
     &:extend(.font-link all);
+}
+
+.pt__tags__content {
+    &:extend(.font-base);
+
+    margin: 0;
+    padding: 0;
+}
+
+.pt__tags__content--base {
+}
+
+h1, h2, h3, h4, h5, h6, p, dl, ul, ol {
+    &:extend(.pt__tags__content all);
+}
+
+p, dl, ul, ol {
+    &:extend(.pt__tags__content--base all);
 }
 
 /* *** INPUTS *** */

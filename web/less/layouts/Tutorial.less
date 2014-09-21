@@ -1,5 +1,40 @@
 /* ******* LAYOUTS: TUTORIAL ******* */
 
 .lt__tutorial {
+    .lt__slider__slides {
+        > ul {
+            > li {
+                > .text {
+                    width: 100%;
+                    left: 0;
+                    margin-left: 0;
 
+                    @media only screen and (min-width : @LT-Slider-BackgroundWidth) {
+                        width: @LT-Slider-BackgroundWidth;
+                        left: 50%;
+                        margin-left: -(@LT-Slider-BackgroundWidth / 2);
+                    }
+
+                    @media only screen and (max-width : @CM-MinWidth) {
+                        width: @CM-MinWidth;
+                        left: 50%;
+                        margin-left: -(@CM-MinWidth / 2);
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* *** SLIDER TEXT *** */
+
+.lt__tutorial__text {
+    width: 600px;
+    position: absolute;
+    .mix-position(112px, 100px, auto, auto);
+    .mix-transition(all @CM-Transition-Duration ease-in-out);
+
+    @media only screen and (max-width : @LT-Slider-BackgroundWidth) {
+        right: 20px;
+    }
 }

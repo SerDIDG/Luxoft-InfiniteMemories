@@ -54,7 +54,7 @@
         .loop((@counter - 1));
 
         &.col-@{counter} {
-            #cm > .grid-size(@counter);
+            #cm > .pt__grid__size(@counter);
         }
     }
 
@@ -62,11 +62,11 @@
 
     // /* Set grid items indent */
 
-    #cm > .grid-indent(@PT-Grid-itemIndent);
+    #cm > .pt__grid__indent(@PT-Grid-ItemIndent);
 
-    .for(@PT-Grid-itemIndents); .-each(@name) {
+    .for(@PT-Grid-ItemIndents); .-each(@name) {
         &.indent-@{name} {
-            #cm > .grid-indent(@name);
+            #cm > .pt__grid__indent(@name);
         }
     }
 }
@@ -80,7 +80,7 @@
 /* ******* PARTS: GRID: BUNDLE ******* */
 
 #cm () {
-    .grid-size (@count: 1) {
+    .pt__grid__size (@count: 1) {
         @size: 100% / @count;
 
         > ul > li {
@@ -88,7 +88,7 @@
         }
     }
 
-    .grid-indent (@indent: @PT-Grid-itemIndent) {
+    .pt__grid__indent (@indent: @PT-Grid-ItemIndent) {
         > ul {
             margin: @indent -@indent -@indent;
 

@@ -4,8 +4,19 @@
 /* ******* PARTS: FONT ******* */
 .font-base,
 body,
+.pt__tags__content,
 .cm-ul-inline > li,
 .pt__grid > ul > li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+dl,
+ul,
+ol,
 .pt__grid > ul > li,
 .pt__menu > ul > li,
 .pt__share > ul > li,
@@ -28,7 +39,7 @@ a:hover {
 }
 .font-header,
 .pt__menu--header > ul > li > a,
-.pt__user-dropdown--header > .name {
+.pt__user-box--header > .name {
   font: 700 14px/18px 'PT Sans Narrow', sans-serif;
   color: #ffffff;
 }
@@ -72,6 +83,22 @@ button.size-28 {
   font: bold 14px/18px Tahoma, Geneva, sans-serif;
   color: #ffffff;
 }
+.font-slider,
+.lt__slider__slides > ul > li > .text,
+.lt__slider__slides > ul > li > .text h1 {
+  font: bold 50px/60px 'Open Sans', Arial, Helvetica, sans-serif;
+  color: #ffffff;
+}
+.font-slider-h2,
+.lt__slider__slides > ul > li > .text h2 {
+  font: bold 30px/45px 'Open Sans', Arial, Helvetica, sans-serif;
+  color: #ffffff;
+}
+.font-slider-h3,
+.lt__slider__slides > ul > li > .text h3 {
+  font: bold 24px/36px 'Open Sans', Arial, Helvetica, sans-serif;
+  color: #ffffff;
+}
 .font-title-small,
 .lt__sidebar__block > dt .title,
 .lt__sidebar__block > dt .counter {
@@ -112,7 +139,55 @@ form {
   display: block;
   text-indent: 0;
 }
+iframe {
+  width: 100%;
+  display: block;
+  border: none;
+}
+header,
+main,
+aside,
+footer,
+section {
+  display: block;
+}
+/* *** TABLE *** */
+table {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border: none;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+tbody,
+thead,
+tr {
+  width: 100%;
+}
+tbody,
+thead,
+td,
+th,
+tr {
+  margin: 0;
+  padding: 0;
+}
 /* *** TEXT *** */
+.pt__tags__content,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+dl,
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+}
 /* *** INPUTS *** */
 input[type="file"] {
   width: 100%;
@@ -126,7 +201,7 @@ input[type="checkbox"] {
 .clearfix:after,
 .pt__form dl:after,
 .pt__search:after,
-.pt__user-dropdown:after,
+.pt__user-box:after,
 .lt__splash__header:after,
 .lt__splash__main > .inner:after,
 .lt__splash__footer > .inner:after,
@@ -333,13 +408,13 @@ button {
   width: 8.33333333%;
 }
 .pt__grid > ul {
-  margin: 10px -10px -10px;
+  margin: 0px 0px 0px;
 }
 .pt__grid > ul:first-child {
-  margin: -10px;
+  margin: 0px;
 }
 .pt__grid > ul > li {
-  padding: 10px;
+  padding: 0px;
 }
 .pt__grid.indent-1px > ul {
   margin: 1px -1px -1px;
@@ -385,12 +460,31 @@ button {
   -webkit-transition: opacity 100ms ease-in-out;
   transition: opacity 100ms ease-in-out;
 }
+.icon.pull-center {
+  margin: 0 auto;
+}
 .icon.size-18 {
   width: 18px;
   height: 18px;
 }
 .icon.size-18.more-right {
   background-image: url("../img/icons/18/more-right.png");
+}
+.icon.size-24 {
+  width: 24px;
+  height: 24px;
+}
+.icon.size-24.icon-1 {
+  background-image: url("../img/icons/24/icon-1.png");
+}
+.icon.size-24.icon-2 {
+  background-image: url("../img/icons/24/icon-2.png");
+}
+.icon.size-24.icon-3 {
+  background-image: url("../img/icons/24/icon-3.png");
+}
+.icon.size-24.icon-4 {
+  background-image: url("../img/icons/24/icon-4.png");
 }
 .icon.size-26 {
   width: 26px;
@@ -1040,26 +1134,31 @@ button.style-facebook.has-icon .icon {
   display: block;
   margin: 0 auto;
 }
-/* ******* PARTS: USER DROPDOWN ******* */
+/* ******* PARTS: USER BOX ******* */
 /* *** BASE *** */
-.pt__user-dropdown {
+.pt__user-box {
   cursor: pointer;
 }
-.pt__user-dropdown > .image,
-.pt__user-dropdown > .name,
-.pt__user-dropdown > .arrow {
-  margin: 0 8px 0 0;
+.pt__user-box > .image,
+.pt__user-box > .name,
+.pt__user-box > .arrow {
+  margin: 0 0 0 8px;
   float: left;
 }
-.pt__user-dropdown > .image img {
-  display: block;
-}
-.pt__user-dropdown > .arrow {
-  width: 8px;
+.pt__user-box > .image {
   margin: 0;
+}
+.pt__user-box > .image img {
+  display: block;
+  -webkit-background-clip: border-box;
+  -moz-background-clip: border-box;
+  background-clip: border-box;
+}
+.pt__user-box > .arrow {
+  width: 8px;
   position: relative;
 }
-.pt__user-dropdown > .arrow:before {
+.pt__user-box > .arrow:before {
   width: 0;
   height: 0;
   display: block;
@@ -1074,23 +1173,41 @@ button.style-facebook.has-icon .icon {
   bottom: auto;
   left: 0;
 }
-.pt__user-dropdown.size-34 > .image,
-.pt__user-dropdown.size-34 > .name,
-.pt__user-dropdown.size-34 > .arrow {
+.pt__user-box.size-34 > .image,
+.pt__user-box.size-34 > .name,
+.pt__user-box.size-34 > .arrow {
   height: 34px;
   line-height: 34px;
 }
-.pt__user-dropdown.size-34 > .image img {
+.pt__user-box.size-34 > .image img {
   border-radius: 34px;
 }
-/* *** HEADER *** */
-.pt__user-dropdown--header > .arrow {
-  width: 8px;
-  margin: 0;
+.pt__user-box.size-100 > .image,
+.pt__user-box.size-100 > .name,
+.pt__user-box.size-100 > .arrow {
+  height: 100px;
+  line-height: 100px;
 }
-.pt__user-dropdown--header > .arrow:before {
+.pt__user-box.size-100 > .image img {
+  border-radius: 100px;
+}
+/* *** HEADER *** */
+.pt__user-box--header > .arrow:before {
   border-color: #ffffff transparent transparent transparent;
 }
+/* *** TUTORIAL *** */
+.pt__user-box--tutorial {
+  margin: 0 0 40px;
+  cursor: default;
+}
+.pt__user-box--tutorial > .image img {
+  background-color: #ffffff;
+  box-shadow: 0 0 0 5px #ffffff;
+}
+.pt__user-box--tutorial > .name {
+  margin-left: 25px;
+}
+/* ******* PARTS: USER BOX: BUNDLE ******* */
 /* ************ LAYOUTS ************ */
 /* ******* LAYOUTS: SLIDER ******* */
 .lt__slider__slides {
@@ -1145,9 +1262,7 @@ button.style-facebook.has-icon .icon {
   margin-left: -500px;
   position: absolute;
   z-index: 4;
-  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
-  font-weight: bold;
-  color: #ffffff;
+  text-shadow: 0 5px 10px rgba(0, 0, 0, 0.25);
   top: 0;
   right: 0;
   bottom: 0;
@@ -1155,6 +1270,29 @@ button.style-facebook.has-icon .icon {
   -webkit-user-select: text;
   -moz-user-select: text;
   user-select: text;
+}
+.lt__slider__slides > ul > li > .text .pt__tags__content,
+.lt__slider__slides > ul > li > .text h1,
+.lt__slider__slides > ul > li > .text h2,
+.lt__slider__slides > ul > li > .text h3,
+.lt__slider__slides > ul > li > .text h4,
+.lt__slider__slides > ul > li > .text h5,
+.lt__slider__slides > ul > li > .text h6,
+.lt__slider__slides > ul > li > .text p,
+.lt__slider__slides > ul > li > .text dl,
+.lt__slider__slides > ul > li > .text ul,
+.lt__slider__slides > ul > li > .text ol {
+  margin: 0;
+  color: #ffffff;
+}
+.lt__slider__slides > ul > li > .text h1 {
+  text-transform: uppercase;
+}
+.lt__slider__slides > ul > li > .text h2 {
+  text-transform: uppercase;
+}
+.lt__slider__slides > ul > li > .text h3 {
+  text-transform: uppercase;
 }
 .lt__slider__slides.effect-fade > ul > li {
   display: none;
@@ -1292,7 +1430,7 @@ button.style-facebook.has-icon .icon {
   left: 0;
 }
 .lt__sidebar > .inner > .bottom {
-  height: 48px;
+  padding: 12px 0;
   position: absolute;
   top: auto;
   right: 0;
@@ -1313,6 +1451,9 @@ button.style-facebook.has-icon .icon {
 .lt__sidebar__block {
   margin: 10px 0 0 0;
   padding: 0;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
 }
 .lt__sidebar__block > dt {
   padding: 0 26px 0 8px;
@@ -1419,21 +1560,14 @@ button.style-facebook.has-icon .icon {
 }
 .lt__splash__slide-text-1 {
   padding: 265px 0 0 0;
-  font-size: 50px;
-  line-height: 60px;
-  text-transform: uppercase;
   text-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
 }
 .lt__splash__slide-text-2 {
   padding: 110px 0 0 22px;
-  font-size: 30px;
-  line-height: 45px;
-  text-transform: uppercase;
+  text-shadow: none;
 }
 .lt__splash__slide-text-3 {
   padding: 65px 0 0 0;
-  font-size: 50px;
-  line-height: 60px;
   text-shadow: 0 5px 5px rgba(0, 0, 0, 0.35);
 }
 .lt__splash__main {
@@ -1552,4 +1686,39 @@ button.style-facebook.has-icon .icon {
   left: 0;
 }
 /* ******* LAYOUTS: TUTORIAL ******* */
+.lt__tutorial .lt__slider__slides > ul > li > .text {
+  width: 100%;
+  left: 0;
+  margin-left: 0;
+}
+@media only screen and (min-width: 1500px) {
+  .lt__tutorial .lt__slider__slides > ul > li > .text {
+    width: 1500px;
+    left: 50%;
+    margin-left: -750px;
+  }
+}
+@media only screen and (max-width: 1000px) {
+  .lt__tutorial .lt__slider__slides > ul > li > .text {
+    width: 1000px;
+    left: 50%;
+    margin-left: -500px;
+  }
+}
+/* *** SLIDER TEXT *** */
+.lt__tutorial__text {
+  width: 600px;
+  position: absolute;
+  top: 112px;
+  right: 100px;
+  bottom: auto;
+  left: auto;
+  -webkit-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
+}
+@media only screen and (max-width: 1500px) {
+  .lt__tutorial__text {
+    right: 20px;
+  }
+}
 /* ************ MAIN STYLES ************ */

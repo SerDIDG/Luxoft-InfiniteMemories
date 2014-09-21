@@ -41,15 +41,35 @@
             }
 
             > .text {
+                &:extend(.font-slider);
+
                 width: @CM-MinWidth;
                 margin-left: -(@CM-MinWidth / 2);
                 position: absolute;
                 z-index: 4;
-                font-family: @Font-Slider-Family;
-                font-weight: @Font-Slider-Weight;
-                color: @LT-Slider-Color;
+                text-shadow: 0 5px 10px rgba(0, 0, 0, 0.25);
                 .mix-position(0, 0, 0, 50%);
                 .mix-user-select(text);
+
+                .pt__tags__content {
+                    margin: 0;
+                    color: @Color-Slider;
+                }
+
+                h1 {
+                    &:extend(.font-slider);
+                    text-transform: uppercase;
+                }
+
+                h2 {
+                    &:extend(.font-slider-h2);
+                    text-transform: uppercase;
+                }
+
+                h3 {
+                    &:extend(.font-slider-h3);
+                    text-transform: uppercase;
+                }
             }
         }
     }

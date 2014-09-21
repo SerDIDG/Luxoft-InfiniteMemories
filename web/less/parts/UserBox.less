@@ -1,0 +1,102 @@
+/* ******* PARTS: USER BOX ******* */
+
+/* *** BASE *** */
+
+.pt__user-box {
+    &:extend(.clearfix all);
+
+    cursor: pointer;
+
+    > .image,
+    > .name,
+    > .arrow {
+        margin: 0 0 0 8px;
+        float: left;
+    }
+
+    > .image {
+        margin: 0;
+
+        img {
+            display: block;
+            .mix-background-clip();
+        }
+    }
+
+    > .arrow {
+        width: 8px;
+        position: relative;
+
+        &:before {
+            width: 0;
+            height: 0;
+            display: block;
+            position: absolute;
+            margin: -1px 0 0 0;
+            content: '';
+            border-style: solid;
+            border-width: 5px 4px 0 4px;
+            border-color: @Background-Base-Dark transparent transparent transparent;
+            .mix-position(50%, auto, auto, 0);
+        }
+    }
+
+    // /* Set sizes */
+
+    .for(@PT-UserBox-Sizes); .-each(@name) {
+        &.size-@{name} {
+            #cm > .pt__user-box__size(@name);
+        }
+    }
+}
+
+/* *** HEADER *** */
+
+.pt__user-box--header {
+    > .name {
+        &:extend(.font-header);
+    }
+
+    > .arrow {
+        &:before {
+            border-color: @Color-Header transparent transparent transparent;
+        }
+    }
+}
+
+/* *** TUTORIAL *** */
+
+.pt__user-box--tutorial {
+    margin: 0 0 40px;
+    cursor: default;
+
+    > .image {
+        img {
+            background-color: @Background-Base;
+            box-shadow: 0 0 0 5px  @Color-Slider;
+        }
+    }
+
+    > .name {
+        margin-left: 25px;
+    }
+}
+
+/* ******* PARTS: USER BOX: BUNDLE ******* */
+
+#cm () {
+    .pt__user-box__size (@size) {
+        > .image,
+        > .name,
+        > .arrow {
+            height: unit(@size, px);
+            line-height: unit(@size, px);
+        }
+
+        > .image {
+            img {
+                border-radius: unit(@size, px);
+            }
+        }
+    }
+}

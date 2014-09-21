@@ -28,7 +28,7 @@
         width: 28px;
         height: 28px;
 
-        .for(facebook twitter google youtube); .-each(@name) {
+        .for(facebook twitter google youtube search); .-each(@name) {
             &.@{name} {
                 background-image: url("@{Path-Image}/icons/28/@{name}.png");
             }
@@ -44,6 +44,19 @@
         .for(facebook twitter); .-each(@name) {
             &.@{name} {
                 background-image: url("@{Path-Image}/icons/36/@{name}.png");
+            }
+        }
+    }
+
+    // /* *** 50 x 50 *** */
+
+    &.size-50 {
+        width: 50px;
+        height: 50px;
+
+        .for(menu); .-each(@name) {
+            &.@{name} {
+                background-image: url("@{Path-Image}/icons/50/@{name}.png");
             }
         }
     }
@@ -68,6 +81,12 @@
             width: 280px;
             height: 90px;
             background-image: url("@{Path-Image}/icons/logo/280.png");
+        }
+
+        &.size-126 {
+            width: 126px;
+            height: 50px;
+            background-image: url("@{Path-Image}/icons/logo/126.png");
         }
     }
 }

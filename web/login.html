@@ -17,13 +17,16 @@
     <script type="text/javascript" src="js/custom.js"></script>
 
     <script type="text/javascript">
-        cm.onReady(function(){
+        cm.onLoad(function(){
             // Components
             new Com.Collector()
                 .add('slider', function(node){
                     new Com.Slider({
                         'node' : node
                     });
+                })
+                .add('preload-overlay', function(node){
+                    cm.removeClass(node, 'is-show', true);
                 })
                 .construct();
         });
@@ -34,15 +37,17 @@
 <div class="lt__splash">
 
     <div class="lt__splash__header">
-        <div class="pt__menu pt__menu--header">
-            <ul>
-                <li>
-                    <a>Site feedback</a>
-                </li>
-                <li>
-                    <a>Help</a>
-                </li>
-            </ul>
+        <div class="header-menu">
+            <div class="pt__menu pt__menu--header">
+                <ul>
+                    <li>
+                        <a>Site feedback</a>
+                    </li>
+                    <li>
+                        <a>Help</a>
+                    </li>
+                </ul>
+            </div>
         </div>
     </div>
 
@@ -71,6 +76,11 @@
                 </ul>
             </div>
 
+            <div class="pt__overlay is-preload is-show" data-element="preload-overlay">
+                <div class="bg"></div>
+                <div class="inner"></div>
+            </div>
+
             <div class="lt__splash__main">
                 <div class="inner">
                     <div class="lt__login pull-right">
@@ -80,10 +90,10 @@
                             </div>
 
                             <div class="lt__login__social-login pt__buttons is-box">
-                                <a class="button size-36 style-facebook has-icon">
+                                <a href="tutorial.html" class="button size-36 style-facebook has-icon">
                                     <span class="icon inline size-36 facebook"></span>Login with Facebook
                                 </a>
-                                <a class="button size-36 style-twitter has-icon">
+                                <a href="tutorial.html" class="button size-36 style-twitter has-icon">
                                     <span class="icon inline size-36 twitter"></span>Login with Twitter
                                 </a>
                             </div>
@@ -91,12 +101,12 @@
                             <div class="lt__login__form pt__form">
                                 <dl class="is-box">
                                     <dd>
-                                        <input type="text" name="email" placeholder="Email or Phone">
+                                        <input class="style-alt" type="text" name="email" placeholder="Email or Phone">
                                     </dd>
                                 </dl>
                                 <dl class="is-box">
                                     <dd>
-                                        <input type="password" name="password" placeholder="Password">
+                                        <input class="style-alt" type="password" name="password" placeholder="Password">
                                     </dd>
                                 </dl>
                             </div>
@@ -110,8 +120,8 @@
                             </div>
 
                             <div class="lt__login__submit-box pt__buttons is-box">
-                                <a class="button button-active size-32">Login</a>
-                                <a class="button button-alt size-32">Sign Up</a>
+                                <a href="tutorial.html" class="button button-active size-32">Login</a>
+                                <a href="tutorial.html" class="button button-alt size-32">Sign Up</a>
                             </div>
                         </div>
                     </div>

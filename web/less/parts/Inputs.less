@@ -8,15 +8,25 @@
     padding: ((@PT-Input-Height - @Font-Input-LineHeight) / 2) @PT-Input-Indent;
     margin: 0;
     vertical-align: top;
-    background: #fff;
-    border: none;
-    border-bottom: @Border-Base-Active;
+    background: @Background-Input;
+    border: @Border-Base;
     border-radius: @PT-Input-Radius;
     outline: none;
     cursor: text;
     .mix-box-sizing();
     .mix-background-clip();
     .mix-placeholder(@Color-Placeholder);
+
+    &.style-alt {
+        background: #fff;
+        border: none;
+        border-bottom: @Border-Alt;
+    }
+
+    &.style-clear {
+        background: #fff;
+        border: none;
+    }
 }
 
 .textarea {
@@ -28,7 +38,11 @@
 
 .select {
     &[multiple] {
-        height: @PT-Select-Size * @Font-Input-LineHeight + @Border-Base-ActiveSize * 2;
+        height: @PT-Select-Size * @Font-Input-LineHeight + @Border-Base-Size * 2;
         padding: 0;
+
+        &.style-alt {
+            height: @PT-Select-Size * @Font-Input-LineHeight + @Border-Alt-Size;
+        }
     }
 }

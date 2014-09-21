@@ -5,6 +5,13 @@
 .pt__menu {
     > ul {
         &:extend(.cm-ul-clear all, .cm-ul-inline all);
+
+        > li {
+            > a {
+                display: inline-block;
+                vertical-align: top;
+            }
+        }
     }
 
     &.pull-left {
@@ -29,15 +36,12 @@
 /* *** HEADER *** */
 
 .pt__menu--header {
-    float: right;
-    margin: 0 18px 0 0;
-
     > ul {
         > li {
             margin: 0 18px 0 0;
 
             > a {
-                &:extend(.font-header-menu);
+                &:extend(.font-header);
                 text-transform: uppercase;
             }
 

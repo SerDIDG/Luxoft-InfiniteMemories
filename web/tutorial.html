@@ -1,0 +1,121 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Infinite Memories</title>
+    <link type="text/css" rel="stylesheet" href="css/index.css">
+
+    <script type="text/javascript" src="js/polyfill.js"></script>
+    <script type="text/javascript" src="js/common.js"></script>
+    <script type="text/javascript" src="js/parts.js"></script>
+    <script type="text/javascript" src="js/modules.js"></script>
+    <script type="text/javascript" src="js/init.js"></script>
+    <script type="text/javascript" src="js/components/UA.js"></script>
+    <script type="text/javascript" src="js/components/Collector.js"></script>
+    <script type="text/javascript" src="js/components/Slider.js"></script>
+
+    <script type="text/javascript" src="js/custom.js"></script>
+
+    <script type="text/javascript">
+        cm.onReady(function(){
+            // Components
+            new Com.Collector()
+                .add('slider', function(node){
+                    new Com.Slider({
+                        'node' : node
+                    });
+                })
+                .add('preload-overlay', function(node){
+                    cm.removeClass(node, 'is-show', true);
+                })
+                .construct();
+        });
+    </script>
+</head>
+<body>
+
+<div class="lt__base lt__tutorial">
+    <div class="lt__base__header">
+        <div class="inner">
+            <div class="l">
+                <div class="header-toggle">
+                    <div class="icon size-50 menu linked"></div>
+                </div>
+
+                <div class="header-logo">
+                    <a class="icon icon-logo size-126 linked"></a>
+                </div>
+
+                <div class="header-search">
+                    <div class="pt__search pt__search--header">
+                        <input class="style-clear" type="text" name="search">
+                        <a class="button button-active size-28">
+                            <div class="icon size-28 search linked"></div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="r">
+                <div class="header-menu">
+                    <div class="pt__menu pt__menu--header">
+                        <ul>
+                            <li>
+                                <a>Site feedback</a>
+                            </li>
+                            <li>
+                                <a>Help</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="header-user">
+                    <div class="pt__user-dropdown pt__user-dropdown--header size-34">
+                        <div class="image">
+                            <img src="img/parts/avatars/34.png" alt="Hubert Mokko">
+                        </div>
+                        <div class="name">Hubert Mokko</div>
+                        <div class="arrow"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="lt__base__content">
+        <div class="lt__slider"  data-element="slider" data-node="ComSlider:{}:container">
+            <div class="lt__slider__slides" data-node="slides">
+                <ul data-node="slidesInner">
+                    <li data-node="items:[]:container">
+                        <img class="image" src="img/layouts/tutorial/bg-1.jpg" alt="">
+                        <div class="text">
+                        </div>
+                    </li>
+                    <li data-node="items:[]:container">
+                        <img class="image" src="img/layouts/tutorial/bg-1.jpg" alt="">
+                        <div class="text">
+                        </div>
+                    </li>
+                    <li data-node="items:[]:container">
+                        <img class="image" src="img/layouts/tutorial/bg-1.jpg" alt="">
+                        <div class="text">
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="pt__overlay is-preload is-show" data-element="preload-overlay">
+                <div class="bg"></div>
+                <div class="inner"></div>
+            </div>
+
+            <div class="lt__slider__buttons">
+                <ul data-node="buttons"></ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

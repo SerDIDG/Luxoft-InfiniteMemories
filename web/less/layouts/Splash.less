@@ -6,14 +6,6 @@
     overflow: hidden;
 }
 
-/* *** BACKGROUND *** */
-
-.lt__splash__bg {
-    position: absolute;
-    .mix-position(0, 0, 0, 0);
-    z-index: 1;
-}
-
 /* *** HEADER *** */
 
 .lt__splash__header {
@@ -25,7 +17,9 @@
     z-index: 4;
     background: url('@{Path-Image}/layouts/splash/header-bg.png') 100% 0 no-repeat;
 
-    .pt__menu--header {
+    .header-menu {
+        margin: 0 18px 0 0;
+        float: right;
         padding: ((@LT-Splash-HeaderHeight - @Font-Base-LineHeight) / 2) 0;
     }
 }

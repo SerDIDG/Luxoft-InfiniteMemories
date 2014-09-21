@@ -30,27 +30,32 @@
 // /* *** COLORS *** */
 
 @Color-Base: #000000;
-@Color-Base-Active: #328cd2;
+@Color-Base-Active: #009fda;
+@Color-Base-Alt: #47b537;
 @Color-Link: @Color-Base-Active;
 @Color-LinkHover: @Color-Link;
 @Color-Placeholder: #a0a0a0;
-@Color-Header-Menu: #ffffff;
+@Color-Header: #ffffff;
 @Color-Button: #ffffff;
 @Color-Input: @Color-Base;
+@Color-Border: #e2e2e2;
 
 // /* *** BACKGROUNDS *** */
 
 @Background-Base: #ffffff;
-@Background-Base-Active: @Color-Base-Active;
+@Background-Base-Dark: #1e1e1e;
 @Background-Twitter: #30bbe9;
 @Background-Facebook: #325190;
-@Background-Button-Active: @Background-Base-Active;
-@Background-Button-Alt: #14a27c;
+@Background-Button-Active: @Color-Base-Active;
+@Background-Button-Alt: @Color-Base-Alt;
+@Background-Input: #f9f9f9;
 
 // /* *** BORDERS *** */
 
-@Border-Base-ActiveSize: 2px;
-@Border-Base-Active: @Border-Base-ActiveSize solid @Background-Base-Active;
+@Border-Base-Size: 1px;
+@Border-Base: @Border-Base-Size solid @Color-Border;
+@Border-Alt-Size: 2px;
+@Border-Alt: @Border-Alt-Size solid @Color-Base-Active;
 
 // /* ******* PARTS ******* */
 
@@ -78,12 +83,15 @@
 // /* *** BUTTONS *** */
 
 @PT-Buttons-Indent: @PT-Form-FieldIndent;
-
 @PT-Button-Radius: 0px;
 @PT-Button-IndentY: @PT-Form-FieldIndent;
 @PT-Button-PaddingWidth: 16px;
 @PT-Button-Duration: @CM-Transition-Duration;
 @PT-Button-DurationReverse: @CM-Transition-DurationReverse;
+
+// /* *** OVERLAY *** */
+
+@PT-Overlay-Duration: 1000ms;
 
 // /* ******* LAYOUTS ******* */
 
@@ -105,3 +113,7 @@
 @LT-Login-Width: 380px;
 @LT-Login-PaddingWidth: 50px;
 @LT-Login-Background: @Background-Base;
+
+// /* *** BASE *** */
+
+@LT-Base-HeaderHeight: 50px;

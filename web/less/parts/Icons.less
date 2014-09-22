@@ -84,7 +84,7 @@
         width: 26px;
         height: 26px;
 
-        .for(plus-white s-avatars s-circles s-diary s-friends si-auctions si-family si-travel s-memories s-messages s-profile s-settings); .-each(@name) {
+        .for(plus-white s-avatars s-circles s-diary s-friends si-auctions si-family si-travel s-memories s-messages s-profile s-settings p-qr p-video); .-each(@name) {
             &.@{name} {
                 background-image: url("@{Path-Image}/icons/26/@{name}.png");
             }
@@ -196,7 +196,7 @@
         }
     }
 
-    // /* *** CREATE *** */
+    // /* *** MEMORY *** */
 
     &.icon-memory {
         width: 150px;
@@ -209,7 +209,20 @@
         }
     }
 
-    // /* *** CREATE *** */
+    // /* *** CODE *** */
+
+    &.icon-code {
+        width: 150px;
+        height: 180px;
+
+        .for(nfc qr rfid); .-each(@name) {
+            &.@{name} {
+                background-image: url("@{Path-Image}/icons/code/@{name}.png");
+            }
+        }
+    }
+
+    // /* *** TYPE *** */
 
     &.icon-type {
         width: 52px;

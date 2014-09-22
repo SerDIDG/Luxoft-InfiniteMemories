@@ -127,6 +127,43 @@
     }
 }
 
+/* *** PROFILE LEFT *** */
+
+.pt__menu--profile-stuff {
+    > ul {
+        > li {
+            height: @PT-Menu-ProfileStuff-Height;
+            margin: @PT-Menu-ProfileStuff-Indent 0 0 0;
+            display: block;
+            
+            &:first-child {
+                margin: 0;
+            }
+
+            > a {
+                display: block;
+                line-height: @PT-Menu-ProfileStuff-Height;
+                font-weight: bold;
+                color: @Color-Hint;
+
+                .icon {
+                    float: left;
+                    margin: 0 @PT-Menu-ProfileStuff-Padding 0 0;
+                }
+
+                .counter {
+                    float: right;
+                    margin: 0 0 0 @PT-Menu-ProfileStuff-Padding;
+                }
+
+                .title {
+                    &:extend(.cm-text-overflow);
+                }
+            }
+        }
+    }
+}
+
 /* *** SIDEBAR *** */
 
 .pt__menu--sidebar {

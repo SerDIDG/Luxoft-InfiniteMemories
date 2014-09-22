@@ -34,20 +34,42 @@
                 margin: 3px 0 0 0;
             }
 
+            h4 {
+                &:extend(.cm-text-overflow);
+
+                margin: 0;
+            }
+
+            p {
+                &:extend(.cm-text-overflow);
+
+                margin: 10px 0 0 0;
+            }
+
             .pt__line-info {
-                margin: 2px 0 0 0;
+                margin: 10px 0 0 0;
             }
 
             .pt__buttons {
-                margin: 12px 0 0 0;
+                margin: 15px 0 0 0;
             }
         }
     }
 
     &.has-uploader-bar {
-        > .r {
-            .pt__line-info {
-                margin: 13px 0 0 0;
+        > .inner {
+            > .r {
+                .pt__line-info {
+                    margin: 2px 0 0 0;
+                }
+
+                p {
+                    margin: 2px 0 0 0;
+                }
+
+                .pt__buttons {
+                    margin: 12px 0 0 0;
+                }
             }
         }
     }

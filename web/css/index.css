@@ -304,7 +304,8 @@ input[type="checkbox"] {
 .lt__base__backward:after,
 .lt__base__buttons:after,
 .lt__filtered__filter:after,
-.lt__profile > .inner:after {
+.lt__profile > .inner:after,
+.lt__profile__block > .title:after {
   content: ".";
   display: block;
   clear: both;
@@ -419,17 +420,21 @@ input[type="checkbox"] {
 }
 .cm-text-overflow,
 .button,
+.pt__menu--profile-stuff > ul > li > a .title,
 .pt__menu--sidebar > ul > li > a,
 .pt__menu--sidebar > ul > li > a .title,
 .pt__hover-box--avatar-type p,
 .pt__hover-box--memory-selection h3,
+.pt__item-box > .inner > .r h4,
+.pt__item-box > .inner > .r p,
 .lt__sidebar__block > dt,
 .lt__sidebar__block > dt .title,
 .lt__sidebar__block > dt .counter,
 input[type="button"],
 input[type="submit"],
 input[type="reset"],
-button {
+button,
+.pt__hover-box--code-selection h3 {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -566,6 +571,16 @@ button {
 .pt__grid--memory-selection > ul > li:last-child {
   text-align: right;
 }
+/* *** CODE SELECTION *** */
+.pt__grid--code-selection > ul > li {
+  text-align: center;
+}
+.pt__grid--code-selection > ul > li:first-child {
+  text-align: right;
+}
+.pt__grid--code-selection > ul > li:last-child {
+  text-align: left;
+}
 /* ******* PARTS: GRID: BUNDLE ******* */
 /* ******* PARTS: ICONS ******* */
 .icon {
@@ -688,6 +703,12 @@ button {
 }
 .icon.size-26.s-settings {
   background-image: url("../img/icons/26/s-settings.png");
+}
+.icon.size-26.p-qr {
+  background-image: url("../img/icons/26/p-qr.png");
+}
+.icon.size-26.p-video {
+  background-image: url("../img/icons/26/p-video.png");
 }
 .icon.size-28 {
   width: 28px;
@@ -832,6 +853,19 @@ button {
 }
 .icon.icon-memory.video {
   background-image: url("../img/icons/memory/video.png");
+}
+.icon.icon-code {
+  width: 150px;
+  height: 180px;
+}
+.icon.icon-code.nfc {
+  background-image: url("../img/icons/code/nfc.png");
+}
+.icon.icon-code.qr {
+  background-image: url("../img/icons/code/qr.png");
+}
+.icon.icon-code.rfid {
+  background-image: url("../img/icons/code/rfid.png");
 }
 .icon.icon-type {
   width: 52px;
@@ -1623,6 +1657,29 @@ button.button-delete {
 .pt__menu--controls > ul > li:last-child {
   margin-right: 0;
 }
+/* *** PROFILE LEFT *** */
+.pt__menu--profile-stuff > ul > li {
+  height: 26px;
+  margin: 10px 0 0 0;
+  display: block;
+}
+.pt__menu--profile-stuff > ul > li:first-child {
+  margin: 0;
+}
+.pt__menu--profile-stuff > ul > li > a {
+  display: block;
+  line-height: 26px;
+  font-weight: bold;
+  color: #a0a0a0;
+}
+.pt__menu--profile-stuff > ul > li > a .icon {
+  float: left;
+  margin: 0 8px 0 0;
+}
+.pt__menu--profile-stuff > ul > li > a .counter {
+  float: right;
+  margin: 0 0 0 8px;
+}
 /* *** SIDEBAR *** */
 .pt__menu--sidebar > ul > li {
   height: 26px;
@@ -1903,7 +1960,8 @@ button.button-delete {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 /* *** MEMORY SELECTION *** */
-.pt__hover-box--memory-selection {
+.pt__hover-box--memory-selection,
+.pt__hover-box--code-selection {
   width: 100%;
   max-width: 250px;
   display: inline-block;
@@ -1911,13 +1969,16 @@ button.button-delete {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
-.pt__hover-box--memory-selection > .image {
+.pt__hover-box--memory-selection > .image,
+.pt__hover-box--code-selection > .image {
   width: auto;
   height: 180px;
 }
-.pt__hover-box--memory-selection h3 {
+.pt__hover-box--memory-selection h3,
+.pt__hover-box--code-selection h3 {
   margin: 10px 0 0 0;
 }
+/* *** CODE SELECTION *** */
 /* ******* PARTS: HOVER BOX: BUNDLE ******* */
 /* ******* PARTS: TOOLBAR ******* */
 .pt__toolbar {
@@ -2103,14 +2164,26 @@ button.button-delete {
 .pt__item-box > .inner > .r .pt__uploader-bar {
   margin: 3px 0 0 0;
 }
+.pt__item-box > .inner > .r h4 {
+  margin: 0;
+}
+.pt__item-box > .inner > .r p {
+  margin: 10px 0 0 0;
+}
 .pt__item-box > .inner > .r .pt__line-info {
-  margin: 2px 0 0 0;
+  margin: 10px 0 0 0;
 }
 .pt__item-box > .inner > .r .pt__buttons {
-  margin: 12px 0 0 0;
+  margin: 15px 0 0 0;
 }
-.pt__item-box.has-uploader-bar > .r .pt__line-info {
-  margin: 13px 0 0 0;
+.pt__item-box.has-uploader-bar > .inner > .r .pt__line-info {
+  margin: 2px 0 0 0;
+}
+.pt__item-box.has-uploader-bar > .inner > .r p {
+  margin: 2px 0 0 0;
+}
+.pt__item-box.has-uploader-bar > .inner > .r .pt__buttons {
+  margin: 12px 0 0 0;
 }
 /* ************ LAYOUTS ************ */
 /* ******* LAYOUTS: SLIDER ******* */
@@ -2736,7 +2809,7 @@ button.button-delete {
 }
 .lt__profile > .inner > .l {
   width: 250px;
-  margin: 0 15px 0 0;
+  margin: 0 16px 0 0;
   float: left;
 }
 .lt__profile > .inner > .l .pt__buttons {
@@ -2776,6 +2849,24 @@ button.button-delete {
   margin: 20px 0 0 0;
   padding: 0;
 }
+.lt__profile__block > .title {
+  margin: 0 0 4px;
+}
+.lt__profile__block > .title > .l {
+  margin: 0 8px 0 0;
+  float: left;
+}
+.lt__profile__block > .title > .l h6 {
+  margin: 0;
+}
+.lt__profile__block > .title > .r {
+  padding-top: 13px;
+  overflow: hidden;
+}
+.lt__profile__block > .title > .r .border {
+  overflow: hidden;
+  border-top: 1px solid #e2e2e2;
+}
 .lt__profile__block .pt__tags__content,
 .lt__profile__block h1,
 .lt__profile__block h2,
@@ -2793,10 +2884,21 @@ button.button-delete {
   margin: 0 0 4px;
 }
 .lt__profile__block.has-border {
+  margin: 16px 0 0 0;
   padding-top: 10px;
   border-top: 1px solid #e2e2e2;
 }
 .lt__profile__block--memory-selection {
   margin-top: 32px;
+}
+.lt__profile__block--memory-selection.has-border {
+  margin-top: 32px;
+}
+.lt__profile__block--code-selection {
+  margin-top: 32px;
+}
+.lt__profile__block--code-selection.has-border {
+  margin-top: 32px;
+  padding-top: 18px;
 }
 /* ************ MAIN STYLES ************ */

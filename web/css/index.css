@@ -47,7 +47,8 @@ h2 {
   font: normal 24px/28px Tahoma, Geneva, sans-serif;
   color: #a0a0a0;
 }
-.font-base-h2.style-light {
+.font-base-h2.style-light,
+h2.style-light {
   font: 300 24px/28px 'Open Sans', Arial, Helvetica, sans-serif;
   color: #a0a0a0;
 }

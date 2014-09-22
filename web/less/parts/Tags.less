@@ -75,6 +75,10 @@ a {
     padding: 0;
 }
 
+.pt__tags__content--title {
+    text-align: center;
+}
+
 .pt__tags__content--base {
 }
 
@@ -82,8 +86,32 @@ h1, h2, h3, h4, h5, h6, p, dl, ul, ol {
     &:extend(.pt__tags__content all);
 }
 
+h1, h2, h3, h4, h5, h6 {
+    &:extend(.pt__tags__content--title all);
+}
+
 p, dl, ul, ol {
     &:extend(.pt__tags__content--base all);
+}
+
+h1 {
+    &:extend(.font-base-h1);
+}
+
+h2 {
+    &:extend(.font-base-h2);
+}
+
+h4 {
+    &:extend(.font-base-h4);
+}
+
+h5 {
+    &:extend(.font-base-h5);
+
+    a {
+        &:extend(.font-base-h5);
+    }
 }
 
 /* *** INPUTS *** */

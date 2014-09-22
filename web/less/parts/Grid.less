@@ -37,15 +37,33 @@
         }
     }
 
-    &.is-inline {
+    &.pull-left {
         > ul {
-            overflow: hidden;
-            white-space: nowrap;
+            text-align: left;
         }
     }
 
-    &.is-inrow {
-        height: 100%;
+    &.pull-center {
+        > ul {
+            text-align: center;
+        }
+    }
+
+    &.pull-right {
+        > ul {
+            text-align: right;
+        }
+    }
+
+    &.is-adaptive {
+        overflow: visible;
+
+        > ul {
+            > li {
+                width: auto;
+                overflow: visible;
+            }
+        }
     }
 
     // /* Build columns styles */

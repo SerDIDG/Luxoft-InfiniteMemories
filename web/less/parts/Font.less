@@ -8,15 +8,37 @@
     color: @Color-Base;
 }
 
+.font-base-h1 {
+    font: @Font-Base-Weight ~'@{Font-Base-SizeH1}/@{Font-Base-LineHeightH1}' @Font-Base-Family;
+    color: @Color-Base-H1;
+}
+
+.font-base-h2 {
+    font: @Font-Base-Weight ~'@{Font-Base-SizeH2}/@{Font-Base-LineHeightH2}' @Font-Base-Family;
+    color: @Color-Base-H2;
+}
+
+.font-base-h4 {
+    font: 300 ~'@{Font-Base-SizeH4}/@{Font-Base-LineHeightH4}' @Font-Base-FamilySecondary;
+    color: @Color-Base-H4;
+}
+
+.font-base-h5 {
+    font: @Font-Base-Weight ~'@{Font-Base-SizeH5}/@{Font-Base-LineHeightH5}' @Font-Base-Family;
+    color: @Color-Base-H5;
+}
+
 .font-link {
     cursor: pointer;
     outline: none;
     text-decoration: none;
     color: @Color-Link;
+    .mix-transition(color @CM-Transition-Duration ease-in-out);
 
     &:hover {
         text-decoration: none;
         color: @Color-LinkHover;
+        .mix-transition(color @CM-Transition-DurationReverse ease-in-out);
     }
 }
 
@@ -32,6 +54,11 @@
 
 .font-button-big {
     font: @Font-ButtonBig-Weight ~'@{Font-ButtonBig-Size}/@{Font-Base-LineHeight}' @Font-Base-Family;
+    color: @Color-Button;
+}
+
+.font-button-bigger {
+    font: @Font-ButtonBigger-Weight ~'@{Font-ButtonBigger-Size}/@{Font-Base-LineHeight}' @Font-Base-Family;
     color: @Color-Button;
 }
 

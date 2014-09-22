@@ -1,0 +1,36 @@
+/* ******* PARTS: BACKWARD ******* */
+
+.pt__backward {
+    height: @LT-Base-BackwardHeight;
+
+    > a {
+        &:extend(.font-base);
+
+        display: inline-block;
+        vertical-align: top;
+        line-height: @LT-Base-BackwardHeight;
+        font-weight: bold;
+
+        &:before {
+            width: 22px;
+            height: 22px;
+            margin: ((@LT-Base-BackwardHeight - 22px) / 2) 10px 0 0;
+            display: inline-block;
+            vertical-align: top;
+            content: '';
+            .icon.size-22.backward;
+        }
+    }
+
+    &.pull-left {
+        float: left;
+    }
+
+    &.pull-center {
+        margin: 0 auto;
+    }
+
+    &.pull-right {
+        float: right;
+    }
+}

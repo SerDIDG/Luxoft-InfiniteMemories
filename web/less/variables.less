@@ -15,12 +15,23 @@
 // /* *** FONT *** */
 
 @Font-Base-Family: Tahoma, Geneva, sans-serif;
+@Font-Base-FamilySecondary: 'Open Sans', Arial, Helvetica, sans-serif;
 @Font-Base-LineHeight: 18px;
 @Font-Base-Size: 14px;
 @Font-Base-SizeSecondary: 12px;
 @Font-Base-Weight: normal;
+@Font-Base-SizeH1: 32px;
+@Font-Base-SizeH2: 24px;
+@Font-Base-SizeH3: 24px;
+@Font-Base-SizeH4: 24px;
+@Font-Base-SizeH5: 16px;
+@Font-Base-LineHeightH1: 38px;
+@Font-Base-LineHeightH2: 28px;
+@Font-Base-LineHeightH3: 28px;
+@Font-Base-LineHeightH4: 28px;
+@Font-Base-LineHeightH5: @Font-Base-LineHeight;
 
-@Font-Slider-Family: 'Open Sans', Arial, Helvetica, sans-serif;
+@Font-Slider-Family: @Font-Base-FamilySecondary;
 @Font-Slider-LineHeight: 60px;
 @Font-Slider-Size: 50px;
 @Font-Slider-Weight: bold;
@@ -33,8 +44,10 @@
 @Font-Header-Size: 14px;
 
 @Font-ButtonBig-Size: 22px;
-@Font-ButtonMedium-Size: 14px;
 @Font-ButtonBig-Weight: normal;
+@Font-ButtonBigger-Size: 16px;
+@Font-ButtonBigger-Weight: bold;
+@Font-ButtonMedium-Size: 14px;
 
 @Font-Input-Size: 17px;
 @Font-Input-LineHeight: 22px;
@@ -44,6 +57,7 @@
 // /* *** COLORS *** */
 
 @Color-Base: #000000;
+@Color-Base-Dark: #1e1e1e;
 @Color-Active: #009fda;
 @Color-Active-Secondary: #cf1715;
 @Color-Alt: #47b537;
@@ -53,28 +67,40 @@
 @Color-Placeholder: @Color-Hint;
 @Color-Header: #ffffff;
 @Color-Button: #ffffff;
+@Color-Button-Secondary: @Color-Base;
 @Color-Input: @Color-Base;
 @Color-Border: #e2e2e2;
+@Color-Border-Dark: #d9d9d9;
 @Color-TitleSmall: #4d4d4d;
 @Color-Slider: #ffffff;
+
+@Color-Base-H1: @Color-Base-Dark;
+@Color-Base-H2: @Color-Hint;
+@Color-Base-H4: @Color-Hint;
+@Color-Base-H5: @Color-Hint;
 
 // /* *** BACKGROUNDS *** */
 
 @Background-Base: #ffffff;
-@Background-Base-Dark: #1e1e1e;
+@Background-Base-Dark: @Color-Base-Dark;
 @Background-Active: @Color-Active;
 @Background-Active-Secondary: @Color-Active-Secondary;
 @Background-Alt: @Color-Alt;
 @Background-Twitter: #30bbe9;
 @Background-Facebook: #325190;
+
 @Background-Button-Active: @Background-Active;
+@Background-Button-Secondary: #f5f5f5;
+@Background-Button-SecondaryDark: #e4e6e8;
 @Background-Button-Alt: @Background-Alt;
+
 @Background-Input: #f9f9f9;
 
 // /* *** BORDERS *** */
 
 @Border-Base-Size: 1px;
 @Border-Base: @Border-Base-Size solid @Color-Border;
+@Border-Dark: @Border-Base-Size solid @Color-Border-Dark;
 @Border-Active-Size: 2px;
 @Border-Active: @Border-Active-Size solid @Color-Active;
 
@@ -130,6 +156,12 @@
 
 @PT-UserBox-Sizes: 34 100;
 
+// /* *** HOVER BOX *** */
+
+@PT-HoverBox-Indents: 14px 30px;
+@PT-HoverBox-Indent: 0px;
+@PT-HoverBox-Background: @Background-Base;
+
 // /* ******* LAYOUTS ******* */
 
 // /* *** SLIDER *** */
@@ -155,6 +187,8 @@
 @LT-Base-HeaderHeight: 50px;
 @LT-Base-ButtonsPadding: 32px;
 @LT-Base-ButtonsIndent: 16px;
+@LT-Base-PageIndent: 16px;
+@LT-Base-BackwardHeight: @PT-Menu-Sidebar-Height;
 
 // /* *** SIDEBAR *** */
 

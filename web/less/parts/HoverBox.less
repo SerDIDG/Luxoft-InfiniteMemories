@@ -1,0 +1,54 @@
+/* ******* PARTS: HOVER BOX ******* */
+
+/* *** BASE *** */
+
+.pt__hover-box {
+    border: @Border-Base-Size solid transparent;
+    .mix-box-sizing();
+    .mix-transition(all @CM-Transition-Duration ease-in-out);
+
+    &.active,
+    &:hover {
+        background-color: @PT-HoverBox-Background;
+        border: @Border-Dark;
+        box-shadow: 0 2px 15px rgba(0, 0, 0, 0.25);
+
+        .button {
+            &:extend(.button-active all);
+        }
+    }
+
+    // /* Set indents */
+
+    #cm > .pt__hover-box__indent(@PT-HoverBox-Indent);
+
+    .for(@PT-HoverBox-Indents); .-each(@name) {
+        &.indent-@{name} {
+            #cm > .pt__hover-box__indent(@name);
+        }
+    }
+}
+
+/* *** WELCOME *** */
+
+.pt__hover-box--welcome {
+    h1 {
+        margin: 10px 0 0 0;
+    }
+
+    h5 {
+        margin: 16px 0 0 0;
+    }
+
+    .pt__buttons {
+        margin: 28px 0 0 0;
+    }
+}
+
+/* ******* PARTS: HOVER BOX: BUNDLE ******* */
+
+#cm () {
+    .pt__hover-box__indent (@indent: @PT-HoverBox-Indent) {
+        padding: @indent;
+    }
+}

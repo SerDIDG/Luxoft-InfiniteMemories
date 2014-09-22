@@ -39,6 +39,19 @@
         }
     }
 
+    // /* *** 22 x 22 *** */
+
+    &.size-22 {
+        width: 22px;
+        height: 22px;
+
+        .for(backward); .-each(@name) {
+            &.@{name} {
+                background-image: url("@{Path-Image}/icons/22/@{name}.png");
+            }
+        }
+    }
+
     // /* *** 24 x 24 *** */
 
     &.size-24 {
@@ -130,6 +143,19 @@
             width: 126px;
             height: 50px;
             background-image: url("@{Path-Image}/icons/logo/126.png");
+        }
+    }
+
+    // /* *** CREATE *** */
+
+    &.icon-create {
+        width: 280px;
+        height: 240px;
+
+        .for(avatar memory); .-each(@name) {
+            &.@{name} {
+                background-image: url("@{Path-Image}/icons/create/@{name}.png");
+            }
         }
     }
 }

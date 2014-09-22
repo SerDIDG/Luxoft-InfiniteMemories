@@ -19,6 +19,7 @@
     .mix-background-clip();
     .mix-user-select();
     .mix-transition(background-color @PT-Button-Duration ease-in-out);
+    .mix-transition(color @PT-Button-Duration ease-in-out);
 
     &.has-icon {
         text-align: left;
@@ -36,6 +37,15 @@
         padding: 0 @PT-Button-PaddingBigWidth;
         line-height: 44px;
     }
+
+    &.size-50 {
+        &:extend(.font-button-bigger);
+
+        height: 50px;
+        padding: 0 @PT-Button-PaddingBigWidth;
+        line-height: 50px;
+    }
+
 
     &.size-36 {
         &:extend(.font-button-medium);
@@ -59,11 +69,15 @@
     }
 
     &.button-active {
-        background-color: @Background-Button-Active;
+        &:extend(.button-active all);
     }
 
     &.button-alt {
-        background-color: @Background-Button-Alt;
+        &:extend(.button-alt all);
+    }
+
+    &.button-secondary {
+        &:extend(.button-secondary all);
     }
 
     &.style-twitter {
@@ -95,6 +109,28 @@
     }
 }
 
+.button-active {
+    background-color: @Background-Button-Active;
+    color: @Color-Button;
+
+    &.size-50 {
+        color:  @Color-Button;
+    }
+}
+
+.button-secondary {
+    background-color: @Background-Button-Secondary;
+    color: @Color-Button-Secondary;
+
+    &.size-50 {
+        color: @Color-Link;
+    }
+}
+
+.button-alt {
+    background-color: @Background-Button-Alt;
+    color: @Color-Button;
+}
 
 .pt__buttons {
     margin-top: @PT-Buttons-Indent;

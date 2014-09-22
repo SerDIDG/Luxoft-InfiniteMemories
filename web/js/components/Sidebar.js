@@ -43,11 +43,11 @@ function(params){
         // Check toggle class
         that.isExpanded = cm.isClass(that.nodes['sidebar'], 'is-expanded');
         // Check storage
-        if(that.params['remember']){
+        if(that.params['remember'] && typeof that.storageRead('isExpanded') != 'undefined'){
             that.isExpanded = that.storageRead('isExpanded');
         }
         // Check sidebars visibility
-        if(!cm.inDOM(that.nodes['container']) || cm.getStyle(that.nodes['container'], 'display') == 'none'){
+        if(!cm.inDOM(that.nodes['sidebar']) || cm.getStyle(that.nodes['sidebar'], 'display') == 'none'){
             that.isExpanded = false;
         }
         // Trigger events

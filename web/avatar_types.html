@@ -1,0 +1,777 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Infinite Memories</title>
+    <link type="text/css" rel="stylesheet" href="css/index.css">
+
+    <script type="text/javascript" src="js/polyfill.js"></script>
+    <script type="text/javascript" src="js/common.js"></script>
+    <script type="text/javascript" src="js/parts.js"></script>
+    <script type="text/javascript" src="js/modules.js"></script>
+    <script type="text/javascript" src="js/init.js"></script>
+    <script type="text/javascript" src="js/components/UA.js"></script>
+    <script type="text/javascript" src="js/components/Collector.js"></script>
+    <script type="text/javascript" src="js/components/Slider.js"></script>
+    <script type="text/javascript" src="js/components/Sidebar.js"></script>
+    <script type="text/javascript" src="js/components/ToggleBox.js"></script>
+
+    <script type="text/javascript" src="js/custom.js"></script>
+
+    <script type="text/javascript">
+        cm.onReady(function(){
+            // Components
+            new Com.Collector()
+                .add('sidebar', function(node){
+                    new Com.Sidebar({
+                        'node' : node
+                    });
+                })
+                .add('togglebox', function(node){
+                    new Com.ToggleBox({
+                        'node' : node
+                    });
+                })
+                .add('slider', function(node){
+                    new Com.Slider({
+                        'node' : node
+                    });
+                })
+                .add('preload-overlay', function(node){
+                    cm.removeClass(node, 'is-show', true);
+                })
+                .construct();
+        });
+    </script>
+</head>
+<body>
+
+<div class="lt__base">
+    <div class="lt__base__header">
+        <div class="inner">
+            <div class="l">
+                <div class="header-toggle" title="Toggle Sidebar Menu" data-node="ComSidebar.button">
+                    <div class="icon size-50 menu linked"></div>
+                </div>
+
+                <div class="header-logo">
+                    <a class="icon icon-logo size-126 linked" href="welcome.html"></a>
+                </div>
+
+                <div class="header-search">
+                    <div class="pt__search pt__search--header">
+                        <input class="style-clear" type="text" name="search">
+                        <a class="button button-active size-28" title="Search">
+                            <div class="icon size-28 search linked"></div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="r">
+                <div class="header-menu">
+                    <div class="pt__menu pt__menu--header">
+                        <ul>
+                            <li>
+                                <a>Site feedback</a>
+                            </li>
+                            <li>
+                                <a>Help</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="header-user">
+                    <div class="pt__user-box pt__user-box--header size-34">
+                        <div class="image">
+                            <img src="img/parts/avatars/34.png" alt="Hubert Mokko">
+                        </div>
+                        <div class="name">Hubert Mokko</div>
+                        <div class="arrow"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="lt__base__content" data-node="ComSidebar.container">
+        <div class="lt__sidebar is-expanded" data-node="ComSidebar.sidebar" data-element="sidebar">
+            <div class="inner">
+                <div class="top">
+                    <dl class="lt__sidebar__block lt__sidebar__block--create">
+                        <dd>
+                            <div class="pt__menu pt__menu--sidebar has-icon-right">
+                                <ul>
+                                    <li class="active">
+                                        <a href="welcome.html">
+                                            <div class="icon size-26 plus-white"></div>
+                                            <div class="title">Create</div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </dd>
+                    </dl>
+
+                    <dl class="lt__sidebar__block">
+                        <dd>
+                            <div class="pt__menu pt__menu--sidebar has-icon-left">
+                                <ul>
+                                    <li>
+                                        <a>
+                                            <div class="icon size-26 s-profile"></div>
+                                            <div class="title">My Profile</div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a>
+                                            <div class="icon size-26 s-avatars"></div>
+                                            <div class="title">My Avatars</div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a>
+                                            <div class="icon size-26 s-memories"></div>
+                                            <div class="title">My Memories</div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a>
+                                            <div class="icon size-26 s-circles"></div>
+                                            <div class="title">My Circles</div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a>
+                                            <div class="icon size-26 s-messages"></div>
+                                            <div class="title">Messages</div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a>
+                                            <div class="icon size-26 s-friends"></div>
+                                            <div class="title">Friends & Family</div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a>
+                                            <div class="icon size-26 s-diary"></div>
+                                            <div class="title">My Diary</div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a>
+                                            <div class="icon size-26 s-settings"></div>
+                                            <div class="title">Settings</div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="pt__more pt__more--sidebar-menu">
+                                <a>More</a>
+                            </div>
+                        </dd>
+                    </dl>
+
+                    <dl class="lt__sidebar__block has-separator is-show" data-element="togglebox" data-config='{"remember" : true, "name" : "sidebar-interests"}'>
+                        <dt data-node="ComToggleBox.button">
+                            <span class="icon default"></span>
+                            <span class="title">Interests</span>
+                        </dt>
+                        <dd data-node="ComToggleBox.target">
+                            <div class="pt__menu pt__menu--sidebar has-icon-left">
+                                <ul>
+                                    <li>
+                                        <a>
+                                            <div class="counter">4</div>
+                                            <div class="icon size-26 si-family"></div>
+                                            <div class="title">Family</div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a>
+                                            <div class="counter">21</div>
+                                            <div class="icon size-26 si-travel"></div>
+                                            <div class="title">Travel</div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a>
+                                            <div class="counter">2</div>
+                                            <div class="icon size-26 si-auctions"></div>
+                                            <div class="title">Auctions</div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="pt__more pt__more--sidebar-menu">
+                                <a>More</a>
+                            </div>
+                        </dd>
+                    </dl>
+
+                    <dl class="lt__sidebar__block has-separator is-show" data-element="togglebox" data-config='{"remember" : true, "name" : "sidebar-circles"}'>
+                        <dt data-node="ComToggleBox.button">
+                            <span class="icon default"></span>
+                            <span class="title">Circles</span>
+                            <span class="counter">43</span>
+                        </dt>
+                        <dd data-node="ComToggleBox.target">
+                            <div class="pt__grid pt__grid--sidebar indent-1px col-4">
+                                <ul>
+                                    <li>
+                                        <a>
+                                            <img src="img/parts/avatars/40/1.jpg" alt="">
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a>
+                                            <img src="img/parts/avatars/40/2.jpg" alt="">
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a>
+                                            <img src="img/parts/avatars/40/3.jpg" alt="">
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a>
+                                            <img src="img/parts/avatars/40/4.jpg" alt="">
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a>
+                                            <img src="img/parts/avatars/40/5.jpg" alt="">
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a>
+                                            <img src="img/parts/avatars/40/6.jpg" alt="">
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a>
+                                            <img src="img/parts/avatars/40/7.jpg" alt="">
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a>
+                                            <img src="img/parts/avatars/40/8.jpg" alt="">
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a>
+                                            <img src="img/parts/avatars/40/9.jpg" alt="">
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a>
+                                            <img src="img/parts/avatars/40/10.jpg" alt="">
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a>
+                                            <img src="img/parts/avatars/40/11.jpg" alt="">
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a>
+                                            <img src="img/parts/avatars/40/12.jpg" alt="">
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a>
+                                            <img src="img/parts/avatars/40/13.jpg" alt="">
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a>
+                                            <img src="img/parts/avatars/40/14.jpg" alt="">
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a>
+                                            <img src="img/parts/avatars/40/15.jpg" alt="">
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a>
+                                            <img src="img/parts/avatars/40/16.jpg" alt="">
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a>
+                                            <img src="img/parts/avatars/40/17.jpg" alt="">
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a>
+                                            <img src="img/parts/avatars/40/18.jpg" alt="">
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a>
+                                            <img src="img/parts/avatars/40/19.jpg" alt="">
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a>
+                                            <img src="img/parts/avatars/40/20.jpg" alt="">
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="pt__more pt__more--sidebar">
+                                <a>View all</a>
+                            </div>
+                        </dd>
+                    </dl>
+                </div>
+
+                <div class="bottom">
+                    <div class="pt__grid col-4">
+                        <ul>
+                            <li>
+                                <a class="icon size-24 icon-1 linked pull-center"></a>
+                            </li>
+                            <li>
+                                <a class="icon size-24 icon-2 linked pull-center"></a>
+                            </li>
+                            <li>
+                                <a class="icon size-24 icon-3 linked pull-center"></a>
+                            </li>
+                            <li>
+                                <a class="icon size-24 icon-4 linked pull-center"></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="lt__base__page has-backward">
+            <div class="lt__base__backward">
+                <div class="pt__backward">
+                    <a href="welcome.html">Back</a>
+                </div>
+            </div>
+
+            <div class="lt__base__entry">
+                <div class="lt__filtered">
+                    <div class="inner">
+                        <div class="lt__base__page-title">
+                            <h1>Select avatar type</h1>
+                        </div>
+
+                        <div class="lt__filtered__filter">
+                            <div class="pt__toolbar">
+                                <div class="inner">
+                                    <div class="left">
+                                        <ul class="group">
+                                            <li>
+                                                <div class="pt__dropdown">
+                                                    <a>Filter</a>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                        <ul class="group">
+                                            <li class="is-field x-large">
+                                                <input type="text">
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="right">
+                                        <ul class="group is-toggle">
+                                            <li class="active">
+                                                <a>All</a>
+                                            </li>
+                                            <li>
+                                                <a>Jewelry</a>
+                                            </li>
+                                            <li>
+                                                <a>Sport</a>
+                                            </li>
+                                            <li>
+                                                <a>Closses</a>
+                                            </li>
+                                            <li>
+                                                <a>Health</a>
+                                            </li>
+                                            <li>
+                                                <a>Business</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="lt__filtered__content">
+                            <div class="pt__grid pt__grid--avatar-type is-adaptive pull-center">
+                                <ul>
+                                    <li>
+                                        <div class="pt__hover-box pt__hover-box--avatar-type indent-16px">
+                                            <div class="image">
+                                                <div class="icon icon-avatar-small book"></div>
+                                            </div>
+                                            <p>Book</p>
+                                            <div class="pt__buttons is-box">
+                                                <a class="button button-active size-30">Add</a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="pt__hover-box pt__hover-box--avatar-type indent-16px">
+                                            <div class="image">
+                                                <div class="icon icon-avatar-small jewelry"></div>
+                                            </div>
+                                            <p>Jewelry</p>
+                                            <div class="pt__buttons is-box">
+                                                <a class="button button-active size-30">Add</a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="pt__hover-box pt__hover-box--avatar-type indent-16px">
+                                            <div class="image">
+                                                <div class="icon icon-avatar-small toys"></div>
+                                            </div>
+                                            <p>Toys</p>
+                                            <div class="pt__buttons is-box">
+                                                <a class="button button-active size-30">Add</a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="pt__hover-box pt__hover-box--avatar-type indent-16px">
+                                            <div class="image">
+                                                <div class="icon icon-avatar-small pram"></div>
+                                            </div>
+                                            <p>Pram</p>
+                                            <div class="pt__buttons is-box">
+                                                <a class="button button-active size-30">Add</a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="pt__hover-box pt__hover-box--avatar-type indent-16px">
+                                            <div class="image">
+                                                <div class="icon icon-avatar-small sofa"></div>
+                                            </div>
+                                            <p>Sofa</p>
+                                            <div class="pt__buttons is-box">
+                                                <a class="button button-active size-30">Add</a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="pt__hover-box pt__hover-box--avatar-type indent-16px">
+                                            <div class="image">
+                                                <div class="icon icon-avatar-small trumpet"></div>
+                                            </div>
+                                            <p>Trumpet</p>
+                                            <div class="pt__buttons is-box">
+                                                <a class="button button-active size-30">Add</a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="pt__hover-box pt__hover-box--avatar-type indent-16px">
+                                            <div class="image">
+                                                <div class="icon icon-avatar-small weapon"></div>
+                                            </div>
+                                            <p>Weapon</p>
+                                            <div class="pt__buttons is-box">
+                                                <a class="button button-active size-30">Add</a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="pt__hover-box pt__hover-box--avatar-type indent-16px">
+                                            <div class="image">
+                                                <div class="icon icon-avatar-small knife"></div>
+                                            </div>
+                                            <p>Knife</p>
+                                            <div class="pt__buttons is-box">
+                                                <a class="button button-active size-30">Add</a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="pt__hover-box pt__hover-box--avatar-type indent-16px">
+                                            <div class="image">
+                                                <div class="icon icon-avatar-small mask"></div>
+                                            </div>
+                                            <p>Mask</p>
+                                            <div class="pt__buttons is-box">
+                                                <a class="button button-active size-30">Add</a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="pt__hover-box pt__hover-box--avatar-type indent-16px">
+                                            <div class="image">
+                                                <div class="icon icon-avatar-small motorcycle"></div>
+                                            </div>
+                                            <p>Motorcycle</p>
+                                            <div class="pt__buttons is-box">
+                                                <a class="button button-active size-30">Add</a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="pt__hover-box pt__hover-box--avatar-type indent-16px">
+                                            <div class="image">
+                                                <div class="icon icon-avatar-small necklace"></div>
+                                            </div>
+                                            <p>Necklace</p>
+                                            <div class="pt__buttons is-box">
+                                                <a class="button button-active size-30">Add</a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="pt__hover-box pt__hover-box--avatar-type indent-16px">
+                                            <div class="image">
+                                                <div class="icon icon-avatar-small wine"></div>
+                                            </div>
+                                            <p>Wine</p>
+                                            <div class="pt__buttons is-box">
+                                                <a class="button button-active size-30">Add</a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="pt__hover-box pt__hover-box--avatar-type indent-16px">
+                                            <div class="image">
+                                                <div class="icon icon-avatar-small cutlery"></div>
+                                            </div>
+                                            <p>Cutlery</p>
+                                            <div class="pt__buttons is-box">
+                                                <a class="button button-active size-30">Add</a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="pt__hover-box pt__hover-box--avatar-type indent-16px">
+                                            <div class="image">
+                                                <div class="icon icon-avatar-small crown"></div>
+                                            </div>
+                                            <p>Crown</p>
+                                            <div class="pt__buttons is-box">
+                                                <a class="button button-active size-30">Add</a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="pt__hover-box pt__hover-box--avatar-type indent-16px">
+                                            <div class="image">
+                                                <div class="icon icon-avatar-small microscope"></div>
+                                            </div>
+                                            <p>Microscope</p>
+                                            <div class="pt__buttons is-box">
+                                                <a class="button button-active size-30">Add</a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="pt__hover-box pt__hover-box--avatar-type indent-16px">
+                                            <div class="image">
+                                                <div class="icon icon-avatar-small pitcher"></div>
+                                            </div>
+                                            <p>Pitcher</p>
+                                            <div class="pt__buttons is-box">
+                                                <a class="button button-active size-30">Add</a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="pt__hover-box pt__hover-box--avatar-type indent-16px">
+                                            <div class="image">
+                                                <div class="icon icon-avatar-small book"></div>
+                                            </div>
+                                            <p>Book</p>
+                                            <div class="pt__buttons is-box">
+                                                <a class="button button-active size-30">Add</a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="pt__hover-box pt__hover-box--avatar-type indent-16px">
+                                            <div class="image">
+                                                <div class="icon icon-avatar-small jewelry"></div>
+                                            </div>
+                                            <p>Jewelry</p>
+                                            <div class="pt__buttons is-box">
+                                                <a class="button button-active size-30">Add</a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="pt__hover-box pt__hover-box--avatar-type indent-16px">
+                                            <div class="image">
+                                                <div class="icon icon-avatar-small toys"></div>
+                                            </div>
+                                            <p>Toys</p>
+                                            <div class="pt__buttons is-box">
+                                                <a class="button button-active size-30">Add</a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="pt__hover-box pt__hover-box--avatar-type indent-16px">
+                                            <div class="image">
+                                                <div class="icon icon-avatar-small pram"></div>
+                                            </div>
+                                            <p>Pram</p>
+                                            <div class="pt__buttons is-box">
+                                                <a class="button button-active size-30">Add</a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="pt__hover-box pt__hover-box--avatar-type indent-16px">
+                                            <div class="image">
+                                                <div class="icon icon-avatar-small sofa"></div>
+                                            </div>
+                                            <p>Sofa</p>
+                                            <div class="pt__buttons is-box">
+                                                <a class="button button-active size-30">Add</a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="pt__hover-box pt__hover-box--avatar-type indent-16px">
+                                            <div class="image">
+                                                <div class="icon icon-avatar-small trumpet"></div>
+                                            </div>
+                                            <p>Trumpet</p>
+                                            <div class="pt__buttons is-box">
+                                                <a class="button button-active size-30">Add</a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="pt__hover-box pt__hover-box--avatar-type indent-16px">
+                                            <div class="image">
+                                                <div class="icon icon-avatar-small weapon"></div>
+                                            </div>
+                                            <p>Weapon</p>
+                                            <div class="pt__buttons is-box">
+                                                <a class="button button-active size-30">Add</a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="pt__hover-box pt__hover-box--avatar-type indent-16px">
+                                            <div class="image">
+                                                <div class="icon icon-avatar-small knife"></div>
+                                            </div>
+                                            <p>Knife</p>
+                                            <div class="pt__buttons is-box">
+                                                <a class="button button-active size-30">Add</a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="pt__hover-box pt__hover-box--avatar-type indent-16px">
+                                            <div class="image">
+                                                <div class="icon icon-avatar-small mask"></div>
+                                            </div>
+                                            <p>Mask</p>
+                                            <div class="pt__buttons is-box">
+                                                <a class="button button-active size-30">Add</a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="pt__hover-box pt__hover-box--avatar-type indent-16px">
+                                            <div class="image">
+                                                <div class="icon icon-avatar-small motorcycle"></div>
+                                            </div>
+                                            <p>Motorcycle</p>
+                                            <div class="pt__buttons is-box">
+                                                <a class="button button-active size-30">Add</a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="pt__hover-box pt__hover-box--avatar-type indent-16px">
+                                            <div class="image">
+                                                <div class="icon icon-avatar-small necklace"></div>
+                                            </div>
+                                            <p>Necklace</p>
+                                            <div class="pt__buttons is-box">
+                                                <a class="button button-active size-30">Add</a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="pt__hover-box pt__hover-box--avatar-type indent-16px">
+                                            <div class="image">
+                                                <div class="icon icon-avatar-small wine"></div>
+                                            </div>
+                                            <p>Wine</p>
+                                            <div class="pt__buttons is-box">
+                                                <a class="button button-active size-30">Add</a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="pt__hover-box pt__hover-box--avatar-type indent-16px">
+                                            <div class="image">
+                                                <div class="icon icon-avatar-small cutlery"></div>
+                                            </div>
+                                            <p>Cutlery</p>
+                                            <div class="pt__buttons is-box">
+                                                <a class="button button-active size-30">Add</a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="pt__hover-box pt__hover-box--avatar-type indent-16px">
+                                            <div class="image">
+                                                <div class="icon icon-avatar-small crown"></div>
+                                            </div>
+                                            <p>Crown</p>
+                                            <div class="pt__buttons is-box">
+                                                <a class="button button-active size-30">Add</a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="pt__hover-box pt__hover-box--avatar-type indent-16px">
+                                            <div class="image">
+                                                <div class="icon icon-avatar-small microscope"></div>
+                                            </div>
+                                            <p>Microscope</p>
+                                            <div class="pt__buttons is-box">
+                                                <a class="button button-active size-30">Add</a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="pt__hover-box pt__hover-box--avatar-type indent-16px">
+                                            <div class="image">
+                                                <div class="icon icon-avatar-small pitcher"></div>
+                                            </div>
+                                            <p>Pitcher</p>
+                                            <div class="pt__buttons is-box">
+                                                <a class="button button-active size-30">Add</a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

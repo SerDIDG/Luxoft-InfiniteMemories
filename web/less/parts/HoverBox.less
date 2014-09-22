@@ -4,8 +4,18 @@
 
 .pt__hover-box {
     border: @Border-Base-Size solid transparent;
-    .mix-box-sizing();
     .mix-transition(all @CM-Transition-Duration ease-in-out);
+
+    > .image {
+        .icon {
+            display: block;
+            margin: 0 auto;
+        }
+    }
+
+    .pt__buttons {
+        .mix-transition(opacity @CM-Transition-Duration ease-in-out);
+    }
 
     &.active,
     &:hover {
@@ -40,8 +50,37 @@
         margin: 16px 0 0 0;
     }
 
+    > .image {
+        width: 280px;
+        height: 240px;
+    }
+
     .pt__buttons {
         margin: 28px 0 0 0;
+    }
+}
+
+/* *** AVATAR TYPE *** */
+
+.pt__hover-box--avatar-type {
+    > .image {
+        width: 118px;
+        height: 90px;
+    }
+
+    .pt__buttons {
+        margin: 20px 0 0 0;
+        opacity: 0;
+    }
+
+    &.active,
+    &:hover {
+        .mix-transition(all @CM-Transition-DurationReverse ease-in-out);
+
+        .pt__buttons {
+            opacity: 1;
+            .mix-transition(opacity @CM-Transition-DurationReverse ease-in-out);
+        }
     }
 }
 

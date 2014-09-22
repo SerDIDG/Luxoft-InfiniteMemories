@@ -1,0 +1,27 @@
+/* ******* LAYOUTS: FILTERED ******* */
+
+.lt__filtered {
+    width: 100%;
+    height: 100%;
+    position: relative;
+
+    > .inner {
+        width: 100%;
+        height: 100%;
+        position: relative;
+    }
+}
+
+.lt__filtered__filter {
+    &:extend(.clearfix all);
+}
+
+.lt__filtered__content {
+    // This parameter is offsetTop position of the scrollable block, must be calculated using Java-Script.
+    @indent: @Font-Base-LineHeightH1 + @LT-Base-PageTitle-Indent + @PT-Form-FieldHeight + 25px;
+
+    &:extend(.cm-scroll-y-a);
+
+    position: absolute;
+    .mix-position(@indent, 0, 0, 0);
+}

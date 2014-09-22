@@ -1,0 +1,23 @@
+/* ******* PARTS: DROPDOWN ******* */
+
+/* *** BASE *** */
+
+.pt__dropdown {
+    > a {
+        &:extend(.font-base);
+
+        display: inline-block;
+        vertical-align: top;
+        line-height: @PT-Form-FieldHeight;
+
+        &:after {
+            width: 18px;
+            height: 18px;
+            margin-top: (@PT-Form-FieldHeight - 18px) / 2;
+            display: inline-block;
+            vertical-align: top;
+            content: '';
+            .icon.size-18.arrow-down;
+        }
+    }
+}

@@ -61,6 +61,13 @@
         line-height: 32px;
     }
 
+    &.size-30 {
+        &:extend(.font-button-bigger);
+
+        height: 30px;
+        line-height: 30px;
+    }
+
     &.size-28 {
         &:extend(.font-button-medium);
 
@@ -113,7 +120,8 @@
     background-color: @Background-Button-Active;
     color: @Color-Button;
 
-    &.size-50 {
+    &.size-50,
+    &.size-30 {
         color:  @Color-Button;
     }
 }
@@ -122,7 +130,8 @@
     background-color: @Background-Button-Secondary;
     color: @Color-Button-Secondary;
 
-    &.size-50 {
+    &.size-50,
+    &.size-30 {
         color: @Color-Link;
     }
 }

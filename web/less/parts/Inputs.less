@@ -1,11 +1,11 @@
 /* ******* PARTS: INPUTS ******* */
 
 .input {
-    &:extend(.font-input);
+    &:extend(.font-base);
 
     width: 100%;
     height: @PT-Input-Height;
-    padding: ((@PT-Input-Height - @Font-Input-LineHeight) / 2) @PT-Input-Indent;
+    padding: ((@PT-Input-Height - @Font-Base-LineHeight) / 2) @PT-Input-Indent;
     margin: 0;
     vertical-align: top;
     background: @Background-Input;
@@ -18,6 +18,9 @@
     .mix-placeholder(@Color-Placeholder);
 
     &.style-alt {
+        &:extend(.font-input);
+
+        padding: ((@PT-Input-Height - @Font-Input-LineHeight) / 2) @PT-Input-Indent;
         background: #fff;
         border: none;
         border-bottom: @Border-Active;

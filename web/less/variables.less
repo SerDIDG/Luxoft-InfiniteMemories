@@ -22,14 +22,16 @@
 @Font-Base-Weight: normal;
 @Font-Base-SizeH1: 32px;
 @Font-Base-SizeH2: 24px;
+@Font-Base-SizeH2Light: 24px;
 @Font-Base-SizeH3: 24px;
-@Font-Base-SizeH4: 24px;
+@Font-Base-SizeH4: 16px;
 @Font-Base-SizeH5: 16px;
 @Font-Base-SizeH6: @Font-Base-SizeSecondary;
 @Font-Base-LineHeightH1: 38px;
 @Font-Base-LineHeightH2: 28px;
+@Font-Base-LineHeightH2Light: 28px;
 @Font-Base-LineHeightH3: 28px;
-@Font-Base-LineHeightH4: 28px;
+@Font-Base-LineHeightH4: @Font-Base-LineHeight;
 @Font-Base-LineHeightH5: @Font-Base-LineHeight;
 @Font-Base-LineHeightH6: 26px;
 
@@ -49,7 +51,9 @@
 @Font-ButtonBig-Weight: normal;
 @Font-ButtonBigger-Size: 16px;
 @Font-ButtonBigger-Weight: bold;
-@Font-ButtonMedium-Size: 14px;
+@Font-ButtonMedium-Size: @Font-Base-Size;
+@Font-ButtonSmall-Size: @Font-Base-SizeSecondary;
+@Font-ButtonSmall-Weight: normal;
 
 @Font-Input-Size: 17px;
 @Font-Input-LineHeight: 22px;
@@ -77,8 +81,9 @@
 
 @Color-Base-H1: @Color-Base-Dark;
 @Color-Base-H2: @Color-Hint;
+@Color-Base-H2Light: @Color-Base-H2;
 @Color-Base-H3: @Color-Base-Dark;
-@Color-Base-H4: @Color-Hint;
+@Color-Base-H4: @Color-Base-Dark;
 @Color-Base-H5: @Color-Hint;
 @Color-Base-H6: #4d4d4d;
 
@@ -89,6 +94,7 @@
 @Background-Active: @Color-Active;
 @Background-Active-Secondary: @Color-Active-Secondary;
 @Background-Alt: @Color-Alt;
+@Background-Hint: @Color-Hint;
 @Background-Twitter: #30bbe9;
 @Background-Facebook: #325190;
 
@@ -96,6 +102,7 @@
 @Background-Button-Secondary: #f5f5f5;
 @Background-Button-SecondaryDark: #e4e6e8;
 @Background-Button-Alt: @Background-Alt;
+@Background-Button-Delete: #9a9a9a;
 
 @Background-Input: #f9f9f9;
 
@@ -139,10 +146,13 @@
 // /* *** BUTTONS *** */
 
 @PT-Buttons-Indent: @PT-Form-FieldIndent;
+@PT-Buttons-Indents: 10px @PT-Buttons-Indent;
+
 @PT-Button-Radius: 0px;
 @PT-Button-IndentY: @PT-Form-FieldIndent;
 @PT-Button-PaddingWidth: 16px;
 @PT-Button-PaddingBigWidth: 40px;
+@PT-Button-PaddingSmallWidth: 14px;
 @PT-Button-Duration: @CM-Transition-Duration;
 @PT-Button-DurationReverse: @CM-Transition-DurationReverse;
 
@@ -176,6 +186,11 @@
 @PT-Toolbar-Medium: 150px;
 @PT-Toolbar-Large: 250px;
 @PT-Toolbar-XLarge: 300px;
+
+// /* *** ITEM BOX *** */
+
+@PT-ItemBox-LeftColumn-Width: 140px;
+@PT-ItemBox-LeftColumn-Indent: 16px;
 
 // /* ******* LAYOUTS ******* */
 

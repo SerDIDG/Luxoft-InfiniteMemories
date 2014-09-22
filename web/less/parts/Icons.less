@@ -26,6 +26,19 @@
         margin: 0 auto;
     }
 
+    // /* *** 12 x 12 *** */
+
+    &.size-12 {
+        width: 12px;
+        height: 12px;
+
+        .for(cancel); .-each(@name) {
+            &.@{name} {
+                background-image: url("@{Path-Image}/icons/12/@{name}.png");
+            }
+        }
+    }
+
     // /* *** 18 x 18 *** */
 
     &.size-18 {
@@ -179,6 +192,32 @@
         .for(necklace); .-each(@name) {
             &.@{name} {
                 background-image: url("@{Path-Image}/icons/avatars/big/@{name}.png");
+            }
+        }
+    }
+
+    // /* *** CREATE *** */
+
+    &.icon-memory {
+        width: 150px;
+        height: 180px;
+
+        .for(audio file picture video); .-each(@name) {
+            &.@{name} {
+                background-image: url("@{Path-Image}/icons/memory/@{name}.png");
+            }
+        }
+    }
+
+    // /* *** CREATE *** */
+
+    &.icon-type {
+        width: 52px;
+        height: 40px;
+
+        .for(video); .-each(@name) {
+            &.@{name} {
+                background-image: url("@{Path-Image}/icons/types/@{name}.png");
             }
         }
     }

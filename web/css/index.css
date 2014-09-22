@@ -47,6 +47,10 @@ h2 {
   font: normal 24px/28px Tahoma, Geneva, sans-serif;
   color: #a0a0a0;
 }
+.font-base-h2.style-light {
+  font: 300 24px/28px 'Open Sans', Arial, Helvetica, sans-serif;
+  color: #a0a0a0;
+}
 .font-base-h3,
 h3 {
   font: normal 24px/28px Tahoma, Geneva, sans-serif;
@@ -54,8 +58,8 @@ h3 {
 }
 .font-base-h4,
 h4 {
-  font: 300 24px/28px 'Open Sans', Arial, Helvetica, sans-serif;
-  color: #a0a0a0;
+  font: bold 16px/18px Tahoma, Geneva, sans-serif;
+  color: #1e1e1e;
 }
 .font-base-h5,
 h5,
@@ -121,14 +125,19 @@ button.size-44 {
 }
 .font-button-bigger,
 .button.size-50,
+.button.size-44-2,
 .button.size-30,
 input[type="button"].size-50,
+input[type="button"].size-44-2,
 input[type="button"].size-30,
 input[type="submit"].size-50,
+input[type="submit"].size-44-2,
 input[type="submit"].size-30,
 input[type="reset"].size-50,
+input[type="reset"].size-44-2,
 input[type="reset"].size-30,
 button.size-50,
+button.size-44-2,
 button.size-30 {
   font: bold 16px/18px Tahoma, Geneva, sans-serif;
   color: #ffffff;
@@ -150,6 +159,15 @@ button.size-36,
 button.size-32,
 button.size-28 {
   font: bold 14px/18px Tahoma, Geneva, sans-serif;
+  color: #ffffff;
+}
+.font-button-small,
+.button.size-22,
+input[type="button"].size-22,
+input[type="submit"].size-22,
+input[type="reset"].size-22,
+button.size-22 {
+  font: normal 12px/18px Tahoma, Geneva, sans-serif;
   color: #ffffff;
 }
 .font-slider,
@@ -270,12 +288,14 @@ input[type="checkbox"] {
 }
 /* ******* PARTS: COMMON ******* */
 .clearfix:after,
+.pt__buttons:after,
 .pt__form dl:after,
 .pt__search:after,
 .pt__user-box:after,
 .pt__toolbar > .inner:after,
 .pt__line-info:after,
 .pt__line-title:after,
+.pt__item-box > .inner:after,
 .lt__splash__header:after,
 .lt__splash__main > .inner:after,
 .lt__splash__footer > .inner:after,
@@ -400,6 +420,8 @@ input[type="checkbox"] {
 .button,
 .pt__menu--sidebar > ul > li > a,
 .pt__menu--sidebar > ul > li > a .title,
+.pt__hover-box--avatar-type p,
+.pt__hover-box--memory-selection h3,
 .lt__sidebar__block > dt,
 .lt__sidebar__block > dt .title,
 .lt__sidebar__block > dt .counter,
@@ -533,6 +555,16 @@ button {
 .pt__grid--avatar-type {
   padding: 16px 0;
 }
+/* *** MEMORY SELECTION *** */
+.pt__grid--memory-selection > ul > li {
+  text-align: center;
+}
+.pt__grid--memory-selection > ul > li:first-child {
+  text-align: left;
+}
+.pt__grid--memory-selection > ul > li:last-child {
+  text-align: right;
+}
 /* ******* PARTS: GRID: BUNDLE ******* */
 /* ******* PARTS: ICONS ******* */
 .icon {
@@ -557,6 +589,13 @@ button {
 }
 .icon.pull-center {
   margin: 0 auto;
+}
+.icon.size-12 {
+  width: 12px;
+  height: 12px;
+}
+.icon.size-12.cancel {
+  background-image: url("../img/icons/12/cancel.png");
 }
 .icon.size-18 {
   width: 18px;
@@ -776,6 +815,29 @@ button {
 }
 .icon.icon-avatar-big.necklace {
   background-image: url("../img/icons/avatars/big/necklace.png");
+}
+.icon.icon-memory {
+  width: 150px;
+  height: 180px;
+}
+.icon.icon-memory.audio {
+  background-image: url("../img/icons/memory/audio.png");
+}
+.icon.icon-memory.file {
+  background-image: url("../img/icons/memory/file.png");
+}
+.icon.icon-memory.picture {
+  background-image: url("../img/icons/memory/picture.png");
+}
+.icon.icon-memory.video {
+  background-image: url("../img/icons/memory/video.png");
+}
+.icon.icon-type {
+  width: 52px;
+  height: 40px;
+}
+.icon.icon-type.video {
+  background-image: url("../img/icons/types/video.png");
 }
 /* ******* PARTS: OVERLAY ******* */
 .pt__overlay {
@@ -1008,6 +1070,10 @@ textarea {
   padding: 4px;
   resize: vertical;
 }
+.textarea.style-white,
+textarea.style-white {
+  padding: 8px;
+}
 .select[multiple],
 select[multiple] {
   height: 156px;
@@ -1061,6 +1127,15 @@ input[type="reset"].has-icon .icon,
 button.has-icon .icon {
   margin-right: 16px;
 }
+.button.size-50,
+input[type="button"].size-50,
+input[type="submit"].size-50,
+input[type="reset"].size-50,
+button.size-50 {
+  height: 50px;
+  padding: 0 40px;
+  line-height: 50px;
+}
 .button.size-44,
 input[type="button"].size-44,
 input[type="submit"].size-44,
@@ -1070,14 +1145,14 @@ button.size-44 {
   padding: 0 40px;
   line-height: 44px;
 }
-.button.size-50,
-input[type="button"].size-50,
-input[type="submit"].size-50,
-input[type="reset"].size-50,
-button.size-50 {
-  height: 50px;
+.button.size-44-2,
+input[type="button"].size-44-2,
+input[type="submit"].size-44-2,
+input[type="reset"].size-44-2,
+button.size-44-2 {
+  height: 44px;
   padding: 0 40px;
-  line-height: 50px;
+  line-height: 44px;
 }
 .button.size-36,
 input[type="button"].size-36,
@@ -1110,6 +1185,15 @@ input[type="reset"].size-28,
 button.size-28 {
   height: 28px;
   line-height: 28px;
+}
+.button.size-22,
+input[type="button"].size-22,
+input[type="submit"].size-22,
+input[type="reset"].size-22,
+button.size-22 {
+  height: 22px;
+  padding: 0 14px;
+  line-height: 22px;
 }
 .button.style-twitter,
 input[type="button"].style-twitter,
@@ -1183,56 +1267,82 @@ button.button-active,
   color: #ffffff;
 }
 .button-active.size-50,
+.button-active.size-44-2,
 .button-active.size-30,
 .button.button-active.size-50,
+.button.button-active.size-44-2,
 .button.button-active.size-30,
 .pt__hover-box.active .button.size-50,
+.pt__hover-box.active .button.size-44-2,
 .pt__hover-box.active .button.size-30,
 .pt__hover-box:hover .button.size-50,
+.pt__hover-box:hover .button.size-44-2,
 .pt__hover-box:hover .button.size-30,
 input[type="button"].button-active.size-50,
+input[type="button"].button-active.size-44-2,
 input[type="button"].button-active.size-30,
 .pt__hover-box.active input[type="button"].size-50,
+.pt__hover-box.active input[type="button"].size-44-2,
 .pt__hover-box.active input[type="button"].size-30,
 .pt__hover-box:hover input[type="button"].size-50,
+.pt__hover-box:hover input[type="button"].size-44-2,
 .pt__hover-box:hover input[type="button"].size-30,
 input[type="submit"].button-active.size-50,
+input[type="submit"].button-active.size-44-2,
 input[type="submit"].button-active.size-30,
 .pt__hover-box.active input[type="submit"].size-50,
+.pt__hover-box.active input[type="submit"].size-44-2,
 .pt__hover-box.active input[type="submit"].size-30,
 .pt__hover-box:hover input[type="submit"].size-50,
+.pt__hover-box:hover input[type="submit"].size-44-2,
 .pt__hover-box:hover input[type="submit"].size-30,
 input[type="reset"].button-active.size-50,
+input[type="reset"].button-active.size-44-2,
 input[type="reset"].button-active.size-30,
 .pt__hover-box.active input[type="reset"].size-50,
+.pt__hover-box.active input[type="reset"].size-44-2,
 .pt__hover-box.active input[type="reset"].size-30,
 .pt__hover-box:hover input[type="reset"].size-50,
+.pt__hover-box:hover input[type="reset"].size-44-2,
 .pt__hover-box:hover input[type="reset"].size-30,
 button.button-active.size-50,
+button.button-active.size-44-2,
 button.button-active.size-30,
 .pt__hover-box.active button.size-50,
+.pt__hover-box.active button.size-44-2,
 .pt__hover-box.active button.size-30,
 .pt__hover-box:hover button.size-50,
+.pt__hover-box:hover button.size-44-2,
 .pt__hover-box:hover button.size-30,
 .button.pt__hover-box.active .button.size-50,
+.button.pt__hover-box.active .button.size-44-2,
 .button.pt__hover-box.active .button.size-30,
 .button.pt__hover-box:hover .button.size-50,
+.button.pt__hover-box:hover .button.size-44-2,
 .button.pt__hover-box:hover .button.size-30,
 .button.pt__hover-box.active input[type="button"].size-50,
+.button.pt__hover-box.active input[type="button"].size-44-2,
 .button.pt__hover-box.active input[type="button"].size-30,
 .button.pt__hover-box:hover input[type="button"].size-50,
+.button.pt__hover-box:hover input[type="button"].size-44-2,
 .button.pt__hover-box:hover input[type="button"].size-30,
 .button.pt__hover-box.active input[type="submit"].size-50,
+.button.pt__hover-box.active input[type="submit"].size-44-2,
 .button.pt__hover-box.active input[type="submit"].size-30,
 .button.pt__hover-box:hover input[type="submit"].size-50,
+.button.pt__hover-box:hover input[type="submit"].size-44-2,
 .button.pt__hover-box:hover input[type="submit"].size-30,
 .button.pt__hover-box.active input[type="reset"].size-50,
+.button.pt__hover-box.active input[type="reset"].size-44-2,
 .button.pt__hover-box.active input[type="reset"].size-30,
 .button.pt__hover-box:hover input[type="reset"].size-50,
+.button.pt__hover-box:hover input[type="reset"].size-44-2,
 .button.pt__hover-box:hover input[type="reset"].size-30,
 .button.pt__hover-box.active button.size-50,
+.button.pt__hover-box.active button.size-44-2,
 .button.pt__hover-box.active button.size-30,
 .button.pt__hover-box:hover button.size-50,
+.button.pt__hover-box:hover button.size-44-2,
 .button.pt__hover-box:hover button.size-30 {
   color: #ffffff;
 }
@@ -1246,16 +1356,22 @@ button.button-secondary {
   color: #000000;
 }
 .button-secondary.size-50,
+.button-secondary.size-44-2,
 .button-secondary.size-30,
 .button.button-secondary.size-50,
+.button.button-secondary.size-44-2,
 .button.button-secondary.size-30,
 input[type="button"].button-secondary.size-50,
+input[type="button"].button-secondary.size-44-2,
 input[type="button"].button-secondary.size-30,
 input[type="submit"].button-secondary.size-50,
+input[type="submit"].button-secondary.size-44-2,
 input[type="submit"].button-secondary.size-30,
 input[type="reset"].button-secondary.size-50,
+input[type="reset"].button-secondary.size-44-2,
 input[type="reset"].button-secondary.size-30,
 button.button-secondary.size-50,
+button.button-secondary.size-44-2,
 button.button-secondary.size-30 {
   color: #009fda;
 }
@@ -1268,6 +1384,16 @@ button.button-alt {
   background-color: #47b537;
   color: #ffffff;
 }
+.button-delete,
+.button.button-delete,
+input[type="button"].button-delete,
+input[type="submit"].button-delete,
+input[type="reset"].button-delete,
+button.button-delete {
+  background-color: #9a9a9a;
+  color: #ffffff;
+}
+/* *** CONTAINER *** */
 .pt__buttons {
   margin-top: 16px;
 }
@@ -1292,6 +1418,98 @@ button.button-alt {
 .pt__buttons.is-box input[type="reset"]:first-child,
 .pt__buttons.is-box button:first-child {
   margin: 0;
+}
+.pt__buttons.pull-left .button,
+.pt__buttons.pull-left .browse-button,
+.pt__buttons.pull-left input[type="button"],
+.pt__buttons.pull-left input[type="submit"],
+.pt__buttons.pull-left input[type="reset"],
+.pt__buttons.pull-left button {
+  float: left;
+}
+.pt__buttons.pull-right .button,
+.pt__buttons.pull-right .browse-button,
+.pt__buttons.pull-right input[type="button"],
+.pt__buttons.pull-right input[type="submit"],
+.pt__buttons.pull-right input[type="reset"],
+.pt__buttons.pull-right button {
+  float: right;
+}
+.pt__buttons.pull-left .button,
+.pt__buttons.pull-left .browse-button,
+.pt__buttons.pull-left input[type="button"],
+.pt__buttons.pull-left input[type="submit"],
+.pt__buttons.pull-left input[type="reset"],
+.pt__buttons.pull-left button {
+  margin: 0 16px 0 0;
+}
+.pt__buttons.pull-right .button,
+.pt__buttons.pull-right .browse-button,
+.pt__buttons.pull-right input[type="button"],
+.pt__buttons.pull-right input[type="submit"],
+.pt__buttons.pull-right input[type="reset"],
+.pt__buttons.pull-right button {
+  margin: 0 0 0 16px;
+}
+.pt__buttons.indent-10px.pull-left .button,
+.pt__buttons.indent-10px.pull-left .browse-button,
+.pt__buttons.indent-10px.pull-left input[type="button"],
+.pt__buttons.indent-10px.pull-left input[type="submit"],
+.pt__buttons.indent-10px.pull-left input[type="reset"],
+.pt__buttons.indent-10px.pull-left button {
+  margin: 0 10px 0 0;
+}
+.pt__buttons.indent-10px.pull-right .button,
+.pt__buttons.indent-10px.pull-right .browse-button,
+.pt__buttons.indent-10px.pull-right input[type="button"],
+.pt__buttons.indent-10px.pull-right input[type="submit"],
+.pt__buttons.indent-10px.pull-right input[type="reset"],
+.pt__buttons.indent-10px.pull-right button {
+  margin: 0 0 0 10px;
+}
+.pt__buttons.indent-16px.pull-left .button,
+.pt__buttons.indent-16px.pull-left .browse-button,
+.pt__buttons.indent-16px.pull-left input[type="button"],
+.pt__buttons.indent-16px.pull-left input[type="submit"],
+.pt__buttons.indent-16px.pull-left input[type="reset"],
+.pt__buttons.indent-16px.pull-left button {
+  margin: 0 16px 0 0;
+}
+.pt__buttons.indent-16px.pull-right .button,
+.pt__buttons.indent-16px.pull-right .browse-button,
+.pt__buttons.indent-16px.pull-right input[type="button"],
+.pt__buttons.indent-16px.pull-right input[type="submit"],
+.pt__buttons.indent-16px.pull-right input[type="reset"],
+.pt__buttons.indent-16px.pull-right button {
+  margin: 0 0 0 16px;
+}
+/* ******* PARTS: BUTTONS: BUNDLE ******* */
+/* ******* PARTS: UPLOADER BAR ******* */
+.pt__uploader-bar {
+  max-width: 350px;
+}
+.pt__uploader-bar > .r {
+  margin: 0 0 0 8px;
+  float: right;
+}
+.pt__uploader-bar > .l {
+  padding: 3px 0 0 0;
+  overflow: hidden;
+}
+.pt__uploader-bar > .l .bar {
+  position: relative;
+  height: 5px;
+  background-color: #a0a0a0;
+}
+.pt__uploader-bar > .l .bar .progress {
+  position: absolute;
+  background-color: #47b537;
+  top: 0;
+  right: auto;
+  bottom: 0;
+  left: 0;
+  -webkit-transition: width 300ms ease-in-out;
+  transition: width 300ms ease-in-out;
 }
 /* ******* PARTS: FORM ******* */
 .pt__form {
@@ -1644,6 +1862,11 @@ button.button-alt {
   margin: 28px 0 0 0;
 }
 /* *** AVATAR TYPE *** */
+.pt__hover-box--avatar-type {
+  max-width: 152px;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
 .pt__hover-box--avatar-type > .image {
   width: 118px;
   height: 90px;
@@ -1677,6 +1900,22 @@ button.button-alt {
 .pt__hover-box--avatar.active,
 .pt__hover-box--avatar:hover {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+/* *** MEMORY SELECTION *** */
+.pt__hover-box--memory-selection {
+  width: 100%;
+  max-width: 250px;
+  display: inline-block;
+  vertical-align: top;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.pt__hover-box--memory-selection > .image {
+  width: auto;
+  height: 180px;
+}
+.pt__hover-box--memory-selection h3 {
+  margin: 10px 0 0 0;
 }
 /* ******* PARTS: HOVER BOX: BUNDLE ******* */
 /* ******* PARTS: TOOLBAR ******* */
@@ -1833,6 +2072,44 @@ button.button-alt {
 /* ******* PARTS: COMMENT BOX ******* */
 .pt__comment-box .pt__menu--controls {
   margin: 14px 0 0 0;
+}
+/* ******* PARTS: ITEM BOX ******* */
+.pt__item-box > .inner > .l {
+  width: 140px;
+  margin: 0 16px 0 0;
+  float: left;
+}
+.pt__item-box > .inner > .l .image {
+  height: 82px;
+  position: relative;
+  border: 1px solid #e2e2e2;
+  background-color: #1e1e1e;
+}
+.pt__item-box > .inner > .l .image img {
+  display: block;
+}
+.pt__item-box > .inner > .l .image .icon {
+  position: absolute;
+  margin: -20px 0 0 -26px;
+  top: 50%;
+  right: auto;
+  bottom: auto;
+  left: 50%;
+}
+.pt__item-box > .inner > .r {
+  overflow: hidden;
+}
+.pt__item-box > .inner > .r .pt__uploader-bar {
+  margin: 3px 0 0 0;
+}
+.pt__item-box > .inner > .r .pt__line-info {
+  margin: 2px 0 0 0;
+}
+.pt__item-box > .inner > .r .pt__buttons {
+  margin: 12px 0 0 0;
+}
+.pt__item-box.has-uploader-bar > .r .pt__line-info {
+  margin: 13px 0 0 0;
 }
 /* ************ LAYOUTS ************ */
 /* ******* LAYOUTS: SLIDER ******* */
@@ -2513,5 +2790,12 @@ button.button-alt {
 }
 .lt__profile__block h6 {
   margin: 0 0 4px;
+}
+.lt__profile__block.has-border {
+  padding-top: 10px;
+  border-top: 1px solid #e2e2e2;
+}
+.lt__profile__block--memory-selection {
+  margin-top: 32px;
 }
 /* ************ MAIN STYLES ************ */

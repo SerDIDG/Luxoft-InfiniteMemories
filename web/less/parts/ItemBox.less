@@ -1,0 +1,54 @@
+/* ******* PARTS: ITEM BOX ******* */
+
+.pt__item-box {
+    > .inner {
+        &:extend(.clearfix all);
+
+        > .l {
+            width: @PT-ItemBox-LeftColumn-Width;
+            margin: 0 @PT-ItemBox-LeftColumn-Indent 0 0;
+            float: left;
+
+            .image {
+                height: 82px;
+                position: relative;
+                border: @Border-Base;
+                background-color: @Background-Base-Dark;
+
+                img {
+                    display: block;
+                }
+                
+                .icon {
+                    position: absolute;
+                    margin: -20px 0 0 -26px;
+                    .mix-position(50%, auto, auto, 50%);
+                }
+            }
+        }
+
+        > .r {
+            overflow: hidden;
+
+            .pt__uploader-bar {
+                margin: 3px 0 0 0;
+            }
+
+            .pt__line-info {
+                margin: 2px 0 0 0;
+            }
+
+            .pt__buttons {
+                margin: 12px 0 0 0;
+            }
+        }
+    }
+
+    &.has-uploader-bar {
+        > .r {
+            .pt__line-info {
+                margin: 13px 0 0 0;
+            }
+        }
+    }
+}

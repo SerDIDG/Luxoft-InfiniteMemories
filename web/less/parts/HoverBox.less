@@ -63,9 +63,16 @@
 /* *** AVATAR TYPE *** */
 
 .pt__hover-box--avatar-type {
+    max-width: 152px;
+    .mix-box-sizing();
+
     > .image {
         width: 118px;
         height: 90px;
+    }
+
+    p {
+        &:extend(.cm-text-overflow);
     }
 
     .pt__buttons {
@@ -103,6 +110,27 @@
     &.active,
     &:hover {
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    }
+}
+
+/* *** MEMORY SELECTION *** */
+
+.pt__hover-box--memory-selection {
+    width: 100%;
+    max-width: 250px;
+    display: inline-block;
+    vertical-align: top;
+    .mix-box-sizing();
+
+    > .image {
+        width: auto;
+        height: 180px;
+    }
+
+    h3 {
+        &:extend(.cm-text-overflow);
+
+        margin: 10px 0 0 0;
     }
 }
 

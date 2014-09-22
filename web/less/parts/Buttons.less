@@ -30,14 +30,6 @@
         }
     }
 
-    &.size-44 {
-        &:extend(.font-button-big);
-
-        height: 44px;
-        padding: 0 @PT-Button-PaddingBigWidth;
-        line-height: 44px;
-    }
-
     &.size-50 {
         &:extend(.font-button-bigger);
 
@@ -46,6 +38,21 @@
         line-height: 50px;
     }
 
+    &.size-44 {
+        &:extend(.font-button-big);
+
+        height: 44px;
+        padding: 0 @PT-Button-PaddingBigWidth;
+        line-height: 44px;
+    }
+
+    &.size-44-2 {
+        &:extend(.font-button-bigger);
+
+        height: 44px;
+        padding: 0 @PT-Button-PaddingBigWidth;
+        line-height: 44px;
+    }
 
     &.size-36 {
         &:extend(.font-button-medium);
@@ -75,6 +82,14 @@
         line-height: 28px;
     }
 
+    &.size-22 {
+        &:extend(.font-button-small);
+
+        height: 22px;
+        padding: 0 @PT-Button-PaddingSmallWidth;
+        line-height: 22px;
+    }
+
     &.button-active {
         &:extend(.button-active all);
     }
@@ -85,6 +100,10 @@
 
     &.button-secondary {
         &:extend(.button-secondary all);
+    }
+
+    &.button-delete {
+        &:extend(.button-delete all);
     }
 
     &.style-twitter {
@@ -121,6 +140,7 @@
     color: @Color-Button;
 
     &.size-50,
+    &.size-44-2,
     &.size-30 {
         color:  @Color-Button;
     }
@@ -131,6 +151,7 @@
     color: @Color-Button-Secondary;
 
     &.size-50,
+    &.size-44-2,
     &.size-30 {
         color: @Color-Link;
     }
@@ -141,7 +162,16 @@
     color: @Color-Button;
 }
 
+.button-delete {
+    background-color: @Background-Button-Delete;
+    color: @Color-Button;
+}
+
+/* *** CONTAINER *** */
+
 .pt__buttons {
+    &:extend(.clearfix all);
+
     margin-top: @PT-Buttons-Indent;
 
     &.is-box {
@@ -155,6 +185,50 @@
 
             &:first-child {
                 margin: 0;
+            }
+        }
+    }
+
+    &.pull-left {
+        .button,
+        .browse-button {
+            float: left;
+        }
+    }
+
+    &.pull-right {
+        .button,
+        .browse-button {
+            float: right;
+        }
+    }
+
+    // /* Set indents */
+
+    #cm > .pt__buttons__indent(@PT-Buttons-Indent);
+
+    .for(@PT-Buttons-Indents); .-each(@name) {
+        &.indent-@{name} {
+            #cm > .pt__buttons__indent(@name);
+        }
+    }
+}
+
+/* ******* PARTS: BUTTONS: BUNDLE ******* */
+
+#cm () {
+    .pt__buttons__indent (@indent: @PT-Buttons-Indent) {
+        &.pull-left {
+            .button,
+            .browse-button {
+                margin: 0 @indent 0 0;
+            }
+        }
+
+        &.pull-right {
+            .button,
+            .browse-button {
+                margin: 0 0 0 @indent;
             }
         }
     }

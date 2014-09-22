@@ -16,6 +16,11 @@
 .font-base-h2 {
     font: @Font-Base-Weight ~'@{Font-Base-SizeH2}/@{Font-Base-LineHeightH2}' @Font-Base-Family;
     color: @Color-Base-H2;
+
+    &.style-light {
+        font: 300 ~'@{Font-Base-SizeH2Light}/@{Font-Base-LineHeightH2Light}' @Font-Base-FamilySecondary;
+        color: @Color-Base-H2Light;
+    }
 }
 
 .font-base-h3 {
@@ -24,7 +29,7 @@
 }
 
 .font-base-h4 {
-    font: 300 ~'@{Font-Base-SizeH4}/@{Font-Base-LineHeightH4}' @Font-Base-FamilySecondary;
+    font: bold ~'@{Font-Base-SizeH4}/@{Font-Base-LineHeightH4}' @Font-Base-Family;
     color: @Color-Base-H4;
 }
 
@@ -80,6 +85,11 @@
 
 .font-button-medium {
     font: bold ~'@{Font-ButtonMedium-Size}/@{Font-Base-LineHeight}' @Font-Base-Family;
+    color: @Color-Button;
+}
+
+.font-button-small {
+    font: @Font-ButtonSmall-Weight ~'@{Font-ButtonSmall-Size}/@{Font-Base-LineHeight}' @Font-Base-Family;
     color: @Color-Button;
 }
 

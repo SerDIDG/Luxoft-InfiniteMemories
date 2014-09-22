@@ -47,6 +47,11 @@ h2 {
   font: normal 24px/28px Tahoma, Geneva, sans-serif;
   color: #a0a0a0;
 }
+.font-base-h3,
+h3 {
+  font: normal 24px/28px Tahoma, Geneva, sans-serif;
+  color: #1e1e1e;
+}
 .font-base-h4,
 h4 {
   font: 300 24px/28px 'Open Sans', Arial, Helvetica, sans-serif;
@@ -269,7 +274,9 @@ input[type="checkbox"] {
 .lt__base__header > .inner:after,
 .lt__base__backward:after,
 .lt__base__buttons:after,
-.lt__filtered__filter:after {
+.lt__filtered__filter:after,
+.lt__avatar > .inner:after,
+.lt__avatar__title:after {
   content: ".";
   display: block;
   clear: both;
@@ -577,6 +584,24 @@ button {
 .icon.size-24.icon-4 {
   background-image: url("../img/icons/24/icon-4.png");
 }
+.icon.size-24.edit {
+  background-image: url("../img/icons/24/edit.png");
+}
+.icon.size-24.facebook {
+  background-image: url("../img/icons/24/facebook.png");
+}
+.icon.size-24.like {
+  background-image: url("../img/icons/24/like.png");
+}
+.icon.size-24.send {
+  background-image: url("../img/icons/24/send.png");
+}
+.icon.size-24.share {
+  background-image: url("../img/icons/24/share.png");
+}
+.icon.size-24.twitter {
+  background-image: url("../img/icons/24/twitter.png");
+}
 .icon.size-26 {
   width: 26px;
   height: 26px;
@@ -737,6 +762,13 @@ button {
 }
 .icon.icon-avatar-small.wine {
   background-image: url("../img/icons/avatars/small/wine.png");
+}
+.icon.icon-avatar-big {
+  width: 214px;
+  height: 214px;
+}
+.icon.icon-avatar-big.necklace {
+  background-image: url("../img/icons/avatars/big/necklace.png");
 }
 /* ******* PARTS: OVERLAY ******* */
 .pt__overlay {
@@ -1399,6 +1431,16 @@ button.button-alt {
 .pt__share--footer > ul > li:last-child {
   margin-right: 0;
 }
+/* *** AVATAR *** */
+.pt__share--avatar {
+  padding: 7px 0;
+}
+.pt__share--avatar > ul > li {
+  margin: 0 20px 0 0;
+}
+.pt__share--avatar > ul > li:last-child {
+  margin-right: 0;
+}
 /* ******* PARTS: MARKETS ******* */
 /* *** BASE *** */
 .pt__markets > ul > li {
@@ -1586,6 +1628,21 @@ button.button-alt {
   opacity: 1;
   -webkit-transition: opacity 100ms ease-in-out;
   transition: opacity 100ms ease-in-out;
+}
+/* *** AVATAR *** */
+.pt__hover-box--avatar > .image {
+  width: auto;
+  height: 214px;
+}
+.pt__hover-box--avatar h3 {
+  margin: 8px 0 4px 0;
+}
+.pt__hover-box--avatar h5 {
+  margin: 0 0 4px 0;
+}
+.pt__hover-box--avatar.active,
+.pt__hover-box--avatar:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 /* ******* PARTS: HOVER BOX: BUNDLE ******* */
 /* ******* PARTS: TOOLBAR ******* */
@@ -2120,6 +2177,7 @@ button.button-alt {
 .lt__base__header {
   height: 50px;
   position: absolute;
+  z-index: 2;
   background-color: #1e1e1e;
   top: 0;
   right: 0;
@@ -2161,6 +2219,7 @@ button.button-alt {
 /* *** CONTENT *** */
 .lt__base__content {
   position: absolute;
+  z-index: 1;
   top: 50px;
   right: 0;
   bottom: 0;
@@ -2184,8 +2243,14 @@ button.button-alt {
 .lt__base__page.has-backward .lt__base__entry {
   top: 42px;
 }
+.lt__base__page.has-backward .lt__base__entry .lt__base__entry-inner {
+  padding-top: 0;
+}
 .lt__base__page.has-buttons .lt__base__entry {
   bottom: 108px;
+}
+.lt__base__page.has-buttons .lt__base__entry .lt__base__entry-inner {
+  padding-bottom: 0;
 }
 .lt__base__page-title {
   margin: 0 0 20px;
@@ -2194,20 +2259,25 @@ button.button-alt {
   margin: 0 0 5px;
 }
 .lt__base__backward {
+  padding: 16px 16px 0;
   height: 26px;
   position: absolute;
-  top: 16px;
-  right: 16px;
+  top: 0;
+  right: 0;
   bottom: auto;
-  left: 16px;
+  left: 0;
 }
-/* *** ENTRY *** */
 .lt__base__entry {
   position: absolute;
-  top: 16px;
-  right: 16px;
-  bottom: 16px;
-  left: 16px;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+.lt__base__entry-inner {
+  padding: 16px;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
 /* *** BUTTONS *** */
 .lt__base__buttons {
@@ -2223,7 +2293,7 @@ button.button-alt {
 .lt__base__buttons input[type="submit"],
 .lt__base__buttons input[type="reset"],
 .lt__base__buttons button {
-  float: left;
+  float: right;
   margin: 0 0 0 16px;
 }
 /* ******* LAYOUTS: TUTORIAL ******* */
@@ -2297,5 +2367,42 @@ button.button-alt {
   right: 0;
   bottom: 0;
   left: 0;
+}
+/* ******* LAYOUTS: AVATAR ******* */
+.lt__avatar > .inner {
+  max-width: 880px;
+  padding: 16px 0;
+}
+.lt__avatar > .inner > .l {
+  width: 250px;
+  float: left;
+}
+.lt__avatar > .inner > .l .pt__buttons {
+  margin: 30px 0 0 0;
+}
+.lt__avatar > .inner > .r {
+  margin: 0 0 0 265px;
+}
+.lt__avatar > .inner > .r .pt__tags__content,
+.lt__avatar > .inner > .r h1,
+.lt__avatar > .inner > .r h2,
+.lt__avatar > .inner > .r h3,
+.lt__avatar > .inner > .r h4,
+.lt__avatar > .inner > .r h5,
+.lt__avatar > .inner > .r h6,
+.lt__avatar > .inner > .r p,
+.lt__avatar > .inner > .r dl,
+.lt__avatar > .inner > .r ul,
+.lt__avatar > .inner > .r ol {
+  text-align: left;
+}
+/* *** TITLE *** */
+.lt__avatar__title > .r {
+  margin: 0 0 0 20px;
+  float: right;
+}
+.lt__avatar__title > .l {
+  margin: -4px 0 0 0;
+  overflow: hidden;
 }
 /* ************ MAIN STYLES ************ */

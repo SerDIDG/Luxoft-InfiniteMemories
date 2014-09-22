@@ -12,6 +12,7 @@
 .lt__base__header {
     height: @LT-Base-HeaderHeight;
     position: absolute;
+    z-index: 2;
     background-color: @Background-Base-Dark;
     .mix-position(0, 0, auto, 0);
 
@@ -59,6 +60,7 @@
 
 .lt__base__content {
     position: absolute;
+    z-index: 1;
     .mix-position(@LT-Base-HeaderHeight, 0, 0, 0);
 
     &.is-expanded {
@@ -86,12 +88,20 @@
     &.has-backward {
         .lt__base__entry {
             top: @LT-Base-BackwardHeight + @LT-Base-PageIndent;
+
+            .lt__base__entry-inner{
+                padding-top: 0;
+            }
         }
     }
 
     &.has-buttons {
         .lt__base__entry {
             bottom: (@LT-Base-ButtonsPadding * 2) + 44px;
+
+            .lt__base__entry-inner {
+                padding-bottom: 0;
+            }
         }
     }
 }
@@ -107,18 +117,22 @@
 .lt__base__backward {
     &:extend(.clearfix all);
 
+    padding: @LT-Base-PageIndent @LT-Base-PageIndent 0;
     height: @LT-Base-BackwardHeight;
     position: absolute;
-    .mix-position(@LT-Base-PageIndent, @LT-Base-PageIndent, auto, @LT-Base-PageIndent);
+    .mix-position(0, 0, auto, 0);
 }
-
-/* *** ENTRY *** */
 
 .lt__base__entry {
     &:extend(.cm-scroll-y-a);
 
     position: absolute;
-    .mix-position(@LT-Base-PageIndent, @LT-Base-PageIndent, @LT-Base-PageIndent, @LT-Base-PageIndent);
+    .mix-position(0, 0, 0, 0);
+}
+
+.lt__base__entry-inner {
+    padding: @LT-Base-PageIndent;
+    .mix-box-sizing();
 }
 
 /* *** BUTTONS *** */
@@ -131,7 +145,7 @@
     .mix-position(auto, 0, 0, 0);
 
     .button {
-        float: left;
+        float: right;
         margin: 0 0 0 @LT-Base-ButtonsIndent;
     }
 }

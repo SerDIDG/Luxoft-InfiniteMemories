@@ -43,7 +43,7 @@ function(params){
         // Check toggle class
         that.isExpanded = cm.isClass(that.nodes['sidebar'], 'is-expanded');
         // Check storage
-        if(that.params['remember'] && typeof that.storageRead('isExpanded') != 'undefined'){
+        if(that.params['remember'] && that.storageRead('isExpanded') != null){
             that.isExpanded = that.storageRead('isExpanded');
         }
         // Check sidebars visibility

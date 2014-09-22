@@ -63,6 +63,14 @@ h5 a {
   font: normal 16px/18px Tahoma, Geneva, sans-serif;
   color: #a0a0a0;
 }
+.font-base-h6,
+h6,
+.lt__sidebar__block > dt .title,
+.lt__sidebar__block > dt .counter {
+  font: bold 12px/26px Tahoma, Geneva, sans-serif;
+  color: #4d4d4d;
+  text-transform: uppercase;
+}
 .font-link,
 a {
   cursor: pointer;
@@ -78,6 +86,11 @@ a:hover {
   color: #009fda;
   -webkit-transition: color 100ms ease-in-out;
   transition: color 100ms ease-in-out;
+}
+.font-hint,
+.pt__line-info {
+  font: normal 12px/18px Tahoma, Geneva, sans-serif;
+  color: #a0a0a0;
 }
 .font-header,
 .pt__menu--header > ul > li > a,
@@ -154,13 +167,6 @@ button.size-28 {
 .lt__slider__slides > ul > li > .text h3 {
   font: bold 24px/36px 'Open Sans', Arial, Helvetica, sans-serif;
   color: #ffffff;
-}
-.font-title-small,
-.lt__sidebar__block > dt .title,
-.lt__sidebar__block > dt .counter {
-  font: bold 12px/18px Tahoma, Geneva, sans-serif;
-  color: #4d4d4d;
-  text-transform: uppercase;
 }
 /* ******* PARTS: TAGS ******* */
 html,
@@ -268,6 +274,8 @@ input[type="checkbox"] {
 .pt__search:after,
 .pt__user-box:after,
 .pt__toolbar > .inner:after,
+.pt__line-info:after,
+.pt__line-title:after,
 .lt__splash__header:after,
 .lt__splash__main > .inner:after,
 .lt__splash__footer > .inner:after,
@@ -275,8 +283,7 @@ input[type="checkbox"] {
 .lt__base__backward:after,
 .lt__base__buttons:after,
 .lt__filtered__filter:after,
-.lt__avatar > .inner:after,
-.lt__avatar__title:after {
+.lt__profile > .inner:after {
   content: ".";
   display: block;
   clear: both;
@@ -983,6 +990,17 @@ select.style-clear {
   background: #fff;
   border: none;
 }
+.input.style-white,
+input[type="text"].style-white,
+input[type="email"].style-white,
+input[type="number"].style-white,
+input[type="phone"].style-white,
+input[type="password"].style-white,
+textarea.style-white,
+select.style-white {
+  background: #fff;
+  font-size: 12px;
+}
 .textarea,
 textarea {
   height: 100px;
@@ -1367,6 +1385,25 @@ button.button-alt {
 .pt__menu--links > ul > li:last-child {
   margin-right: 0;
 }
+/* *** CONTROLS *** */
+.pt__menu--controls > ul > li {
+  margin: 0 30px 0 0;
+}
+.pt__menu--controls > ul > li > a {
+  font-weight: bold;
+  line-height: 24px;
+}
+.pt__menu--controls > ul > li > a .icon {
+  margin: 0 6px 0 0;
+  float: left;
+}
+.pt__menu--controls > ul > li > a .title {
+  display: inline-block;
+  float: left;
+}
+.pt__menu--controls > ul > li:last-child {
+  margin-right: 0;
+}
 /* *** SIDEBAR *** */
 .pt__menu--sidebar > ul > li {
   height: 26px;
@@ -1432,9 +1469,6 @@ button.button-alt {
   margin-right: 0;
 }
 /* *** AVATAR *** */
-.pt__share--avatar {
-  padding: 7px 0;
-}
 .pt__share--avatar > ul > li {
   margin: 0 20px 0 0;
 }
@@ -1747,6 +1781,59 @@ button.button-alt {
   display: -webkit-flex;
   display: flex;
 }
+/* ******* PARTS: LINE INFO ******* */
+.pt__line-info .category,
+.pt__line-info .author,
+.pt__line-info .date,
+.pt__line-info .hash,
+.pt__line-info .links,
+.pt__line-info .status {
+  float: left;
+  margin: 0 18px 0 0;
+  line-height: inherit;
+  font-size: inherit;
+}
+.pt__line-info .category:last-child,
+.pt__line-info .author:last-child,
+.pt__line-info .date:last-child,
+.pt__line-info .hash:last-child,
+.pt__line-info .links:last-child,
+.pt__line-info .status:last-child {
+  margin: 0;
+}
+/* ******* PARTS: LINE TITLE ******* */
+.pt__line-title > .r {
+  margin: 0 0 0 20px;
+  padding: 11px 0 0 0;
+  float: right;
+}
+.pt__line-title > .l {
+  overflow: hidden;
+}
+.pt__line-title .pt__tags__content,
+.pt__line-title h1,
+.pt__line-title h2,
+.pt__line-title h3,
+.pt__line-title h4,
+.pt__line-title h5,
+.pt__line-title h6,
+.pt__line-title p,
+.pt__line-title dl,
+.pt__line-title ul,
+.pt__line-title ol {
+  text-align: left;
+}
+/* ******* PARTS: TEXT BOX ******* */
+.pt__text-box.is-pre-line {
+  white-space: pre-line;
+}
+.pt__text-box.is-pre-wrap {
+  white-space: pre-wrap;
+}
+/* ******* PARTS: COMMENT BOX ******* */
+.pt__comment-box .pt__menu--controls {
+  margin: 14px 0 0 0;
+}
 /* ************ LAYOUTS ************ */
 /* ******* LAYOUTS: SLIDER ******* */
 .lt__slider__slides {
@@ -2001,10 +2088,6 @@ button.button-alt {
   position: relative;
   font-size: 0;
   cursor: pointer;
-}
-.lt__sidebar__block > dt .title,
-.lt__sidebar__block > dt .counter {
-  line-height: 26px;
 }
 .lt__sidebar__block > dt .counter {
   margin: 0 0 0 5px;
@@ -2368,41 +2451,67 @@ button.button-alt {
   bottom: 0;
   left: 0;
 }
-/* ******* LAYOUTS: AVATAR ******* */
-.lt__avatar > .inner {
+/* ******* LAYOUTS: PROFILE ******* */
+.lt__profile > .inner {
   max-width: 880px;
   padding: 16px 0;
 }
-.lt__avatar > .inner > .l {
+.lt__profile > .inner > .l {
   width: 250px;
+  margin: 0 15px 0 0;
   float: left;
 }
-.lt__avatar > .inner > .l .pt__buttons {
+.lt__profile > .inner > .l .pt__buttons {
   margin: 30px 0 0 0;
 }
-.lt__avatar > .inner > .r {
-  margin: 0 0 0 265px;
+.lt__profile > .inner > .r {
+  overflow: hidden;
 }
-.lt__avatar > .inner > .r .pt__tags__content,
-.lt__avatar > .inner > .r h1,
-.lt__avatar > .inner > .r h2,
-.lt__avatar > .inner > .r h3,
-.lt__avatar > .inner > .r h4,
-.lt__avatar > .inner > .r h5,
-.lt__avatar > .inner > .r h6,
-.lt__avatar > .inner > .r p,
-.lt__avatar > .inner > .r dl,
-.lt__avatar > .inner > .r ul,
-.lt__avatar > .inner > .r ol {
+/* *** DESCRIPTION BLOCK *** */
+.lt__profile__descr .pt__line-title {
+  margin: -4px 0 0 0;
+}
+.lt__profile__descr .pt__line-info {
+  margin: 6px 0 0 0;
+}
+.lt__profile__descr .pt__menu--controls {
+  margin: 8px 0 0 0;
+}
+.lt__profile__descr .pt__text-box {
+  margin: 12px 0 0 0;
+}
+.lt__profile__descr .pt__tags__content,
+.lt__profile__descr h1,
+.lt__profile__descr h2,
+.lt__profile__descr h3,
+.lt__profile__descr h4,
+.lt__profile__descr h5,
+.lt__profile__descr h6,
+.lt__profile__descr p,
+.lt__profile__descr dl,
+.lt__profile__descr ul,
+.lt__profile__descr ol {
   text-align: left;
 }
-/* *** TITLE *** */
-.lt__avatar__title > .r {
-  margin: 0 0 0 20px;
-  float: right;
+/* *** BLOCK *** */
+.lt__profile__block {
+  margin: 20px 0 0 0;
+  padding: 0;
 }
-.lt__avatar__title > .l {
-  margin: -4px 0 0 0;
-  overflow: hidden;
+.lt__profile__block .pt__tags__content,
+.lt__profile__block h1,
+.lt__profile__block h2,
+.lt__profile__block h3,
+.lt__profile__block h4,
+.lt__profile__block h5,
+.lt__profile__block h6,
+.lt__profile__block p,
+.lt__profile__block dl,
+.lt__profile__block ul,
+.lt__profile__block ol {
+  text-align: left;
+}
+.lt__profile__block h6 {
+  margin: 0 0 4px;
 }
 /* ************ MAIN STYLES ************ */

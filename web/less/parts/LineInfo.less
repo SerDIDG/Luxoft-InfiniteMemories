@@ -1,0 +1,21 @@
+/* ******* PARTS: LINE INFO ******* */
+
+.pt__line-info {
+    &:extend(.clearfix all, .font-hint);
+
+    .category,
+    .author,
+    .date,
+    .hash,
+    .links,
+    .status {
+        float: left;
+        margin: 0 18px 0 0;
+        line-height: inherit;
+        font-size: inherit;
+
+        &:last-child {
+            margin: 0;
+        }
+    }
+}

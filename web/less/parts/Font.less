@@ -33,6 +33,12 @@
     color: @Color-Base-H5;
 }
 
+.font-base-h6 {
+    font: bold ~'@{Font-Base-SizeH6}/@{Font-Base-LineHeightH6}' @Font-Base-Family;
+    color: @Color-Base-H6;
+    text-transform: uppercase;
+}
+
 .font-link {
     cursor: pointer;
     outline: none;
@@ -45,6 +51,11 @@
         color: @Color-LinkHover;
         .mix-transition(color @CM-Transition-DurationReverse ease-in-out);
     }
+}
+
+.font-hint {
+    font: @Font-Base-Weight ~'@{Font-Hint-Size}/@{Font-Base-LineHeight}' @Font-Base-Family;
+    color: @Color-Hint;
 }
 
 .font-header {
@@ -85,10 +96,4 @@
 .font-slider-h3 {
     font: @Font-Slider-Weight ~'@{Font-Slider-SizeH3}/@{Font-Slider-LineHeightH3}' @Font-Slider-Family;
     color: @Color-Slider;
-}
-
-.font-title-small {
-    font: bold ~'@{Font-TitleSmall-Size}/@{Font-Base-LineHeight}' @Font-Base-Family;
-    color: @Color-TitleSmall;
-    text-transform: uppercase;
 }

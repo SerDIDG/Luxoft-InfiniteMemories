@@ -1,0 +1,62 @@
+/* ******* LAYOUTS: PROFILE ******* */
+
+.lt__profile {
+    > .inner {
+        &:extend(.clearfix all);
+
+        max-width: @LT-Profile-MaxWidth;
+        padding: @LT-Base-PageIndent 0;
+
+        > .l {
+            width: @LT-Profile-LeftColumn-Width;
+            margin: 0 @LT-Profile-LeftColumn-Indent 0 0;
+            float: left;
+
+            .pt__buttons {
+                margin: 30px 0 0 0;
+            }
+        }
+
+        > .r {
+            overflow: hidden;
+        }
+    }
+}
+
+/* *** DESCRIPTION *** */
+
+.lt__profile__descr {
+    .pt__line-title {
+        margin: -4px 0 0 0;
+    }
+
+    .pt__line-info {
+        margin: 6px 0 0 0;
+    }
+
+    .pt__menu--controls {
+        margin: 8px 0 0 0;
+    }
+
+    .pt__text-box {
+        margin: 12px 0 0 0;
+    }
+
+    .pt__tags__content {
+        text-align: left;
+    }
+}
+
+/* *** BLOCK *** */
+
+.lt__profile__block {
+    margin: 20px 0 0 0;
+
+    .pt__tags__content {
+        text-align: left;
+    }
+
+    h6 {
+        margin: 0 0 4px;
+    }
+}

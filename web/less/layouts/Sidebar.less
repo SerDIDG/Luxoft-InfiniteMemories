@@ -58,7 +58,7 @@
     > dt {
         &:extend(.cm-text-overflow);
 
-        padding: 0 @PT-Menu-Sidebar-Height 0 @LT-Sidebar-InnerIndent;
+        padding: 0 @Font-Base-LineHeightH6 0 @LT-Sidebar-InnerIndent;
         margin: 0;
         position: relative;
         font-size: 0;
@@ -66,8 +66,7 @@
 
         .title,
         .counter {
-            &:extend(.font-title-small, .cm-text-overflow);
-            line-height: @PT-Menu-Sidebar-Height;
+            &:extend(.font-base-h6, .cm-text-overflow);
         }
 
         .counter {
@@ -91,8 +90,8 @@
             .mix-position(0, 0, 0, auto);
 
             &.default {
-                width: @PT-Menu-Sidebar-Height;
-                height: @PT-Menu-Sidebar-Height;
+                width: @Font-Base-LineHeightH6;
+                height: @Font-Base-LineHeightH6;
 
                 &:before {
                     width: 0;

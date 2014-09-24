@@ -380,6 +380,11 @@ input[type="checkbox"] {
   margin: 0;
   padding: 0;
 }
+.cm-scroll-a,
+.lt__dialog > .inner {
+  -webkit-overflow-scrolling: touch;
+  overflow: auto;
+}
 .cm-scroll-y {
   -webkit-overflow-scrolling: touch;
   overflow-x: hidden;
@@ -392,7 +397,6 @@ input[type="checkbox"] {
 .lt__filtered__content {
   -webkit-overflow-scrolling: touch;
   overflow-x: hidden;
-  overflow-y: scroll;
   overflow-y: auto;
 }
 .cm-block-wrapper > .inner,
@@ -402,7 +406,8 @@ input[type="checkbox"] {
   max-width: 1000px;
   margin: 0 auto;
 }
-.cm-image-resizable {
+.cm-image-resizable,
+.lt__video-player > .inner .content img {
   width: 100%;
   height: auto;
   display: block;
@@ -441,7 +446,8 @@ button,
 }
 .cm-transition-none,
 .lt__sidebar.is-immediately,
-.lt__base__content.is-immediately .lt__base__page {
+.lt__base__content.is-immediately .lt__base__page,
+.lt__dialog.is-immediately {
   -webkit-transition: none;
   -ms-transition: none;
   transition: none;
@@ -728,6 +734,22 @@ button,
 }
 .icon.size-28.search {
   background-image: url("../img/icons/28/search.png");
+}
+.icon.size-32 {
+  width: 32px;
+  height: 32px;
+}
+.icon.size-32.close-white {
+  background-image: url("../img/icons/32/close-white.png");
+}
+.icon.size-32.maximize-white {
+  background-image: url("../img/icons/32/maximize-white.png");
+}
+.icon.size-32.pause-white {
+  background-image: url("../img/icons/32/pause-white.png");
+}
+.icon.size-32.volume-white {
+  background-image: url("../img/icons/32/volume-white.png");
 }
 .icon.size-36 {
   width: 36px;
@@ -2900,5 +2922,67 @@ button.button-delete {
 .lt__profile__block--code-selection.has-border {
   margin-top: 32px;
   padding-top: 18px;
+}
+/* ******* LAYOUTS: DIALOG ******* */
+/* *** BASE *** */
+.lt__dialog {
+  position: fixed;
+  z-index: 9000;
+  visibility: hidden;
+  opacity: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  -webkit-transition: all 500ms ease-in-out;
+  transition: all 500ms ease-in-out;
+}
+.lt__dialog > .inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  white-space: nowrap;
+  text-align: center;
+  font-size: 0;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.lt__dialog > .inner:before {
+  height: 100%;
+  display: inline-block;
+  vertical-align: middle;
+  content: '';
+}
+.lt__dialog.is-open {
+  visibility: visible;
+  opacity: 1;
+}
+.lt__dialog__window {
+  margin: 12px;
+  display: inline-block;
+  position: relative;
+  z-index: 2;
+  vertical-align: middle;
+  background: #ffffff;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.75);
+  white-space: normal;
+  text-align: left;
+}
+/* *** VIDEO *** */
+.lt__dialog--video .lt__dialog__window {
+  width: 830px;
+  background: #1e1e1e;
+}
+/* *** BODY ENHANCE *** */
+html.is-dialog--open {
+  overflow: hidden;
+}
+/* ******* LAYOUTS: VIDEO PLAYER ******* */
+.lt__video-player > .inner {
+  position: relative;
+}
+.lt__video-player > .inner .content {
+  position: relative;
 }
 /* ************ MAIN STYLES ************ */

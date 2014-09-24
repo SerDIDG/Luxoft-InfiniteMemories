@@ -1,0 +1,70 @@
+/* ******* LAYOUTS: DIALOG ******* */
+
+/* *** BASE *** */
+
+.lt__dialog {
+    position: fixed;
+    z-index: 9000;
+    visibility: hidden;
+    opacity: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    .mix-position(0, 0, 0, 0);
+    .mix-transition(all @LT-Dialog-Duration ease-in-out);
+
+    > .inner {
+        &:extend(.cm-scroll-a);
+
+        width: 100%;
+        height: 100%;
+        position: relative;
+        white-space: nowrap;
+        text-align: center;
+        font-size: 0;
+        .mix-box-sizing();
+
+        &:before {
+            height: 100%;
+            display: inline-block;
+            vertical-align: middle;
+            content: '';
+        }
+    }
+
+    &.is-open {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    &.is-immediately {
+        &:extend(.cm-transition-none);
+    }
+}
+
+.lt__dialog__window {
+    margin: 12px;
+    display: inline-block;
+    position: relative;
+    z-index: 2;
+    vertical-align: middle;
+    background: @Background-Base;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.75);
+    white-space: normal;
+    text-align: left;
+}
+
+/* *** VIDEO *** */
+
+.lt__dialog--video {
+    .lt__dialog__window {
+        width: 830px;
+        background: @Background-Base-Dark;
+    }
+}
+
+/* *** BODY ENHANCE *** */
+
+html {
+    &.is-dialog--open {
+        overflow: hidden;
+    }
+}

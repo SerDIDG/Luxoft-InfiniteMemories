@@ -104,6 +104,19 @@
         }
     }
 
+    // /* *** 32 x 32 *** */
+
+    &.size-32 {
+        width: 32px;
+        height: 32px;
+
+        .for(close-white maximize-white pause-white volume-white); .-each(@name) {
+            &.@{name} {
+                background-image: url("@{Path-Image}/icons/32/@{name}.png");
+            }
+        }
+    }
+
     // /* *** 36 x 36 *** */
 
     &.size-36 {

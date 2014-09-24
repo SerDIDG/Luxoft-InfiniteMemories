@@ -12,6 +12,7 @@ body,
 .input,
 .pt__toolbar .group > li,
 .pt__toolbar .group.is-toggle > li > a,
+.lt__video-player__title > .l,
 h1,
 h2,
 h3,
@@ -93,7 +94,8 @@ a:hover {
   transition: color 100ms ease-in-out;
 }
 .font-hint,
-.pt__line-info {
+.pt__line-info,
+.lt__video-player__time {
   font: normal 12px/18px Tahoma, Geneva, sans-serif;
   color: #a0a0a0;
 }
@@ -305,7 +307,9 @@ input[type="checkbox"] {
 .lt__base__buttons:after,
 .lt__filtered__filter:after,
 .lt__profile > .inner:after,
-.lt__profile__block > .title:after {
+.lt__profile__block > .title:after,
+.lt__video-player__title:after,
+.lt__video-player__controls:after {
   content: ".";
   display: block;
   clear: both;
@@ -381,7 +385,9 @@ input[type="checkbox"] {
   padding: 0;
 }
 .cm-scroll-a,
-.lt__dialog > .inner {
+.lt__dialog > .inner,
+.lt__dialog__window--maximize > .inner,
+.lt__dialog.is-maximize .lt__dialog__window > .inner {
   -webkit-overflow-scrolling: touch;
   overflow: auto;
 }
@@ -407,7 +413,7 @@ input[type="checkbox"] {
   margin: 0 auto;
 }
 .cm-image-resizable,
-.lt__video-player > .inner .content img {
+.lt__video-player__content img {
   width: 100%;
   height: auto;
   display: block;
@@ -435,6 +441,7 @@ input[type="checkbox"] {
 .lt__sidebar__block > dt,
 .lt__sidebar__block > dt .title,
 .lt__sidebar__block > dt .counter,
+.lt__video-player__title > .l,
 input[type="button"],
 input[type="submit"],
 input[type="reset"],
@@ -2168,6 +2175,7 @@ button.button-delete {
   position: relative;
   border: 1px solid #e2e2e2;
   background-color: #1e1e1e;
+  cursor: pointer;
 }
 .pt__item-box > .inner > .l .image img {
   display: block;
@@ -2959,7 +2967,7 @@ button.button-delete {
   opacity: 1;
 }
 .lt__dialog__window {
-  margin: 12px;
+  margin: 24px;
   display: inline-block;
   position: relative;
   z-index: 2;
@@ -2968,6 +2976,19 @@ button.button-delete {
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.75);
   white-space: normal;
   text-align: left;
+}
+.lt__dialog__window--maximize,
+.lt__dialog.is-maximize .lt__dialog__window {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  position: relative;
+}
+.lt__dialog__window--maximize > .inner,
+.lt__dialog.is-maximize .lt__dialog__window > .inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
 }
 /* *** VIDEO *** */
 .lt__dialog--video .lt__dialog__window {
@@ -2979,10 +3000,103 @@ html.is-dialog--open {
   overflow: hidden;
 }
 /* ******* LAYOUTS: VIDEO PLAYER ******* */
+.lt__video-player {
+  position: relative;
+}
 .lt__video-player > .inner {
   position: relative;
 }
-.lt__video-player > .inner .content {
+.lt__video-player__content {
   position: relative;
+  z-index: 1;
 }
+.lt__video-player__bar {
+  height: 32px;
+  position: absolute;
+  z-index: 2;
+  opacity: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  top: 16px;
+  right: 16px;
+  bottom: 16px;
+  left: 16px;
+  -webkit-transition: opacity 300ms ease-in-out 500ms;
+  transition: opacity 300ms ease-in-out 500ms;
+}
+.lt__video-player__bar.pull-top {
+  bottom: auto;
+}
+.lt__video-player__bar.pull-bottom {
+  top: auto;
+}
+.lt__video-player__bar--show,
+.lt__video-player:hover .lt__video-player__bar {
+  opacity: 1;
+  -webkit-transition: opacity 100ms ease-in-out 0ms;
+  transition: opacity 100ms ease-in-out 0ms;
+}
+.lt__video-player__bar-item {
+  height: 32px;
+  float: left;
+}
+.lt__video-player__title > .r {
+  float: right;
+}
+.lt__video-player__title > .l {
+  padding: 0 12px;
+  overflow: hidden;
+  line-height: 32px;
+  font-weight: bold;
+  color: #ffffff;
+}
+.lt__video-player__controls > .r {
+  float: right;
+}
+.lt__video-player__controls > .l {
+  margin: 0 5px;
+  float: left;
+}
+.lt__video-player__controls > .c {
+  overflow: hidden;
+}
+.lt__video-player__progress {
+  height: 5px;
+  margin: 13.5px 0 0 0;
+  background-color: rgba(255, 255, 255, 0.25);
+  cursor: pointer;
+}
+.lt__video-player__progress .progress {
+  height: 5px;
+  background-color: #cf1715;
+}
+.lt__video-player__progress--volume {
+  width: 80px;
+  margin-right: 10px;
+}
+.lt__video-player__progress--volume .progress {
+  background-color: #FFFFFF;
+}
+.lt__video-player__time {
+  margin: 0 7px 0 10px;
+  line-height: 32px;
+  color: #ffffff;
+}
+/* *** MAXIMIZED *** */
+.lt__video-player--maximize,
+.lt__dialog.is-maximize .lt__video-player {
+  width: 100%;
+  height: 100%;
+}
+.lt__video-player--maximize > .inner,
+.lt__dialog.is-maximize .lt__video-player > .inner {
+  width: 100%;
+  height: 100%;
+}
+.lt__video-player--maximize .lt__video-player__content,
+.lt__dialog.is-maximize .lt__video-player .lt__video-player__content {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+/* *** DIALOG MODE *** */
 /* ************ MAIN STYLES ************ */

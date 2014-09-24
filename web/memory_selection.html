@@ -33,13 +33,24 @@
                         'node' : node
                     });
                 })
+                .construct();
+            // Popup
+            (function(){
+                var popup = new Com.Dialog({
+                        'node' : cm.getEl('popup-content')
+                    }),
+                    button = cm.getEl('popup-button');
+                cm.addEvent(button, 'click', function(){
+                    popup.open();
+                })
+            })();
+        });
+
+        cm.onLoad(function(){
+            // Components
+            new Com.Collector()
                 .add('slider', function(node){
                     new Com.Slider({
-                        'node' : node
-                    });
-                })
-                .add('dialog', function(node){
-                    new Com.Dialog({
                         'node' : node
                     });
                 })
@@ -427,7 +438,7 @@
                                 <div class="pt__item-box has-uploader-bar">
                                     <div class="inner">
                                         <div class="l">
-                                            <div class="image">
+                                            <div class="image" id="popup-button">
                                                 <img src="img/content/item-video.jpg" alt="">
                                                 <div class="icon icon-type video"></div>
                                             </div>
@@ -472,20 +483,69 @@
 
 <!-- [ ******* VIDEO POPUP ******* ] -->
 
-<div class="lt__dialog lt__dialog--video" data-element="dialog" data-node="ComDialog:{}:container" data-config='{"autoOpen" : true}'>
-    <div class="inner">
-        <div class="lt__dialog__window">
-            <div class="inner">
-                <div class="lt__video-player">
-                    <div class="inner">
-                        <div class="content">
-                            <img src="img/content/video-medium.jpg" alt="">
+<div class="display-none">
+
+    <div class="lt__dialog lt__dialog--video" data-node="ComDialog:{}:container" data-config='{"autoOpen" : false}' id="popup-content">
+        <div class="inner">
+            <div class="lt__dialog__window">
+                <div class="inner">
+                    <div class="lt__video-player">
+                        <div class="inner">
+                            <div class="lt__video-player__content">
+                                <img src="img/content/video-maximize.jpg" alt="">
+                            </div>
+
+                            <div class="lt__video-player__bar pull-top">
+                                <div class="lt__video-player__title">
+                                    <div class="r">
+                                        <div class="lt__video-player__bar-item">
+                                            <div class="icon size-32 close-white linked" title="Close" data-node="close"></div>
+                                        </div>
+                                    </div>
+                                    <div class="l">Happy Birthday Barbara</div>
+                                </div>
+                            </div>
+
+                            <div class="lt__video-player__bar pull-bottom">
+                                <div class="lt__video-player__controls">
+                                    <div class="r">
+                                        <div class="lt__video-player__bar-item">
+                                            <div class="lt__video-player__time">17:54</div>
+                                        </div>
+                                        <div class="lt__video-player__bar-item">
+                                            <div class="icon size-32 volume-white linked" title="Mite"></div>
+                                        </div>
+                                        <div class="lt__video-player__bar-item">
+                                            <div class="lt__video-player__progress lt__video-player__progress--volume">
+                                                <div class="progress" style="width: 80%;"></div>
+                                            </div>
+                                        </div>
+                                        <div class="lt__video-player__bar-item">
+                                            <div class="icon size-32 maximize-white linked" title="Maximize" data-node="maximize"></div>
+                                        </div>
+                                    </div>
+
+                                    <div class="l">
+                                        <div class="lt__video-player__bar-item">
+                                            <div class="icon size-32 pause-white linked" title="Pause"></div>
+                                        </div>
+                                    </div>
+
+                                    <div class="c">
+
+                                        <div class="lt__video-player__progress lt__video-player__progress">
+                                            <div class="progress" style="width: 55%;"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
 </div>
 
 </body>

@@ -8,7 +8,9 @@ cm.define('Com.Dialog', {
     'events' : [
         'onRender',
         'onOpen',
-        'onClose'
+        'onClose',
+        'onMaximize',
+        'onRestore'
     ],
     'params' : {
         'node' : cm.Node('div'),
@@ -20,10 +22,13 @@ function(params){
     var that = this;
 
     that.nodes = {
-        'container' : cm.Node('div')
+        'container' : cm.Node('div'),
+        'close' : cm.Node('div'),
+        'maximize' : cm.Node('div')
     };
 
     that.isOpen = true;
+    that.isMaximize = false;
 
     /* *** CLASS FUNCTIONS *** */
 
@@ -36,60 +41,90 @@ function(params){
     };
 
     var render = function(){
+        cm.addEvent(that.nodes['close'], 'click', function(){
+            that.close();
+        });
+        cm.addEvent(that.nodes['maximize'], 'click', function(){
+            that.toggleMaximize();
+        });
         // Auto open
         that.params['autoOpen'] && that.open();
         // Trigger render event
         that.triggerEvent('onRender');
     };
 
-    var toggle = function(){
-        if(that.isOpen){
+    var windowClickEvent = function(e){
+        e = cm.getEvent(e);
+        if(e.keyCode == 27){
             that.close();
-        }else{
-            that.open();
+        }
+    };
+
+    var methodWrapper = function(isImmediately, handler){
+        if(isImmediately){
+            cm.addClass(that.nodes['container'], 'is-immediately');
+            cm.addClass(that.params['target'], 'is-immediately');
+        }
+        handler(isImmediately);
+        // Remove immediately animation hack
+        if(isImmediately){
+            setTimeout(function(){
+                cm.removeClass(that.nodes['container'], 'is-immediately');
+                cm.removeClass(that.params['target'], 'is-immediately');
+            }, 5);
         }
     };
 
     /* ******* MAIN ******* */
 
     that.close = function(isImmediately){
-        that.isOpen = false;
-        // Set immediately animation hack
-        if(isImmediately){
-            cm.addClass(that.nodes['container'], 'is-immediately');
-            cm.addClass(that.params['target'], 'is-immediately');
-        }
-        cm.replaceClass(that.nodes['container'], 'is-open', 'is-close', true);
-        cm.replaceClass(that.params['target'], 'is-dialog--open', 'is-dialog--close', true);
-        // Remove immediately animation hack
-        if(isImmediately){
-            setTimeout(function(){
-                cm.removeClass(that.nodes['container'], 'is-immediately');
-                cm.removeClass(that.params['target'], 'is-immediately');
-            }, 5);
-        }
-        that.triggerEvent('onClose');
+        methodWrapper(isImmediately, function(){
+            that.isOpen = false;
+            cm.removeEvent(window, 'keydown', windowClickEvent);
+            cm.replaceClass(that.nodes['container'], 'is-open', 'is-close', true);
+            cm.replaceClass(that.params['target'], 'is-dialog--open', 'is-dialog--close', true);
+            that.triggerEvent('onClose');
+        });
         return that;
     };
 
     that.open = function(isImmediately){
-        that.isOpen = true;
-        // Set immediately animation hack
-        if(isImmediately){
-            cm.addClass(that.nodes['container'], 'is-immediately');
-            cm.addClass(that.params['target'], 'is-immediately');
-        }
-        cm.replaceClass(that.nodes['container'], 'is-close', 'is-open', true);
-        cm.replaceClass(that.params['target'], 'is-dialog--close', 'is-dialog--open', true);
-        // Remove immediately animation hack
-        if(isImmediately){
-            setTimeout(function(){
-                cm.removeClass(that.nodes['container'], 'is-immediately');
-                cm.removeClass(that.params['target'], 'is-immediately');
-            }, 5);
-        }
-        that.triggerEvent('onOpen');
+        methodWrapper(isImmediately, function(){
+            that.isOpen = true;
+            cm.addEvent(window, 'keydown', windowClickEvent);
+            cm.replaceClass(that.nodes['container'], 'is-close', 'is-open', true);
+            cm.replaceClass(that.params['target'], 'is-dialog--close', 'is-dialog--open', true);
+            that.triggerEvent('onOpen');
+        });
         return that;
+    };
+
+    that.maximize = function(isImmediately){
+        methodWrapper(isImmediately, function(){
+            that.isMaximize = true;
+            cm.replaceClass(that.nodes['container'], 'is-normal', 'is-maximize', true);
+            cm.replaceClass(that.params['target'], 'is-dialog--normal', 'is-dialog--maximize', true);
+            that.triggerEvent('onMaximize');
+        });
+        return that;
+    };
+
+    that.restore = function(isImmediately){
+        methodWrapper(isImmediately, function(){
+            that.isMaximize = false;
+            cm.replaceClass(that.nodes['container'], 'is-maximize', 'is-normal', true);
+            cm.replaceClass(that.params['target'], 'is-dialog--maximize', 'is-dialog--normal', true);
+            that.triggerEvent('onMaximize');
+        });
+        return that;
+    };
+
+    that.toggleMaximize = function(isImmediately){
+        if(that.isMaximize){
+            that.restore(isImmediately);
+        }else{
+            that.maximize(isImmediately);
+        }
     };
 
     init();

@@ -35,13 +35,19 @@
         opacity: 1;
     }
 
+    &.is-maximize {
+        .lt__dialog__window {
+            &:extend(.lt__dialog__window--maximize all);
+        }
+    }
+
     &.is-immediately {
         &:extend(.cm-transition-none);
     }
 }
 
 .lt__dialog__window {
-    margin: 12px;
+    margin: 24px;
     display: inline-block;
     position: relative;
     z-index: 2;
@@ -50,6 +56,21 @@
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.75);
     white-space: normal;
     text-align: left;
+}
+
+.lt__dialog__window--maximize {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    position: relative;
+
+    > .inner {
+        &:extend(.cm-scroll-a);
+
+        width: 100%;
+        height: 100%;
+        position: relative;
+    }
 }
 
 /* *** VIDEO *** */

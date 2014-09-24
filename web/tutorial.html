@@ -32,6 +32,12 @@
                         'node' : node
                     });
                 })
+                .construct();
+        });
+
+        cm.onLoad(function(){
+            // Components
+            new Com.Collector()
                 .add('slider', function(node){
                     new Com.Slider({
                         'node' : node

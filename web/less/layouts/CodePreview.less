@@ -1,0 +1,29 @@
+/* ******* LAYOUTS: CODE PREVIEW ******* */
+
+.lt__code-preview__content {
+    position: relative;
+}
+
+.lt__code-preview__box {
+    position: absolute;
+    cursor: pointer;
+    .mix-position(0, auto, auto, 16px);
+
+    > .inner {
+        padding: 15px;
+        border: 1px solid @Background-Active;
+
+        .image {
+            margin: 0 0 10px;
+
+            img {
+                margin: 0 auto;
+                display: block;
+            }
+        }
+
+        p {
+            text-align: center;
+        }
+    }
+}

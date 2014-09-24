@@ -3,6 +3,7 @@
 /* *** BASE *** */
 
 .pt__hover-box {
+    position: relative;
     border: @Border-Base-Size solid transparent;
     .mix-transition(all @CM-Transition-Duration ease-in-out);
 
@@ -13,19 +14,25 @@
         }
     }
 
+    .controls {
+        position: absolute;
+        visibility: hidden;
+        opacity: 0;
+        .mix-position(auto, auto, auto, auto);
+        .mix-transition(all @CM-Transition-Duration ease-in-out);
+
+        .icon {
+            display: block;
+        }
+    }
+
     .pt__buttons {
         .mix-transition(opacity @CM-Transition-Duration ease-in-out);
     }
 
     &.active,
     &:hover {
-        background-color: @PT-HoverBox-Background;
-        border: @Border-Dark;
-        box-shadow: 0 2px 15px rgba(0, 0, 0, 0.25);
-
-        .button {
-            &:extend(.button-active all);
-        }
+        &:extend(.pt__hover-box--active all);
     }
 
     // /* Set indents */
@@ -36,6 +43,21 @@
         &.indent-@{name} {
             #cm > .pt__hover-box__indent(@name);
         }
+    }
+}
+
+.pt__hover-box--active {
+    background-color: @PT-HoverBox-Background;
+    border: @Border-Dark;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.25);
+
+    .controls {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    .button {
+        &:extend(.button-active all);
     }
 }
 
@@ -145,5 +167,10 @@
 #cm () {
     .pt__hover-box__indent (@indent: @PT-HoverBox-Indent) {
         padding: @indent;
+
+        .controls {
+            right: @indent;
+            bottom: @indent;
+        }
     }
 }

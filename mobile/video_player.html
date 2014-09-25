@@ -1,0 +1,72 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="apple-touch-icon" sizes="120x120" href="img/app/icon-120.png">
+    <link rel="apple-touch-startup-image" href="img/app/startup.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+    <title>InfiniteMemories</title>
+    <link type="text/css" rel="stylesheet" href="css/index.css">
+
+    <script type="text/javascript" src="js/polyfill.js"></script>
+    <script type="text/javascript" src="js/common.js"></script>
+    <script type="text/javascript" src="js/parts.js"></script>
+    <script type="text/javascript" src="js/modules.js"></script>
+    <script type="text/javascript" src="js/init.js"></script>
+    <script type="text/javascript" src="js/components/UA.js"></script>
+    <script type="text/javascript" src="js/components/Collector.js"></script>
+    <script type="text/javascript" src="js/components/Slider.js"></script>
+    <script type="text/javascript" src="js/components/Sidebar.js"></script>
+
+    <script type="text/javascript" src="js/custom.js"></script>
+
+    <script type="text/javascript">
+        cm.onReady(function(){
+            cm.addEvent(document, 'click', function(e){
+                var target = cm.getEventTarget(e),
+                    href;
+                while(target.nodeName.toLowerCase() !== 'a' && target.nodeName.toLowerCase() !== "html"){
+                    target = target.parentNode;
+                }
+                if(target && (href = target.getAttribute('href'))){
+                    cm.preventDefault(e);
+                    window.location.href = href;
+                }
+            });
+            // Components
+            new Com.Collector()
+                .add('sidebar', function(node){
+                    new Com.Sidebar({
+                        'node' : node
+                    });
+                })
+                .construct();
+        });
+
+        cm.onLoad(function(){
+            // Components
+            new Com.Collector()
+                .add('slider', function(node){
+                    new Com.Slider({
+                        'node' : node
+                    });
+                })
+                .add('preload-overlay', function(node){
+                    cm.removeClass(node, 'is-show', true);
+                })
+                .construct();
+        });
+    </script>
+</head>
+<body>
+
+<a class="pt__picture" href="gift_picture.html">
+    <img src="img/content/video-player.jpg" alt="">
+</a>
+
+</body>
+</html>

@@ -1,0 +1,34 @@
+/* ******* LAYOUTS: SIDEBAR ******* */
+
+.lt__sidebar {
+    position: absolute;
+    z-index: 2;
+    -webkit-transition: -webkit-transform @LT-Sidebar-Duration ease-in-out;
+        -ms-transition:     -ms-transform @LT-Sidebar-Duration ease-in-out;
+            transition:         transform @LT-Sidebar-Duration ease-in-out;
+    .mix-position(0, @CM-Base-Size, 0, 0);
+
+    > .inner {
+        padding: (@LT-Sidebar-Padding / 2) @LT-Sidebar-Padding;
+    }
+
+    &.is-expanded {
+        -webkit-transform: translateX(0);
+            -ms-transform: translateX(0);
+                transform: translateX(0);
+    }
+
+    &.is-collapsed {
+        -webkit-transform: translateX(-100%);
+            -ms-transform: translateX(-100%);
+                transform: translateX(-100%);
+    }
+
+    &.is-immediately {
+        &:extend(.cm-transition-none);
+    }
+}
+
+.lt__sidebar--default {
+    background-color: @Background-Sidebar-Default;
+}

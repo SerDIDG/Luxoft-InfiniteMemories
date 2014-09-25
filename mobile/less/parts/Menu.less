@@ -1,0 +1,126 @@
+/* ******* PARTS: MENU ******* */
+
+/* *** BASE *** */
+
+.pt__menu {
+    > ul {
+        &:extend(.cm-ul-clear all, .cm-ul-inline all);
+
+        > li {
+            > a {
+                display: inline-block;
+                vertical-align: top;
+            }
+        }
+    }
+
+    &.pull-left {
+        > ul {
+            text-align: left;
+        }
+    }
+
+    &.pull-center {
+        > ul {
+            text-align: center;
+        }
+    }
+
+    &.pull-right {
+        > ul {
+            text-align: right;
+        }
+    }
+}
+
+/* *** LINKS *** */
+
+.pt__menu--links {
+    > ul {
+        > li {
+            margin: 0 10px 0 0;
+
+            > a {
+                font-size: @Font-Base-SizeSecondary;
+            }
+
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+}
+
+/* *** SIDEBAR *** */
+
+.pt__menu--sidebar {
+    margin: 12px 0 0 0;
+
+    &:first-child {
+        margin-top: 0;
+    }
+
+    > ul {
+        > li {
+            margin: 8px 0 0 -6px;
+            display: block;
+
+            &:first-child {
+                margin-top: 0;
+            }
+            
+            > a {
+                height: @PT-Menu-Sidebar-Height;
+                display: block;
+
+                .counter {
+                    min-width:@PT-Menu-Sidebar-CounterHeight;
+                    height: @PT-Menu-Sidebar-CounterHeight;
+                    padding: 0 4px;
+                    margin: ((@PT-Menu-Sidebar-Height - @PT-Menu-Sidebar-CounterHeight) / 2) 12px 0 0;
+                    float: right;
+                    background-color: @Background-Alt;
+                    border-radius: @PT-Menu-Sidebar-CounterHeight;
+                    text-align: center;
+                    line-height: @PT-Menu-Sidebar-CounterHeight;
+                    font-weight: bold;
+                    font-size: 14px;
+                    color: @Color-Sidebar;
+                    .mix-box-sizing();
+                }
+
+                .icon {
+                    float: left;
+                }
+
+                .avatar {
+                    float: left;
+
+                    img {
+                        width: @PT-Menu-Sidebar-Height;
+                        height: @PT-Menu-Sidebar-Height;
+                        display: block;
+                        border-radius: @PT-Menu-Sidebar-Height;
+                    }
+                }
+
+                .title {
+                    &:extend(.font-sidebar, .cm-text-overflow);
+
+                    padding: 0 @PT-Menu-Sidebar-Indent;
+                    line-height: @PT-Menu-Sidebar-Height;
+                }
+            }
+        }
+    }
+
+    &.has-border {
+        padding: 10px 0 0 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.3);
+
+        &:first-child {
+            padding-top: 0;
+            border-top: none;
+        }
+    }
+}

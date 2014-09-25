@@ -1,0 +1,114 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="apple-touch-icon" sizes="120x120" href="img/app/icon-120.png">
+    <link rel="apple-touch-startup-image" href="img/app/startup.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+    <title>InfiniteMemories</title>
+    <link type="text/css" rel="stylesheet" href="css/index.css">
+
+    <script type="text/javascript" src="js/polyfill.js"></script>
+    <script type="text/javascript" src="js/common.js"></script>
+    <script type="text/javascript" src="js/parts.js"></script>
+    <script type="text/javascript" src="js/modules.js"></script>
+    <script type="text/javascript" src="js/init.js"></script>
+    <script type="text/javascript" src="js/components/UA.js"></script>
+    <script type="text/javascript" src="js/components/Collector.js"></script>
+    <script type="text/javascript" src="js/components/Slider.js"></script>
+    <script type="text/javascript" src="js/components/Sidebar.js"></script>
+
+    <script type="text/javascript" src="js/custom.js"></script>
+
+    <script type="text/javascript">
+        cm.onReady(function(){
+            cm.addEvent(document, 'click', function(e){
+                var target = cm.getEventTarget(e),
+                    href;
+                while(target.nodeName.toLowerCase() !== 'a' && target.nodeName.toLowerCase() !== "html"){
+                    target = target.parentNode;
+                }
+                if(target && (href = target.getAttribute('href'))){
+                    cm.preventDefault(e);
+                    window.location.href = href;
+                }
+            });
+            // Components
+            new Com.Collector()
+                .add('sidebar', function(node){
+                    new Com.Sidebar({
+                        'node' : node
+                    });
+                })
+                .construct();
+        });
+
+        cm.onLoad(function(){
+            // Components
+            new Com.Collector()
+                .add('slider', function(node){
+                    new Com.Slider({
+                        'node' : node
+                    });
+                })
+                .add('preload-overlay', function(node){
+                    cm.removeClass(node, 'is-show', true);
+                })
+                .construct();
+        });
+    </script>
+</head>
+<body>
+
+<div class="lt__scanner__holder">
+    <img src="img/layouts/scanner/bg.jpg" alt="">
+</div>
+
+<div class="lt__scanner__grid">
+    <img src="img/layouts/scanner/grid.png" alt="">
+</div>
+
+<div class="lt__base is-light has-app-bar has-header">
+    <div class="lt__base__app-bar"></div>
+
+    <div class="lt__base__header">
+        <div class="c">
+            <h1>Scan code</h1>
+        </div>
+
+        <div class="r">
+            <a class="icon size-44 more-active"></a>
+        </div>
+    </div>
+
+    <div class="lt__base__content">
+        <div class="lt__scanner__controls">
+            <div class="pt__grid col-3">
+                <ul>
+                    <li>
+                        <div class="lt__scanner__button">
+                            <div class="icon size-60 flash"></div>
+                        </div>
+                    </li>
+                    <li>
+                        <a class="lt__scanner__button style-alt" href="enter_code.html">
+                            <div class="icon size-60 shot"></div>
+                        </a>
+                    </li>
+                    <li>
+                        <div class="lt__scanner__button">
+                            <div class="icon size-60 settings"></div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

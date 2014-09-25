@@ -1,0 +1,135 @@
+/* ******* PARTS: COMMON ******* */
+
+.clearfix {
+    &:after {
+        content: ".";
+        display: block;
+        clear: both;
+        visibility: hidden;
+        line-height: 0;
+        font-size: 0;
+        height: 0;
+    }
+}
+
+/* ******* INLINE ******* */
+
+.hidden {
+    display: none !important;
+}
+
+.inline {
+    display: inline-block !important;
+}
+
+.margin-none {
+    margin: 0 !important;
+}
+
+.align-left {
+    text-align: left !important;
+}
+
+.align-center {
+    text-align: center !important;
+}
+
+.align-right {
+    text-align: right !important;
+}
+
+.valign-top {
+    vertical-align: top !important;
+}
+
+.valign-middle {
+    vertical-align: middle !important;
+}
+
+.valign-bottom {
+    vertical-align: bottom !important;
+}
+
+/* ******* STATIC ******* */
+
+.cm-ul-inline {
+    text-align: left;
+    font-size: 0;
+
+    > li {
+        &:extend(.font-base);
+
+        display: inline-block;
+        vertical-align: top;
+    }
+}
+
+.cm-ul-clear {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    > li {
+        margin: 0;
+        padding: 0;
+    }
+}
+
+.cm-scroll-a {
+    -webkit-overflow-scrolling: touch;
+    overflow: auto;
+}
+
+.cm-scroll-y {
+    -webkit-overflow-scrolling: touch;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+.cm-scroll-y-a {
+    -webkit-overflow-scrolling: touch;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.scrollable {
+    &:extend(.cm-scroll-y-a);
+}
+
+.cm-block-wrapper {
+    > .inner {
+        max-width: @CM-MinWidth;
+        margin: 0 auto;
+    }
+}
+
+.cm-image-resizable {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.cm-image-flexible {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.cm-image-adaptive {
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.cm-text-overflow {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.cm-transition-none {
+    -webkit-transition: none;
+        -ms-transition: none;
+            transition: none;
+}

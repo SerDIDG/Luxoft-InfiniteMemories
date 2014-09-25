@@ -1,0 +1,134 @@
+/* ******* PARTS: GRID ******* */
+
+/* *** BASE *** */
+
+.pt__grid {
+    overflow: hidden;
+
+    > ul {
+        &:extend(.cm-ul-clear all, .cm-ul-inline all);
+
+        > li {
+            &:extend(.font-base);
+
+            width: 100%;
+            overflow: hidden;
+            .mix-box-sizing();
+
+            > a {
+                display: block;
+                cursor: pointer;
+
+                > img {
+                    width: 100%;
+                    display: block;
+                    position: relative;
+                    cursor: pointer;
+                    .mix-transition(opacity @CM-Transition-Duration ease-in-out);
+                }
+
+                &:hover {
+                    > img {
+                        opacity: @CM-Opacity-Hover;
+                        .mix-transition(opacity @CM-Transition-DurationReverse ease-in-out);
+                    }
+                }
+            }
+        }
+    }
+
+    &.pull-left {
+        > ul {
+            text-align: left;
+        }
+    }
+
+    &.pull-center {
+        > ul {
+            text-align: center;
+        }
+    }
+
+    &.pull-right {
+        > ul {
+            text-align: right;
+        }
+    }
+
+    &.is-justify {
+        > ul {
+            > li {
+                text-align: center;
+
+                &:first-child {
+                    text-align: left;
+                }
+
+                &:last-child {
+                    text-align: right;
+                }
+            }
+        }
+    }
+
+    &.is-adaptive {
+        overflow: visible;
+
+        > ul {
+            > li {
+                width: auto;
+                overflow: visible;
+            }
+        }
+    }
+
+    // /* Build columns styles */
+
+    .loop(@counter) when (@counter > 0) {
+        .loop((@counter - 1));
+
+        &.col-@{counter} {
+            #cm > .pt__grid__size(@counter);
+        }
+    }
+
+    .loop(12);
+
+    // /* Set grid items indent */
+
+    #cm > .pt__grid__indent(@PT-Grid-ItemIndent);
+
+    .for(@PT-Grid-ItemIndents); .-each(@name) {
+        &.indent-@{name} {
+            #cm > .pt__grid__indent(@name);
+        }
+    }
+}
+
+/* *** MESSAGE *** */
+
+/* ******* PARTS: GRID: BUNDLE ******* */
+
+#cm () {
+    .pt__grid__size (@count: 1) {
+        @size: 100% / @count;
+
+        > ul > li {
+            width: @size;
+        }
+    }
+
+    .pt__grid__indent (@indent: @PT-Grid-ItemIndent) {
+        > ul {
+            margin: @indent -@indent -@indent;
+
+            &:first-child {
+                margin: -@indent;
+            }
+
+            > li {
+                padding: @indent;
+            }
+        }
+    }
+}

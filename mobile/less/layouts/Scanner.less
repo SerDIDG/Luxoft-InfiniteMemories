@@ -1,0 +1,51 @@
+/* ******* LAYOUTS: SCANNER ******* */
+
+.lt__scanner__holder {
+    position: absolute;
+    z-index: -1;
+    overflow: hidden;
+    .mix-position(0, 0, 0, 0);
+
+    img {
+        &:extend(.cm-image-resizable);
+    }
+}
+
+.lt__scanner__grid {
+    width: 281px;
+    height: 281px;
+    margin: -140px 0 0 -140px;
+    position: absolute;
+    z-index: 1;
+    .mix-position(50%, auto, auto, 50%);
+
+    img {
+        &:extend(.cm-image-resizable);
+    }
+}
+
+/* *** CONTROLS *** */
+
+.lt__scanner__controls {
+    position: absolute;
+    z-index: 2;
+    .mix-position(auto, 0, 29px, 0);
+}
+
+.lt__scanner__button {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto;
+    border: 1px solid #FFFFFF;
+    border-radius: 60px;
+    background-color: rgba(255, 255, 255, 0.4);
+    cursor: pointer;
+
+    &.style-alt {
+        &:extend(.lt__scanner__button--alt all);
+    }
+}
+
+.lt__scanner__button--alt {
+    background-color: @Background-Alt;
+}

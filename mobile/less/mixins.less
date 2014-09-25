@@ -1,0 +1,72 @@
+// /* ************ MIXINS ************ */
+
+.mix-position (@top: auto, @right: auto, @bottom: auto, @left: auto) {
+    top: @top;
+    right: @right;
+    bottom: @bottom;
+    left: @left;
+}
+
+.mix-transition (@properties: none) {
+    -webkit-transition+: @properties;
+            transition+: @properties;
+}
+
+.mix-linear-gradient (@params) {
+    background-image: -webkit-linear-gradient(@params);
+    background-image:         linear-gradient(@params);
+}
+
+.mix-box-sizing (@value: border-box) {
+    -moz-box-sizing: @value;
+        box-sizing: @value;
+}
+
+.mix-background-clip (@value: border-box) {
+    -webkit-background-clip: border-box;
+       -moz-background-clip: border-box;
+            background-clip: border-box;
+}
+
+.mix-user-select (@value: none) {
+    -webkit-user-select: @value;
+       -moz-user-select: @value;
+            user-select: @value;
+}
+
+.mix-placeholder (@color, @fontSize: @Font-Placeholder-Size) {
+    &::-webkit-input-placeholder {
+        opacity: 1;
+        color: @color;
+        font-size: @fontSize;
+    }
+    &:-moz-placeholder {
+        opacity: 1;
+        color: @color;
+        font-size: @fontSize;
+    }
+    &::-moz-placeholder {
+        opacity: 1;
+        color: @color;
+        font-size: @fontSize;
+    }
+    &:-ms-input-placeholder {
+        opacity: 1;
+        color: @color;
+        font-size: @fontSize;
+    }
+}
+
+// /* ******* OTHER ******* */
+
+// /* *** FOREACH *** */
+
+.for(@i, @n) {.-each(@i)}
+.for(@n)     when (isnumber(@n)) {.for(1, @n)}
+.for(@i, @n) when not (@i = @n)  {
+    .for((@i + (@n - @i) / abs(@n - @i)), @n);
+}
+
+.for(@array)   when (default()) {.for-impl_(length(@array))}
+.for-impl_(@i) when (@i > 1)    {.for-impl_((@i - 1))}
+.for-impl_(@i) when (@i > 0)    {.-each(extract(@array, @i))}

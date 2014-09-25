@@ -1,0 +1,64 @@
+/* ******* LAYOUTS: SPLASH ******* */
+
+.lt__splash {
+    position: absolute;
+    background: @Background-Base-Dark;
+    .mix-position(0, 0, 0, 0);
+
+    .pt__overlay {
+        z-index: 4;
+    }
+}
+
+.lt__splash__shadow {
+    position: absolute;
+    z-index: 2;
+    .mix-position(0, 0, 0, 0);
+
+    &:before {
+        position: absolute;
+        display: block;
+        content: '';
+        background: url('@{Path-Image}/layouts/splash/shadow-top.png') 0 0 repeat-x;
+        background-size: 100% 100%;
+        .mix-position(0, 0, 50%, 0);
+    }
+
+    &:after {
+        position: absolute;
+        display: block;
+        content: '';
+        background: url('@{Path-Image}/layouts/splash/shadow-bottom.png') 0 100% repeat-x;
+        background-size: 100% 100%;
+        .mix-position(50%, 0, 0, 0);
+    }
+}
+
+.lt__splash__logo {
+    position: absolute;
+    z-index: 3;
+    .mix-position(0, 0, 0, 0);
+
+    .link {
+        position: absolute;
+        display: block;
+        .mix-position(0, 0, 0, 0);
+    }
+
+    .inner {
+        position: absolute;
+    }
+
+    .logo {
+        &:extend(.cm-image-adaptive);
+
+        max-width: @CM-MinWidth;
+        margin: 0 auto;
+    }
+
+    &.pull-bottom {
+        .inner {
+            .mix-position(auto, 0, 0, 0);
+        }
+    }
+}

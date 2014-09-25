@@ -1,0 +1,196 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="apple-touch-icon" sizes="120x120" href="img/app/icon-120.png">
+    <link rel="apple-touch-startup-image" href="img/app/startup.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+    <title>InfiniteMemories</title>
+    <link type="text/css" rel="stylesheet" href="css/index.css">
+
+    <script type="text/javascript" src="js/polyfill.js"></script>
+    <script type="text/javascript" src="js/common.js"></script>
+    <script type="text/javascript" src="js/parts.js"></script>
+    <script type="text/javascript" src="js/modules.js"></script>
+    <script type="text/javascript" src="js/init.js"></script>
+    <script type="text/javascript" src="js/components/UA.js"></script>
+    <script type="text/javascript" src="js/components/Collector.js"></script>
+    <script type="text/javascript" src="js/components/Slider.js"></script>
+    <script type="text/javascript" src="js/components/Sidebar.js"></script>
+
+    <script type="text/javascript" src="js/custom.js"></script>
+
+    <script type="text/javascript">
+        cm.onReady(function(){
+            cm.addEvent(document, 'click', function(e){
+                var target = cm.getEventTarget(e),
+                    href;
+                while(target.nodeName.toLowerCase() !== 'a' && target.nodeName.toLowerCase() !== "html"){
+                    target = target.parentNode;
+                }
+                if(target && (href = target.getAttribute('href'))){
+                    cm.preventDefault(e);
+                    window.location.href = href;
+                }
+            });
+            // Components
+            new Com.Collector()
+                .add('sidebar', function(node){
+                    new Com.Sidebar({
+                        'node' : node
+                    });
+                })
+                .construct();
+        });
+
+        cm.onLoad(function(){
+            // Components
+            new Com.Collector()
+                .add('slider', function(node){
+                    new Com.Slider({
+                        'node' : node
+                    });
+                })
+                .add('preload-overlay', function(node){
+                    cm.removeClass(node, 'is-show', true);
+                })
+                .construct();
+        });
+    </script>
+</head>
+<body>
+
+
+<div class="lt__base is-default has-app-bar has-header" data-node="ComSidebar.container">
+    <div class="lt__base__app-bar"></div>
+
+    <div class="lt__base__header">
+        <div class="l">
+            <a class="icon size-44 menu" data-node="ComSidebar.button"></a>
+        </div>
+
+        <div class="c">
+            <div class="icon icon-logo size-90"></div>
+        </div>
+
+        <div class="r">
+            <a class="icon size-44 search"></a>
+        </div>
+    </div>
+
+    <div class="lt__sidebar scrollable is-collapsed" data-node="ComSidebar.sidebar" data-element="sidebar" >
+        <div class="inner">
+            <div class="pt__menu pt__menu--sidebar">
+                <ul>
+                    <li>
+                        <a>
+                            <div class="avatar">
+                                <img src="img/content/avatars/44.png" alt="">
+                            </div>
+                            <div class="title">My Profile</div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="pt__menu pt__menu--sidebar has-border">
+                <ul>
+                    <li>
+                        <a>
+                            <div class="icon size-44 avatars"></div>
+                            <div class="title">My Avatars</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="memory_details.html">
+                            <div class="counter">1</div>
+                            <div class="icon size-44 memories"></div>
+                            <div class="title">My Memories</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a>
+                            <div class="icon size-44 circles"></div>
+                            <div class="title">My Circles</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="message.html">
+                            <div class="icon size-44 messages"></div>
+                            <div class="title">Messages</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a>
+                            <div class="icon size-44 settings"></div>
+                            <div class="title">Settings</div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="lt__base__content scrollable">
+        <div class="lt__home">
+            <div class="lt__home__banner">
+                <img src="img/layouts/home/bg.jpg" alt="">
+            </div>
+
+            <div class="lt__home__content">
+                <div class="pt__grid col-3 indent-9px">
+                    <ul>
+                        <li>
+                            <a class="pt__menu-box">
+                                <div class="icon size-50 profile"></div>
+                                <p>My Profile</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="pt__menu-box">
+                                <div class="icon size-50 avatars"></div>
+                                <p>My Avatars</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="pt__menu-box">
+                                <div class="icon size-50 memories"></div>
+                                <p>My Memories</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="pt__menu-box">
+                                <div class="icon size-50 circles"></div>
+                                <p>My Circles</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="pt__menu-box">
+                                <div class="icon size-50 messages"></div>
+                                <p>Messages</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="pt__menu-box">
+                                <div class="icon size-50 settings"></div>
+                                <p>Settings</p>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="pt__buttons is-box">
+                    <a href="scan_code.html" class="button button-active size-39">Create Avatar</a>
+                    <a href="scan_code.html" class="button button-alt size-39">Create Memory</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

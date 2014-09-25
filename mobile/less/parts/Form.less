@@ -1,0 +1,80 @@
+/* ******* PARTS: FORM ******* */
+
+.pt__form {
+    cursor: default;
+}
+
+/* *** FIELD *** */
+
+.pt__form {
+    dl {
+        &:extend(.clearfix all);
+
+        margin: @PT-Form-FieldIndent 0 0 0;
+        padding: 0;
+        display: block;
+        clear: both;
+
+        &.is-box {
+            > dt {
+                width: auto;
+                float: none;
+            }
+
+            > dd {
+                margin: 0 0 @PT-Form-FieldInnerIndent 0;
+
+                &:last-child {
+                    margin: 0;
+                }
+            }
+        }
+    }
+
+    > dl:first-child {
+        margin-top: 0;
+    }
+
+    > dt {
+        width: @PT-Form-FieldTitleWidth;
+        display: block;
+        margin: 0;
+        padding: ((@PT-Form-FieldHeight - @Font-Base-LineHeight) / 2) 0;
+        float: left;
+        line-height: @Font-Base-LineHeight;
+    }
+
+    > dd {
+        display: block;
+        margin: 0 0 0 (@PT-Form-FieldTitleWidth + @PT-Form-FieldIndent);
+        padding: 0;
+        position: relative;
+
+        &:first-child {
+            margin: 0;
+        }
+    }
+}
+
+.pt__form-field {
+    position: relative;
+
+    label {
+        &:extend(.font-hint-small);
+
+        padding: 8px 0 0 0;
+        position: absolute;
+        z-index: 2;
+        .mix-position(0, auto, 0, 0);
+    }
+
+    .icon {
+        position: absolute;
+        z-index: 2;
+        .mix-position(4px, 0, auto, auto);
+    }
+
+    .input {
+        text-align: center;
+    }
+}

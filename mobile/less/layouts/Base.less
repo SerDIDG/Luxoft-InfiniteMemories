@@ -1,0 +1,222 @@
+/* ******* LAYOUTS: BASE ******* */
+
+.lt__base {
+    position: absolute;
+    background-color: @Background-Base;
+    .mix-position(0, 0, 0, 0);
+
+    &.is-default {
+        background-color: @Background-Base-Light;
+
+        .lt__base__header {
+            .lt__base__header--default;
+        }
+
+        .lt__base__footer {
+            .lt__base__footer--default;
+        }
+
+        .lt__base__app-bar {
+            background-color: @Background-Header-Default;
+        }
+
+        .lt__sidebar {
+            &:extend(.lt__sidebar--default all);
+        }
+    }
+
+    &.is-default-dark {
+        background-color: @Background-Dark;
+
+        .lt__base__header {
+            .lt__base__header--default;
+        }
+
+        .lt__base__footer {
+            .lt__base__footer--dark;
+        }
+
+        .lt__base__app-bar {
+            background-color: @Background-Header-Default;
+        }
+
+        .lt__sidebar {
+            &:extend(.lt__sidebar--default all);
+        }
+    }
+
+    &.is-dark {
+        background-color: @Background-Dark;
+
+        .lt__base__header {
+            .lt__base__header--dark;
+        }
+
+        .lt__base__app-bar {
+            background-color: @Background-Header-Dark;
+        }
+    }
+
+    &.is-light {
+        background-color: transparent;
+
+        .lt__base__header {
+            .lt__base__header--light;
+        }
+
+        .lt__base__app-bar {
+            //background-color: @Background-Header-Light;
+            background-color: @Background-Header-Default;
+        }
+    }
+
+    &.has-app-bar {
+        top: @CM-BarHeight;
+
+        .lt__base__app-bar {
+            top: -@CM-BarHeight;
+        }
+
+        @media screen and (orientation: landscape) {
+            top: 0;
+
+            .lt__base__app-bar {
+                display: none;
+            }
+        }
+    }
+
+    &.has-header {
+        .lt__base__content {
+            top: @LT-Base-HeaderHeight;
+        }
+
+        .lt__sidebar {
+            top: @LT-Base-HeaderHeight;
+        }
+    }
+
+    &.has-footer {
+        .lt__base__content {
+            bottom: @LT-Base-FooterHeight;
+        }
+    }
+}
+
+.lt__base__app-bar {
+    height: @CM-BarHeight;
+    position: absolute;
+    .mix-position(0, 0, 0, 0);
+}
+
+/* *** HEADER *** */
+
+.lt__base__header {
+    height: @LT-Base-HeaderHeight;
+    position: absolute;
+    z-index: 2;
+    .mix-position(0, 0, auto, 0);
+
+    .pt__tags__content {
+        text-align: center;
+        line-height: @LT-Base-HeaderHeight;
+    }
+
+    > .l {
+        position: absolute;
+        z-index: 2;
+        .mix-position(0, auto, 0, 0);
+
+        .icon {
+            display: block;
+            float: left;
+        }
+    }
+
+    > .c {
+        &:extend(.cm-text-overflow);
+
+        height: 100%;
+        padding: 0 @LT-Base-HeaderHeight;
+        position: relative;
+        z-index: 1;
+        text-align: center;
+        line-height: @LT-Base-HeaderHeight;
+
+        .icon-logo {
+            margin: 0 auto;
+        }
+    }
+
+    > .r {
+        position: absolute;
+        z-index: 2;
+        .mix-position(0, 0, 0, auto);
+
+        .icon {
+            display: block;
+            float: left;
+        }
+    }
+}
+
+.lt__base__header--default {
+    background-color: @Background-Header-Default;
+
+    .pt__tags__content {
+        color: @Color-Base-Light;
+    }
+
+    .pt__header-link {
+        &:extend(.pt__header-link--default all);
+    }
+}
+
+.lt__base__header--dark {
+    background-color: @Background-Header-Dark;
+
+    .pt__tags__content {
+        color: @Color-Active;
+    }
+
+    .pt__header-link {
+        &:extend(.pt__header-link--dark all);
+    }
+}
+
+.lt__base__header--light {
+    background-color: @Background-Header-Light;
+
+    .pt__tags__content {
+        color: @Color-Base;
+    }
+}
+
+/* *** CONTENT *** */
+
+.lt__base__content {
+    position: absolute;
+    z-index: 1;
+    .mix-position(0, 0, 0, 0);
+
+    &.has-notification {
+        padding-top: @PT-Notification-Height;
+    }
+}
+
+/* *** FOOTER *** */
+
+.lt__base__footer {
+    height: @LT-Base-FooterHeight;
+    position: absolute;
+    z-index: 2;
+    .mix-position(auto, 0, 0, 0);
+}
+
+.lt__base__footer--default {
+    background-color: @Background-Footer-Default;
+}
+
+.lt__base__footer--dark {
+    background-color: @Background-Footer-Dark;
+}

@@ -1,0 +1,150 @@
+/* ******* PARTS: TAGS ******* */
+
+* {
+    -webkit-touch-callout: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    .mix-user-select();
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    &:extend(.font-base);
+
+    min-width: @CM-MinWidth;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    cursor: default;
+    -webkit-text-size-adjust: 100%;
+    -webkit-font-smoothing: subpixel-antialiased;
+}
+
+img {
+    border: none;
+}
+
+dl, dt, dd, canvas, iframe, form {
+    padding: 0;
+    margin: 0;
+    display: block;
+    text-indent: 0;
+}
+
+iframe {
+    width: 100%;
+    display: block;
+    border: none;
+}
+
+header, main, aside, footer, section {
+    display: block;
+}
+
+/* *** TABLE *** */
+
+table {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    border: none;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+tbody, thead, tr {
+    width: 100%;
+}
+
+tbody, thead, td, th, tr {
+    margin: 0;
+    padding: 0;
+}
+
+/* *** TEXT *** */
+
+a {
+    &:extend(.font-link all);
+}
+
+.pt__tags__content {
+    &:extend(.font-base);
+
+    margin: 0;
+    padding: 0;
+}
+
+.pt__tags__content--title {
+    text-align: center;
+}
+
+.pt__tags__content--base {
+}
+
+h1, h2, h3, h4, h5, h6, p, dl, ul, ol {
+    &:extend(.pt__tags__content all);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    &:extend(.pt__tags__content--title all);
+}
+
+p, dl, ul, ol {
+    &:extend(.pt__tags__content--base all);
+}
+
+h1 {
+    &:extend(.font-h1 all);
+}
+
+h2 {
+    &:extend(.font-h2 all);
+}
+
+h3 {
+    &:extend(.font-h3 all);
+}
+
+h5 {
+    &:extend(.font-h5 all);
+}
+
+/* *** INPUTS *** */
+
+input[type="file"] {
+    width: 100%;
+    cursor: pointer;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+    cursor: pointer;
+}
+
+input[type="button"],
+input[type="submit"],
+input[type="reset"],
+button {
+    &:extend(.button all);
+}
+
+input[type="text"],
+input[type="email"],
+input[type="number"],
+input[type="phone"],
+input[type="password"],
+textarea,
+select {
+    &:extend(.input all);
+}
+
+textarea {
+    &:extend(.textarea all);
+}
+
+select {
+    &:extend(.select all);
+}

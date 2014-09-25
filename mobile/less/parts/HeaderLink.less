@@ -1,0 +1,34 @@
+/* ******* PARTS: HEADER LINK ******* */
+
+.pt__header-link {
+    height: @LT-Base-HeaderHeight;
+    float: left;
+
+    .icon {
+        float: left;
+    }
+
+    .label {
+        &:extend(.font-h1);
+
+        float: left;
+        line-height: @LT-Base-HeaderHeight;
+        font-weight: normal;
+
+        &:first-child {
+            padding-left: @CM-Base-Indent;
+        }
+    }
+}
+
+.pt__header-link--default {
+    .label {
+        color: @Color-Base-Light;;
+    }
+}
+
+.pt__header-link--dark {
+    .label {
+        color: @Color-Active;
+    }
+}

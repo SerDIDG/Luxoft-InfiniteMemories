@@ -1,0 +1,108 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="apple-touch-icon" sizes="120x120" href="img/app/icon-120.png">
+    <link rel="apple-touch-startup-image" href="img/app/startup.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+    <title>InfiniteMemories</title>
+    <link type="text/css" rel="stylesheet" href="css/index.css">
+
+    <script type="text/javascript" src="js/polyfill.js"></script>
+    <script type="text/javascript" src="js/common.js"></script>
+    <script type="text/javascript" src="js/parts.js"></script>
+    <script type="text/javascript" src="js/modules.js"></script>
+    <script type="text/javascript" src="js/init.js"></script>
+    <script type="text/javascript" src="js/components/UA.js"></script>
+    <script type="text/javascript" src="js/components/Collector.js"></script>
+    <script type="text/javascript" src="js/components/Slider.js"></script>
+    <script type="text/javascript" src="js/components/Sidebar.js"></script>
+
+    <script type="text/javascript" src="js/custom.js"></script>
+
+    <script type="text/javascript">
+        cm.onReady(function(){
+            cm.addEvent(document, 'click', function(e){
+                var target = cm.getEventTarget(e),
+                    href;
+                while(target.nodeName.toLowerCase() !== 'a' && target.nodeName.toLowerCase() !== "html"){
+                    target = target.parentNode;
+                }
+                if(target && (href = target.getAttribute('href'))){
+                    cm.preventDefault(e);
+                    window.location.href = href;
+                }
+            });
+        });
+
+        cm.onLoad(function(){
+            // Components
+            new Com.Collector()
+                .add('slider', function(node){
+                    new Com.Slider({
+                        'node' : node
+                    });
+                })
+                .add('preload-overlay', function(node){
+                    cm.removeClass(node, 'is-show', true);
+                })
+                .construct();
+        });
+    </script>
+</head>
+<body>
+
+
+<div class="lt__base is-default has-app-bar">
+    <div class="lt__base__app-bar"></div>
+
+    <div class="lt__base__content scrollable">
+        <div class="lt__login">
+            <div class="lt__login__logo">
+                <img src="img/layouts/login/logo.png" alt="">
+            </div>
+
+            <div class="lt__login__social-login pt__buttons is-box">
+                <a href="home.html" class="button size-44 style-facebook has-icon">
+                    <span class="icon inline size-44 facebook"></span>Login with Facebook
+                </a>
+                <a href="home.html" class="button size-44 style-twitter has-icon">
+                    <span class="icon inline size-44 twitter"></span>Login with Twitter
+                </a>
+            </div>
+
+            <div class="lt__login__form pt__form">
+                <dl class="is-box">
+                    <dd>
+                        <input type="text" name="email" placeholder="Email or Phone">
+                    </dd>
+                </dl>
+                <dl class="is-box">
+                    <dd>
+                        <input type="password" name="password" placeholder="Password">
+                    </dd>
+                </dl>
+            </div>
+
+            <div class="lt__login__links pt__menu pt__menu--links pull-right">
+                <ul>
+                    <li>
+                        <a>Forgot password?</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="lt__login__submit-box pt__buttons is-box">
+                <a href="home.html" class="button button-active size-39">Login</a>
+                <a href="home.html" class="button button-alt size-39">Sign Up</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

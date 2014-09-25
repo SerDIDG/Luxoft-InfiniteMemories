@@ -1,0 +1,91 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="apple-touch-icon" sizes="120x120" href="img/app/icon-120.png">
+    <link rel="apple-touch-startup-image" href="img/app/startup.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+    <title>InfiniteMemories</title>
+    <link type="text/css" rel="stylesheet" href="css/index.css">
+
+    <script type="text/javascript" src="js/polyfill.js"></script>
+    <script type="text/javascript" src="js/common.js"></script>
+    <script type="text/javascript" src="js/parts.js"></script>
+    <script type="text/javascript" src="js/modules.js"></script>
+    <script type="text/javascript" src="js/init.js"></script>
+    <script type="text/javascript" src="js/components/UA.js"></script>
+    <script type="text/javascript" src="js/components/Collector.js"></script>
+    <script type="text/javascript" src="js/components/Slider.js"></script>
+    <script type="text/javascript" src="js/components/Sidebar.js"></script>
+
+    <script type="text/javascript" src="js/custom.js"></script>
+
+    <script type="text/javascript">
+        cm.onReady(function(){
+            cm.addEvent(document, 'click', function(e){
+                e = cm.getEvent(e);
+                var target = cm.getEventTarget(e),
+                        href;
+                while(target.nodeName.toLowerCase() !== 'a' && target.nodeName.toLowerCase() !== "html"){
+                    target = target.parentNode;
+                }
+                if(target && (href = target.getAttribute('href'))){
+                    cm.preventDefault(e);
+                    window.location.href = href;
+                }
+            });
+            setTimeout(function(){
+                window.location.href = 'login.html';
+            }, 5000);
+        });
+
+        cm.onLoad(function(){
+            // Components
+            new Com.Collector()
+                .add('slider', function(node){
+                    new Com.Slider({
+                        'node' : node
+                    });
+                })
+                .add('preload-overlay', function(node){
+                    cm.removeClass(node, 'is-show', true);
+                })
+                .construct();
+        });
+    </script>
+</head>
+<body>
+
+<div class="lt__splash">
+    <div class="lt__slider"  data-element="slider" data-node="ComSlider:{}:container">
+        <div class="lt__slider__slides" data-node="slides">
+            <ul data-node="slidesInner">
+                <li data-node="items:[]:container">
+                    <img class="image" src="img/layouts/splash/bg.jpg" alt="">
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="lt__splash__shadow"></div>
+
+    <div class="lt__splash__logo pull-bottom">
+        <a class="link" href="login.html">
+            <div class="inner">
+                <img class="logo" src="img/layouts/splash/logo.png" alt="">
+            </div>
+        </a>
+    </div>
+
+    <div class="pt__overlay is-preload is-show" data-element="preload-overlay">
+        <div class="bg"></div>
+        <div class="inner"></div>
+    </div>
+</div>
+
+</body>
+</html>

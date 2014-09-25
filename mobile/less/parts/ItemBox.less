@@ -1,0 +1,28 @@
+/* ******* PARTS: ITEM BOX ******* */
+
+.pt__item-box {
+    margin: 8px 0 0 0;
+
+    &:first-child {
+        margin-top: 0;
+    }
+
+    .pt__tags__content {
+        text-align: left;
+    }
+
+    .image {
+        margin: 3px 0 0 0;
+        position: relative;
+
+        .icon {
+            position: absolute;
+            z-index: 2;
+            .mix-position(12px, 12px, auto, auto);
+        }
+
+        img {
+            &:extend(.cm-image-adaptive);
+        }
+    }
+}

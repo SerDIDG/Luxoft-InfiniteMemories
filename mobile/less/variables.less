@@ -1,0 +1,196 @@
+// /* ************ VARIABLES ************ */
+
+// /* ******* COMMON ******* */
+
+@CM-MinWidth: 320px;
+@CM-BarHeight: 20px;
+@CM-Transition-Duration: 300ms;
+@CM-Transition-DurationReverse: 100ms;
+@CM-Opacity-Hover: 0.7;
+
+@CM-Base-Size: 44px;
+@CM-Base-Indent: 15px;
+
+// /* *** PATH *** */
+
+@Path-Image: '../img';
+
+// /* *** FONT *** */
+
+@Font-Base-Family: Arial, Helvetica, sans-serif;
+@Font-Base-FamilySecondary: 'Open Sans', Arial, Helvetica, sans-serif;
+@Font-Base-LineHeight: 22px;
+@Font-Base-Size: 12px;
+@Font-Base-SizeSecondary: 15px;
+@Font-Base-Weight: normal;
+
+@Font-UI-Size: 19px;
+
+@Font-ButtonBig-Size: 21px;
+@Font-ButtonBig-Weight: normal;
+@Font-ButtonMedium-Size: @Font-UI-Size;
+@Font-ButtonMedium-Weight: normal;
+
+@Font-Input-Size: 20px;
+@Font-Input-LineHeight: 24px;
+@Font-Placeholder-Size: @Font-Input-Size;
+@Font-Hint-Size: @Font-Base-SizeSecondary;
+@Font-HintSmall-Size: 10px;
+
+@Font-H1-Size: 18px;
+@Font-H1-LineHeight: 22px;
+@Font-H1-Weight: bold;
+
+@Font-H2-Size: 16px;
+@Font-H2-LineHeight: 20px;
+@Font-H2-Weight: bold;
+
+@Font-H3-Size: 16px;
+@Font-H3-LineHeight: 20px;
+@Font-H3-Weight: normal;
+
+@Font-H5-Size: 12px;
+@Font-H5-LineHeight: 16px;
+@Font-H5-Weight: bold;
+
+// /* *** COLORS *** */
+
+@Color-Base: #000000;
+@Color-Base-Dark: #1e1e1e;
+@Color-Base-Light: #ffffff;
+@Color-Active: #328cd2;
+@Color-Active-Secondary: #1252a7;
+@Color-Alt: #00a859;
+@Color-Link: #007aff;
+@Color-LinkHover: @Color-Link;
+@Color-Hint: #999999;
+@Color-Placeholder: @Color-Hint;
+@Color-Button: @Color-Base-Light;
+@Color-Input: @Color-Base;
+@Color-Border: #c8c8c8;
+@Color-Sidebar: @Color-Base-Light;
+
+@Color-H3: #999999;
+
+// /* *** BACKGROUNDS *** */
+
+@Background-Base: #ffffff;
+@Background-Base-Light: #ffffff;
+@Background-Base-Dark: @Color-Base-Dark;
+@Background-Dark: #000000;
+@Background-Active: @Color-Active;
+@Background-Active-Secondary: @Color-Active-Secondary;
+@Background-Alt: @Color-Alt;
+@Background-Hint: @Color-Hint;
+@Background-Twitter: #30bbe9;
+@Background-Facebook: #325190;
+
+@Background-Header-Default: @Background-Active-Secondary;
+@Background-Header-Light: rgba(255, 255, 255, 0.8);
+@Background-Header-Dark: @Background-Dark;
+@Background-Sidebar-Default: @Background-Active-Secondary;
+@Background-Footer-Dark: #242424;
+@Background-Footer-Default: #009fda;
+
+@Background-Button-Active: @Background-Active;
+@Background-Button-Secondary: #f5f5f5;
+@Background-Button-SecondaryDark: #e4e6e8;
+@Background-Button-Alt: @Background-Alt;
+@Background-Button-Delete: #9a9a9a;
+
+@Background-Input: @Background-Base;
+
+// /* *** BORDERS *** */
+
+@Border-Base-Size: 1px;
+@Border-Base: @Border-Base-Size solid @Color-Border;
+@Border-Active-Size: 2px;
+@Border-Active: @Border-Active-Size solid @Color-Active;
+
+// /* ******* PARTS ******* */
+
+// /* *** ICONS *** */
+
+@PT-Icon-Duration: @CM-Transition-Duration;
+@PT-Icon-DurationReverse: @CM-Transition-DurationReverse;
+@PT-Icon-Linked-Opacity: @CM-Opacity-Hover;
+
+// /* *** MENU *** */
+
+@PT-Menu-Sidebar-Height: @CM-Base-Size;
+@PT-Menu-Sidebar-Indent: @CM-Base-Indent;
+@PT-Menu-Sidebar-CounterHeight: 20px;
+
+// /* *** FORM *** */
+
+@PT-Form-FieldHeight: 32px;
+@PT-Form-FieldIndent: @CM-Base-Indent;
+@PT-Form-FieldInnerIndent: @PT-Form-FieldIndent / 2;
+@PT-Form-FieldTitleWidth: 150px;
+
+// /* *** INPUTS *** */
+
+@PT-Input-Height: @PT-Form-FieldHeight;
+@PT-Input-Indent: 4px;
+@PT-Textarea-Height: 100px;
+@PT-Select-Size: 7;
+
+// /* *** BUTTONS *** */
+
+@PT-Buttons-Indent: @PT-Form-FieldIndent;
+@PT-Buttons-Indents: 10px @PT-Buttons-Indent;
+
+@PT-Button-Radius: 3px;
+@PT-Button-IndentY: @PT-Form-FieldIndent;
+@PT-Button-PaddingWidth: 20px;
+@PT-Button-Duration: @CM-Transition-Duration;
+@PT-Button-DurationReverse: @CM-Transition-DurationReverse;
+
+// /* *** OVERLAY *** */
+
+@PT-Overlay-Duration: 1000ms;
+
+// /* *** GRID *** */
+
+@PT-Grid-ItemIndents: 0px 9px;
+@PT-Grid-ItemIndent: 0px;
+
+// /* *** USER BOX *** */
+
+@PT-UserBox-Sizes: 83 100;
+
+// /* *** NOTIFICATION *** */
+
+@PT-Notification-Height: 41px;
+
+// /* ******* LAYOUTS ******* */
+
+// /* *** LOGIN *** */
+
+@LT-Login-Padding: @CM-Base-Indent;
+
+// /* *** BASE *** */
+
+@LT-Base-HeaderHeight: @CM-Base-Size;
+@LT-Base-FooterHeight: @CM-Base-Size;
+
+// /* *** SIDEBAR *** */
+
+@LT-Sidebar-Duration: 300ms;
+@LT-Sidebar-Padding: @CM-Base-Indent;
+
+// /* *** HOME *** */
+
+@LT-Home-Padding: @CM-Base-Indent;
+
+// /* *** ENTER CODE *** */
+
+@LT-EnterCode-Padding: @CM-Base-Indent;
+
+// /* *** MESSAGE *** */
+
+@LT-Message-Padding: @CM-Base-Indent;
+
+// /* *** MEMORY DETAILS *** */
+
+@LT-MemoryDetails-Padding: 8px;

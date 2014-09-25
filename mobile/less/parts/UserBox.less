@@ -1,0 +1,65 @@
+/* ******* PARTS: USER BOX ******* */
+
+/* *** BASE *** */
+
+.pt__user-box {
+    &:extend(.clearfix all);
+
+    margin: 0 0 8px;
+    padding: 0 0 8px;
+    border-bottom: @Border-Base;
+
+    > .l {
+        margin: 0 @CM-Base-Indent 0 0;
+        float: left;
+
+        .image {
+            margin: 0;
+
+            img {
+                &:extend(.cm-image-adaptive);
+            }
+        }
+    }
+
+    > .r {
+        overflow: hidden;
+
+        .date {
+            line-height: 14px;
+            font-size: 11px;
+            color: #808080;
+        }
+
+        .pt__tags__content {
+            text-align: left;
+        }
+
+        h1 {
+            margin: 0 0 2px;
+        }
+    }
+
+    // /* Set sizes */
+
+    .for(@PT-UserBox-Sizes); .-each(@name) {
+        &.size-@{name} {
+            #cm > .pt__user-box__size(@name);
+        }
+    }
+}
+
+/* ******* PARTS: USER BOX: BUNDLE ******* */
+
+#cm () {
+    .pt__user-box__size (@size) {
+        > .l {
+            > .image {
+                img {
+                    max-width: unit(@size, px);
+                    border-radius: unit(@size, px);
+                }
+            }
+        }
+    }
+}

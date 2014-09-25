@@ -1,0 +1,31 @@
+/* ******* PARTS: NOTIFICATION ******* */
+
+.pt__notification {
+    height: @PT-Notification-Height;
+    position: absolute;
+    z-index: 10;
+    overflow: hidden;
+    .mix-position(0, 0, auto, 0);
+
+    > .inner {
+        @paddingY: ((@PT-Notification-Height - 24px) / 2);
+
+        padding: @paddingY 30px;
+        background-color: @Background-Alt;
+
+        .icon {
+            position: absolute;
+            cursor: pointer;
+            .mix-position(@paddingY, 6px, auto, auto);
+        }
+
+        .text {
+            &:extend(.cm-text-overflow);
+
+            text-align: center;
+            line-height: 24px;
+            font-size: @Font-Base-SizeSecondary;
+            color: @Color-Base-Light;
+        }
+    }
+}

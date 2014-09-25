@@ -1,0 +1,138 @@
+/* ******* PARTS: ICONS ******* */
+
+.icon {
+    background: transparent 50% 50% no-repeat;
+    background-size: contain;
+
+    &.hidden {
+        visibility: hidden;
+    }
+
+    &.inline {
+        display: inline-block;
+        vertical-align: top;
+    }
+
+    &.linked {
+        cursor: pointer;
+        .mix-transition(opacity @PT-Icon-Duration ease-in-out);
+
+        &:hover {
+            opacity: @PT-Icon-Linked-Opacity;
+            .mix-transition(opacity @PT-Icon-DurationReverse ease-in-out);
+        }
+    }
+
+    &.pull-center {
+        margin: 0 auto;
+    }
+
+    // /* *** 19 x 19 *** */
+
+    &.size-19 {
+        width: 19px;
+        height: 19px;
+
+        .for(valid); .-each(@name) {
+            &.@{name} {
+                background-image: url("@{Path-Image}/icons/19/@{name}.png");
+            }
+        }
+    }
+
+    // /* *** 24 x 24 *** */
+
+    &.size-24 {
+        width: 24px;
+        height: 24px;
+
+        .for(close); .-each(@name) {
+            &.@{name} {
+                background-image: url("@{Path-Image}/icons/24/@{name}.png");
+            }
+        }
+    }
+
+    // /* *** 44 x 44 *** */
+
+    &.size-44 {
+        width: 44px;
+        height: 44px;
+
+        .for(facebook twitter menu search avatars circles memories messages settings more-active backward-c backward-c-active save share write back bookmark favorite more); .-each(@name) {
+            &.@{name} {
+                background-image: url("@{Path-Image}/icons/44/@{name}.png");
+            }
+        }
+
+        &.backward-c,
+        &.backward-c-active {
+            width: 29px;
+        }
+    }
+
+    // /* *** 50 x 50 *** */
+
+    &.size-50 {
+        width: 50px;
+        height: 50px;
+
+        .for(avatars circles memories messages profile settings); .-each(@name) {
+            &.@{name} {
+                background-image: url("@{Path-Image}/icons/50/@{name}.png");
+            }
+        }
+    }
+
+    // /* *** 60 x 60 *** */
+
+    &.size-60 {
+        width: 60px;
+        height: 60px;
+
+        .for(flash settings shot); .-each(@name) {
+            &.@{name} {
+                background-image: url("@{Path-Image}/icons/60/@{name}.png");
+            }
+        }
+    }
+
+    // /* *** 72 x 72 *** */
+
+    &.size-72 {
+        width: 72px;
+        height: 72px;
+
+        .for(add mute share); .-each(@name) {
+            &.@{name} {
+                background-image: url("@{Path-Image}/icons/72/@{name}.png");
+            }
+        }
+    }
+
+    // /* *** LOGO *** */
+
+    &.icon-logo {
+        &.size-90 {
+            width: 90px;
+            height: 44px;
+            background-image: url("@{Path-Image}/icons/logo/90.png");
+        }
+    }
+
+    // /* *** TYPES *** */
+
+    &.icon-types {
+        &.video-49 {
+            width: 49px;
+            height: 38px;
+            background-image: url("@{Path-Image}/icons/types/video-49.png");
+        }
+
+        &.video-49-w {
+            width: 49px;
+            height: 38px;
+            background-image: url("@{Path-Image}/icons/types/video-49-w.png");
+        }
+    }
+}

@@ -1,0 +1,131 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="apple-touch-icon" sizes="120x120" href="img/app/icon-120.png">
+    <link rel="apple-touch-startup-image" href="img/app/startup.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+    <title>InfiniteMemories</title>
+    <link type="text/css" rel="stylesheet" href="css/index.css">
+
+    <script type="text/javascript" src="js/polyfill.js"></script>
+    <script type="text/javascript" src="js/common.js"></script>
+    <script type="text/javascript" src="js/parts.js"></script>
+    <script type="text/javascript" src="js/modules.js"></script>
+    <script type="text/javascript" src="js/init.js"></script>
+    <script type="text/javascript" src="js/components/UA.js"></script>
+    <script type="text/javascript" src="js/components/Collector.js"></script>
+    <script type="text/javascript" src="js/components/Slider.js"></script>
+    <script type="text/javascript" src="js/components/Sidebar.js"></script>
+
+    <script type="text/javascript" src="js/custom.js"></script>
+
+    <script type="text/javascript">
+        cm.onReady(function(){
+            cm.addEvent(document, 'click', function(e){
+                var target = cm.getEventTarget(e),
+                    href;
+                while(target.nodeName.toLowerCase() !== 'a' && target.nodeName.toLowerCase() !== "html"){
+                    target = target.parentNode;
+                }
+                if(target && (href = target.getAttribute('href'))){
+                    cm.preventDefault(e);
+                    window.location.href = href;
+                }
+            });
+            // Components
+            new Com.Collector()
+                .add('sidebar', function(node){
+                    new Com.Sidebar({
+                        'node' : node
+                    });
+                })
+                .construct();
+        });
+
+        cm.onLoad(function(){
+            // Components
+            new Com.Collector()
+                .add('slider', function(node){
+                    new Com.Slider({
+                        'node' : node
+                    });
+                })
+                .add('preload-overlay', function(node){
+                    cm.removeClass(node, 'is-show', true);
+                })
+                .construct();
+        });
+    </script>
+</head>
+<body>
+
+
+<div class="lt__base is-dark has-app-bar has-header">
+    <div class="lt__base__app-bar"></div>
+
+    <div class="lt__base__header">
+        <div class="l">
+            <a class="pt__header-link" href="enter_code.html">
+                <div class="icon size-44 backward-c-active"></div>
+                <div class="label">Back</div>
+            </a>
+        </div>
+    </div>
+
+    <div class="lt__base__content scrollable">
+        <div class="lt__message">
+            <div class="lt__message__user">
+                <div class="image">
+                    <img src="img/content/avatars/158.png" alt="">
+                    <div class="icon icon-types video-49"></div>
+                </div>
+                <div class="label">Hubert Mokko</div>
+            </div>
+
+            <div class="lt__message__controls">
+                <div class="pt__grid col-3 is-justify">
+                    <ul>
+                        <li>
+                            <div class="lt__message__button">
+                                <div class="inner">
+                                    <div class="icon size-72 mute"></div>
+                                </div>
+                                <div class="label">mute</div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="lt__message__button">
+                                <div class="inner">
+                                    <div class="icon size-72 add"></div>
+                                </div>
+                                <div class="label">add to circles</div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="lt__message__button">
+                                <div class="inner">
+                                    <div class="icon size-72 share"></div>
+                                </div>
+                                <div class="label">share</div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="lt__message__footer">
+                <div class="pt__buttons is-box">
+                    <a href="video_player.html" class="button button-alt size-50">Show Message</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

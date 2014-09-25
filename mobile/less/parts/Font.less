@@ -1,0 +1,70 @@
+/* ******* PARTS: FONT ******* */
+
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,300,700,600);
+
+.font-base {
+    font: @Font-Base-Weight ~'@{Font-Base-Size}/@{Font-Base-LineHeight}' @Font-Base-Family;
+    color: @Color-Base;
+}
+
+.font-link {
+    cursor: pointer;
+    outline: none;
+    text-decoration: none;
+    color: @Color-Link;
+
+    &:hover {
+        text-decoration: none;
+        color: @Color-LinkHover;
+    }
+}
+
+.font-h1 {
+    font: @Font-H1-Weight ~'@{Font-H1-Size}/@{Font-H1-LineHeight}' @Font-Base-Family;
+    color: @Color-Base;
+}
+
+.font-h2 {
+    font: @Font-H2-Weight ~'@{Font-H2-Size}/@{Font-H2-LineHeight}' @Font-Base-Family;
+    color: @Color-Base;
+}
+
+.font-h3 {
+    font: @Font-H3-Weight ~'@{Font-H3-Size}/@{Font-H3-LineHeight}' @Font-Base-Family;
+    color: @Color-H3;
+}
+
+.font-h5 {
+    font: @Font-H5-Weight ~'@{Font-H5-Size}/@{Font-H5-LineHeight}' @Font-Base-Family;
+    color: @Color-Base;
+}
+
+.font-sidebar {
+    font: @Font-Base-Weight ~'@{Font-UI-Size}/@{Font-Base-LineHeight}' @Font-Base-Family;
+    color: @Color-Sidebar;
+}
+
+.font-hint {
+    font: @Font-Base-Weight ~'@{Font-Hint-Size}/@{Font-Base-LineHeight}' @Font-Base-Family;
+    color: @Color-Hint;
+}
+
+.font-hint-small {
+    font: @Font-Base-Weight ~'@{Font-HintSmall-Size}/@{Font-Base-LineHeight}' @Font-Base-Family;
+    color: @Color-Hint;
+}
+
+.font-input {
+    font: @Font-Base-Weight ~'@{Font-Input-Size}/@{Font-Input-LineHeight}' @Font-Base-Family;
+    color: @Color-Input;
+}
+
+.font-button-big {
+    font: @Font-ButtonBig-Weight ~'@{Font-ButtonBig-Size}/@{Font-Base-LineHeight}' @Font-Base-Family;
+    color: @Color-Button;
+}
+
+.font-button-medium {
+    font: @Font-ButtonMedium-Weight ~'@{Font-ButtonMedium-Size}/@{Font-Base-LineHeight}' @Font-Base-Family;
+    color: @Color-Button;
+}

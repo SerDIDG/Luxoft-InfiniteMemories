@@ -1,0 +1,35 @@
+/* ******* PARTS: INPUTS ******* */
+
+.input {
+    &:extend(.font-input);
+
+    width: 100%;
+    height: @PT-Input-Height;
+    padding: ((@PT-Input-Height - @Font-Input-LineHeight) / 2) @PT-Input-Indent;
+    margin: 0;
+    vertical-align: top;
+    background: @Background-Input;
+    border: none;
+    border-bottom: @Border-Active;
+    border-radius: 0;
+    outline: none;
+    cursor: text;
+    .mix-box-sizing();
+    .mix-background-clip();
+    .mix-placeholder(@Color-Placeholder);
+    .mix-user-select(text);
+}
+
+.textarea {
+    height: @PT-Textarea-Height;
+    min-height: @PT-Input-Height;
+    padding: @PT-Input-Indent;
+    resize: vertical;
+}
+
+.select {
+    &[multiple] {
+        height: @PT-Select-Size * @Font-Input-LineHeight + @Border-Base-Size * 2;
+        padding: 0;
+    }
+}

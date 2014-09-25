@@ -1,0 +1,79 @@
+/* ******* LAYOUTS: MESSAGE ******* */
+
+/* *** USER *** */
+
+.lt__message__user {
+    margin: 2px 0 0 0;
+
+    .image {
+        width: 170px;
+        margin: 0 auto;
+        position: relative;
+
+        .icon {
+            position: absolute;
+            z-index: 2;
+            .mix-position(auto, auto, 6px, -20px);
+        }
+
+        img {
+            &:extend(.cm-image-adaptive);
+
+            max-width: 158px;
+            border-radius: 158px;;
+            border: 3px solid @Background-Base-Light;
+            background-color: @Background-Base-Light;
+        }
+    }
+
+    .label {
+        margin: 18px 0 0 0;
+        text-align: center;
+        font-family: @Font-Base-FamilySecondary;
+        line-height: 32px;
+        font-size: 28px;
+        font-weight: 300;
+        color: @Color-Base-Light;
+    }
+}
+
+/* *** CONTROLS *** */
+
+.lt__message__controls {
+    margin: 30px 0 0 0;
+    padding: 0 21px;
+}
+
+.lt__message__button {
+    margin: 0 auto;
+    display: inline-block;
+    vertical-align: top;
+    cursor: pointer;
+
+    .inner {
+        width: 72px;
+        height: 72px;
+        margin: 0 auto;
+        border: 1px solid rgba(255, 255, 255, 0.6);
+        border-radius: 72px;
+    }
+
+    .label {
+        margin: 8px 0 0 0;
+        text-align: center;
+        line-height: @Font-Base-LineHeight;
+        font-size: @Font-Base-SizeSecondary;
+        color: #e6e6e6;
+    }
+}
+
+/* *** FOOTER *** */
+
+.lt__message__footer {
+    margin: 35px 0 0 0;
+    padding: @LT-Message-Padding;
+
+    .pt__buttons {
+        margin: 0;
+    }
+}

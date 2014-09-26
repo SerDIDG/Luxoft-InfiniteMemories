@@ -122,6 +122,52 @@
     display: block;
 }
 
+.cm-box__image-centered {
+    text-align: center;
+    white-space: nowrap;
+    font-size: 0;
+
+    &:before {
+        height: 100%;
+        display: inline-block;
+        vertical-align: middle;
+        content: '';
+    }
+
+    img {
+        width: auto;
+        height: auto;
+        max-width: 100%;
+        max-height: 100%;
+        margin: auto;
+        display: inline-block;
+        vertical-align: middle;
+    }
+}
+
+.cm-box__centered {
+    text-align: center;
+    white-space: nowrap;
+    font-size: 0;
+
+    &:before {
+        height: 100%;
+        display: inline-block;
+        vertical-align: middle;
+        content: '';
+    }
+
+    > .inner {
+        width: auto;
+        height: auto;
+        max-width: 100%;
+        max-height: 100%;
+        margin: auto;
+        display: inline-block;
+        vertical-align: middle;
+    }
+}
+
 .cm-text-overflow {
     overflow: hidden;
     white-space: nowrap;

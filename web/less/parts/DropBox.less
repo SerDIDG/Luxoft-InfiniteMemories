@@ -1,0 +1,26 @@
+/* ******* PARTS: DROP BOX ******* */
+
+.pt__drop-box {
+    height: 110px;
+    position: relative;
+    overflow: hidden;
+    
+    .box {
+        &:extend(.cm-box__centered all);
+
+        position: absolute;
+        border: 3px dashed #eeeeee;
+        border-radius: 8px;
+        .mix-position(0, 0, 0, 0);
+
+        .icon {
+            margin: 0 auto 6px;
+        }
+
+        p {
+            margin: 0;
+            text-align: center;
+            color: @Color-HintTitle;
+        }
+    }
+}

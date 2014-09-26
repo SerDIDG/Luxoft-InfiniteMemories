@@ -15,6 +15,7 @@
     <script type="text/javascript" src="js/components/Slider.js"></script>
     <script type="text/javascript" src="js/components/Sidebar.js"></script>
     <script type="text/javascript" src="js/components/ToggleBox.js"></script>
+    <script type="text/javascript" src="js/components/Dialog.js"></script>
 
     <script type="text/javascript" src="js/custom.js"></script>
 
@@ -41,6 +42,17 @@
                     cm.removeClass(node, 'is-show', true);
                 })
                 .construct();
+
+            // Popup
+            (function(){
+                var popup = new Com.Dialog({
+                        'node' : cm.getEl('popup-content')
+                    }),
+                    button = cm.getEl('popup-button');
+                cm.addEvent(button, 'click', function(){
+                    popup.open();
+                })
+            })();
         });
     </script>
 </head>
@@ -695,16 +707,16 @@
                 <div class="lt__base__entry-inner lt__profile lt__profile--avatar">
                     <div class="inner">
                         <div class="l">
-                            <div class="pt__hover-box pt__hover-box--avatar indent-16px active">
+                            <div class="pt__hover-box pt__hover-box--avatar active">
                                 <div class="image">
-                                    <div class="icon icon-avatar-big necklace"></div>
+                                    <img src="img/icons/avatars/big/jewelry.png" alt="">
+                                    <div class="controls">
+                                        <a class="icon size-24 edit linked"></a>
+                                    </div>
                                 </div>
-                                <h3>Necklace</h3>
-                                <h5>Accessories</h5>
-                            </div>
-
-                            <div class="pt__buttons is-box">
-                                <a class="button button-active size-44">Add Memory</a>
+                                <div class="title">
+                                    <h3>Jewelry</h3>
+                                </div>
                             </div>
                         </div>
 
@@ -732,49 +744,45 @@
                                     </div>
 
                                     <div class="l">
-                                        <h1>Gold Necklace</h1>
+                                        <h1>
+                                            <span class="title">Gold Necklace</span><a class="icon size-24 edit linked inline"></a>
+                                        </h1>
                                     </div>
-                                </div>
-
-                                <div class="pt__line-info">
-                                    <div class="date">added 21.05.2014</div>
-                                    <div class="author">Hubert Mokko</div>
-                                </div>
-
-                                <div class="pt__menu pt__menu--controls">
-                                    <ul>
-                                        <li>
-                                            <a>
-                                                <div class="icon size-24 like"></div>
-                                                <div class="title">Like</div>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-
-                                <div class="pt__text-box is-pre-line">Collaboratively administrate empowered markets via plug-and-play networks. Dynamically procrastinate B2C users after installed base benefits.
-
-                                    Efficiently unleash cross-media information without cross-media value. Quickly maximize timely deliverables for real-time schemas. Dramatically maintain clicks-and-mortar solutions without functional solutions.
                                 </div>
                             </div>
 
                             <div class="lt__profile__block">
-                                <h6>Comments</h6>
-                                <div class="pt__comment-box">
-                                    <textarea class="style-clean" placeholder="Type comment"></textarea>
+                                <h6>Add photo of avatar</h6>
+                                <div class="pt__drop-box" id="popup-button">
+                                    <div class="box">
+                                        <div class="inner">
+                                            <div class="icon size-28 upload"></div>
+                                            <p>Drag & drop photos here or <a>browse from disk</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="lt__profile__block">
+                                <h6>Description</h6>
+                                <div class="pt__textarea-box">
+                                    <textarea class="style-clean"></textarea>
                                     <div class="pt__menu pt__menu--controls">
                                         <ul>
-                                            <li>
-                                                <a>
-                                                    <div class="icon size-24 edit"></div>
-                                                    <div class="title">Comment</div>
-                                                </a>
+                                            <li class="has-border">
+                                                <a>Save</a>
                                             </li>
                                             <li>
-                                                <a>Cancel</a>
+                                                <a>Skip</a>
                                             </li>
                                         </ul>
                                     </div>
+                                </div>
+                            </div>
+
+                            <div class="lt__profile__block lt__profile__block--add-button">
+                                <div class="pt__buttons pull-left">
+                                    <a class="button button-active size-44">Add Memory</a>
                                 </div>
                             </div>
                         </div>
@@ -785,6 +793,35 @@
             <div class="lt__base__buttons">
                 <a class="button button-alt size-44" href="memory_selection.html">Next</a>
                 <a class="button button-secondary size-44" href="avatar_with_memories.html">Skip</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- [ ******* VIDEO POPUP ******* ] -->
+
+<div class="display-none">
+    <div class="lt__dialog lt__dialog--image-upload style-clean" data-node="ComDialog:{}:container" data-config='{"autoOpen" : false}' id="popup-content">
+        <div class="inner">
+            <div class="lt__dialog__window">
+                <div class="inner">
+                    <div class="lt__image-upload">
+                        <div class="pt__picture">
+                            <img src="img/content/image-upload.jpg" alt="">
+                        </div>
+
+                        <div class="pt__uploader-bar">
+                            <div class="r">
+                                <div class="icon size-12 cancel linked" data-node="close"></div>
+                            </div>
+                            <div class="l">
+                                <div class="bar">
+                                    <div class="progress" style="width: 65%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

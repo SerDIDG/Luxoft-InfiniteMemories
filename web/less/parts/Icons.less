@@ -12,6 +12,11 @@
         vertical-align: top;
     }
 
+    &.inline-centered {
+        display: inline-block;
+        vertical-align: baseline;
+    }
+
     &.linked {
         cursor: pointer;
         .mix-transition(opacity @PT-Icon-Duration ease-in-out);
@@ -97,7 +102,7 @@
         width: 28px;
         height: 28px;
 
-        .for(facebook twitter google youtube search tiles-active list); .-each(@name) {
+        .for(facebook twitter google youtube search tiles-active list upload); .-each(@name) {
             &.@{name} {
                 background-image: url("@{Path-Image}/icons/28/@{name}.png");
             }

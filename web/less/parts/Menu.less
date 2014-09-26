@@ -109,7 +109,7 @@
 
             > a {
                 font-weight: bold;
-                line-height: 24px;
+                line-height: 26px;
 
                 .icon {
                     margin: 0 6px 0 0;
@@ -117,8 +117,15 @@
                 }
 
                 .title {
-                    display: inline-block;
                     float: left;
+                }
+            }
+
+            &.has-border {
+                > a {
+                    padding: 0 16px;
+                    border: @Border-Base;
+                    line-height: 24px;
                 }
             }
 

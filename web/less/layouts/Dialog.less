@@ -44,6 +44,14 @@
     &.is-immediately {
         &:extend(.cm-transition-none);
     }
+
+    &.style-clean {
+        background-color: transparent;
+
+        .lt__dialog__window {
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.35);
+        }
+    }
 }
 
 .lt__dialog__window {
@@ -70,6 +78,18 @@
         width: 100%;
         height: 100%;
         position: relative;
+    }
+}
+
+/* *** IMAGE UPLOAD *** */
+
+.lt__dialog--image-upload {
+    .lt__dialog__window {
+        width: 600px;
+
+        > .inner {
+            padding: 40px 76px 32px;
+        }
     }
 }
 

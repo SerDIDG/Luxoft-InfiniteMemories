@@ -23,6 +23,7 @@ function(params){
 
     that.nodes = {
         'container' : cm.Node('div'),
+        'window' : cm.Node('div'),
         'close' : cm.Node('div'),
         'maximize' : cm.Node('div')
     };
@@ -41,6 +42,12 @@ function(params){
     };
 
     var render = function(){
+        cm.addEvent(that.nodes['container'], 'click', function(e){
+            var target = cm.getEventTarget(e);
+            if(!cm.isParent(that.nodes['window'], target, true)){
+                that.close();
+            }
+        });
         cm.addEvent(that.nodes['close'], 'click', function(){
             that.close();
         });

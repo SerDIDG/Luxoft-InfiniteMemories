@@ -295,6 +295,7 @@ input[type="checkbox"] {
 /* ******* PARTS: COMMON ******* */
 .clearfix:after,
 .pt__buttons:after,
+.pt__buttons > .inner:after,
 .pt__form dl:after,
 .pt__search:after,
 .pt__user-box:after,
@@ -1613,6 +1614,9 @@ button.button-delete {
 .pt__buttons {
   margin-top: 16px;
 }
+.pt__buttons > .inner {
+  overflow: hidden;
+}
 .pt__buttons .sep {
   padding: 0 8px;
 }
@@ -1664,6 +1668,18 @@ button.button-delete {
 .pt__buttons.pull-right button {
   float: right;
 }
+.pt__buttons > .inner {
+  margin-bottom: -16px;
+}
+.pt__buttons > .inner .button,
+.pt__buttons > .inner .browse-button,
+.pt__buttons > .inner .sep,
+.pt__buttons > .inner input[type="button"],
+.pt__buttons > .inner input[type="submit"],
+.pt__buttons > .inner input[type="reset"],
+.pt__buttons > .inner button {
+  margin-bottom: 16px;
+}
 .pt__buttons.pull-left .button,
 .pt__buttons.pull-left .browse-button,
 .pt__buttons.pull-left .sep,
@@ -1671,7 +1687,8 @@ button.button-delete {
 .pt__buttons.pull-left input[type="submit"],
 .pt__buttons.pull-left input[type="reset"],
 .pt__buttons.pull-left button {
-  margin: 0 16px 0 0;
+  margin-right: 16px;
+  margin-left: 0;
 }
 .pt__buttons.pull-right .button,
 .pt__buttons.pull-right .browse-button,
@@ -1680,7 +1697,20 @@ button.button-delete {
 .pt__buttons.pull-right input[type="submit"],
 .pt__buttons.pull-right input[type="reset"],
 .pt__buttons.pull-right button {
-  margin: 0 0 0 16px;
+  margin-right: 0;
+  margin-left: 16px;
+}
+.pt__buttons.indent-8px > .inner {
+  margin-bottom: -8px;
+}
+.pt__buttons.indent-8px > .inner .button,
+.pt__buttons.indent-8px > .inner .browse-button,
+.pt__buttons.indent-8px > .inner .sep,
+.pt__buttons.indent-8px > .inner input[type="button"],
+.pt__buttons.indent-8px > .inner input[type="submit"],
+.pt__buttons.indent-8px > .inner input[type="reset"],
+.pt__buttons.indent-8px > .inner button {
+  margin-bottom: 8px;
 }
 .pt__buttons.indent-8px.pull-left .button,
 .pt__buttons.indent-8px.pull-left .browse-button,
@@ -1689,7 +1719,8 @@ button.button-delete {
 .pt__buttons.indent-8px.pull-left input[type="submit"],
 .pt__buttons.indent-8px.pull-left input[type="reset"],
 .pt__buttons.indent-8px.pull-left button {
-  margin: 0 8px 0 0;
+  margin-right: 8px;
+  margin-left: 0;
 }
 .pt__buttons.indent-8px.pull-right .button,
 .pt__buttons.indent-8px.pull-right .browse-button,
@@ -1698,7 +1729,20 @@ button.button-delete {
 .pt__buttons.indent-8px.pull-right input[type="submit"],
 .pt__buttons.indent-8px.pull-right input[type="reset"],
 .pt__buttons.indent-8px.pull-right button {
-  margin: 0 0 0 8px;
+  margin-right: 0;
+  margin-left: 8px;
+}
+.pt__buttons.indent-10px > .inner {
+  margin-bottom: -10px;
+}
+.pt__buttons.indent-10px > .inner .button,
+.pt__buttons.indent-10px > .inner .browse-button,
+.pt__buttons.indent-10px > .inner .sep,
+.pt__buttons.indent-10px > .inner input[type="button"],
+.pt__buttons.indent-10px > .inner input[type="submit"],
+.pt__buttons.indent-10px > .inner input[type="reset"],
+.pt__buttons.indent-10px > .inner button {
+  margin-bottom: 10px;
 }
 .pt__buttons.indent-10px.pull-left .button,
 .pt__buttons.indent-10px.pull-left .browse-button,
@@ -1707,7 +1751,8 @@ button.button-delete {
 .pt__buttons.indent-10px.pull-left input[type="submit"],
 .pt__buttons.indent-10px.pull-left input[type="reset"],
 .pt__buttons.indent-10px.pull-left button {
-  margin: 0 10px 0 0;
+  margin-right: 10px;
+  margin-left: 0;
 }
 .pt__buttons.indent-10px.pull-right .button,
 .pt__buttons.indent-10px.pull-right .browse-button,
@@ -1716,7 +1761,20 @@ button.button-delete {
 .pt__buttons.indent-10px.pull-right input[type="submit"],
 .pt__buttons.indent-10px.pull-right input[type="reset"],
 .pt__buttons.indent-10px.pull-right button {
-  margin: 0 0 0 10px;
+  margin-right: 0;
+  margin-left: 10px;
+}
+.pt__buttons.indent-16px > .inner {
+  margin-bottom: -16px;
+}
+.pt__buttons.indent-16px > .inner .button,
+.pt__buttons.indent-16px > .inner .browse-button,
+.pt__buttons.indent-16px > .inner .sep,
+.pt__buttons.indent-16px > .inner input[type="button"],
+.pt__buttons.indent-16px > .inner input[type="submit"],
+.pt__buttons.indent-16px > .inner input[type="reset"],
+.pt__buttons.indent-16px > .inner button {
+  margin-bottom: 16px;
 }
 .pt__buttons.indent-16px.pull-left .button,
 .pt__buttons.indent-16px.pull-left .browse-button,
@@ -1725,7 +1783,8 @@ button.button-delete {
 .pt__buttons.indent-16px.pull-left input[type="submit"],
 .pt__buttons.indent-16px.pull-left input[type="reset"],
 .pt__buttons.indent-16px.pull-left button {
-  margin: 0 16px 0 0;
+  margin-right: 16px;
+  margin-left: 0;
 }
 .pt__buttons.indent-16px.pull-right .button,
 .pt__buttons.indent-16px.pull-right .browse-button,
@@ -1734,7 +1793,8 @@ button.button-delete {
 .pt__buttons.indent-16px.pull-right input[type="submit"],
 .pt__buttons.indent-16px.pull-right input[type="reset"],
 .pt__buttons.indent-16px.pull-right button {
-  margin: 0 0 0 16px;
+  margin-right: 0;
+  margin-left: 16px;
 }
 /* ******* PARTS: BUTTONS: BUNDLE ******* */
 /* ******* PARTS: PICTURE ******* */
@@ -2145,6 +2205,9 @@ button.button-delete {
   -webkit-transition: all 300ms ease-in-out;
   transition: all 300ms ease-in-out;
   padding: 0px;
+}
+.pt__hover-box > .image {
+  display: block;
 }
 .pt__hover-box > .image .icon {
   display: block;
@@ -3572,10 +3635,10 @@ html.is-dialog--open {
   top: 0;
   right: auto;
   bottom: auto;
-  left: 16px;
+  left: 0;
 }
 .lt__code-preview__box > .inner {
-  padding: 15px;
+  padding: 8px;
   border: 1px solid #009fda;
 }
 .lt__code-preview__box > .inner .image {

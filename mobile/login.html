@@ -26,17 +26,18 @@
 
     <script type="text/javascript">
         cm.onReady(function(){
-            cm.addEvent(document, 'click', function(e){
-                var target = cm.getEventTarget(e),
-                    href;
-                while(target.nodeName.toLowerCase() !== 'a' && target.nodeName.toLowerCase() !== "html"){
-                    target = target.parentNode;
-                }
-                if(target && (href = target.getAttribute('href'))){
-                    cm.preventDefault(e);
-                    window.location.href = href;
-                }
-            });
+            (function(){
+                var els = document.querySelectorAll('a'),
+                        href;
+                cm.forEach(els, function(el){
+                    cm.addEvent(el, 'click', function(e){
+                        if(href = el.getAttribute('href')){
+                            cm.preventDefault(e);
+                            window.location.href = href;
+                        }
+                    }, true, true);
+                });
+            })();
         });
 
         cm.onLoad(function(){
@@ -67,10 +68,10 @@
             </div>
 
             <div class="lt__login__social-login pt__buttons is-box">
-                <a href="home.html" class="button size-44 style-facebook has-icon">
+                <a href="message.html" class="button size-44 style-facebook has-icon">
                     <span class="icon inline size-44 facebook"></span>Login with Facebook
                 </a>
-                <a href="home.html" class="button size-44 style-twitter has-icon">
+                <a href="message.html" class="button size-44 style-twitter has-icon">
                     <span class="icon inline size-44 twitter"></span>Login with Twitter
                 </a>
             </div>
@@ -97,8 +98,8 @@
             </div>
 
             <div class="lt__login__submit-box pt__buttons is-box">
-                <a href="home.html" class="button button-active size-39">Login</a>
-                <a href="home.html" class="button button-alt size-39">Sign Up</a>
+                <a href="message.html" class="button button-active size-39">Login</a>
+                <a href="message.html" class="button button-alt size-39">Sign Up</a>
             </div>
         </div>
     </div>

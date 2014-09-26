@@ -26,17 +26,18 @@
 
     <script type="text/javascript">
         cm.onReady(function(){
-            cm.addEvent(document, 'click', function(e){
-                var target = cm.getEventTarget(e),
-                    href;
-                while(target.nodeName.toLowerCase() !== 'a' && target.nodeName.toLowerCase() !== "html"){
-                    target = target.parentNode;
-                }
-                if(target && (href = target.getAttribute('href'))){
-                    cm.preventDefault(e);
-                    window.location.href = href;
-                }
-            });
+            (function(){
+                var els = document.querySelectorAll('a'),
+                        href;
+                cm.forEach(els, function(el){
+                    cm.addEvent(el, 'click', function(e){
+                        if(href = el.getAttribute('href')){
+                            cm.preventDefault(e);
+                            window.location.href = href;
+                        }
+                    }, true, true);
+                });
+            })();
             // Components
             new Com.Collector()
                 .add('sidebar', function(node){

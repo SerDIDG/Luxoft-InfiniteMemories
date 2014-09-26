@@ -15,6 +15,7 @@
     <script type="text/javascript" src="js/components/Slider.js"></script>
     <script type="text/javascript" src="js/components/Sidebar.js"></script>
     <script type="text/javascript" src="js/components/ToggleBox.js"></script>
+    <script type="text/javascript" src="js/components/HoverBox.js"></script>
 
     <script type="text/javascript" src="js/custom.js"></script>
 
@@ -34,6 +35,11 @@
                 })
                 .add('slider', function(node){
                     new Com.Slider({
+                        'node' : node
+                    });
+                })
+                .add('hover-box', function(node){
+                    new Com.HoverBox({
                         'node' : node
                     });
                 })
@@ -703,38 +709,31 @@
                                 <div class="inner">
                                     <div class="left">
                                         <ul class="group">
-                                            <li>
-                                                <div class="pt__dropdown">
-                                                    <a>Filter</a>
-                                                </div>
+                                            <li class="label">Category</li>
+                                            <li class="is-field large">
+                                                <select class="style-clean style-toolbar">
+                                                    <option>All</option>
+                                                </select>
                                             </li>
                                         </ul>
-                                        <ul class="group">
-                                            <li class="is-field x-large">
-                                                <input type="text">
+                                        <ul class="group is-toggle">
+                                            <li class="label">Sort by:</li>
+                                            <li class="active">
+                                                <a>Popularity</a>
+                                            </li>
+                                            <li>
+                                                <a>A-Z</a>
                                             </li>
                                         </ul>
                                     </div>
 
                                     <div class="right">
-                                        <ul class="group is-toggle">
-                                            <li class="active">
-                                                <a>All</a>
+                                        <ul class="group">
+                                            <li>
+                                                <div class="icon size-28 tiles-active"></div>
                                             </li>
                                             <li>
-                                                <a>Jewelry</a>
-                                            </li>
-                                            <li>
-                                                <a>Sport</a>
-                                            </li>
-                                            <li>
-                                                <a>Closses</a>
-                                            </li>
-                                            <li>
-                                                <a>Health</a>
-                                            </li>
-                                            <li>
-                                                <a>Business</a>
+                                                <div class="icon size-28 list linked"></div>
                                             </li>
                                         </ul>
                                     </div>
@@ -743,23 +742,122 @@
                         </div>
 
                         <div class="lt__filtered__content">
-                            <div class="pt__grid pt__grid--avatar-type is-adaptive pull-center">
+                            <div class="pt__grid pt__grid--avatar-type is-adaptive pull-center" data-element="hover-box" data-node="ComHoverBox:{}:container">
                                 <ul>
-                                    <li>
+                                    <li data-node="items:[]:container">
                                         <div class="pt__hover-box pt__hover-box--avatar-type indent-16px">
                                             <div class="image">
-                                                <div class="icon icon-avatar-small book"></div>
+                                                <div class="icon icon-avatar-small books" data-node="icon"></div>
                                             </div>
-                                            <p>Book</p>
+                                            <p>Books</p>
                                             <div class="pt__buttons is-box">
                                                 <a class="button button-active size-30" href="avatar.html">Add</a>
                                             </div>
                                         </div>
                                     </li>
-                                    <li>
+                                    <li data-node="items:[]:container">
                                         <div class="pt__hover-box pt__hover-box--avatar-type indent-16px">
                                             <div class="image">
-                                                <div class="icon icon-avatar-small jewelry"></div>
+                                                <div class="icon icon-avatar-small furniture" data-node="icon"></div>
+                                            </div>
+                                            <p>Furniture</p>
+                                            <div class="pt__buttons is-box">
+                                                <a class="button button-active size-30" href="avatar.html">Add</a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li data-node="items:[]:container">
+                                        <div class="pt__hover-box pt__hover-box--avatar-type indent-16px">
+                                            <div class="image">
+                                                <div class="icon icon-avatar-small painting" data-node="icon"></div>
+                                            </div>
+                                            <p>Painting</p>
+                                            <div class="pt__buttons is-box">
+                                                <a class="button button-active size-30" href="avatar.html">Add</a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li data-node="items:[]:container">
+                                        <div class="pt__hover-box pt__hover-box--avatar-type indent-16px">
+                                            <div class="image">
+                                                <div class="icon icon-avatar-small clothes" data-node="icon"></div>
+                                            </div>
+                                            <p>Clothes</p>
+                                            <div class="pt__buttons is-box">
+                                                <a class="button button-active size-30" href="avatar.html">Add</a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li data-node="items:[]:container">
+                                        <div class="pt__hover-box pt__hover-box--avatar-type indent-16px">
+                                            <div class="image">
+                                                <div class="icon icon-avatar-small cars" data-node="icon"></div>
+                                            </div>
+                                            <p>Cars</p>
+                                            <div class="pt__buttons is-box">
+                                                <a class="button button-active size-30" href="avatar.html">Add</a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li data-node="items:[]:container">
+                                        <div class="pt__hover-box pt__hover-box--avatar-type indent-16px">
+                                            <div class="image">
+                                                <div class="icon icon-avatar-small tapes" data-node="icon"></div>
+                                            </div>
+                                            <p>Tapes</p>
+                                            <div class="pt__buttons is-box">
+                                                <a class="button button-active size-30" href="avatar.html">Add</a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li data-node="items:[]:container">
+                                        <div class="pt__hover-box pt__hover-box--avatar-type indent-16px">
+                                            <div class="image">
+                                                <div class="icon icon-avatar-small wedding" data-node="icon"></div>
+                                            </div>
+                                            <p>Wedding</p>
+                                            <div class="pt__buttons is-box">
+                                                <a class="button button-active size-30" href="avatar.html">Add</a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li data-node="items:[]:container">
+                                        <div class="pt__hover-box pt__hover-box--avatar-type indent-16px">
+                                            <div class="image">
+                                                <div class="icon icon-avatar-small hardware" data-node="icon"></div>
+                                            </div>
+                                            <p>Hardware</p>
+                                            <div class="pt__buttons is-box">
+                                                <a class="button button-active size-30" href="avatar.html">Add</a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li data-node="items:[]:container">
+                                        <div class="pt__hover-box pt__hover-box--avatar-type indent-16px">
+                                            <div class="image">
+                                                <div class="icon icon-avatar-small photos" data-node="icon"></div>
+                                            </div>
+                                            <p>Photos</p>
+                                            <div class="pt__buttons is-box">
+                                                <a class="button button-active size-30" href="avatar.html">Add</a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li data-node="items:[]:container">
+                                        <div class="pt__hover-box pt__hover-box--avatar-type indent-16px">
+                                            <div class="image">
+                                                <div class="icon icon-avatar-small bikes" data-node="icon"></div>
+                                            </div>
+                                            <p>Bikes</p>
+                                            <div class="pt__buttons is-box">
+                                                <a class="button button-active size-30" href="avatar.html">Add</a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li data-node="items:[]:container">
+                                        <div class="pt__hover-box pt__hover-box--avatar-type indent-16px">
+                                            <div class="image">
+                                                <div class="icon icon-avatar-small jewelry" data-node="icon"></div>
                                             </div>
                                             <p>Jewelry</p>
                                             <div class="pt__buttons is-box">
@@ -767,10 +865,21 @@
                                             </div>
                                         </div>
                                     </li>
-                                    <li>
+                                    <li data-node="items:[]:container">
                                         <div class="pt__hover-box pt__hover-box--avatar-type indent-16px">
                                             <div class="image">
-                                                <div class="icon icon-avatar-small toys"></div>
+                                                <div class="icon icon-avatar-small wines" data-node="icon"></div>
+                                            </div>
+                                            <p>Wines</p>
+                                            <div class="pt__buttons is-box">
+                                                <a class="button button-active size-30" href="avatar.html">Add</a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li data-node="items:[]:container">
+                                        <div class="pt__hover-box pt__hover-box--avatar-type indent-16px">
+                                            <div class="image">
+                                                <div class="icon icon-avatar-small toys" data-node="icon"></div>
                                             </div>
                                             <p>Toys</p>
                                             <div class="pt__buttons is-box">
@@ -778,164 +887,219 @@
                                             </div>
                                         </div>
                                     </li>
-                                    <li>
+                                    <li data-node="items:[]:container">
                                         <div class="pt__hover-box pt__hover-box--avatar-type indent-16px">
                                             <div class="image">
-                                                <div class="icon icon-avatar-small pram"></div>
+                                                <div class="icon icon-avatar-small cd" data-node="icon"></div>
                                             </div>
-                                            <p>Pram</p>
+                                            <p>CD</p>
                                             <div class="pt__buttons is-box">
                                                 <a class="button button-active size-30" href="avatar.html">Add</a>
                                             </div>
                                         </div>
                                     </li>
-                                    <li>
+                                    <li data-node="items:[]:container">
                                         <div class="pt__hover-box pt__hover-box--avatar-type indent-16px">
                                             <div class="image">
-                                                <div class="icon icon-avatar-small sofa"></div>
+                                                <div class="icon icon-avatar-small flags" data-node="icon"></div>
                                             </div>
-                                            <p>Sofa</p>
+                                            <p>Flags</p>
                                             <div class="pt__buttons is-box">
                                                 <a class="button button-active size-30" href="avatar.html">Add</a>
                                             </div>
                                         </div>
                                     </li>
-                                    <li>
+                                    <li data-node="items:[]:container">
                                         <div class="pt__hover-box pt__hover-box--avatar-type indent-16px">
                                             <div class="image">
-                                                <div class="icon icon-avatar-small trumpet"></div>
+                                                <div class="icon icon-avatar-small accessories" data-node="icon"></div>
                                             </div>
-                                            <p>Trumpet</p>
+                                            <p>Accessories</p>
                                             <div class="pt__buttons is-box">
                                                 <a class="button button-active size-30" href="avatar.html">Add</a>
                                             </div>
                                         </div>
                                     </li>
-                                    <li>
+                                    <li data-node="items:[]:container">
                                         <div class="pt__hover-box pt__hover-box--avatar-type indent-16px">
                                             <div class="image">
-                                                <div class="icon icon-avatar-small weapon"></div>
+                                                <div class="icon icon-avatar-small glasses" data-node="icon"></div>
                                             </div>
-                                            <p>Weapon</p>
+                                            <p>Glasses</p>
                                             <div class="pt__buttons is-box">
                                                 <a class="button button-active size-30" href="avatar.html">Add</a>
                                             </div>
                                         </div>
                                     </li>
-                                    <li>
+                                    <li data-node="items:[]:container">
                                         <div class="pt__hover-box pt__hover-box--avatar-type indent-16px">
                                             <div class="image">
-                                                <div class="icon icon-avatar-small knife"></div>
+                                                <div class="icon icon-avatar-small instruments" data-node="icon"></div>
                                             </div>
-                                            <p>Knife</p>
+                                            <p>Instruments</p>
                                             <div class="pt__buttons is-box">
                                                 <a class="button button-active size-30" href="avatar.html">Add</a>
                                             </div>
                                         </div>
                                     </li>
-                                    <li>
+                                    <li data-node="items:[]:container">
                                         <div class="pt__hover-box pt__hover-box--avatar-type indent-16px">
                                             <div class="image">
-                                                <div class="icon icon-avatar-small mask"></div>
+                                                <div class="icon icon-avatar-small maps" data-node="icon"></div>
                                             </div>
-                                            <p>Mask</p>
+                                            <p>Maps</p>
                                             <div class="pt__buttons is-box">
                                                 <a class="button button-active size-30" href="avatar.html">Add</a>
                                             </div>
                                         </div>
                                     </li>
-                                    <li>
+                                    <li data-node="items:[]:container">
                                         <div class="pt__hover-box pt__hover-box--avatar-type indent-16px">
                                             <div class="image">
-                                                <div class="icon icon-avatar-small motorcycle"></div>
+                                                <div class="icon icon-avatar-small medals" data-node="icon"></div>
                                             </div>
-                                            <p>Motorcycle</p>
+                                            <p>Medals</p>
                                             <div class="pt__buttons is-box">
                                                 <a class="button button-active size-30" href="avatar.html">Add</a>
                                             </div>
                                         </div>
                                     </li>
-                                    <li>
+                                    <li data-node="items:[]:container">
                                         <div class="pt__hover-box pt__hover-box--avatar-type indent-16px">
                                             <div class="image">
-                                                <div class="icon icon-avatar-small necklace"></div>
+                                                <div class="icon icon-avatar-small clocks" data-node="icon"></div>
                                             </div>
-                                            <p>Necklace</p>
+                                            <p>Clocks</p>
                                             <div class="pt__buttons is-box">
                                                 <a class="button button-active size-30" href="avatar.html">Add</a>
                                             </div>
                                         </div>
                                     </li>
-                                    <li>
+                                    <li data-node="items:[]:container">
                                         <div class="pt__hover-box pt__hover-box--avatar-type indent-16px">
                                             <div class="image">
-                                                <div class="icon icon-avatar-small wine"></div>
+                                                <div class="icon icon-avatar-small awards" data-node="icon"></div>
                                             </div>
-                                            <p>Wine</p>
+                                            <p>Awards</p>
                                             <div class="pt__buttons is-box">
                                                 <a class="button button-active size-30" href="avatar.html">Add</a>
                                             </div>
                                         </div>
                                     </li>
-                                    <li>
+                                    <li data-node="items:[]:container">
                                         <div class="pt__hover-box pt__hover-box--avatar-type indent-16px">
                                             <div class="image">
-                                                <div class="icon icon-avatar-small cutlery"></div>
+                                                <div class="icon icon-avatar-small books" data-node="icon"></div>
                                             </div>
-                                            <p>Cutlery</p>
+                                            <p>Books</p>
                                             <div class="pt__buttons is-box">
                                                 <a class="button button-active size-30" href="avatar.html">Add</a>
                                             </div>
                                         </div>
                                     </li>
-                                    <li>
+                                    <li data-node="items:[]:container">
                                         <div class="pt__hover-box pt__hover-box--avatar-type indent-16px">
                                             <div class="image">
-                                                <div class="icon icon-avatar-small crown"></div>
+                                                <div class="icon icon-avatar-small furniture" data-node="icon"></div>
                                             </div>
-                                            <p>Crown</p>
+                                            <p>Furniture</p>
                                             <div class="pt__buttons is-box">
                                                 <a class="button button-active size-30" href="avatar.html">Add</a>
                                             </div>
                                         </div>
                                     </li>
-                                    <li>
+                                    <li data-node="items:[]:container">
                                         <div class="pt__hover-box pt__hover-box--avatar-type indent-16px">
                                             <div class="image">
-                                                <div class="icon icon-avatar-small microscope"></div>
+                                                <div class="icon icon-avatar-small painting" data-node="icon"></div>
                                             </div>
-                                            <p>Microscope</p>
+                                            <p>Painting</p>
                                             <div class="pt__buttons is-box">
                                                 <a class="button button-active size-30" href="avatar.html">Add</a>
                                             </div>
                                         </div>
                                     </li>
-                                    <li>
+                                    <li data-node="items:[]:container">
                                         <div class="pt__hover-box pt__hover-box--avatar-type indent-16px">
                                             <div class="image">
-                                                <div class="icon icon-avatar-small pitcher"></div>
+                                                <div class="icon icon-avatar-small clothes" data-node="icon"></div>
                                             </div>
-                                            <p>Pitcher</p>
+                                            <p>Clothes</p>
                                             <div class="pt__buttons is-box">
                                                 <a class="button button-active size-30" href="avatar.html">Add</a>
                                             </div>
                                         </div>
                                     </li>
-                                    <li>
+                                    <li data-node="items:[]:container">
                                         <div class="pt__hover-box pt__hover-box--avatar-type indent-16px">
                                             <div class="image">
-                                                <div class="icon icon-avatar-small book"></div>
+                                                <div class="icon icon-avatar-small cars" data-node="icon"></div>
                                             </div>
-                                            <p>Book</p>
+                                            <p>Cars</p>
                                             <div class="pt__buttons is-box">
                                                 <a class="button button-active size-30" href="avatar.html">Add</a>
                                             </div>
                                         </div>
                                     </li>
-                                    <li>
+                                    <li data-node="items:[]:container">
                                         <div class="pt__hover-box pt__hover-box--avatar-type indent-16px">
                                             <div class="image">
-                                                <div class="icon icon-avatar-small jewelry"></div>
+                                                <div class="icon icon-avatar-small tapes" data-node="icon"></div>
+                                            </div>
+                                            <p>Tapes</p>
+                                            <div class="pt__buttons is-box">
+                                                <a class="button button-active size-30" href="avatar.html">Add</a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li data-node="items:[]:container">
+                                        <div class="pt__hover-box pt__hover-box--avatar-type indent-16px">
+                                            <div class="image">
+                                                <div class="icon icon-avatar-small wedding" data-node="icon"></div>
+                                            </div>
+                                            <p>Wedding</p>
+                                            <div class="pt__buttons is-box">
+                                                <a class="button button-active size-30" href="avatar.html">Add</a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li data-node="items:[]:container">
+                                        <div class="pt__hover-box pt__hover-box--avatar-type indent-16px">
+                                            <div class="image">
+                                                <div class="icon icon-avatar-small hardware" data-node="icon"></div>
+                                            </div>
+                                            <p>Hardware</p>
+                                            <div class="pt__buttons is-box">
+                                                <a class="button button-active size-30" href="avatar.html">Add</a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li data-node="items:[]:container">
+                                        <div class="pt__hover-box pt__hover-box--avatar-type indent-16px">
+                                            <div class="image">
+                                                <div class="icon icon-avatar-small photos" data-node="icon"></div>
+                                            </div>
+                                            <p>Photos</p>
+                                            <div class="pt__buttons is-box">
+                                                <a class="button button-active size-30" href="avatar.html">Add</a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li data-node="items:[]:container">
+                                        <div class="pt__hover-box pt__hover-box--avatar-type indent-16px">
+                                            <div class="image">
+                                                <div class="icon icon-avatar-small bikes" data-node="icon"></div>
+                                            </div>
+                                            <p>Bikes</p>
+                                            <div class="pt__buttons is-box">
+                                                <a class="button button-active size-30" href="avatar.html">Add</a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li data-node="items:[]:container">
+                                        <div class="pt__hover-box pt__hover-box--avatar-type indent-16px">
+                                            <div class="image">
+                                                <div class="icon icon-avatar-small jewelry" data-node="icon"></div>
                                             </div>
                                             <p>Jewelry</p>
                                             <div class="pt__buttons is-box">
@@ -943,10 +1107,21 @@
                                             </div>
                                         </div>
                                     </li>
-                                    <li>
+                                    <li data-node="items:[]:container">
                                         <div class="pt__hover-box pt__hover-box--avatar-type indent-16px">
                                             <div class="image">
-                                                <div class="icon icon-avatar-small toys"></div>
+                                                <div class="icon icon-avatar-small wines" data-node="icon"></div>
+                                            </div>
+                                            <p>Wines</p>
+                                            <div class="pt__buttons is-box">
+                                                <a class="button button-active size-30" href="avatar.html">Add</a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li data-node="items:[]:container">
+                                        <div class="pt__hover-box pt__hover-box--avatar-type indent-16px">
+                                            <div class="image">
+                                                <div class="icon icon-avatar-small toys" data-node="icon"></div>
                                             </div>
                                             <p>Toys</p>
                                             <div class="pt__buttons is-box">
@@ -954,144 +1129,100 @@
                                             </div>
                                         </div>
                                     </li>
-                                    <li>
+                                    <li data-node="items:[]:container">
                                         <div class="pt__hover-box pt__hover-box--avatar-type indent-16px">
                                             <div class="image">
-                                                <div class="icon icon-avatar-small pram"></div>
+                                                <div class="icon icon-avatar-small cd" data-node="icon"></div>
                                             </div>
-                                            <p>Pram</p>
+                                            <p>CD</p>
                                             <div class="pt__buttons is-box">
                                                 <a class="button button-active size-30" href="avatar.html">Add</a>
                                             </div>
                                         </div>
                                     </li>
-                                    <li>
+                                    <li data-node="items:[]:container">
                                         <div class="pt__hover-box pt__hover-box--avatar-type indent-16px">
                                             <div class="image">
-                                                <div class="icon icon-avatar-small sofa"></div>
+                                                <div class="icon icon-avatar-small flags" data-node="icon"></div>
                                             </div>
-                                            <p>Sofa</p>
+                                            <p>Flags</p>
                                             <div class="pt__buttons is-box">
                                                 <a class="button button-active size-30" href="avatar.html">Add</a>
                                             </div>
                                         </div>
                                     </li>
-                                    <li>
+                                    <li data-node="items:[]:container">
                                         <div class="pt__hover-box pt__hover-box--avatar-type indent-16px">
                                             <div class="image">
-                                                <div class="icon icon-avatar-small trumpet"></div>
+                                                <div class="icon icon-avatar-small accessories" data-node="icon"></div>
                                             </div>
-                                            <p>Trumpet</p>
+                                            <p>Accessories</p>
                                             <div class="pt__buttons is-box">
                                                 <a class="button button-active size-30" href="avatar.html">Add</a>
                                             </div>
                                         </div>
                                     </li>
-                                    <li>
+                                    <li data-node="items:[]:container">
                                         <div class="pt__hover-box pt__hover-box--avatar-type indent-16px">
                                             <div class="image">
-                                                <div class="icon icon-avatar-small weapon"></div>
+                                                <div class="icon icon-avatar-small glasses" data-node="icon"></div>
                                             </div>
-                                            <p>Weapon</p>
+                                            <p>Glasses</p>
                                             <div class="pt__buttons is-box">
                                                 <a class="button button-active size-30" href="avatar.html">Add</a>
                                             </div>
                                         </div>
                                     </li>
-                                    <li>
+                                    <li data-node="items:[]:container">
                                         <div class="pt__hover-box pt__hover-box--avatar-type indent-16px">
                                             <div class="image">
-                                                <div class="icon icon-avatar-small knife"></div>
+                                                <div class="icon icon-avatar-small instruments" data-node="icon"></div>
                                             </div>
-                                            <p>Knife</p>
+                                            <p>Instruments</p>
                                             <div class="pt__buttons is-box">
                                                 <a class="button button-active size-30" href="avatar.html">Add</a>
                                             </div>
                                         </div>
                                     </li>
-                                    <li>
+                                    <li data-node="items:[]:container">
                                         <div class="pt__hover-box pt__hover-box--avatar-type indent-16px">
                                             <div class="image">
-                                                <div class="icon icon-avatar-small mask"></div>
+                                                <div class="icon icon-avatar-small maps" data-node="icon"></div>
                                             </div>
-                                            <p>Mask</p>
+                                            <p>Maps</p>
                                             <div class="pt__buttons is-box">
                                                 <a class="button button-active size-30" href="avatar.html">Add</a>
                                             </div>
                                         </div>
                                     </li>
-                                    <li>
+                                    <li data-node="items:[]:container">
                                         <div class="pt__hover-box pt__hover-box--avatar-type indent-16px">
                                             <div class="image">
-                                                <div class="icon icon-avatar-small motorcycle"></div>
+                                                <div class="icon icon-avatar-small medals" data-node="icon"></div>
                                             </div>
-                                            <p>Motorcycle</p>
+                                            <p>Medals</p>
                                             <div class="pt__buttons is-box">
                                                 <a class="button button-active size-30" href="avatar.html">Add</a>
                                             </div>
                                         </div>
                                     </li>
-                                    <li>
+                                    <li data-node="items:[]:container">
                                         <div class="pt__hover-box pt__hover-box--avatar-type indent-16px">
                                             <div class="image">
-                                                <div class="icon icon-avatar-small necklace"></div>
+                                                <div class="icon icon-avatar-small clocks" data-node="icon"></div>
                                             </div>
-                                            <p>Necklace</p>
+                                            <p>Clocks</p>
                                             <div class="pt__buttons is-box">
                                                 <a class="button button-active size-30" href="avatar.html">Add</a>
                                             </div>
                                         </div>
                                     </li>
-                                    <li>
+                                    <li data-node="items:[]:container">
                                         <div class="pt__hover-box pt__hover-box--avatar-type indent-16px">
                                             <div class="image">
-                                                <div class="icon icon-avatar-small wine"></div>
+                                                <div class="icon icon-avatar-small awards" data-node="icon"></div>
                                             </div>
-                                            <p>Wine</p>
-                                            <div class="pt__buttons is-box">
-                                                <a class="button button-active size-30" href="avatar.html">Add</a>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="pt__hover-box pt__hover-box--avatar-type indent-16px">
-                                            <div class="image">
-                                                <div class="icon icon-avatar-small cutlery"></div>
-                                            </div>
-                                            <p>Cutlery</p>
-                                            <div class="pt__buttons is-box">
-                                                <a class="button button-active size-30" href="avatar.html">Add</a>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="pt__hover-box pt__hover-box--avatar-type indent-16px">
-                                            <div class="image">
-                                                <div class="icon icon-avatar-small crown"></div>
-                                            </div>
-                                            <p>Crown</p>
-                                            <div class="pt__buttons is-box">
-                                                <a class="button button-active size-30" href="avatar.html">Add</a>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="pt__hover-box pt__hover-box--avatar-type indent-16px">
-                                            <div class="image">
-                                                <div class="icon icon-avatar-small microscope"></div>
-                                            </div>
-                                            <p>Microscope</p>
-                                            <div class="pt__buttons is-box">
-                                                <a class="button button-active size-30" href="avatar.html">Add</a>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="pt__hover-box pt__hover-box--avatar-type indent-16px">
-                                            <div class="image">
-                                                <div class="icon icon-avatar-small pitcher"></div>
-                                            </div>
-                                            <p>Pitcher</p>
+                                            <p>Awards</p>
                                             <div class="pt__buttons is-box">
                                                 <a class="button button-active size-30" href="avatar.html">Add</a>
                                             </div>

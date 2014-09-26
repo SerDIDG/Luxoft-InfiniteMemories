@@ -97,7 +97,7 @@
         width: 28px;
         height: 28px;
 
-        .for(facebook twitter google youtube search); .-each(@name) {
+        .for(facebook twitter google youtube search tiles-active list); .-each(@name) {
             &.@{name} {
                 background-image: url("@{Path-Image}/icons/28/@{name}.png");
             }
@@ -204,9 +204,13 @@
         width: 118px;
         height: 90px;
 
-        .for(book crown cutlery jewelry knife mask microscope motorcycle necklace pitcher pram sofa toys trumpet weapon wine); .-each(@name) {
+        .for(accessories awards bikes books cars cd clocks clothes flags furniture glasses hardware instruments jewelry maps medals painting photos tapes toys wedding wines); .-each(@name) {
             &.@{name} {
                 background-image: url("@{Path-Image}/icons/avatars/small/@{name}.png");
+
+                &.active {
+                    background-image: url("@{Path-Image}/icons/avatars/small/active/@{name}.png");
+                }
             }
         }
     }

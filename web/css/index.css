@@ -8,10 +8,8 @@ body,
 .cm-ul-inline > li,
 .pt__grid > ul > li,
 .pt__backward > a,
-.pt__dropdown > a,
 .input,
 .pt__toolbar .group > li,
-.pt__toolbar .group.is-toggle > li > a,
 .lt__video-player__title > .l,
 h1,
 h2,
@@ -71,8 +69,8 @@ h2 {
 }
 .font-base-h2.style-light,
 h2.style-light {
-  font: 300 24px/28px 'Open Sans', Arial, Helvetica, sans-serif;
-  color: #a0a0a0;
+  font: 300 22px/28px 'Open Sans', Arial, Helvetica, sans-serif;
+  color: #808080;
 }
 .font-base-h3,
 h3 {
@@ -761,6 +759,12 @@ button,
 .icon.size-28.search {
   background-image: url("../img/icons/28/search.png");
 }
+.icon.size-28.tiles-active {
+  background-image: url("../img/icons/28/tiles-active.png");
+}
+.icon.size-28.list {
+  background-image: url("../img/icons/28/list.png");
+}
 .icon.size-32 {
   width: 32px;
   height: 32px;
@@ -838,53 +842,137 @@ button,
   width: 118px;
   height: 90px;
 }
-.icon.icon-avatar-small.book {
-  background-image: url("../img/icons/avatars/small/book.png");
+.icon.icon-avatar-small.accessories {
+  background-image: url("../img/icons/avatars/small/accessories.png");
 }
-.icon.icon-avatar-small.crown {
-  background-image: url("../img/icons/avatars/small/crown.png");
+.icon.icon-avatar-small.accessories.active {
+  background-image: url("../img/icons/avatars/small/active/accessories.png");
 }
-.icon.icon-avatar-small.cutlery {
-  background-image: url("../img/icons/avatars/small/cutlery.png");
+.icon.icon-avatar-small.awards {
+  background-image: url("../img/icons/avatars/small/awards.png");
+}
+.icon.icon-avatar-small.awards.active {
+  background-image: url("../img/icons/avatars/small/active/awards.png");
+}
+.icon.icon-avatar-small.bikes {
+  background-image: url("../img/icons/avatars/small/bikes.png");
+}
+.icon.icon-avatar-small.bikes.active {
+  background-image: url("../img/icons/avatars/small/active/bikes.png");
+}
+.icon.icon-avatar-small.books {
+  background-image: url("../img/icons/avatars/small/books.png");
+}
+.icon.icon-avatar-small.books.active {
+  background-image: url("../img/icons/avatars/small/active/books.png");
+}
+.icon.icon-avatar-small.cars {
+  background-image: url("../img/icons/avatars/small/cars.png");
+}
+.icon.icon-avatar-small.cars.active {
+  background-image: url("../img/icons/avatars/small/active/cars.png");
+}
+.icon.icon-avatar-small.cd {
+  background-image: url("../img/icons/avatars/small/cd.png");
+}
+.icon.icon-avatar-small.cd.active {
+  background-image: url("../img/icons/avatars/small/active/cd.png");
+}
+.icon.icon-avatar-small.clocks {
+  background-image: url("../img/icons/avatars/small/clocks.png");
+}
+.icon.icon-avatar-small.clocks.active {
+  background-image: url("../img/icons/avatars/small/active/clocks.png");
+}
+.icon.icon-avatar-small.clothes {
+  background-image: url("../img/icons/avatars/small/clothes.png");
+}
+.icon.icon-avatar-small.clothes.active {
+  background-image: url("../img/icons/avatars/small/active/clothes.png");
+}
+.icon.icon-avatar-small.flags {
+  background-image: url("../img/icons/avatars/small/flags.png");
+}
+.icon.icon-avatar-small.flags.active {
+  background-image: url("../img/icons/avatars/small/active/flags.png");
+}
+.icon.icon-avatar-small.furniture {
+  background-image: url("../img/icons/avatars/small/furniture.png");
+}
+.icon.icon-avatar-small.furniture.active {
+  background-image: url("../img/icons/avatars/small/active/furniture.png");
+}
+.icon.icon-avatar-small.glasses {
+  background-image: url("../img/icons/avatars/small/glasses.png");
+}
+.icon.icon-avatar-small.glasses.active {
+  background-image: url("../img/icons/avatars/small/active/glasses.png");
+}
+.icon.icon-avatar-small.hardware {
+  background-image: url("../img/icons/avatars/small/hardware.png");
+}
+.icon.icon-avatar-small.hardware.active {
+  background-image: url("../img/icons/avatars/small/active/hardware.png");
+}
+.icon.icon-avatar-small.instruments {
+  background-image: url("../img/icons/avatars/small/instruments.png");
+}
+.icon.icon-avatar-small.instruments.active {
+  background-image: url("../img/icons/avatars/small/active/instruments.png");
 }
 .icon.icon-avatar-small.jewelry {
   background-image: url("../img/icons/avatars/small/jewelry.png");
 }
-.icon.icon-avatar-small.knife {
-  background-image: url("../img/icons/avatars/small/knife.png");
+.icon.icon-avatar-small.jewelry.active {
+  background-image: url("../img/icons/avatars/small/active/jewelry.png");
 }
-.icon.icon-avatar-small.mask {
-  background-image: url("../img/icons/avatars/small/mask.png");
+.icon.icon-avatar-small.maps {
+  background-image: url("../img/icons/avatars/small/maps.png");
 }
-.icon.icon-avatar-small.microscope {
-  background-image: url("../img/icons/avatars/small/microscope.png");
+.icon.icon-avatar-small.maps.active {
+  background-image: url("../img/icons/avatars/small/active/maps.png");
 }
-.icon.icon-avatar-small.motorcycle {
-  background-image: url("../img/icons/avatars/small/motorcycle.png");
+.icon.icon-avatar-small.medals {
+  background-image: url("../img/icons/avatars/small/medals.png");
 }
-.icon.icon-avatar-small.necklace {
-  background-image: url("../img/icons/avatars/small/necklace.png");
+.icon.icon-avatar-small.medals.active {
+  background-image: url("../img/icons/avatars/small/active/medals.png");
 }
-.icon.icon-avatar-small.pitcher {
-  background-image: url("../img/icons/avatars/small/pitcher.png");
+.icon.icon-avatar-small.painting {
+  background-image: url("../img/icons/avatars/small/painting.png");
 }
-.icon.icon-avatar-small.pram {
-  background-image: url("../img/icons/avatars/small/pram.png");
+.icon.icon-avatar-small.painting.active {
+  background-image: url("../img/icons/avatars/small/active/painting.png");
 }
-.icon.icon-avatar-small.sofa {
-  background-image: url("../img/icons/avatars/small/sofa.png");
+.icon.icon-avatar-small.photos {
+  background-image: url("../img/icons/avatars/small/photos.png");
+}
+.icon.icon-avatar-small.photos.active {
+  background-image: url("../img/icons/avatars/small/active/photos.png");
+}
+.icon.icon-avatar-small.tapes {
+  background-image: url("../img/icons/avatars/small/tapes.png");
+}
+.icon.icon-avatar-small.tapes.active {
+  background-image: url("../img/icons/avatars/small/active/tapes.png");
 }
 .icon.icon-avatar-small.toys {
   background-image: url("../img/icons/avatars/small/toys.png");
 }
-.icon.icon-avatar-small.trumpet {
-  background-image: url("../img/icons/avatars/small/trumpet.png");
+.icon.icon-avatar-small.toys.active {
+  background-image: url("../img/icons/avatars/small/active/toys.png");
 }
-.icon.icon-avatar-small.weapon {
-  background-image: url("../img/icons/avatars/small/weapon.png");
+.icon.icon-avatar-small.wedding {
+  background-image: url("../img/icons/avatars/small/wedding.png");
 }
-.icon.icon-avatar-small.wine {
-  background-image: url("../img/icons/avatars/small/wine.png");
+.icon.icon-avatar-small.wedding.active {
+  background-image: url("../img/icons/avatars/small/active/wedding.png");
+}
+.icon.icon-avatar-small.wines {
+  background-image: url("../img/icons/avatars/small/wines.png");
+}
+.icon.icon-avatar-small.wines.active {
+  background-image: url("../img/icons/avatars/small/active/wines.png");
 }
 .icon.icon-avatar-big {
   width: 214px;
@@ -1024,22 +1112,6 @@ button,
 .pt__backward.pull-right {
   float: right;
 }
-/* ******* PARTS: DROPDOWN ******* */
-/* *** BASE *** */
-.pt__dropdown > a {
-  display: inline-block;
-  vertical-align: top;
-  line-height: 28px;
-}
-.pt__dropdown > a:after {
-  width: 18px;
-  height: 18px;
-  margin-top: 5px;
-  display: inline-block;
-  vertical-align: top;
-  content: '';
-  background-image: url("../img/icons/18/arrow-down.png");
-}
 /* ******* PARTS: INPUTS ******* */
 .input,
 input[type="text"],
@@ -1133,16 +1205,27 @@ select.style-clear {
   background: #fff;
   border: none;
 }
-.input.style-white,
-input[type="text"].style-white,
-input[type="email"].style-white,
-input[type="number"].style-white,
-input[type="phone"].style-white,
-input[type="password"].style-white,
-textarea.style-white,
-select.style-white {
+.input.style-clean,
+input[type="text"].style-clean,
+input[type="email"].style-clean,
+input[type="number"].style-clean,
+input[type="phone"].style-clean,
+input[type="password"].style-clean,
+textarea.style-clean,
+select.style-clean {
   background: #fff;
   font-size: 12px;
+}
+.input.style-toolbar,
+input[type="text"].style-toolbar,
+input[type="email"].style-toolbar,
+input[type="number"].style-toolbar,
+input[type="phone"].style-toolbar,
+input[type="password"].style-toolbar,
+textarea.style-toolbar,
+select.style-toolbar {
+  font-weight: bold;
+  font-size: 14px;
 }
 .textarea,
 textarea {
@@ -1151,9 +1234,13 @@ textarea {
   padding: 4px;
   resize: vertical;
 }
-.textarea.style-white,
-textarea.style-white {
+.textarea.style-clean,
+textarea.style-clean {
   padding: 8px;
+}
+.select.style-toolbar option,
+select.style-toolbar option {
+  font-weight: normal;
 }
 .select[multiple],
 select[multiple] {
@@ -2018,6 +2105,13 @@ button.button-delete {
   width: 118px;
   height: 90px;
 }
+.pt__hover-box--avatar-type > .image .icon {
+  -webkit-transition: background 300ms ease-in-out;
+  transition: background 300ms ease-in-out;
+}
+.pt__hover-box--avatar-type p {
+  font-size: 15px;
+}
 .pt__hover-box--avatar-type .pt__buttons {
   margin: 20px 0 0 0;
   opacity: 0;
@@ -2026,6 +2120,11 @@ button.button-delete {
 .pt__hover-box--avatar-type:hover {
   -webkit-transition: all 100ms ease-in-out;
   transition: all 100ms ease-in-out;
+}
+.pt__hover-box--avatar-type.active > .image .icon,
+.pt__hover-box--avatar-type:hover > .image .icon {
+  -webkit-transition: background 100ms ease-in-out;
+  transition: background 100ms ease-in-out;
 }
 .pt__hover-box--avatar-type.active .pt__buttons,
 .pt__hover-box--avatar-type:hover .pt__buttons {
@@ -2076,7 +2175,7 @@ button.button-delete {
   border-bottom: 1px solid #e2e2e2;
 }
 .pt__toolbar > .inner {
-  margin: 0 0 -16px;
+  margin: 0 0 -12px;
   font-size: 0;
   display: -webkit-flex;
   display: flex;
@@ -2092,7 +2191,7 @@ button.button-delete {
 }
 .pt__toolbar .group {
   max-width: 100%;
-  margin: 0 48px 0 0;
+  margin: 0 38px 0 0;
   padding: 0;
   display: inline-block;
   vertical-align: top;
@@ -2106,14 +2205,14 @@ button.button-delete {
   max-width: 100%;
   display: inline-block;
   vertical-align: top;
-  margin: 0 16px 16px 0;
+  margin: 0 12px 12px 0;
   line-height: 28px;
 }
 .pt__toolbar .group > li:last-child {
   margin-right: 0;
 }
 .pt__toolbar .group > li.label {
-  margin-right: 10px;
+  margin-right: 12px;
   line-height: 28px;
 }
 .pt__toolbar .group > li.is-icon {
@@ -2140,18 +2239,19 @@ button.button-delete {
   width: 150px;
 }
 .pt__toolbar .group > li.large {
-  width: 250px;
+  width: 200px;
 }
 .pt__toolbar .group > li.x-large {
   width: 300px;
 }
 .pt__toolbar .group.is-toggle > li {
-  margin-right: 35px;
+  margin-right: 12px;
 }
 .pt__toolbar .group.is-toggle > li:last-child {
   margin-right: 0;
 }
 .pt__toolbar .group.is-toggle > li > a {
+  display: block;
   line-height: 28px;
 }
 .pt__toolbar .group.is-toggle > li > a:hover {
@@ -2162,6 +2262,7 @@ button.button-delete {
 }
 .pt__toolbar .group.is-toggle > li.active > a {
   font-weight: bold;
+  color: #000000;
 }
 .pt__toolbar.is-adaptive > .inner {
   -webkit-flex-wrap: nowrap;
@@ -3270,4 +3371,3 @@ html.is-dialog--open {
 .lt__code-preview__box > .inner p {
   text-align: center;
 }
-/* ************ MAIN STYLES ************ */

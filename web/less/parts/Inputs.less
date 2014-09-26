@@ -31,9 +31,14 @@
         border: none;
     }
 
-    &.style-white {
+    &.style-clean {
         background: #fff;
         font-size: @Font-Base-SizeSecondary;
+    }
+
+    &.style-toolbar {
+        font-weight: bold;
+        font-size: @Font-Base-Size;
     }
 }
 
@@ -43,12 +48,18 @@
     padding: @PT-Input-Indent;
     resize: vertical;
 
-    &.style-white {
+    &.style-clean {
         padding: 8px;
     }
 }
 
 .select {
+    &.style-toolbar {
+        option {
+            font-weight: normal;
+        }
+    }
+
     &[multiple] {
         height: @PT-Select-Size * @Font-Input-LineHeight + @Border-Base-Size * 2;
         padding: 0;

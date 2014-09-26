@@ -143,7 +143,13 @@
 
     > .title {
         height: 54px;
+        position: relative;
         border-top: @Border-Dark;
+
+        .icon {
+            position: absolute;
+            .mix-position(0, auto, 0, 0);
+        }
 
         h3 {
             &:extend(.cm-text-overflow all);

@@ -37,6 +37,7 @@ select,
   color: #000000;
 }
 .font-base-secondary,
+.pt__item-box > .inner > .r .descr,
 .pt__users-line > .title {
   font: normal 12px/18px Arial, Helvetica, sans-serif;
   color: #000000;
@@ -491,7 +492,7 @@ input[type="checkbox"] {
 .pt__hover-box--avatar > .title h3,
 .pt__hover-box--memory-selection h3,
 .pt__item-box > .inner > .r h4,
-.pt__item-box > .inner > .r p,
+.pt__item-box > .inner > .r .descr,
 .pt__preview-box__info > .r h3,
 .lt__sidebar__block > dt,
 .lt__sidebar__block > dt .title,
@@ -765,6 +766,9 @@ button,
 .icon.size-26.p-video {
   background-image: url("../img/icons/26/p-video.png");
 }
+.icon.size-26.p-photo {
+  background-image: url("../img/icons/26/p-photo.png");
+}
 .icon.size-26.avatars {
   background-image: url("../img/icons/26/avatars.png");
 }
@@ -898,6 +902,13 @@ button,
 }
 .icon.icon-create.memory {
   background-image: url("../img/icons/create/memory.png");
+}
+.icon.icon-avatar-x-small {
+  width: 36px;
+  height: 54px;
+}
+.icon.icon-avatar-x-small.jewelry {
+  background-image: url("../img/icons/avatars/x-small/jewelry.png");
 }
 .icon.icon-avatar-small {
   width: 118px;
@@ -1602,6 +1613,17 @@ button.button-delete {
 .pt__buttons {
   margin-top: 16px;
 }
+.pt__buttons .sep {
+  padding: 0 8px;
+}
+.pt__buttons .sep:before {
+  display: block;
+  border-right: 1px solid #e2e2e2;
+  content: '';
+}
+.pt__buttons .sep.size-22:before {
+  height: 22px;
+}
 .pt__buttons.is-box .button,
 .pt__buttons.is-box .browse-button,
 .pt__buttons.is-box input[type="button"],
@@ -1626,6 +1648,7 @@ button.button-delete {
 }
 .pt__buttons.pull-left .button,
 .pt__buttons.pull-left .browse-button,
+.pt__buttons.pull-left .sep,
 .pt__buttons.pull-left input[type="button"],
 .pt__buttons.pull-left input[type="submit"],
 .pt__buttons.pull-left input[type="reset"],
@@ -1634,6 +1657,7 @@ button.button-delete {
 }
 .pt__buttons.pull-right .button,
 .pt__buttons.pull-right .browse-button,
+.pt__buttons.pull-right .sep,
 .pt__buttons.pull-right input[type="button"],
 .pt__buttons.pull-right input[type="submit"],
 .pt__buttons.pull-right input[type="reset"],
@@ -1642,6 +1666,7 @@ button.button-delete {
 }
 .pt__buttons.pull-left .button,
 .pt__buttons.pull-left .browse-button,
+.pt__buttons.pull-left .sep,
 .pt__buttons.pull-left input[type="button"],
 .pt__buttons.pull-left input[type="submit"],
 .pt__buttons.pull-left input[type="reset"],
@@ -1650,14 +1675,34 @@ button.button-delete {
 }
 .pt__buttons.pull-right .button,
 .pt__buttons.pull-right .browse-button,
+.pt__buttons.pull-right .sep,
 .pt__buttons.pull-right input[type="button"],
 .pt__buttons.pull-right input[type="submit"],
 .pt__buttons.pull-right input[type="reset"],
 .pt__buttons.pull-right button {
   margin: 0 0 0 16px;
 }
+.pt__buttons.indent-8px.pull-left .button,
+.pt__buttons.indent-8px.pull-left .browse-button,
+.pt__buttons.indent-8px.pull-left .sep,
+.pt__buttons.indent-8px.pull-left input[type="button"],
+.pt__buttons.indent-8px.pull-left input[type="submit"],
+.pt__buttons.indent-8px.pull-left input[type="reset"],
+.pt__buttons.indent-8px.pull-left button {
+  margin: 0 8px 0 0;
+}
+.pt__buttons.indent-8px.pull-right .button,
+.pt__buttons.indent-8px.pull-right .browse-button,
+.pt__buttons.indent-8px.pull-right .sep,
+.pt__buttons.indent-8px.pull-right input[type="button"],
+.pt__buttons.indent-8px.pull-right input[type="submit"],
+.pt__buttons.indent-8px.pull-right input[type="reset"],
+.pt__buttons.indent-8px.pull-right button {
+  margin: 0 0 0 8px;
+}
 .pt__buttons.indent-10px.pull-left .button,
 .pt__buttons.indent-10px.pull-left .browse-button,
+.pt__buttons.indent-10px.pull-left .sep,
 .pt__buttons.indent-10px.pull-left input[type="button"],
 .pt__buttons.indent-10px.pull-left input[type="submit"],
 .pt__buttons.indent-10px.pull-left input[type="reset"],
@@ -1666,6 +1711,7 @@ button.button-delete {
 }
 .pt__buttons.indent-10px.pull-right .button,
 .pt__buttons.indent-10px.pull-right .browse-button,
+.pt__buttons.indent-10px.pull-right .sep,
 .pt__buttons.indent-10px.pull-right input[type="button"],
 .pt__buttons.indent-10px.pull-right input[type="submit"],
 .pt__buttons.indent-10px.pull-right input[type="reset"],
@@ -1674,6 +1720,7 @@ button.button-delete {
 }
 .pt__buttons.indent-16px.pull-left .button,
 .pt__buttons.indent-16px.pull-left .browse-button,
+.pt__buttons.indent-16px.pull-left .sep,
 .pt__buttons.indent-16px.pull-left input[type="button"],
 .pt__buttons.indent-16px.pull-left input[type="submit"],
 .pt__buttons.indent-16px.pull-left input[type="reset"],
@@ -1682,6 +1729,7 @@ button.button-delete {
 }
 .pt__buttons.indent-16px.pull-right .button,
 .pt__buttons.indent-16px.pull-right .browse-button,
+.pt__buttons.indent-16px.pull-right .sep,
 .pt__buttons.indent-16px.pull-right input[type="button"],
 .pt__buttons.indent-16px.pull-right input[type="submit"],
 .pt__buttons.indent-16px.pull-right input[type="reset"],
@@ -2217,7 +2265,15 @@ button.button-delete {
 }
 .pt__hover-box--avatar > .title {
   height: 54px;
+  position: relative;
   border-top: 1px solid #d9d9d9;
+}
+.pt__hover-box--avatar > .title .icon {
+  position: absolute;
+  top: 0;
+  right: auto;
+  bottom: 0;
+  left: 0;
 }
 .pt__hover-box--avatar > .title h3 {
   margin: 0;
@@ -2381,10 +2437,10 @@ button.button-delete {
 .pt__line-title > .l {
   overflow: hidden;
 }
-.pt__line-title > .l h1 .title {
+.pt__line-title > .l h1 .label {
   margin: 0 16px 0 0;
 }
-.pt__line-title > .l h1 .title:last-child {
+.pt__line-title > .l h1 .label:last-child {
   margin: 0;
 }
 .pt__line-title > .l h1 .icon {
@@ -2444,8 +2500,26 @@ button.button-delete {
 .pt__item-box > .inner > .r .pt__uploader-bar {
   margin: 3px 0 0 0;
 }
+.pt__item-box > .inner > .r .title > .r {
+  margin: 0 0 0 16px;
+  float: right;
+}
+.pt__item-box > .inner > .r .title > .l {
+  overflow: hidden;
+}
+.pt__item-box > .inner > .r .title .pt__line-info {
+  margin: 0;
+}
 .pt__item-box > .inner > .r h4 {
   margin: 0;
+}
+.pt__item-box > .inner > .r .descr {
+  margin: 5px 0 0 0;
+  font-weight: bold;
+  line-height: 24px;
+}
+.pt__item-box > .inner > .r .descr .label {
+  margin: 0 6px 0 0;
 }
 .pt__item-box > .inner > .r p {
   margin: 10px 0 0 0;
@@ -2458,6 +2532,9 @@ button.button-delete {
 }
 .pt__item-box.has-uploader-bar > .inner > .r .pt__line-info {
   margin: 2px 0 0 0;
+}
+.pt__item-box.has-uploader-bar > .inner > .r .descr {
+  margin: 0;
 }
 .pt__item-box.has-uploader-bar > .inner > .r p {
   margin: 2px 0 0 0;
@@ -2625,6 +2702,7 @@ button.button-delete {
   margin-left: -482px;
   position: absolute;
   z-index: 4;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.25), 0 0 5px rgba(0, 0, 0, 0.25);
   top: 0;
   right: 0;
   bottom: 0;
@@ -2905,9 +2983,6 @@ button.button-delete {
   right: 0;
   bottom: 185px;
   left: 0;
-}
-.lt__splash__text {
-  text-shadow: 0 0 10px rgba(0, 0, 0, 0.25), 0 0 5px rgba(0, 0, 0, 0.25);
 }
 .lt__splash__text .pt__tags__content,
 .lt__splash__text h1,
@@ -3265,6 +3340,9 @@ button.button-delete {
 .lt__profile__block h6 {
   margin: 0 0 4px;
 }
+.lt__profile__block h6 .label {
+  margin: 0 10px 0 0;
+}
 .lt__profile__block.has-border {
   margin: 16px 0 0 0;
   padding-top: 10px;
@@ -3292,6 +3370,16 @@ button.button-delete {
 .lt__profile__block--add-button .pt__buttons input[type="reset"],
 .lt__profile__block--add-button .pt__buttons button {
   min-width: 250px;
+}
+/* *** MENUS *** */
+.lt__profile__menus {
+  margin: 22px 0 0 0;
+}
+.lt__profile__menus .lt__profile__block {
+  margin: 10px 0 0 0;
+}
+.lt__profile__menus .lt__profile__block:first-child {
+  margin-top: 0;
 }
 /* ******* LAYOUTS: DIALOG ******* */
 /* *** BASE *** */

@@ -89,7 +89,7 @@
         width: 26px;
         height: 26px;
 
-        .for(plus-white p-qr p-video avatars circles memories messages profile settings i-auctions i-family i-social i-travel i-video); .-each(@name) {
+        .for(plus-white p-qr p-video p-photo avatars circles memories messages profile settings i-auctions i-family i-social i-travel i-video); .-each(@name) {
             &.@{name} {
                 background-image: url("@{Path-Image}/icons/26/@{name}.png");
             }
@@ -199,6 +199,19 @@
         .for(avatar memory); .-each(@name) {
             &.@{name} {
                 background-image: url("@{Path-Image}/icons/create/@{name}.png");
+            }
+        }
+    }
+
+    // /* *** AVATARS X-SMALL *** */
+
+    &.icon-avatar-x-small {
+        width: 36px;
+        height: 54px;
+
+        .for(jewelry); .-each(@name) {
+            &.@{name} {
+                background-image: url("@{Path-Image}/icons/avatars/x-small/@{name}.png");
             }
         }
     }

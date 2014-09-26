@@ -35,15 +35,40 @@
                 margin: 3px 0 0 0;
             }
 
+            .title {
+                > .r {
+                    margin: 0 0 0 16px;
+                    float: right;
+                }
+
+                > .l {
+                    overflow: hidden;
+                }
+
+                .pt__line-info {
+                    margin: 0;
+                }
+            }
+
             h4 {
                 &:extend(.cm-text-overflow);
 
                 margin: 0;
             }
 
-            p {
-                &:extend(.cm-text-overflow);
+            .descr {
+                &:extend(.font-base-secondary, .cm-text-overflow);
 
+                margin: 5px 0 0 0;
+                font-weight: bold;
+                line-height: 24px;
+
+                .label {
+                    margin: 0 6px 0 0;
+                }
+            }
+
+            p {
                 margin: 10px 0 0 0;
             }
 
@@ -62,6 +87,10 @@
             > .r {
                 .pt__line-info {
                     margin: 2px 0 0 0;
+                }
+
+                .descr {
+                    margin: 0;
                 }
 
                 p {

@@ -2,7 +2,7 @@
 
 // /* ******* COMMON ******* */
 
-@CM-MinWidth: 1000px;
+@CM-MinWidth: 964px;
 @CM-WrapperIndent: 12px;
 @CM-Transition-Duration: 300ms;
 @CM-Transition-DurationReverse: 100ms;
@@ -14,8 +14,10 @@
 
 // /* *** FONT *** */
 
-@Font-Base-Family: Tahoma, Geneva, sans-serif;
-@Font-Base-FamilySecondary: 'Open Sans', Arial, Helvetica, sans-serif;
+@Font-Base-Family: Arial, Helvetica, sans-serif;    //Tahoma, Geneva, sans-serif;
+@Font-Base-Family2: 'Open Sans', Arial, Helvetica, sans-serif;
+@Font-Base-Family3: Arial, Helvetica, sans-serif;
+@Font-Base-Family4: 'PT Sans Narrow', sans-serif;
 @Font-Base-LineHeight: 18px;
 @Font-Base-Size: 14px;
 @Font-Base-SizeSecondary: 12px;
@@ -35,17 +37,17 @@
 @Font-Base-LineHeightH5: @Font-Base-LineHeight;
 @Font-Base-LineHeightH6: 26px;
 
-@Font-Slider-Family: @Font-Base-FamilySecondary;
-@Font-Slider-LineHeight: 60px;
-@Font-Slider-Size: 50px;
+@Font-Slider-Family: @Font-Base-Family3;
+@Font-Slider-LineHeight: 62px;
+@Font-Slider-Size: 46px;
 @Font-Slider-Weight: bold;
 @Font-Slider-LineHeightH2: 45px;
 @Font-Slider-SizeH2: 30px;
 @Font-Slider-LineHeightH3: 36px;
 @Font-Slider-SizeH3: 24px;
 
-@Font-Header-Family: 'PT Sans Narrow', sans-serif;
-@Font-Header-Size: 14px;
+@Font-Header-Family: @Font-Base-Family4;
+@Font-Header-Size: 14px;    // 15px for Franklin Gothic Heavy
 
 @Font-ButtonBig-Size: 22px;
 @Font-ButtonBig-Weight: normal;
@@ -89,6 +91,7 @@
 
 // /* *** BACKGROUNDS *** */
 
+@Background-Branding: #1252a7;
 @Background-Base: #ffffff;
 @Background-Base-Dark: @Color-Base-Dark;
 @Background-Active: @Color-Active;
@@ -105,6 +108,8 @@
 @Background-Button-Delete: #9a9a9a;
 
 @Background-Input: #f9f9f9;
+
+@Background-Header: @Background-Branding;
 
 // /* *** BORDERS *** */
 
@@ -171,7 +176,7 @@
 
 // /* *** USER BOX *** */
 
-@PT-UserBox-Sizes: 34 100;
+@PT-UserBox-Sizes: 32 100;
 
 // /* *** HOVER BOX *** */
 
@@ -203,7 +208,7 @@
 @LT-Slider-BackgroundWidth: 1500px;
 @LT-Slider-ButtonSize: 16px;
 @LT-Slider-ButtonBackground: @Background-Base;
-@LT-Slider-ButtonBackgroundActive: @Background-Active-Secondary;
+@LT-Slider-ButtonBackgroundActive: @Background-Active;
 
 // /* *** SPLASH *** */
 

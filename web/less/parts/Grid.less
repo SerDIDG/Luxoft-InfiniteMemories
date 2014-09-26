@@ -55,6 +55,38 @@
         }
     }
 
+    &.is-justify {
+        > ul {
+            > li {
+                text-align: center;
+
+                &:first-child {
+                    text-align: left;
+                }
+
+                &:last-child {
+                    text-align: right;
+                }
+            }
+        }
+    }
+
+    &.is-justify-center {
+        > ul {
+            > li {
+                text-align: center;
+
+                &:first-child {
+                    text-align: right;
+                }
+
+                &:last-child {
+                    text-align: left;
+                }
+            }
+        }
+    }
+
     &.is-adaptive {
         overflow: visible;
 
@@ -63,6 +95,13 @@
                 width: auto;
                 overflow: visible;
             }
+        }
+    }
+
+    &.is-inline {
+        > ul {
+            overflow: hidden;
+            white-space: nowrap;
         }
     }
 
@@ -89,51 +128,10 @@
     }
 }
 
-/* *** SIDEBAR *** */
-
-.pt__grid--sidebar {
-    padding: 0 @LT-Sidebar-InnerIndent;
-}
-
 /* *** AVATAR TYPE *** */
 
 .pt__grid--avatar-type {
     padding: 16px 0;
-}
-
-/* *** MEMORY SELECTION *** */
-
-.pt__grid--memory-selection {
-    > ul {
-        > li {
-            text-align: center;
-
-            &:first-child {
-                text-align: left;
-            }
-
-            &:last-child {
-                text-align: right;
-            }
-        }
-    }
-}
-/* *** CODE SELECTION *** */
-
-.pt__grid--code-selection {
-    > ul {
-        > li {
-            text-align: center;
-
-            &:first-child {
-                text-align: right;
-            }
-
-            &:last-child {
-                text-align: left;
-            }
-        }
-    }
 }
 
 /* ******* PARTS: GRID: BUNDLE ******* */

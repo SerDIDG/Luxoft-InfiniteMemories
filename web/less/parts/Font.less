@@ -8,6 +8,25 @@
     color: @Color-Base;
 }
 
+.font-base-secondary {
+    font: @Font-Base-Weight ~'@{Font-Base-SizeSecondary}/@{Font-Base-LineHeight}' @Font-Base-Family;
+    color: @Color-Base;
+}
+
+.font-link {
+    cursor: pointer;
+    outline: none;
+    text-decoration: none;
+    color: @Color-Link;
+    .mix-transition(color @CM-Transition-Duration ease-in-out);
+
+    &:hover {
+        text-decoration: none;
+        color: @Color-LinkHover;
+        .mix-transition(color @CM-Transition-DurationReverse ease-in-out);
+    }
+}
+
 .font-base-h1 {
     font: @Font-Base-Weight ~'@{Font-Base-SizeH1}/@{Font-Base-LineHeightH1}' @Font-Base-Family;
     color: @Color-Base-H1;
@@ -18,7 +37,7 @@
     color: @Color-Base-H2;
 
     &.style-light {
-        font: 300 ~'@{Font-Base-SizeH2Light}/@{Font-Base-LineHeightH2Light}' @Font-Base-FamilySecondary;
+        font: 300 ~'@{Font-Base-SizeH2Light}/@{Font-Base-LineHeightH2Light}' @Font-Base-Family2;
         color: @Color-Base-H2Light;
     }
 }
@@ -42,20 +61,6 @@
     font: bold ~'@{Font-Base-SizeH6}/@{Font-Base-LineHeightH6}' @Font-Base-Family;
     color: @Color-Base-H6;
     text-transform: uppercase;
-}
-
-.font-link {
-    cursor: pointer;
-    outline: none;
-    text-decoration: none;
-    color: @Color-Link;
-    .mix-transition(color @CM-Transition-Duration ease-in-out);
-
-    &:hover {
-        text-decoration: none;
-        color: @Color-LinkHover;
-        .mix-transition(color @CM-Transition-DurationReverse ease-in-out);
-    }
 }
 
 .font-hint {
@@ -93,7 +98,7 @@
     color: @Color-Button;
 }
 
-.font-slider {
+.font-slider-h1 {
     font: @Font-Slider-Weight ~'@{Font-Slider-Size}/@{Font-Slider-LineHeight}' @Font-Slider-Family;
     color: @Color-Slider;
 }

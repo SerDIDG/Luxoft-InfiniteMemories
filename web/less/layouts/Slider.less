@@ -17,15 +17,6 @@
         .mix-position(0, 0, 0, 0);
 
         > li {
-            &:after {
-                display: block;
-                position: absolute;
-                z-index: 3;
-                box-shadow: inset 0 0 200px rgba(0, 0, 0, 1);
-                content: '';
-                .mix-position(0, 0, 0, 0);
-            }
-
             > .image {
                 width: 100%;
                 height: auto;
@@ -41,40 +32,36 @@
             }
 
             > .text {
-                &:extend(.font-slider);
-
                 width: @CM-MinWidth;
                 margin-left: -(@CM-MinWidth / 2);
                 position: absolute;
                 z-index: 4;
-                text-shadow: 0 0 10px rgba(0, 0, 0, 0.25),
-                             0 0 5px rgba(0, 0, 0, 0.25);;
                 .mix-position(0, 0, 0, 50%);
                 .mix-user-select(text);
-
-                .pt__tags__content {
-                    margin: 0;
-                    color: @Color-Slider;
-                    text-align: left;
-                }
-
-                h1 {
-                    &:extend(.font-slider);
-                    text-transform: uppercase;
-                }
-
-                h2 {
-                    &:extend(.font-slider-h2);
-                    text-transform: uppercase;
-                }
-
-                h3 {
-                    &:extend(.font-slider-h3);
-                    text-transform: uppercase;
-                }
             }
         }
     }
+
+    // /* Text */
+
+    .pt__tags__content {
+        color: @Color-Slider;
+        text-align: left;
+    }
+
+    h1 {
+        &:extend(.font-slider-h1);
+    }
+
+    h2 {
+        &:extend(.font-slider-h2);
+    }
+
+    h3 {
+        &:extend(.font-slider-h3);
+    }
+
+    // /* Effects */
 
     &.effect-fade {
         > ul {
@@ -127,7 +114,6 @@
             background-color: @LT-Slider-ButtonBackground;
             border-radius: @LT-Slider-ButtonSize;
             cursor: pointer;
-            box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.25);
             .mix-transition(all @CM-Transition-Duration);
 
             &:last-child {

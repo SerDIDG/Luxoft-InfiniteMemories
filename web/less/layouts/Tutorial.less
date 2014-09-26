@@ -38,10 +38,21 @@
 .lt__tutorial__text {
     width: 600px;
     position: absolute;
-    .mix-position(112px, 100px, auto, auto);
+    .mix-position(108px, 100px, auto, auto);
     .mix-transition(all @CM-Transition-Duration ease-in-out);
 
     @media only screen and (max-width : @LT-Slider-BackgroundWidth) {
         right: 20px;
+    }
+}
+
+.lt__tutorial__text--1 {
+    h1 {
+        margin: 0 0 20px;
+        font-size: 44px;
+    }
+
+    h3 {
+        margin: 0 0 30px;
     }
 }

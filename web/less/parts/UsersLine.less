@@ -1,0 +1,50 @@
+/* ******* PARTS: USERS LINE ******* */
+
+.pt__users-line {
+    margin: 4px 0 0 0;
+
+    &:first-child {
+        margin-top: 0;
+    }
+
+    > .title {
+        &:extend(.font-base-secondary);
+    }
+
+    > .bar {
+        position: relative;
+
+        .bar-arrow {
+            width: 16px;
+            height: 100%;
+            position: absolute;
+            z-index: 2;
+            background-color: @Color-Border;
+            cursor: pointer;
+            .mix-position(0, auto, 0, auto);
+            .mix-transition(opacity @CM-Transition-Duration ease-in-out);
+
+            &:hover {
+                opacity: @CM-Opacity-Hover;
+                .mix-transition(opacity @CM-Transition-DurationReverse ease-in-out);
+            }
+        }
+
+        .bar-arrow--right {
+            right: 0;
+            background-position: 50% 50%;
+            background-repeat: no-repeat;
+            .icon.size-12.arrow-right;
+        }
+
+        .bar-arrow--left {
+            left: 0;
+        }
+    }
+}
+
+/* *** SIDEBAR *** */
+
+.pt__users-line--sidebar {
+    padding: 0 @LT-Sidebar-InnerIndent;
+}

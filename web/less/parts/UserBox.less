@@ -7,15 +7,8 @@
 
     cursor: pointer;
 
-    > .image,
-    > .name,
-    > .arrow {
-        margin: 0 0 0 8px;
-        float: left;
-    }
-
     > .image {
-        margin: 0;
+        float: left;
 
         img {
             display: block;
@@ -23,9 +16,16 @@
         }
     }
 
+    > .name {
+        margin: 0 0 0 10px;
+        float: left;
+    }
+
     > .arrow {
         width: 8px;
         position: relative;
+        margin: 0 0 0 6px;
+        float: left;
 
         &:before {
             width: 0;
@@ -57,6 +57,13 @@
         &:extend(.font-header);
     }
 
+    > .image {
+        img {
+            background-color: @Background-Base;
+            box-shadow: 0 0 0 2px  @Background-Base;
+        }
+    }
+
     > .arrow {
         &:before {
             border-color: @Color-Header transparent transparent transparent;
@@ -73,7 +80,7 @@
     > .image {
         img {
             background-color: @Background-Base;
-            box-shadow: 0 0 0 5px  @Color-Slider;
+            box-shadow: 0 0 0 5px  @Background-Base;
         }
     }
 

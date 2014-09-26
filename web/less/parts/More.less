@@ -19,20 +19,6 @@
 /* *** SIDEBAR *** */
 
 .pt__more--sidebar {
-    margin: 10px 0 0 0;
-    padding: 0 @LT-Sidebar-InnerIndent;
-}
-
-/* *** SIDEBAR MENU *** */
-
-.pt__more--sidebar-menu {
-    > a {
-        display: block;
-        padding: 0 @PT-Menu-Sidebar-Indent 0 (@PT-Menu-Sidebar-Indent + @PT-Menu-Sidebar-IndentIconLeft + @PT-Menu-Sidebar-Height);
-        line-height: @PT-Menu-Sidebar-Height;
-
-        &:after {
-            margin-top: (@PT-Menu-Sidebar-Height - 18px) / 2;
-        }
-    }
+    margin: 4px 0 0 0;
+    padding: ((@PT-Menu-Sidebar-Height - @Font-Base-LineHeight) / 2) @LT-Sidebar-InnerIndent;
 }

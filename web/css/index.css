@@ -731,6 +731,9 @@ button,
 .icon.size-24.edit {
   background-image: url("../img/icons/24/edit.png");
 }
+.icon.size-24.edit-white {
+  background-image: url("../img/icons/24/edit-white.png");
+}
 .icon.size-24.facebook {
   background-image: url("../img/icons/24/facebook.png");
 }
@@ -745,6 +748,9 @@ button,
 }
 .icon.size-24.twitter {
   background-image: url("../img/icons/24/twitter.png");
+}
+.icon.size-24.comment {
+  background-image: url("../img/icons/24/comment.png");
 }
 .icon.size-26 {
   width: 26px;
@@ -3206,12 +3212,6 @@ button.button-delete {
 }
 .lt__profile__descr .pt__line-info {
   margin: 6px 0 0 0;
-}
-.lt__profile__descr .pt__menu--controls {
-  margin: 8px 0 0 0;
-}
-.lt__profile__descr .pt__text-box {
-  margin: 12px 0 0 0;
 }
 .lt__profile__descr .pt__tags__content,
 .lt__profile__descr h1,

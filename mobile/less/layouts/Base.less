@@ -101,6 +101,12 @@
             bottom: @LT-Base-FooterHeight;
         }
     }
+
+    &.has-buttons {
+        .lt__base__content {
+            bottom: @LT-Base-ButtonsHeight;
+        }
+    }
 }
 
 .lt__base__app-bar {
@@ -219,4 +225,17 @@
 
 .lt__base__footer--dark {
     background-color: @Background-Footer-Dark;
+}
+
+/* *** BUTTONS *** */
+
+.lt__base__buttons {
+    position: absolute;
+    z-index: 2;
+    padding: @LT-Base-ButtonsIndent @CM-Base-Indent;
+    .mix-position(auto, 0, 0, 0);
+
+    .button {
+        width: 100%;
+    }
 }

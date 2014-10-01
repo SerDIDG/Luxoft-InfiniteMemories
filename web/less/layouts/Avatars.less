@@ -142,22 +142,34 @@
     display: block;
 
     .image {
-        width: 120px;
-        height: 120px;
-        border-radius: 120px;
-        border: 4px solid @Background-Base;
+        width: @LT-Avatars-ItemSize;
+        height: @LT-Avatars-ItemSize;
+        position: relative;
+        z-index: 1;
         overflow: hidden;
         background-color: @Background-Base;
+        border-radius: @LT-Avatars-ItemSize;
+
+        &:before {
+            display: block;
+            position: absolute;
+            z-index: 2;
+            border: 4px solid transparent;
+            border-radius: @LT-Avatars-ItemSize;
+            content: '';
+            .mix-position(0, 0, 0, 0);
+        }
 
         img {
             &:extend(.cm-image-resizable);
 
-            border-radius: 120px;
+            border-radius: @LT-Avatars-ItemSize;
         }
     }
 
     .icon {
         position: absolute;
+        z-index: 2;
         border-radius: 38px;
         background-color: @Background-Base;
         .mix-position(auto, 2px, 2px, auto);
@@ -165,34 +177,47 @@
 
     &.style-grey {
         .image {
-            border-color: @Background-Base-Light;
+            &:before {
+                border-color: @Background-Base-Light;
+            }
         }
     }
 
     &.style-red {
         .image {
-            border-color: @Background-Active-Secondary;
+            &:before {
+                border-color: @Background-Active-Secondary;
+            }
         }
     }
 
     &.style-yellow {
         .image {
-            border-color: #f7d917;
             background-color: #f5ed59;
+
+            &:before {
+                border-color: #f7d917;
+            }
         }
     }
 
     &.style-green {
         .image {
-            border-color: #30ce82;
             background-color: #b4e6b7;
+
+            &:before {
+                border-color: #30ce82;
+            }
         }
     }
 
     &.style-purple {
         .image {
-            border-color: #ab78de;
             background-color: #cc99ff;
+
+            &:before {
+                border-color: #ab78de;
+            }
         }
     }
 }

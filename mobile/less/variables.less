@@ -35,6 +35,8 @@
 @Font-Input-LineHeight: 24px;
 @Font-Placeholder-Size: @Font-Input-Size;
 @Font-Hint-Size: @Font-Base-SizeSecondary;
+@Font-HintMedium-Size: 11px;
+@Font-HintMedium-LineHeight: 18px;
 @Font-HintSmall-Size: 10px;
 
 @Font-H1-Size: 18px;
@@ -61,14 +63,17 @@
 @Color-Active: #328cd2;
 @Color-Active-Secondary: #1252a7;
 @Color-Alt: #00a859;
+@Color-Alt-Secondary: #cf1715;
 @Color-Link: #007aff;
 @Color-LinkHover: @Color-Link;
 @Color-Hint: #999999;
+@Color-Hint-Dark: #808080;
 @Color-Placeholder: @Color-Hint;
 @Color-Button: @Color-Base-Light;
 @Color-Input: @Color-Base;
 @Color-Border: #c8c8c8;
 @Color-Sidebar: @Color-Base-Light;
+@Color-Avatar-Transfered: #b6b6b6;
 
 @Color-H3: #999999;
 
@@ -81,6 +86,7 @@
 @Background-Active: @Color-Active;
 @Background-Active-Secondary: @Color-Active-Secondary;
 @Background-Alt: @Color-Alt;
+@Background-Alt-Secondary: @Color-Alt-Secondary;
 @Background-Hint: @Color-Hint;
 @Background-Twitter: #30bbe9;
 @Background-Facebook: #325190;
@@ -97,7 +103,6 @@
 @Background-Button-SecondaryDark: #e4e6e8;
 @Background-Button-Alt: @Background-Alt;
 @Background-Button-Delete: #9a9a9a;
-
 @Background-Input: @Background-Base;
 
 // /* *** BORDERS *** */
@@ -163,6 +168,11 @@
 
 @PT-Notification-Height: 41px;
 
+// /* *** TABSET *** */
+
+@PT-Tabset-HeadHeight: 29px;
+@PT-Tabset-HeadIndent: 12px;
+
 // /* ******* LAYOUTS ******* */
 
 // /* *** LOGIN *** */
@@ -173,6 +183,8 @@
 
 @LT-Base-HeaderHeight: @CM-Base-Size;
 @LT-Base-FooterHeight: @CM-Base-Size;
+@LT-Base-ButtonsIndent: 12px;
+@LT-Base-ButtonsHeight: 39px + (@LT-Base-ButtonsIndent * 2);
 
 // /* *** SIDEBAR *** */
 
@@ -194,3 +206,7 @@
 // /* *** MEMORY DETAILS *** */
 
 @LT-MemoryDetails-Padding: 8px;
+
+// /* *** AVATARS *** */
+
+@LT-Avatars-ItemSize: 85px;

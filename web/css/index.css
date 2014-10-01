@@ -4073,7 +4073,7 @@ html.is-dialog--open {
 .lt__avatars-item.is-transfered .pt__line-info {
   color: #666666;
 }
-.lt__avatars-item.is-transfered .lt__avatars-item__image .image {
+.lt__avatars-item.is-transfered .lt__avatars-item__image .image:before {
   border-color: #9a9a9a;
 }
 .lt__avatars-item.is-transit .pt__line-title h3,
@@ -4081,7 +4081,7 @@ html.is-dialog--open {
 .lt__avatars-item.is-transit .pt__line-title a {
   color: #cf1715;
 }
-.lt__avatars-item.is-transit .lt__avatars-item__image .image {
+.lt__avatars-item.is-transit .lt__avatars-item__image .image:before {
   border-color: #cf1715;
 }
 .lt__avatars-item__image {
@@ -4089,18 +4089,32 @@ html.is-dialog--open {
   display: block;
 }
 .lt__avatars-item__image .image {
-  width: 120px;
-  height: 120px;
-  border-radius: 120px;
-  border: 4px solid #ffffff;
+  width: 128px;
+  height: 128px;
+  position: relative;
+  z-index: 1;
   overflow: hidden;
   background-color: #ffffff;
+  border-radius: 128px;
+}
+.lt__avatars-item__image .image:before {
+  display: block;
+  position: absolute;
+  z-index: 2;
+  border: 4px solid transparent;
+  border-radius: 128px;
+  content: '';
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
 }
 .lt__avatars-item__image .image img {
-  border-radius: 120px;
+  border-radius: 128px;
 }
 .lt__avatars-item__image .icon {
   position: absolute;
+  z-index: 2;
   border-radius: 38px;
   background-color: #ffffff;
   top: auto;
@@ -4108,23 +4122,29 @@ html.is-dialog--open {
   bottom: 2px;
   left: auto;
 }
-.lt__avatars-item__image.style-grey .image {
+.lt__avatars-item__image.style-grey .image:before {
   border-color: #9a9a9a;
 }
-.lt__avatars-item__image.style-red .image {
+.lt__avatars-item__image.style-red .image:before {
   border-color: #cf1715;
 }
 .lt__avatars-item__image.style-yellow .image {
-  border-color: #f7d917;
   background-color: #f5ed59;
 }
+.lt__avatars-item__image.style-yellow .image:before {
+  border-color: #f7d917;
+}
 .lt__avatars-item__image.style-green .image {
-  border-color: #30ce82;
   background-color: #b4e6b7;
 }
+.lt__avatars-item__image.style-green .image:before {
+  border-color: #30ce82;
+}
 .lt__avatars-item__image.style-purple .image {
-  border-color: #ab78de;
   background-color: #cc99ff;
+}
+.lt__avatars-item__image.style-purple .image:before {
+  border-color: #ab78de;
 }
 .lt__avatars-item__type .pt__tags__content,
 .lt__avatars-item__type h1,

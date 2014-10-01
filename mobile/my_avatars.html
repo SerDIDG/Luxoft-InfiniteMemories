@@ -1,0 +1,251 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="apple-touch-icon" sizes="120x120" href="img/app/icon-120.png">
+    <link rel="apple-touch-startup-image" href="img/app/startup.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+    <title>InfiniteMemories</title>
+    <link type="text/css" rel="stylesheet" href="css/index.css">
+
+    <script type="text/javascript" src="js/polyfill.js"></script>
+    <script type="text/javascript" src="js/common.js"></script>
+    <script type="text/javascript" src="js/parts.js"></script>
+    <script type="text/javascript" src="js/modules.js"></script>
+    <script type="text/javascript" src="js/init.js"></script>
+    <script type="text/javascript" src="js/components/UA.js"></script>
+    <script type="text/javascript" src="js/components/Collector.js"></script>
+    <script type="text/javascript" src="js/components/Slider.js"></script>
+    <script type="text/javascript" src="js/components/Sidebar.js"></script>
+
+    <script type="text/javascript" src="js/custom.js"></script>
+
+    <script type="text/javascript">
+        cm.onReady(function(){
+            (function(){
+                var els = document.querySelectorAll('a'),
+                        href;
+                cm.forEach(els, function(el){
+                    el.addEventListener('click', function(e){
+                        if((href = el.getAttribute('href')) && !cm.isEmpty(href)){
+                            cm.preventDefault(e);
+                        }
+                    });
+                    cm.addEvent(el, 'click', function(){
+                        if((href = el.getAttribute('href')) && !cm.isEmpty(href)){
+                            window.location.href = href;
+                        }
+                    });
+                });
+            })();
+            // Components
+            new Com.Collector()
+                .add('sidebar', function(node){
+                    new Com.Sidebar({
+                        'node' : node
+                    });
+                })
+                .construct();
+        });
+
+        cm.onLoad(function(){
+            // Components
+            new Com.Collector()
+                .add('slider', function(node){
+                    new Com.Slider({
+                        'node' : node
+                    });
+                })
+                .add('preload-overlay', function(node){
+                    cm.removeClass(node, 'is-show', true);
+                })
+                .construct();
+        });
+    </script>
+</head>
+<body>
+
+
+<div class="lt__base is-default has-app-bar has-header has-buttons">
+    <div class="lt__base__app-bar"></div>
+
+    <div class="lt__base__header">
+        <div class="l">
+            <a class="pt__header-link" href="home.html">
+                <div class="icon size-44 backward-c"></div>
+            </a>
+        </div>
+
+        <div class="c">
+            <h1>My Avatars</h1>
+        </div>
+
+        <div class="r">
+            <a class="icon size-44 search"></a>
+            <a class="icon size-44 more"></a>
+        </div>
+    </div>
+
+    <div class="lt__base__content">
+        <div class="pt__tabset">
+            <div class="pt__tabset__head">
+                <div class="inner">
+                    <div class="pt__tabset__tab-head active">
+                        <div class="label">Personal</div>
+                    </div>
+                    <div class="pt__tabset__tab-head">
+                        <div class="label">Shared</div>
+                    </div>
+                </div>
+            </div>
+            <div class="pt__tabset__content scrollable">
+                <div class="pt__tabset__tab-content active">
+                    <div class="lt__avatars">
+                        <a class="lt__avatars-item">
+                            <div class="inner">
+                                <div class="icon size-44 more-grey"></div>
+
+                                <div class="l">
+                                    <div class="lt__avatars-item__image">
+                                        <div class="image">
+                                            <img src="img/content/my-avatars/gold-necklace.png" alt="">
+                                        </div>
+                                        <div class="icon size-25 jewelry"></div>
+                                    </div>
+                                </div>
+
+                                <div class="r">
+                                    <h1>Gold Necklace</h1>
+                                    <div class="pt__line-info">
+                                        <div class="info">
+                                            <div class="icon icon-info photo active"></div>
+                                            <div class="label">Photo</div>
+                                        </div>
+                                        <div class="info">
+                                            <div class="icon icon-info video active"></div>
+                                            <div class="label">Video</div>
+                                        </div>
+                                    </div>
+                                    <div class="pt__line-info">
+                                        <div class="date">added 21.05.2014</div>
+                                        <div class="author">Hubert Mokko</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+
+                        <a class="lt__avatars-item is-transfered">
+                            <div class="inner">
+                                <div class="icon size-44 more-grey"></div>
+
+                                <div class="l">
+                                    <div class="lt__avatars-item__image">
+                                        <div class="image">
+                                            <img src="img/content/my-avatars/turismo.png" alt="">
+                                        </div>
+                                        <div class="icon size-25 cars"></div>
+                                    </div>
+                                </div>
+
+                                <div class="r">
+                                    <h1>6C-2300B TURISMO/GT</h1>
+                                    <div class="pt__line-info">
+                                        <div class="info">
+                                            <div class="icon icon-info photo"></div>
+                                            <div class="label">Photo</div>
+                                        </div>
+                                        <div class="info">
+                                            <div class="icon icon-info video"></div>
+                                            <div class="label">Video</div>
+                                        </div>
+                                    </div>
+                                    <div class="pt__line-info">
+                                        <div class="date">added 21.05.2014</div>
+                                        <div class="author">Hubert Mokko</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+
+                        <a class="lt__avatars-item is-transit">
+                            <div class="inner">
+                                <div class="icon size-44 more-grey"></div>
+
+                                <div class="l">
+                                    <div class="lt__avatars-item__image">
+                                        <div class="image">
+                                            <img src="img/content/my-avatars/gaja.png" alt="">
+                                        </div>
+                                        <div class="icon size-25 wines"></div>
+                                    </div>
+                                </div>
+
+                                <div class="r">
+                                    <h1>Gaja Wine 1972 (3 bottles)</h1>
+                                    <div class="pt__line-info">
+                                        <div class="info">
+                                            <div class="icon icon-info photo pending"></div>
+                                            <div class="label">Photo</div>
+                                        </div>
+                                        <div class="info">
+                                            <div class="icon icon-info video pending"></div>
+                                            <div class="label">Video</div>
+                                        </div>
+                                    </div>
+                                    <div class="pt__line-info">
+                                        <div class="date">added 21.05.2014</div>
+                                        <div class="author">Hubert Mokko</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+
+                        <a class="lt__avatars-item">
+                            <div class="inner">
+                                <div class="icon size-44 more-grey"></div>
+
+                                <div class="l">
+                                    <div class="lt__avatars-item__image">
+                                        <div class="image">
+                                            <img src="img/content/my-avatars/baseball.png" alt="">
+                                        </div>
+                                        <div class="icon size-25 sports"></div>
+                                    </div>
+                                </div>
+
+                                <div class="r">
+                                    <h1>Baseball card - Darwin Barney</h1>
+                                    <div class="pt__line-info">
+                                        <div class="info">
+                                            <div class="icon icon-info photo active"></div>
+                                            <div class="label">Photo</div>
+                                        </div>
+                                        <div class="info">
+                                            <div class="icon icon-info video active"></div>
+                                            <div class="label">Video</div>
+                                        </div>
+                                    </div>
+                                    <div class="pt__line-info">
+                                        <div class="date">added 21.05.2014</div>
+                                        <div class="author">Hubert Mokko</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="lt__base__buttons">
+        <a class="button button-active size-39">Create Avatar</a>
+    </div>
+</div>
+
+</body>
+</html>

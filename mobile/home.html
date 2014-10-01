@@ -26,25 +26,22 @@
 
     <script type="text/javascript">
         cm.onReady(function(){
-            (function(document,navigator,standalone) {
-                // prevents links from apps from oppening in mobile safari
-                // this javascript must be the first script in your <head>
-                if ((standalone in navigator) && navigator[standalone]) {
-                    var curnode, location=document.location, stop=/^(a|html)$/i;
-                    document.addEventListener('click', function(e) {
-                        curnode=e.target;
-                        while (!(stop).test(curnode.nodeName)) {
-                            curnode=curnode.parentNode;
+            (function(){
+                var els = document.querySelectorAll('a'),
+                        href;
+                cm.forEach(els, function(el){
+                    el.addEventListener('click', function(e){
+                        if((href = el.getAttribute('href')) && !cm.isEmpty(href)){
+                            cm.preventDefault(e);
                         }
-                        // Condidions to do this only on links to your own app
-                        // if you want all links, use if('href' in curnode) instead.
-                        if('href' in curnode && ( curnode.href.indexOf('http') || ~curnode.href.indexOf(location.host) ) ) {
-                            e.preventDefault();
-                            location.href = curnode.href;
+                    });
+                    cm.addEvent(el, 'click', function(){
+                        if((href = el.getAttribute('href')) && !cm.isEmpty(href)){
+                            window.location.href = href;
                         }
-                    },false);
-                }
-            })(document,window.navigator,'standalone');
+                    });
+                });
+            })();
             // Components
             new Com.Collector()
                 .add('sidebar', function(node){
@@ -108,7 +105,7 @@
             <div class="pt__menu pt__menu--sidebar has-border">
                 <ul>
                     <li>
-                        <a>
+                        <a href="my_avatars.html">
                             <div class="icon size-44 avatars"></div>
                             <div class="title">My Avatars</div>
                         </a>
@@ -159,7 +156,7 @@
                             </a>
                         </li>
                         <li>
-                            <a class="pt__menu-box">
+                            <a class="pt__menu-box" href="my_avatars.html">
                                 <div class="icon size-50 avatars"></div>
                                 <p>My Avatars</p>
                             </a>

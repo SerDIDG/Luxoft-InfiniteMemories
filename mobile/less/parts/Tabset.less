@@ -1,0 +1,65 @@
+/* ******* PARTS: TABSET ******* */
+
+.pt__tabset {
+    height: 100%;
+    position: relative;
+}
+
+/* *** HEAD *** */
+
+.pt__tabset__head {
+    padding: @PT-Tabset-HeadIndent @CM-Base-Indent;
+
+    > .inner {
+        width: 100%;
+        display: table;
+        table-layout: fixed;
+    }
+}
+
+.pt__tabset__tab-head {
+    height: @PT-Tabset-HeadHeight;
+    display: table-cell;
+    border: 1px solid @Color-Alt;
+    border-left: none;
+    background-color: @Background-Base;
+    text-align: center;
+    line-height: @PT-Tabset-HeadHeight - 2px;
+    color: @Color-Alt;
+    cursor: pointer;
+    .mix-box-sizing();
+    .mix-transition(all @CM-Transition-Duration ease-in-out);
+
+    .label {
+        &:extend(.cm-text-overflow);
+    }
+
+    &:first-child {
+        border-left: 1px solid @Color-Alt;
+        border-radius: 3px 0 0 3px;
+    }
+
+    &:last-child {
+        border-radius: 0 3px 3px 0;
+    }
+
+    &.active {
+        background-color: @Background-Alt;
+        color: @Color-Base-Light;
+    }
+}
+
+/* *** CONTENT *** */
+
+.pt__tabset__content {
+    position: absolute;
+    .mix-position((@PT-Tabset-HeadHeight + (@PT-Tabset-HeadIndent * 2)), 0, 0, 0);
+}
+
+.pt__tabset__tab-content {
+    display: none;
+
+    &.active {
+        display: block;
+    }
+}

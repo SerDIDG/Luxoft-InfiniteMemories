@@ -2,10 +2,28 @@
 
 /* *** BASE *** */
 
-.pt__hover-box {
+.pt__hover-box--base {
     position: relative;
     border: @Border-Base-Size solid transparent;
     .mix-transition(all @CM-Transition-Duration ease-in-out);
+
+
+    &.active,
+    &:hover {
+        &:extend(.pt__hover-box--base-active all);
+    }
+}
+
+.pt__hover-box--base-active {
+    background-color: @PT-HoverBox-Background;
+    border: @Border-Dark;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.25);
+}
+
+/* *** DEFAULT *** */
+
+.pt__hover-box {
+    &:extend(.pt__hover-box--base all);
 
     > .image {
         display: block;
@@ -13,6 +31,8 @@
         .icon {
             display: block;
             margin: 0 auto;
+            .mix-transition(background @CM-Transition-Duration ease-in-out);
+            .mix-transition(opacity @CM-Transition-Duration ease-in-out);
         }
     }
 
@@ -49,10 +69,6 @@
 }
 
 .pt__hover-box--active {
-    background-color: @PT-HoverBox-Background;
-    border: @Border-Dark;
-    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.25);
-
     .controls {
         visibility: visible;
         opacity: 1;
@@ -93,10 +109,6 @@
     > .image {
         width: 118px;
         height: 90px;
-
-        .icon {
-            .mix-transition(background @CM-Transition-Duration ease-in-out);
-        }
     }
 
     p {
@@ -117,6 +129,7 @@
         > .image {
             .icon {
                 .mix-transition(background @CM-Transition-DurationReverse ease-in-out);
+                .mix-transition(opacity @CM-Transition-DurationReverse ease-in-out);
             }
         }
 

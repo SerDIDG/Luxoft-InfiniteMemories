@@ -5,12 +5,23 @@
 
     > .r {
         margin: 0 0 0 20px;
-        padding: 8px 0 0 0;
         float: right;
+
+        .pt__share {
+            padding: 8px 0 0 0;
+        }
+
+        .pt__tags__content {
+            text-align: right;
+        }
     }
 
     > .l {
         overflow: hidden;
+
+        .pt__tags__content {
+            text-align: left;
+        }
 
         h1 {
             .label {
@@ -27,7 +38,15 @@
         }
     }
 
-    .pt__tags__content {
-        text-align: left;
+    &.size-h3 {
+        > .r {
+            .pt__share {
+                padding: 2px 0 0 0;
+            }
+
+            p {
+                padding: 8px 0 0 0;
+            }
+        }
     }
 }

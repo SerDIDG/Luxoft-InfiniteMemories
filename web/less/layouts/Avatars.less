@@ -1,0 +1,238 @@
+/* ******* LAYOUTS: AVATARS ******* */
+
+/* *** LISTING *** */
+
+.lt__avatars-listing {
+    &:extend(.clearfix all);
+
+    width: 100%;
+    height: 100%;
+    display: table;
+    table-layout: fixed;
+
+    > .column {
+        width: 50%;
+        display: table-cell;
+        border-left: @Border-Base;
+        .mix-box-sizing();
+
+        &:first-child {
+            border: none;
+        }
+
+        > .title {
+            padding: 8px 24px 20px;
+            text-transform: uppercase;
+            line-height: 24px;
+            font-size: 20px;
+            color: @Color-Alt;
+        }
+
+        > .items {
+            padding: 0 12px 12px;
+        }
+    }
+}
+
+/* *** ITEM *** */
+
+.lt__avatars-item {
+    margin: -1px 0 0 0;
+    position: relative;
+
+    &:after {
+        display: block;
+        position: absolute;
+        border-bottom: @Border-Base;
+        content: '';
+        .mix-position(auto, 0, 0, 0);
+    }
+
+    &:first-child {
+        margin: 0;
+    }
+
+    &:last-child {
+        &:after {
+            display: none;
+        }
+    }
+
+    > .inner {
+        &:extend(.pt__hover-box--base all, .clearfix all);
+        padding: 26px;
+
+        > .l {
+            margin: 0 25px 0 0;
+            float: left;
+        }
+
+        > .r {
+            overflow: hidden;
+        }
+    }
+
+    .pt__share {
+        opacity: 0;
+        .mix-transition(opacity @CM-Transition-Duration ease-in-out);
+    }
+
+    .pt__line-title {
+        margin: 0 0 3px;
+
+        .pt__tags__content--title {
+            &:extend(.cm-text-overflow all);
+        }
+
+        h3 {
+            font-size: 22px;
+
+            a {
+                font-size: inherit;
+            }
+        }
+    }
+
+    .pt__line-info {
+        margin: 0 0 5px;
+    }
+
+    .lt__avatars-item__type {
+        margin: 0 0 12px;
+    }
+
+    &:hover,
+    &.active {
+        .pt__share {
+            opacity: 1;
+        }
+    }
+
+    &.is-transfered {
+        > .inner {
+            > .l, > .r {
+                opacity: 0.5;
+            }
+        }
+
+        .pt__line-info {
+            color: #666666;
+        }
+
+        .lt__avatars-item__image {
+            .lt__avatars-item__image.style-grey;
+        }
+    }
+
+    &.is-transit {
+        .pt__line-title {
+            h3, p, a {
+                color: @Color-Active-Secondary;
+            }
+        }
+
+        .lt__avatars-item__image {
+            .lt__avatars-item__image.style-red;
+        }
+    }
+}
+
+.lt__avatars-item__image {
+    position: relative;
+    display: block;
+
+    .image {
+        width: 120px;
+        height: 120px;
+        border-radius: 120px;
+        border: 4px solid @Background-Base;
+        overflow: hidden;
+        background-color: @Background-Base;
+
+        img {
+            &:extend(.cm-image-resizable);
+
+            border-radius: 120px;
+        }
+    }
+
+    .icon {
+        position: absolute;
+        border-radius: 38px;
+        background-color: @Background-Base;
+        .mix-position(auto, 2px, 2px, auto);
+    }
+
+    &.style-grey {
+        .image {
+            border-color: @Background-Base-Light;
+        }
+    }
+
+    &.style-red {
+        .image {
+            border-color: @Background-Active-Secondary;
+        }
+    }
+
+    &.style-yellow {
+        .image {
+            border-color: #f7d917;
+            background-color: #f5ed59;
+        }
+    }
+
+    &.style-green {
+        .image {
+            border-color: #30ce82;
+            background-color: #b4e6b7;
+        }
+    }
+
+    &.style-purple {
+        .image {
+            border-color: #ab78de;
+            background-color: #cc99ff;
+        }
+    }
+}
+
+.lt__avatars-item__type {
+    .pt__tags__content {
+        margin: 0;
+        text-align: left;
+    }
+
+    h4 {
+        line-height: 22px;
+        font-size: 18px;
+        font-weight: normal;
+        color: #4d4d4d;
+    }
+}
+
+.lt__avatars-item__memories {
+    > ul {
+        &:extend(.cm-ul-clear all, .cm-ul-inline all);
+
+        > li {
+            margin: 0 10px 0 0;
+
+            &:last-child {
+                margin: 0;
+            }
+
+            .icon {
+                margin: 0 6px 0 0;
+                float: left;
+            }
+
+            .label {
+                &:extend(.font-base);
+
+                float: left;
+                color: #666666;
+            }
+        }
+    }
+}

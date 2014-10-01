@@ -54,6 +54,8 @@
 }
 
 .select {
+    padding: 0;
+
     &.style-toolbar {
         option {
             font-weight: normal;
@@ -62,7 +64,6 @@
 
     &[multiple] {
         height: @PT-Select-Size * @Font-Input-LineHeight + @Border-Base-Size * 2;
-        padding: 0;
 
         &.style-alt {
             height: @PT-Select-Size * @Font-Input-LineHeight + @Border-Active-Size;

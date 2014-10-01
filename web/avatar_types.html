@@ -16,6 +16,7 @@
     <script type="text/javascript" src="js/components/Sidebar.js"></script>
     <script type="text/javascript" src="js/components/ToggleBox.js"></script>
     <script type="text/javascript" src="js/components/HoverBox.js"></script>
+    <script type="text/javascript" src="js/components/LayoutFiltered.js"></script>
 
     <script type="text/javascript" src="js/custom.js"></script>
 
@@ -40,6 +41,11 @@
                 })
                 .add('hover-box', function(node){
                     new Com.HoverBox({
+                        'node' : node
+                    });
+                })
+                .add('layout-filtered', function(node){
+                    new Com.LayoutFiltered({
                         'node' : node
                     });
                 })
@@ -107,11 +113,11 @@
                 <div class="top">
                     <dl class="lt__sidebar__block lt__sidebar__block--create">
                         <dd>
-                            <div class="pt__menu pt__menu--sidebar has-icon-right">
+                            <div class="pt__menu pt__menu--sidebar pt__menu--sidebar-create has-icon-right">
                                 <ul>
                                     <li class="active">
                                         <a href="welcome.html">
-                                            <div class="icon size-26 plus-white"></div>
+                                            <div class="icon size-26 plus active"></div>
                                             <div class="title">Create</div>
                                         </a>
                                     </li>
@@ -131,7 +137,7 @@
                                         </a>
                                     </li>
                                     <li>
-                                        <a>
+                                        <a href="my_avatars.html">
                                             <div class="icon size-26 avatars"></div>
                                             <div class="title">My Avatars</div>
                                         </a>
@@ -698,14 +704,14 @@
             </div>
 
             <div class="lt__base__entry">
-                <div class="lt__base__entry-inner lt__filtered">
+                <div class="lt__base__entry-inner lt__filtered is-show" data-element="layout-filtered" data-node="ComLayoutFiltered.container">
                     <div class="inner">
                         <div class="lt__base__page-title">
                             <h1>Select avatar type</h1>
                         </div>
 
-                        <div class="lt__filtered__filter">
-                            <div class="pt__toolbar">
+                        <div class="lt__filtered__filter" data-node="ComLayoutFiltered.filter">
+                            <div class="pt__toolbar has-border">
                                 <div class="inner">
                                     <div class="left">
                                         <ul class="group">
@@ -730,7 +736,7 @@
                                     <div class="right">
                                         <ul class="group">
                                             <li>
-                                                <div class="icon size-28 tiles-active"></div>
+                                                <div class="icon size-28 tiles active"></div>
                                             </li>
                                             <li>
                                                 <div class="icon size-28 list linked"></div>
@@ -741,7 +747,7 @@
                             </div>
                         </div>
 
-                        <div class="lt__filtered__content">
+                        <div class="lt__filtered__content" data-node="ComLayoutFiltered.content">
                             <div class="pt__grid pt__grid--avatar-type is-adaptive pull-center" data-element="hover-box" data-node="ComHoverBox:{}:container">
                                 <ul>
                                     <li data-node="items:[]:container">

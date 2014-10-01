@@ -2,8 +2,6 @@
 
 .pt__toolbar {
     margin: 0 0 16px;
-    padding: 0 0 8px;
-    border-bottom: @Border-Base;
 
     > .inner {
         &:extend(.clearfix all);
@@ -132,5 +130,10 @@
             display: -webkit-flex;
             display: flex;
         }
+    }
+
+    &.has-border {
+        padding: 0 0 8px;
+        border-bottom: @Border-Base;
     }
 }

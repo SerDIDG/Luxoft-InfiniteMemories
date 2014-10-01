@@ -16,6 +16,7 @@
     <script type="text/javascript" src="js/components/Sidebar.js"></script>
     <script type="text/javascript" src="js/components/ToggleBox.js"></script>
     <script type="text/javascript" src="js/components/Dialog.js"></script>
+    <script type="text/javascript" src="js/components/HoverBox.js"></script>
 
     <script type="text/javascript" src="js/custom.js"></script>
 
@@ -33,6 +34,11 @@
                         'node' : node
                     });
                 })
+                .add('hover-box', function(node){
+                    new Com.HoverBox({
+                        'node' : node
+                    });
+                })
                 .construct();
             // Popup
             (function(){
@@ -44,20 +50,6 @@
                     popup.open();
                 })
             })();
-        });
-
-        cm.onLoad(function(){
-            // Components
-            new Com.Collector()
-                .add('slider', function(node){
-                    new Com.Slider({
-                        'node' : node
-                    });
-                })
-                .add('preload-overlay', function(node){
-                    cm.removeClass(node, 'is-show', true);
-                })
-                .construct();
         });
     </script>
 </head>
@@ -118,11 +110,11 @@
                 <div class="top">
                     <dl class="lt__sidebar__block lt__sidebar__block--create">
                         <dd>
-                            <div class="pt__menu pt__menu--sidebar has-icon-right">
+                            <div class="pt__menu pt__menu--sidebar pt__menu--sidebar-create has-icon-right">
                                 <ul>
                                     <li class="active">
                                         <a href="welcome.html">
-                                            <div class="icon size-26 plus-white"></div>
+                                            <div class="icon size-26 plus active"></div>
                                             <div class="title">Create</div>
                                         </a>
                                     </li>
@@ -142,7 +134,7 @@
                                         </a>
                                     </li>
                                     <li>
-                                        <a>
+                                        <a href="my_avatars.html">
                                             <div class="icon size-26 avatars"></div>
                                             <div class="title">My Avatars</div>
                                         </a>
@@ -716,12 +708,12 @@
                         </div>
 
                         <div class="lt__memory-selection__content">
-                            <div class="pt__grid col-4 is-adaptive is-justify">
+                            <div class="pt__grid col-4 is-adaptive is-justify" data-element="hover-box" data-node="ComHoverBox:{}:container">
                                 <ul>
-                                    <li>
+                                    <li data-node="items:[]:container">
                                         <div class="pt__hover-box pt__hover-box--memory-selection indent-16px">
                                             <div class="image">
-                                                <div class="icon icon-memory video"></div>
+                                                <div class="icon icon-memory video" data-node="icon"></div>
                                             </div>
                                             <h3>Video</h3>
                                             <div class="pt__buttons is-box">
@@ -729,10 +721,10 @@
                                             </div>
                                         </div>
                                     </li>
-                                    <li>
+                                    <li data-node="items:[]:container">
                                         <div class="pt__hover-box pt__hover-box--memory-selection indent-16px">
                                             <div class="image">
-                                                <div class="icon icon-memory picture"></div>
+                                                <div class="icon icon-memory picture" data-node="icon"></div>
                                             </div>
                                             <h3>Photo or picture</h3>
                                             <div class="pt__buttons is-box">
@@ -740,10 +732,10 @@
                                             </div>
                                         </div>
                                     </li>
-                                    <li>
+                                    <li data-node="items:[]:container">
                                         <div class="pt__hover-box pt__hover-box--memory-selection indent-16px">
                                             <div class="image">
-                                                <div class="icon icon-memory audio"></div>
+                                                <div class="icon icon-memory audio" data-node="icon"></div>
                                             </div>
                                             <h3>Audio</h3>
                                             <div class="pt__buttons is-box">
@@ -751,10 +743,10 @@
                                             </div>
                                         </div>
                                     </li>
-                                    <li>
+                                    <li data-node="items:[]:container">
                                         <div class="pt__hover-box pt__hover-box--memory-selection indent-16px">
                                             <div class="image">
-                                                <div class="icon icon-memory file"></div>
+                                                <div class="icon icon-memory file" data-node="icon"></div>
                                             </div>
                                             <h3>Text or file</h3>
                                             <div class="pt__buttons is-box">

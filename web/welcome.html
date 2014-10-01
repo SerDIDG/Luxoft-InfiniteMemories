@@ -15,6 +15,7 @@
     <script type="text/javascript" src="js/components/Slider.js"></script>
     <script type="text/javascript" src="js/components/Sidebar.js"></script>
     <script type="text/javascript" src="js/components/ToggleBox.js"></script>
+    <script type="text/javascript" src="js/components/HoverBox.js"></script>
 
     <script type="text/javascript" src="js/custom.js"></script>
 
@@ -34,6 +35,11 @@
                 })
                 .add('slider', function(node){
                     new Com.Slider({
+                        'node' : node
+                    });
+                })
+                .add('hover-box', function(node){
+                    new Com.HoverBox({
                         'node' : node
                     });
                 })
@@ -101,11 +107,11 @@
                 <div class="top">
                     <dl class="lt__sidebar__block lt__sidebar__block--create">
                         <dd>
-                            <div class="pt__menu pt__menu--sidebar has-icon-right">
+                            <div class="pt__menu pt__menu--sidebar pt__menu--sidebar-create has-icon-right">
                                 <ul>
                                     <li class="active">
                                         <a href="welcome.html">
-                                            <div class="icon size-26 plus-white"></div>
+                                            <div class="icon size-26 plus active"></div>
                                             <div class="title">Create</div>
                                         </a>
                                     </li>
@@ -125,7 +131,7 @@
                                         </a>
                                     </li>
                                     <li>
-                                        <a>
+                                        <a href="my_avatars.html">
                                             <div class="icon size-26 avatars"></div>
                                             <div class="title">My Avatars</div>
                                         </a>
@@ -700,12 +706,12 @@
                         </div>
 
                         <div class="lt__welcome__content">
-                            <div class="pt__grid is-adaptive pull-center">
+                            <div class="pt__grid is-adaptive pull-center" data-element="hover-box" data-node="ComHoverBox:{}:container">
                                 <ul>
-                                    <li>
+                                    <li data-node="items:[]:container">
                                         <div class="pt__hover-box pt__hover-box--welcome indent-30px">
                                             <a class="image" href="avatar_types.html">
-                                                <div class="icon icon-create avatar"></div>
+                                                <div class="icon icon-create avatar" data-node="icon"></div>
                                             </a>
                                             <h1>New Avatar</h1>
                                             <h5>
@@ -716,10 +722,10 @@
                                             </div>
                                         </div>
                                     </li>
-                                    <li>
+                                    <li data-node="items:[]:container">
                                         <div class="pt__hover-box pt__hover-box--welcome indent-30px">
                                             <a class="image" href="memory_selection.html">
-                                                <div class="icon icon-create memory"></div>
+                                                <div class="icon icon-create memory" data-node="icon"></div>
                                             </a>
                                             <h1>New Memory</h1>
                                             <h5>

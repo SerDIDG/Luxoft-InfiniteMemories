@@ -50,9 +50,17 @@
         width: 18px;
         height: 18px;
 
-        .for(more-right arrow-down); .-each(@name) {
+        .for(more-right arrow-down photo gr video comment); .-each(@name) {
             &.@{name} {
                 background-image: url("@{Path-Image}/icons/18/@{name}.png");
+
+                &.active {
+                    background-image: url("@{Path-Image}/icons/18/active/@{name}.png");
+                }
+
+                &.pending {
+                    background-image: url("@{Path-Image}/icons/18/pending/@{name}.png");
+                }
             }
         }
     }
@@ -63,7 +71,7 @@
         width: 22px;
         height: 22px;
 
-        .for(backward); .-each(@name) {
+        .for(backward arrow-up); .-each(@name) {
             &.@{name} {
                 background-image: url("@{Path-Image}/icons/22/@{name}.png");
             }
@@ -89,9 +97,13 @@
         width: 26px;
         height: 26px;
 
-        .for(plus-white p-qr p-video p-photo avatars circles memories messages profile settings i-auctions i-family i-social i-travel i-video); .-each(@name) {
+        .for(plus p-qr p-video p-photo avatars circles memories messages profile settings i-auctions i-family i-social i-travel i-video); .-each(@name) {
             &.@{name} {
                 background-image: url("@{Path-Image}/icons/26/@{name}.png");
+
+                &.active {
+                    background-image: url("@{Path-Image}/icons/26/active/@{name}.png");
+                }
             }
         }
     }
@@ -102,9 +114,13 @@
         width: 28px;
         height: 28px;
 
-        .for(facebook twitter google youtube search tiles-active list upload); .-each(@name) {
+        .for(facebook twitter google youtube search tiles list upload); .-each(@name) {
             &.@{name} {
                 background-image: url("@{Path-Image}/icons/28/@{name}.png");
+
+                &.active {
+                    background-image: url("@{Path-Image}/icons/28/active/@{name}.png");
+                }
             }
         }
     }
@@ -199,6 +215,23 @@
         .for(avatar memory); .-each(@name) {
             &.@{name} {
                 background-image: url("@{Path-Image}/icons/create/@{name}.png");
+
+                &.active {
+                    background-image: url("@{Path-Image}/icons/create/active/@{name}.png");
+                }
+            }
+        }
+    }
+
+    // /* *** AVATARS X-SMALL *** */
+
+    &.icon-avatar-xx-small {
+        width: 38px;
+        height: 38px;
+
+        .for(cars clothes coins jewelry sports wines); .-each(@name) {
+            &.@{name} {
+                background-image: url("@{Path-Image}/icons/avatars/xx-small/@{name}.png");
             }
         }
     }
@@ -206,7 +239,7 @@
     // /* *** AVATARS X-SMALL *** */
 
     &.icon-avatar-x-small {
-        width: 36px;
+        width: 38px;
         height: 54px;
 
         .for(jewelry); .-each(@name) {
@@ -253,6 +286,10 @@
         .for(audio file picture video); .-each(@name) {
             &.@{name} {
                 background-image: url("@{Path-Image}/icons/memory/@{name}.png");
+
+                &.active {
+                    background-image: url("@{Path-Image}/icons/memory/active/@{name}.png");
+                }
             }
         }
     }
@@ -266,6 +303,10 @@
         .for(nfc qr rfid); .-each(@name) {
             &.@{name} {
                 background-image: url("@{Path-Image}/icons/code/@{name}.png");
+
+                &.active {
+                    background-image: url("@{Path-Image}/icons/code/active/@{name}.png");
+                }
             }
         }
     }

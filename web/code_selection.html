@@ -15,6 +15,7 @@
     <script type="text/javascript" src="js/components/Slider.js"></script>
     <script type="text/javascript" src="js/components/Sidebar.js"></script>
     <script type="text/javascript" src="js/components/ToggleBox.js"></script>
+    <script type="text/javascript" src="js/components/HoverBox.js"></script>
 
     <script type="text/javascript" src="js/custom.js"></script>
 
@@ -29,6 +30,11 @@
                 })
                 .add('togglebox', function(node){
                     new Com.ToggleBox({
+                        'node' : node
+                    });
+                })
+                .add('hover-box', function(node){
+                    new Com.HoverBox({
                         'node' : node
                     });
                 })
@@ -101,11 +107,11 @@
                 <div class="top">
                     <dl class="lt__sidebar__block lt__sidebar__block--create">
                         <dd>
-                            <div class="pt__menu pt__menu--sidebar has-icon-right">
+                            <div class="pt__menu pt__menu--sidebar pt__menu--sidebar-create has-icon-right">
                                 <ul>
                                     <li class="active">
                                         <a href="welcome.html">
-                                            <div class="icon size-26 plus-white"></div>
+                                            <div class="icon size-26 plus active"></div>
                                             <div class="title">Create</div>
                                         </a>
                                     </li>
@@ -125,7 +131,7 @@
                                         </a>
                                     </li>
                                     <li>
-                                        <a>
+                                        <a href="my_avatars.html">
                                             <div class="icon size-26 avatars"></div>
                                             <div class="title">My Avatars</div>
                                         </a>
@@ -699,12 +705,12 @@
                         </div>
 
                         <div class="lt__code-selection__content">
-                            <div class="pt__grid col-3 is-adaptive is-justify-center">
+                            <div class="pt__grid col-3 is-adaptive is-justify-center" data-element="hover-box" data-node="ComHoverBox:{}:container">
                                 <ul>
-                                    <li>
+                                    <li data-node="items:[]:container">
                                         <div class="pt__hover-box pt__hover-box--code-selection indent-16px">
                                             <div class="image">
-                                                <div class="icon icon-code qr"></div>
+                                                <div class="icon icon-code qr" data-node="icon"></div>
                                             </div>
                                             <h3>QR code</h3>
                                             <div class="pt__buttons is-box">
@@ -712,10 +718,10 @@
                                             </div>
                                         </div>
                                     </li>
-                                    <li>
+                                    <li data-node="items:[]:container">
                                         <div class="pt__hover-box pt__hover-box--code-selection indent-16px">
                                             <div class="image">
-                                                <div class="icon icon-code nfc"></div>
+                                                <div class="icon icon-code nfc" data-node="icon"></div>
                                             </div>
                                             <h3>NFC</h3>
                                             <div class="pt__buttons is-box">
@@ -723,10 +729,10 @@
                                             </div>
                                         </div>
                                     </li>
-                                    <li>
+                                    <li data-node="items:[]:container">
                                         <div class="pt__hover-box pt__hover-box--code-selection indent-16px">
                                             <div class="image">
-                                                <div class="icon icon-code rfid"></div>
+                                                <div class="icon icon-code rfid" data-node="icon"></div>
                                             </div>
                                             <h3>RFID</h3>
                                             <div class="pt__buttons is-box">

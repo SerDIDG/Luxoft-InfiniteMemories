@@ -25,3 +25,42 @@
     position: absolute;
     .mix-position(@indent, 0, 0, 0);
 }
+
+/* *** BUTTON *** */
+
+.lt__filtered__button {
+    height: @LT-Base-BackwardHeight;
+    position: absolute;
+    cursor: pointer;
+    .mix-position(0, auto, auto, 0);
+
+    .icon {
+        margin: ((@LT-Base-BackwardHeight - 22px) / 2) 10px 0 0;
+        float: left;
+        -webkit-transition: -webkit-transform @CM-Transition-Duration ease-in-out;
+            -ms-transition:     -ms-transform @CM-Transition-Duration ease-in-out;
+                transition:         transform @CM-Transition-Duration ease-in-out;
+    }
+
+    .label {
+        float: left;
+        line-height: @LT-Base-BackwardHeight;
+        font-weight: bold;
+        .mix-transition(color @CM-Transition-Duration ease-in-out);
+    }
+
+    &:hover {
+        .label {
+            color: @Color-LinkHover;
+            .mix-transition(color @CM-Transition-DurationReverse ease-in-out);
+        }
+    }
+
+    &.is-hide {
+        .icon {
+            -webkit-transform: rotate(180deg);
+                -ms-transform: rotate(180deg);
+                    transform: rotate(180deg);
+        }
+    }
+}

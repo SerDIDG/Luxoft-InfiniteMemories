@@ -1,0 +1,1158 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Infinite Memories</title>
+    <link type="text/css" rel="stylesheet" href="css/index.css">
+
+    <script type="text/javascript" src="js/polyfill.js"></script>
+    <script type="text/javascript" src="js/common.js"></script>
+    <script type="text/javascript" src="js/parts.js"></script>
+    <script type="text/javascript" src="js/modules.js"></script>
+    <script type="text/javascript" src="js/init.js"></script>
+    <script type="text/javascript" src="js/components/UA.js"></script>
+    <script type="text/javascript" src="js/components/Collector.js"></script>
+    <script type="text/javascript" src="js/components/Slider.js"></script>
+    <script type="text/javascript" src="js/components/Sidebar.js"></script>
+    <script type="text/javascript" src="js/components/ToggleBox.js"></script>
+    <script type="text/javascript" src="js/components/HoverBox.js"></script>
+    <script type="text/javascript" src="js/components/LayoutFiltered.js"></script>
+
+    <script type="text/javascript" src="js/custom.js"></script>
+
+    <script type="text/javascript">
+        cm.onReady(function(){
+            // Components
+            new Com.Collector()
+                .add('sidebar', function(node){
+                    new Com.Sidebar({
+                        'node' : node
+                    });
+                })
+                .add('togglebox', function(node){
+                    new Com.ToggleBox({
+                        'node' : node
+                    });
+                })
+                .add('slider', function(node){
+                    new Com.Slider({
+                        'node' : node
+                    });
+                })
+                .add('hover-box', function(node){
+                    new Com.HoverBox({
+                        'node' : node
+                    });
+                })
+                .add('layout-filtered', function(node){
+                    new Com.LayoutFiltered({
+                        'node' : node
+                    });
+                })
+                .add('preload-overlay', function(node){
+                    cm.removeClass(node, 'is-show', true);
+                })
+                .construct();
+        });
+    </script>
+</head>
+<body>
+
+<div class="lt__base">
+    <div class="lt__base__header">
+        <div class="inner">
+            <div class="l">
+                <div class="header-toggle" title="Toggle Sidebar Menu" data-node="ComSidebar.button">
+                    <div class="icon size-50 menu linked"></div>
+                </div>
+
+                <div class="header-logo">
+                    <a class="icon icon-logo size-126 linked" href="welcome.html"></a>
+                </div>
+
+                <div class="header-search">
+                    <div class="pt__search pt__search--header">
+                        <input class="style-clear" type="text" name="search">
+                        <a class="button button-active size-28" title="Search">
+                            <div class="icon size-28 search linked"></div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="r">
+                <div class="header-menu">
+                    <div class="pt__menu pt__menu--header">
+                        <ul>
+                            <li>
+                                <a>Site feedback</a>
+                            </li>
+                            <li>
+                                <a>Help</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="header-user">
+                    <div class="pt__user-box pt__user-box--header size-32">
+                        <div class="image">
+                            <img src="img/parts/avatars/32.png" alt="Hubert Mokko">
+                        </div>
+                        <div class="name">Hubert Mokko</div>
+                        <div class="arrow"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="lt__base__content" data-node="ComSidebar.container">
+        <div class="lt__sidebar is-expanded" data-node="ComSidebar.sidebar" data-element="sidebar">
+			<div class="inner">
+                <div class="top">
+                    <dl class="lt__sidebar__block lt__sidebar__block--create">
+                        <dd>
+                            <div class="pt__menu pt__menu--sidebar pt__menu--sidebar-create has-icon-right">
+                                <ul>
+                                    <li>
+                                        <a href="welcome.html">
+                                            <div class="icon size-26 plus"></div>
+                                            <div class="title">Create</div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </dd>
+                    </dl>
+
+                    <dl class="lt__sidebar__block">
+                        <dd>
+                            <div class="pt__menu pt__menu--sidebar has-icon-left">
+                                <ul>
+                                    <li>
+                                        <a>
+                                            <div class="icon size-26 profile"></div>
+                                            <div class="title">My Profile</div>
+                                        </a>
+                                    </li>
+                                    <li class="active">
+                                        <a href="my_avatars.html">
+                                            <div class="icon size-26 avatars active"></div>
+                                            <div class="title">My Avatars</div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a>
+                                            <div class="icon size-26 memories"></div>
+                                            <div class="title">My Memories</div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a>
+                                            <div class="icon size-26 circles"></div>
+                                            <div class="title">My Circles</div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a>
+                                            <div class="icon size-26 messages"></div>
+                                            <div class="title">Messages</div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a>
+                                            <div class="icon size-26 settings"></div>
+                                            <div class="title">Settings</div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </dd>
+                    </dl>
+
+                    <dl class="lt__sidebar__block has-separator is-show" data-element="togglebox" data-config='{"remember" : true, "name" : "sidebar-interests"}'>
+                        <dt data-node="ComToggleBox.button">
+                            <span class="icon default"></span>
+                            <span class="title">Interests</span>
+                        </dt>
+                        <dd data-node="ComToggleBox.target">
+                            <div class="pt__menu pt__menu--sidebar has-icon-left">
+                                <ul>
+                                    <li>
+                                        <a>
+                                            <div class="counter">4</div>
+                                            <div class="icon size-26 i-family"></div>
+                                            <div class="title">Family</div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a>
+                                            <div class="counter">21</div>
+                                            <div class="icon size-26 i-video"></div>
+                                            <div class="title">Video</div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a>
+                                            <div class="counter">2</div>
+                                            <div class="icon size-26 i-auctions"></div>
+                                            <div class="title">Auctions</div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a>
+                                            <div class="counter">4</div>
+                                            <div class="icon size-26 i-social"></div>
+                                            <div class="title">Social</div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a>
+                                            <div class="counter">2</div>
+                                            <div class="icon size-26 i-travel"></div>
+                                            <div class="title">Travel</div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="pt__more pt__more--sidebar">
+                                <a>View all</a>
+                            </div>
+                        </dd>
+                    </dl>
+
+                    <dl class="lt__sidebar__block has-separator is-show" data-element="togglebox" data-config='{"remember" : true, "name" : "sidebar-circles"}'>
+                        <dt data-node="ComToggleBox.button">
+                            <span class="icon default"></span>
+                            <span class="title">Circles</span>
+                        </dt>
+                        <dd data-node="ComToggleBox.target">
+                            <div class="pt__users-line pt__users-line--sidebar">
+                                <div class="title">Friends</div>
+                                <div class="bar">
+                                    <div class="bar-arrow bar-arrow--right"></div>
+                                    <div class="pt__grid pt__grid--sidebar is-inline indent-1px col-4">
+                                        <ul>
+                                            <li>
+                                                <a>
+                                                    <img src="img/parts/avatars/40/18.jpg" alt="">
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a>
+                                                    <img src="img/parts/avatars/40/19.jpg" alt="">
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a>
+                                                    <img src="img/parts/avatars/40/20.jpg" alt="">
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a>
+                                                    <img src="img/parts/avatars/40/17.jpg" alt="">
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a>
+                                                    <img src="img/parts/avatars/40/1.jpg" alt="">
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a>
+                                                    <img src="img/parts/avatars/40/2.jpg" alt="">
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a>
+                                                    <img src="img/parts/avatars/40/3.jpg" alt="">
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a>
+                                                    <img src="img/parts/avatars/40/4.jpg" alt="">
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a>
+                                                    <img src="img/parts/avatars/40/5.jpg" alt="">
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a>
+                                                    <img src="img/parts/avatars/40/6.jpg" alt="">
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a>
+                                                    <img src="img/parts/avatars/40/7.jpg" alt="">
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a>
+                                                    <img src="img/parts/avatars/40/8.jpg" alt="">
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a>
+                                                    <img src="img/parts/avatars/40/9.jpg" alt="">
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a>
+                                                    <img src="img/parts/avatars/40/10.jpg" alt="">
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a>
+                                                    <img src="img/parts/avatars/40/11.jpg" alt="">
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a>
+                                                    <img src="img/parts/avatars/40/12.jpg" alt="">
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a>
+                                                    <img src="img/parts/avatars/40/13.jpg" alt="">
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a>
+                                                    <img src="img/parts/avatars/40/14.jpg" alt="">
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a>
+                                                    <img src="img/parts/avatars/40/15.jpg" alt="">
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a>
+                                                    <img src="img/parts/avatars/40/16.jpg" alt="">
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="pt__users-line pt__users-line--sidebar">
+                                <div class="title">Family</div>
+                                <div class="bar">
+                                    <div class="bar-arrow bar-arrow--right"></div>
+                                    <div class="pt__grid pt__grid--sidebar is-inline indent-1px col-4">
+                                        <ul>
+                                            <li>
+                                                <a>
+                                                    <img src="img/parts/avatars/40/1.jpg" alt="">
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a>
+                                                    <img src="img/parts/avatars/40/2.jpg" alt="">
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a>
+                                                    <img src="img/parts/avatars/40/3.jpg" alt="">
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a>
+                                                    <img src="img/parts/avatars/40/10.jpg" alt="">
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a>
+                                                    <img src="img/parts/avatars/40/4.jpg" alt="">
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a>
+                                                    <img src="img/parts/avatars/40/5.jpg" alt="">
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a>
+                                                    <img src="img/parts/avatars/40/6.jpg" alt="">
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a>
+                                                    <img src="img/parts/avatars/40/7.jpg" alt="">
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a>
+                                                    <img src="img/parts/avatars/40/8.jpg" alt="">
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a>
+                                                    <img src="img/parts/avatars/40/9.jpg" alt="">
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a>
+                                                    <img src="img/parts/avatars/40/11.jpg" alt="">
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a>
+                                                    <img src="img/parts/avatars/40/12.jpg" alt="">
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a>
+                                                    <img src="img/parts/avatars/40/13.jpg" alt="">
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a>
+                                                    <img src="img/parts/avatars/40/14.jpg" alt="">
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a>
+                                                    <img src="img/parts/avatars/40/15.jpg" alt="">
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a>
+                                                    <img src="img/parts/avatars/40/16.jpg" alt="">
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a>
+                                                    <img src="img/parts/avatars/40/17.jpg" alt="">
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a>
+                                                    <img src="img/parts/avatars/40/18.jpg" alt="">
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a>
+                                                    <img src="img/parts/avatars/40/19.jpg" alt="">
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a>
+                                                    <img src="img/parts/avatars/40/20.jpg" alt="">
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="pt__users-line pt__users-line--sidebar">
+                                <div class="title">Work</div>
+                                <div class="bar">
+                                    <div class="bar-arrow bar-arrow--right"></div>
+                                    <div class="pt__grid pt__grid--sidebar is-inline indent-1px col-4">
+                                        <ul>
+                                            <li>
+                                                <a>
+                                                    <img src="img/parts/avatars/40/9.jpg" alt="">
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a>
+                                                    <img src="img/parts/avatars/40/10.jpg" alt="">
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a>
+                                                    <img src="img/parts/avatars/40/11.jpg" alt="">
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a>
+                                                    <img src="img/parts/avatars/40/12.jpg" alt="">
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a>
+                                                    <img src="img/parts/avatars/40/1.jpg" alt="">
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a>
+                                                    <img src="img/parts/avatars/40/2.jpg" alt="">
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a>
+                                                    <img src="img/parts/avatars/40/3.jpg" alt="">
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a>
+                                                    <img src="img/parts/avatars/40/4.jpg" alt="">
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a>
+                                                    <img src="img/parts/avatars/40/5.jpg" alt="">
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a>
+                                                    <img src="img/parts/avatars/40/6.jpg" alt="">
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a>
+                                                    <img src="img/parts/avatars/40/7.jpg" alt="">
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a>
+                                                    <img src="img/parts/avatars/40/8.jpg" alt="">
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a>
+                                                    <img src="img/parts/avatars/40/13.jpg" alt="">
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a>
+                                                    <img src="img/parts/avatars/40/14.jpg" alt="">
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a>
+                                                    <img src="img/parts/avatars/40/15.jpg" alt="">
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a>
+                                                    <img src="img/parts/avatars/40/16.jpg" alt="">
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a>
+                                                    <img src="img/parts/avatars/40/17.jpg" alt="">
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a>
+                                                    <img src="img/parts/avatars/40/18.jpg" alt="">
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a>
+                                                    <img src="img/parts/avatars/40/19.jpg" alt="">
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a>
+                                                    <img src="img/parts/avatars/40/20.jpg" alt="">
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="pt__users-line pt__users-line--sidebar">
+                                <div class="title">Actors</div>
+                                <div class="bar">
+                                    <div class="bar-arrow bar-arrow--right"></div>
+                                    <div class="pt__grid pt__grid--sidebar is-inline indent-1px col-4">
+                                        <ul>
+                                            <li>
+                                                <a>
+                                                    <img src="img/parts/avatars/40/13.jpg" alt="">
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a>
+                                                    <img src="img/parts/avatars/40/14.jpg" alt="">
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a>
+                                                    <img src="img/parts/avatars/40/15.jpg" alt="">
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a>
+                                                    <img src="img/parts/avatars/40/16.jpg" alt="">
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a>
+                                                    <img src="img/parts/avatars/40/1.jpg" alt="">
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a>
+                                                    <img src="img/parts/avatars/40/2.jpg" alt="">
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a>
+                                                    <img src="img/parts/avatars/40/3.jpg" alt="">
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a>
+                                                    <img src="img/parts/avatars/40/4.jpg" alt="">
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a>
+                                                    <img src="img/parts/avatars/40/5.jpg" alt="">
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a>
+                                                    <img src="img/parts/avatars/40/6.jpg" alt="">
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a>
+                                                    <img src="img/parts/avatars/40/7.jpg" alt="">
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a>
+                                                    <img src="img/parts/avatars/40/8.jpg" alt="">
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a>
+                                                    <img src="img/parts/avatars/40/9.jpg" alt="">
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a>
+                                                    <img src="img/parts/avatars/40/10.jpg" alt="">
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a>
+                                                    <img src="img/parts/avatars/40/11.jpg" alt="">
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a>
+                                                    <img src="img/parts/avatars/40/12.jpg" alt="">
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a>
+                                                    <img src="img/parts/avatars/40/17.jpg" alt="">
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a>
+                                                    <img src="img/parts/avatars/40/18.jpg" alt="">
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a>
+                                                    <img src="img/parts/avatars/40/19.jpg" alt="">
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a>
+                                                    <img src="img/parts/avatars/40/20.jpg" alt="">
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="pt__more pt__more--sidebar">
+                                <a>View all</a>
+                            </div>
+                        </dd>
+                    </dl>
+                </div>
+
+                <div class="bottom">
+                    <div class="pt__grid col-4">
+                        <ul>
+                            <li>
+                                <a class="icon size-24 icon-1 linked pull-center"></a>
+                            </li>
+                            <li>
+                                <a class="icon size-24 icon-2 linked pull-center"></a>
+                            </li>
+                            <li>
+                                <a class="icon size-24 icon-3 linked pull-center"></a>
+                            </li>
+                            <li>
+                                <a class="icon size-24 icon-4 linked pull-center"></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="lt__base__page">
+            <div class="lt__base__entry">
+                <div class="lt__base__entry-inner lt__filtered is-show" data-element="layout-filtered" data-node="ComLayoutFiltered.container">
+                    <div class="inner">
+                        <div class="lt__base__page-title">
+                            <div class="lt__filtered__button" data-node="ComLayoutFiltered.button">
+                                <div class="icon size-22 arrow-up"></div>
+                                <div class="label">Filters</div>
+                            </div>
+                            <h1>My Avatars</h1>
+                        </div>
+
+                        <div class="lt__filtered__filter" data-node="ComLayoutFiltered.filter">
+                            <div class="pt__toolbar">
+                                <div class="inner">
+                                    <div class="left">
+                                        <ul class="group">
+                                            <li class="label">Object</li>
+                                            <li class="is-field large">
+                                                <input type="text" class="style-clean">
+                                            </li>
+                                        </ul>
+                                        <ul class="group">
+                                            <li class="label">Name</li>
+                                            <li class="is-field large">
+                                                <input type="text" class="style-clean">
+                                            </li>
+                                        </ul>
+                                        <ul class="group">
+                                            <li class="label">Business</li>
+                                            <li class="is-field large">
+                                                <input type="text" class="style-clean">
+                                            </li>
+                                        </ul>
+                                        <ul class="group">
+                                            <li class="label">Latest activity</li>
+                                            <li class="is-field medium">
+                                                <select class="style-clean style-toolbar"></select>
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="right">
+                                        <ul class="group">
+                                            <li>
+                                                <div class="icon size-28 tiles"></div>
+                                            </li>
+                                            <li>
+                                                <div class="icon size-28 list active linked"></div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="pt__timeline-menu has-border">
+                                <div class="l">Timeline</div>
+
+                                <div class="r">
+                                    <div class="pt__timeline-menu__bar">
+                                        <div class="bar-arrow bar-arrow--left">
+                                            <div class="icon size-22 backward linked"></div>
+                                        </div>
+
+                                        <div class="pt__menu pt__menu--timeline">
+                                            <ul>
+                                                <li>
+                                                    <a>2010</a>
+                                                </li>
+                                                <li>
+                                                    <a>2011</a>
+                                                </li>
+                                                <li>
+                                                    <a>2012</a>
+                                                </li>
+                                                <li>
+                                                    <a>2013</a>
+                                                </li>
+                                                <li class="active">
+                                                    <a>2014</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="lt__filtered__content" data-node="ComLayoutFiltered.content">
+                            <div class="lt__avatars-listing">
+                                <div class="column">
+                                    <div class="title">Personal</div>
+
+                                    <div class="items">
+                                        <div class="lt__avatars-item">
+                                            <div class="inner">
+                                                <div class="l">
+                                                    <a class="lt__avatars-item__image" href="avatar_with_memories.html">
+                                                        <div class="image">
+                                                            <img src="img/content/my-avatars/gold-necklace.png" alt="">
+                                                        </div>
+                                                        <div class="icon icon-avatar-xx-small jewelry"></div>
+                                                    </a>
+                                                </div>
+
+                                                <div class="r">
+                                                    <div class="pt__line-title size-h3">
+                                                        <div class="r">
+                                                            <div class="pt__share pt__share--avatars">
+                                                                <ul>
+                                                                    <li>
+                                                                        <a class="icon size-24 facebook linked"></a>
+                                                                    </li>
+                                                                    <li>
+                                                                        <a class="icon size-24 twitter linked"></a>
+                                                                    </li>
+                                                                    <li>
+                                                                        <a class="icon size-24 send linked"></a>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="l">
+                                                            <h3>
+                                                                <a href="avatar_with_memories.html">Gold Necklace</a>
+                                                            </h3>
+                                                        </div>
+                                                    </div>
+                                                    <div class="pt__line-info">
+                                                        <div class="date">added 21.05.2014</div>
+                                                        <div class="author">Hubert Mokko</div>
+                                                    </div>
+                                                    <div class="lt__avatars-item__type">
+                                                        <h4 class="style-light">Jewelry</h4>
+                                                    </div>
+                                                    <div class="lt__avatars-item__memories">
+                                                        <ul>
+                                                            <li>
+                                                                <div class="icon size-18 photo active"></div>
+                                                                <div class="label">Photo</div>
+                                                            </li>
+                                                            <li>
+                                                                <div class="icon size-18 video active"></div>
+                                                                <div class="label">Video</div>
+                                                            </li>
+                                                            <li>
+                                                                <div class="icon size-18 gr active"></div>
+                                                                <div class="label">QR Code</div>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="lt__avatars-item is-transfered">
+                                            <div class="inner">
+                                                <div class="l">
+                                                    <a class="lt__avatars-item__image" href="avatar_with_memories.html">
+                                                        <div class="image">
+                                                            <img src="img/content/my-avatars/turismo.png" alt="">
+                                                        </div>
+                                                        <div class="icon icon-avatar-xx-small cars"></div>
+                                                    </a>
+                                                </div>
+
+                                                <div class="r">
+                                                    <div class="pt__line-title size-h3">
+                                                        <div class="r">
+                                                            <p>transfered</p>
+                                                        </div>
+
+                                                        <div class="l">
+                                                            <h3>
+                                                                <a href="avatar_with_memories.html">6C-2300B TURISMO/GT</a>
+                                                            </h3>
+                                                        </div>
+                                                    </div>
+                                                    <div class="pt__line-info">
+                                                        <div class="date">added 21.05.2014</div>
+                                                        <div class="author">Hubert Mokko</div>
+                                                    </div>
+                                                    <div class="lt__avatars-item__type">
+                                                        <h4 class="style-light">Cars</h4>
+                                                    </div>
+                                                    <div class="lt__avatars-item__memories">
+                                                        <ul>
+                                                            <li>
+                                                                <div class="icon size-18 photo"></div>
+                                                                <div class="label">Photo</div>
+                                                            </li>
+                                                            <li>
+                                                                <div class="icon size-18 video"></div>
+                                                                <div class="label">Video</div>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="lt__avatars-item is-transit">
+                                            <div class="inner">
+                                                <div class="l">
+                                                    <a class="lt__avatars-item__image" href="avatar_with_memories.html">
+                                                        <div class="image">
+                                                            <img src="img/content/my-avatars/gaja.png" alt="">
+                                                        </div>
+                                                        <div class="icon icon-avatar-xx-small wines"></div>
+                                                    </a>
+                                                </div>
+
+                                                <div class="r">
+                                                    <div class="pt__line-title size-h3">
+                                                        <div class="r">
+                                                            <p>in transit</p>
+                                                        </div>
+
+                                                        <div class="l">
+                                                            <h3>
+                                                                <a href="avatar_with_memories.html">Gaja Wine 1972 (3 bottles)</a>
+                                                            </h3>
+                                                        </div>
+                                                    </div>
+                                                    <div class="pt__line-info">
+                                                        <div class="date">added 21.05.2014</div>
+                                                        <div class="author">Hubert Mokko</div>
+                                                    </div>
+                                                    <div class="lt__avatars-item__type">
+                                                        <h4 class="style-light">Wine</h4>
+                                                    </div>
+                                                    <div class="lt__avatars-item__memories">
+                                                        <ul>
+                                                            <li>
+                                                                <div class="icon size-18 photo pending"></div>
+                                                                <div class="label">Photo</div>
+                                                            </li>
+                                                            <li>
+                                                                <div class="icon size-18 gr pending"></div>
+                                                                <div class="label">QR Code</div>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="column">
+                                    <div class="title">Shared</div>
+
+                                    <div class="items">
+                                        <div class="lt__avatars-item">
+                                            <div class="inner">
+                                                <div class="l">
+                                                    <a class="lt__avatars-item__image style-yellow" href="avatar_with_memories.html">
+                                                        <div class="image">
+                                                            <img src="img/content/my-avatars/baseball-card.png" alt="">
+                                                        </div>
+                                                        <div class="icon icon-avatar-xx-small sports"></div>
+                                                    </a>
+                                                </div>
+
+                                                <div class="r">
+                                                    <div class="pt__line-title size-h3">
+                                                        <div class="r">
+                                                            <div class="pt__share pt__share--avatars">
+                                                                <ul>
+                                                                    <li>
+                                                                        <a class="icon size-24 facebook linked"></a>
+                                                                    </li>
+                                                                    <li>
+                                                                        <a class="icon size-24 twitter linked"></a>
+                                                                    </li>
+                                                                    <li>
+                                                                        <a class="icon size-24 send linked"></a>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="l">
+                                                            <h3>
+                                                                <a href="avatar_with_memories.html">Baseball card - Darwin Barney</a>
+                                                            </h3>
+                                                        </div>
+                                                    </div>
+                                                    <div class="pt__line-info">
+                                                        <div class="date">added 21.05.2014</div>
+                                                        <div class="author">Hubert Mokko</div>
+                                                        <div class="comments">
+                                                            <div class="icon size-18 comment"></div>
+                                                            <div class="label">22</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="lt__avatars-item__type">
+                                                        <h4 class="style-light">Sports</h4>
+                                                    </div>
+                                                    <div class="lt__avatars-item__memories">
+                                                        <ul>
+                                                            <li>
+                                                                <div class="icon size-18 photo active"></div>
+                                                                <div class="label">Photo</div>
+                                                            </li>
+                                                            <li>
+                                                                <div class="icon size-18 video active"></div>
+                                                                <div class="label">Video</div>
+                                                            </li>
+                                                            <li>
+                                                                <div class="icon size-18 gr active"></div>
+                                                                <div class="label">QR Code</div>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="lt__avatars-item">
+                                            <div class="inner">
+                                                <div class="l">
+                                                    <a class="lt__avatars-item__image style-green" href="avatar_with_memories.html">
+                                                        <div class="image">
+                                                            <img src="img/content/my-avatars/nike-limited.png" alt="">
+                                                        </div>
+                                                        <div class="icon icon-avatar-xx-small clothes"></div>
+                                                    </a>
+                                                </div>
+
+                                                <div class="r">
+                                                    <div class="pt__line-title size-h3">
+                                                        <div class="r">
+                                                            <div class="pt__share pt__share--avatars">
+                                                                <ul>
+                                                                    <li>
+                                                                        <a class="icon size-24 facebook linked"></a>
+                                                                    </li>
+                                                                    <li>
+                                                                        <a class="icon size-24 twitter linked"></a>
+                                                                    </li>
+                                                                    <li>
+                                                                        <a class="icon size-24 send linked"></a>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="l">
+                                                            <h3>
+                                                                <a href="avatar_with_memories.html">Nike Limited Collection 2014</a>
+                                                            </h3>
+                                                        </div>
+                                                    </div>
+                                                    <div class="pt__line-info">
+                                                        <div class="date">added 21.05.2014</div>
+                                                        <div class="author">Hubert Mokko</div>
+                                                        <div class="comments">
+                                                            <div class="icon size-18 comment"></div>
+                                                            <div class="label">12</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="lt__avatars-item__type">
+                                                        <h4 class="style-light">Clothes</h4>
+                                                    </div>
+                                                    <div class="lt__avatars-item__memories">
+                                                        <ul>
+                                                            <li>
+                                                                <div class="icon size-18 photo active"></div>
+                                                                <div class="label">Photo</div>
+                                                            </li>
+                                                            <li>
+                                                                <div class="icon size-18 video active"></div>
+                                                                <div class="label">Video</div>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="lt__avatars-item">
+                                            <div class="inner">
+                                                <div class="l">
+                                                    <a class="lt__avatars-item__image style-purple" href="avatar_with_memories.html">
+                                                        <div class="image">
+                                                            <img src="img/content/my-avatars/silver-dollar.png" alt="">
+                                                        </div>
+                                                        <div class="icon icon-avatar-xx-small coins"></div>
+                                                    </a>
+                                                </div>
+
+                                                <div class="r">
+                                                    <div class="pt__line-title size-h3">
+                                                        <div class="r">
+                                                            <div class="pt__share pt__share--avatars">
+                                                                <ul>
+                                                                    <li>
+                                                                        <a class="icon size-24 facebook linked"></a>
+                                                                    </li>
+                                                                    <li>
+                                                                        <a class="icon size-24 twitter linked"></a>
+                                                                    </li>
+                                                                    <li>
+                                                                        <a class="icon size-24 send linked"></a>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="l">
+                                                            <h3>
+                                                                <a href="avatar_with_memories.html">Silver Dollar 1962</a>
+                                                            </h3>
+                                                        </div>
+                                                    </div>
+                                                    <div class="pt__line-info">
+                                                        <div class="date">added 21.05.2014</div>
+                                                        <div class="author">Hubert Mokko</div>
+                                                        <div class="comments">
+                                                            <div class="icon size-18 comment"></div>
+                                                            <div class="label">4</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="lt__avatars-item__type">
+                                                        <h4 class="style-light">Coins</h4>
+                                                    </div>
+                                                    <div class="lt__avatars-item__memories">
+                                                        <ul>
+                                                            <li>
+                                                                <div class="icon size-18 photo active"></div>
+                                                                <div class="label">Photo</div>
+                                                            </li>
+                                                            <li>
+                                                                <div class="icon size-18 video active"></div>
+                                                                <div class="label">Video</div>
+                                                            </li>
+                                                            <li>
+                                                                <div class="icon size-18 gr active"></div>
+                                                                <div class="label">QR Code</div>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

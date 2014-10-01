@@ -1,0 +1,40 @@
+/* ******* PARTS: TIMELINE MENU ******* */
+
+.pt__timeline-menu {
+    &:extend(.clearfix all);
+
+    margin: 0 0 16px;
+    line-height: @PT-Form-FieldHeight;
+
+    > .l {
+        min-width: 82px;
+        float: left;
+    }
+
+    > .r {
+        overflow: hidden;
+    }
+
+    &.has-border {
+        padding: 0 0 8px;
+        border-bottom: @Border-Base;
+    }
+}
+
+/* *** BAR *** */
+
+.pt__timeline-menu__bar {
+    .bar-arrow {
+        padding: ((@PT-Form-FieldHeight - 22px) / 2);
+    }
+
+    .bar-arrow--left {
+        float: left;
+        margin-right: 18px;
+    }
+
+    .bar-arrow--right {
+        float: right;
+        margin-left: 18px;
+    }
+}

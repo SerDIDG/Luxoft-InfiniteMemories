@@ -44,25 +44,6 @@
             })();
             // Components
             new Com.Collector()
-                .add('sidebar', function(node){
-                    new Com.Sidebar({
-                        'node' : node
-                    });
-                })
-                .construct();
-        });
-
-        cm.onLoad(function(){
-            // Components
-            new Com.Collector()
-                .add('slider', function(node){
-                    new Com.Slider({
-                        'node' : node
-                    });
-                })
-                .add('preload-overlay', function(node){
-                    cm.removeClass(node, 'is-show', true);
-                })
                 .construct();
         });
     </script>

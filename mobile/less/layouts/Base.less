@@ -107,6 +107,12 @@
             bottom: @LT-Base-ButtonsHeight;
         }
     }
+
+    &.has-buttons-double {
+        .lt__base__content {
+            bottom: @LT-Base-ButtonsDoubleHeight;
+        }
+    }
 }
 
 .lt__base__app-bar {
@@ -204,10 +210,6 @@
     position: absolute;
     z-index: 1;
     .mix-position(0, 0, 0, 0);
-
-    &.has-notification {
-        padding-top: @PT-Notification-Height;
-    }
 }
 
 /* *** FOOTER *** */
@@ -237,5 +239,12 @@
 
     .button {
         width: 100%;
+        display: block;
+        margin: @PT-Button-IndentY 0 0 0;
+        .cm-text-overflow;
+
+        &:first-child {
+            margin: 0;
+        }
     }
 }

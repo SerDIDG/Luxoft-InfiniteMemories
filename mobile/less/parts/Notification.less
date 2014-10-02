@@ -2,10 +2,9 @@
 
 .pt__notification {
     height: @PT-Notification-Height;
-    position: absolute;
+    position: relative;
     z-index: 10;
     overflow: hidden;
-    .mix-position(0, 0, auto, 0);
 
     > .inner {
         @paddingY: ((@PT-Notification-Height - 24px) / 2);

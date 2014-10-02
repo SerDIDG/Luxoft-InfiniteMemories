@@ -1266,13 +1266,9 @@ button.button-alt {
 /* ******* PARTS: NOTIFICATION ******* */
 .pt__notification {
   height: 41px;
-  position: absolute;
+  position: relative;
   z-index: 10;
   overflow: hidden;
-  top: 0;
-  right: 0;
-  bottom: auto;
-  left: 0;
 }
 .pt__notification > .inner {
   padding: 8.5px 30px;
@@ -1484,15 +1480,12 @@ button.button-alt {
   margin: 0 0 10px;
 }
 .lt__login__links {
-  margin: 0 0 22px;
-}
-.lt__login__submit-box {
   margin: 0;
 }
 /* ******* LAYOUTS: SIDEBAR ******* */
 .lt__sidebar {
   position: absolute;
-  z-index: 2;
+  z-index: 4;
   -webkit-transition: -webkit-transform 300ms ease-in-out;
   -ms-transition: -ms-transform 300ms ease-in-out;
   transition: transform 300ms ease-in-out;
@@ -1719,6 +1712,9 @@ button.button-alt {
 .lt__base.has-buttons .lt__base__content {
   bottom: 63px;
 }
+.lt__base.has-buttons-double .lt__base__content {
+  bottom: 117px;
+}
 .lt__base__app-bar {
   height: 20px;
   position: absolute;
@@ -1843,9 +1839,6 @@ button.button-alt {
   bottom: 0;
   left: 0;
 }
-.lt__base__content.has-notification {
-  padding-top: 41px;
-}
 /* *** FOOTER *** */
 .lt__base__footer {
   height: 44px;
@@ -1878,10 +1871,25 @@ button.button-alt {
 .lt__base__buttons input[type="reset"],
 .lt__base__buttons button {
   width: 100%;
+  display: block;
+  margin: 15px 0 0 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.lt__base__buttons .button:first-child,
+.lt__base__buttons input[type="button"]:first-child,
+.lt__base__buttons input[type="submit"]:first-child,
+.lt__base__buttons input[type="reset"]:first-child,
+.lt__base__buttons button:first-child {
+  margin: 0;
 }
 /* ******* LAYOUTS: HOME ******* */
+.lt__home__banner {
+  margin: 0 0 15px;
+}
 .lt__home__content {
-  padding: 15px;
+  padding: 0 15px;
 }
 /* ******* LAYOUTS: SCANNER ******* */
 .lt__scanner__holder {
@@ -1934,9 +1942,6 @@ button.button-alt {
   border-top: 1px solid #c8c8c8;
 }
 .lt__enter-code__content .pt__form {
-  margin: 30px 0 0 0;
-}
-.lt__enter-code__content .pt__buttons {
   margin: 30px 0 0 0;
 }
 /* *** PREVIEW *** */
@@ -2004,14 +2009,6 @@ button.button-alt {
   line-height: 22px;
   font-size: 15px;
   color: #e6e6e6;
-}
-/* *** FOOTER *** */
-.lt__message__footer {
-  margin: 35px 0 0 0;
-  padding: 15px;
-}
-.lt__message__footer .pt__buttons {
-  margin: 0;
 }
 /* ******* LAYOUTS: MEMORY DETAILS ******* */
 .lt__memory-details__content {

@@ -3,8 +3,13 @@
 .pt__line-title {
     &:extend(.clearfix all);
 
+    display: -webkit-flex;
+    display:     -ms-flexbox;
+    display:         flex;
+    -webkit-flex-wrap: wrap;
+            flex-wrap: wrap;
+
     > .r {
-        margin: 0 0 0 20px;
         float: right;
 
         .pt__share {
@@ -17,7 +22,12 @@
     }
 
     > .l {
+        max-width: 100%;
+        float: left;
         overflow: hidden;
+        -webkit-flex: auto;
+            -ms-flex: auto;
+                flex: auto;
 
         .pt__tags__content {
             text-align: left;

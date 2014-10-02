@@ -2739,8 +2739,14 @@ button.button-delete {
   color: #4d4d4d;
 }
 /* ******* PARTS: LINE TITLE ******* */
+.pt__line-title {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
 .pt__line-title > .r {
-  margin: 0 0 0 20px;
   float: right;
 }
 .pt__line-title > .r .pt__share {
@@ -2760,7 +2766,12 @@ button.button-delete {
   text-align: right;
 }
 .pt__line-title > .l {
+  max-width: 100%;
+  float: left;
   overflow: hidden;
+  -webkit-flex: auto;
+  -ms-flex: auto;
+  flex: auto;
 }
 .pt__line-title > .l .pt__tags__content,
 .pt__line-title > .l h1,
